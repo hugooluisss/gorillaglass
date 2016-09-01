@@ -10,7 +10,7 @@
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/AdminLTE.less" />
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/skins/_all-skins.less" />
 		{else}
-		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.css">
+		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.min.css">
 		<link rel="stylesheet" type="text/css" href="{$PAGE.ruta}dist/css/skins/_all-skins.css" />
 		{/if}
 
@@ -41,9 +41,9 @@
 			<!-- Logo -->
 			<a href="panelPrincipal" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>A</b>ilatan</span>
+				<span class="logo-mini"><b>Gorilla</b>Glass</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>A</b>ilatan Admin</span>
+				<span class="logo-lg"><b>Gorilla Glass</b> Panel Admin</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -95,15 +95,26 @@
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
-					<li class="{if in_array($PAGE.modulo, array('inicio', 'panelPrincipal'))}active{/if}"><a href="inicio">Ventas</a></li>
+					{if $PAGE.usuario->getIdTipo() eq 1}
 					<li class="{if in_array($PAGE.modulo, array('admonUsuarios'))}active{/if} treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
+							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 						</ul>
 					</li>
+					{/if}
+					{if $PAGE.usuario->getIdTipo() eq 1}
+					<li class="{if in_array($PAGE.modulo, array('colores'))}active{/if} treeview">
+						<a href="#">
+							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li {if $PAGE.modulo eq 'colores'}class="active"{/if}><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
+						</ul>
+					</li>
+					{/if}
 				</ul>
 			</section>
 			<!-- /.sidebar -->

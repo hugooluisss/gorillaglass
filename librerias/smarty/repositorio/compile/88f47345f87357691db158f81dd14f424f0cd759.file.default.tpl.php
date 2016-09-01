@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-24 23:23:07
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-31 23:40:35
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2892515405779d4757b0160-13665111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1472065507,
+      1 => 1472704834,
       2 => 'file',
     ),
   ),
@@ -84,9 +84,9 @@ plugins/upload/css/jquery.fileupload.css">
 			<!-- Logo -->
 			<a href="panelPrincipal" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>A</b>ilatan</span>
+				<span class="logo-mini"><b>Gorilla</b>Glass</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>A</b>ilatan Admin</span>
+				<span class="logo-lg"><b>Gorilla Glass</b> Panel Admin</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -141,15 +141,26 @@ plugins/upload/css/jquery.fileupload.css">
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('inicio','panelPrincipal'))){?>active<?php }?>"><a href="inicio">Ventas</a></li>
+					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
 					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('admonUsuarios'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='configuracion'){?>class="active"<?php }?>><a href="configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 						</ul>
 					</li>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('colores'))){?>active<?php }?> treeview">
+						<a href="#">
+							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='colores'){?>class="active"<?php }?>><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
+						</ul>
+					</li>
+					<?php }?>
 				</ul>
 			</section>
 			<!-- /.sidebar -->

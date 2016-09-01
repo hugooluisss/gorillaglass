@@ -1,27 +1,27 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-10 09:18:37
-         compiled from "templates/plantillas/modulos/modulos/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:35431092057aab34d314f10-65895183%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-31 23:43:29
+         compiled from "templates/plantillas/modulos/colores/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:204967050057c7b148af1824-38491623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '778e96007b7bc721a0a9606e738d3cdd4b4d6513' => 
+    'f0145eada3884db3564a6f6eed42a027c0e5f75c' => 
     array (
-      0 => 'templates/plantillas/modulos/modulos/panel.tpl',
-      1 => 1470838654,
+      0 => 'templates/plantillas/modulos/colores/panel.tpl',
+      1 => 1472705007,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '35431092057aab34d314f10-65895183',
+  'nocache_hash' => '204967050057c7b148af1824-38491623',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57aab34d363989_91126970',
+  'unifunc' => 'content_57c7b148b19867_38624723',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57aab34d363989_91126970')) {function content_57aab34d363989_91126970($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_57c7b148b19867_38624723')) {function content_57c7b148b19867_38624723($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Administración de módulos</h1>
+		<h1 class="page-header">Administración de colores</h1>
 	</div>
 </div>
 
@@ -42,15 +42,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="box">
 				<div class="box-body">			
 					<div class="form-group">
-						<label for="txtNombre" class="col-lg-2">Nombre completo</label>
-						<div class="col-lg-6">
+						<label for="txtNombre" class="col-lg-2">Nombre</label>
+						<div class="col-lg-3">
 							<input class="form-control" id="txtNombre" name="txtNombre">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtImporte" class="col-lg-2">Importe</label>
-						<div class="col-lg-3">
-							<input class="form-control" id="txtImporte" name="txtImporte" type="text">
+						<label for="txtCodigo" class="col-lg-2">Código Hex</label>
+						<div class="col-lg-2">
+							<input class="form-control" id="txtCodigo" name="txtCodigo" type="text">
 						</div>
 					</div>
 				</div>

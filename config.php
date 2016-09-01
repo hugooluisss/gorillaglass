@@ -1,5 +1,5 @@
 <?php
-define('SISTEMA', 'Ailatan');
+define('SISTEMA', 'Gorilla Glass');
 define('VERSION', 'v 1.0');
 define('ALIAS', '');
 define('AUTOR', 'Hugo Luis Santiago Altamirano');
@@ -14,40 +14,102 @@ define('LAYOUT_JSON', 'layout/json.tpl');
 #Login y su controlador
 $conf['inicio'] = array(
 	'descripcion' => '',
-	'controlador' => 'ventas.php',
 	'seguridad' => false,
-	'vista' => 'inicio.tpl',
-	#'js' => array('cliente.class.js'),
-	'jsTemplate' => array('ventas.js'),
-	'capa' => LAYOUT_DEFECTO);
-	
-$conf['panelPrincipal'] = $conf['inicio'];
+	'js' => array('usuario.class.js'),
+	'jsTemplate' => array('login.js'),
+	'capa' => 'layout/login.tpl');
 
-#Configuracion
-$conf['configuracion'] = array(
-	'controlador' => 'configuracion.php',
-	'vista' => 'configuracion.tpl',
-	'descripcion' => 'Configuración del sistema',
+$conf['logout'] = array(
+	'controlador' => 'login.php',
+	#'vista' => 'usuarios/panel.tpl',
+	'descripcion' => 'Salir del sistema',
 	'seguridad' => false,
-	'jsTemplate' => array('configuracion.js'),
+	'js' => array(),
 	'capa' => LAYOUT_DEFECTO);
 	
-$conf['cconfiguracion'] = array(
-	'controlador' => 'configuracion.php',
-	'descripcion' => 'Controlador de configuración del sistema',
+$conf['clogin'] = array(
+	'controlador' => 'login.php',
+	'descripcion' => 'Inicio de sesion',
 	'seguridad' => false,
 	'capa' => LAYOUT_AJAX);
 	
-$conf['listaVentas'] = array(
-	'controlador' => 'ventas.php',
-	'vista' => 'ventas/lista.tpl',
-	'descripcion' => 'Lista de ventas',
-	'seguridad' => false,
+$conf['bienvenida'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'usuarios/bienvenida.tpl',
+	'descripcion' => 'Bienvenida al sistema',
+	'seguridad' => true,
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['admonUsuarios'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'usuarios/panel.tpl',
+	'descripcion' => 'Administración de usuarios',
+	'seguridad' => true,
+	'js' => array('usuario.class.js'),
+	'jsTemplate' => array('usuarios.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaUsuarios'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'usuarios/lista.tpl',
+	'descripcion' => 'Lista de usuarios',
+	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 	
-$conf['cventas'] = array(
-	'controlador' => 'ventas.php',
-	'descripcion' => 'Controlador de ventas',
-	'seguridad' => false,
+$conf['cusuarios'] = array(
+	'controlador' => 'usuarios.php',
+	'descripcion' => 'Controlador de usuarios',
+	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/*Datos de usuario desde el panel*/
+$conf['usuarioDatosPersonales'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'usuarios/datosPersonales.tpl',
+	'descripcion' => 'Cambiar datos personales',
+	'seguridad' => true,
+	'js' => array('usuario.class.js'),
+	'jsTemplate' => array('datosUsuario.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['admonUsuarios'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'usuarios/panel.tpl',
+	'descripcion' => 'Administración de usuarios',
+	'seguridad' => true,
+	'js' => array('usuario.class.js'),
+	'jsTemplate' => array('usuarios.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['panelPrincipal'] = array(
+	#'controlador' => 'index.php',
+	'vista' => 'inicio.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array(),
+	'capa' => LAYOUT_DEFECTO);
+
+#Colores
+$conf['colores'] = array(
+	'controlador' => 'colores.php',
+	'vista' => 'colores/panel.tpl',
+	'descripcion' => 'Administración de colores',
+	'seguridad' => true,
+	'js' => array('color.class.js'),
+	'jsTemplate' => array('colores.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaColores'] = array(
+	'controlador' => 'colores.php',
+	'vista' => 'colores/lista.tpl',
+	'descripcion' => 'Lista de colores',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['ccolores'] = array(
+	'controlador' => 'colores.php',
+	'descripcion' => 'Controlador de colores',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
 ?>

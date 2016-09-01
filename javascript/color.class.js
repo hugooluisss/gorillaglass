@@ -1,14 +1,13 @@
-TPago = function(){
+TColor = function(){
 	var self = this;
 	
-	this.add = function(id,	poliza, fecha, importe, fn){
+	this.add = function(id,	nombre, codigo, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('cpagos', {
+		$.post('ccolores', {
 				"id": id,
-				"poliza": poliza,
-				"fecha": fecha,
-				"importe": importe,
+				"nombre": nombre,
+				"codigo": codigo,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')
@@ -20,14 +19,14 @@ TPago = function(){
 	};
 	
 	this.del = function(id, fn){
-		$.post('cpagos', {
+		$.post('ccolores', {
 			"id": id,
 			"action": "del"
 		}, function(data){
 			if (fn.after != undefined)
 				fn.after(data);
 			if (data.band == 'false'){
-				console.log("Ocurrió un error al eliminar el pago");
+				alert("Ocurrió un error el color");
 			}
 		}, "json");
 	};
