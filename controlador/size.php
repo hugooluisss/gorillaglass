@@ -1,9 +1,9 @@
 <?php
 global $objModulo;
 switch($objModulo->getId()){
-	case 'listaColores':
+	case 'listaSize':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from color");
+		$rs = $db->Execute("select * from size");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
@@ -13,25 +13,24 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("lista", $datos);
 	break;
-	case 'ccolores':
+	case 'csize':
 		switch($objModulo->getAction()){
 			case 'add':
-				$obj = new TColor();
+				$obj = new TSize();
 				
 				$obj->setId($_POST['id']);
 				$obj->setClave($_POST['clave']);
 				$obj->setNombre($_POST['nombre']);
-				$obj->setCodigo($_POST['codigo']);
 
 				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'del':
-				$obj = new TColor($_POST['id']);
+				$obj = new TSize($_POST['id']);
 				echo json_encode(array("band" => $obj->eliminar()));
 			break;
 			case 'validaClave':
 				$db = TBase::conectaDB();
-				$rs = $db->Execute("select idColor from color where clave = '".$_POST['txtClave']."' and not idColor = '".$_POST['id']."'");
+				$rs = $db->Execute("select idSize from size where clave = '".$_POST['txtClave']."' and not idSize = '".$_POST['id']."'");
 				
 				echo $rs->EOF?"true":"false";
 			break;

@@ -1,14 +1,13 @@
-TColor = function(){
+TTextura = function(){
 	var self = this;
 	
-	this.add = function(id,	clave, nombre, codigo, fn){
+	this.add = function(id,	clave, nombre, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('ccolores', {
+		$.post('ctexturas', {
 				"id": id,
 				"clave": clave,
 				"nombre": nombre,
-				"codigo": codigo,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')
@@ -20,7 +19,7 @@ TColor = function(){
 	};
 	
 	this.del = function(id, fn){
-		$.post('ccolores', {
+		$.post('ctexturas', {
 			"id": id,
 			"action": "del"
 		}, function(data){

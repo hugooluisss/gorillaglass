@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-31 23:43:29
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-02 13:24:09
          compiled from "templates/plantillas/modulos/colores/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:204967050057c7b148af1824-38491623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0145eada3884db3564a6f6eed42a027c0e5f75c' => 
     array (
       0 => 'templates/plantillas/modulos/colores/panel.tpl',
-      1 => 1472705007,
+      1 => 1472840593,
       2 => 'file',
     ),
   ),
@@ -40,10 +40,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div id="add" class="tab-pane fade">
 		<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
 			<div class="box">
-				<div class="box-body">			
+				<div class="box-body">	
+					<div class="form-group">
+						<label for="txtClave" class="col-lg-2">Clave</label>
+						<div class="col-lg-3">
+							<input class="form-control" id="txtClave" name="txtClave">
+						</div>
+					</div>		
 					<div class="form-group">
 						<label for="txtNombre" class="col-lg-2">Nombre</label>
-						<div class="col-lg-3">
+						<div class="col-lg-6">
 							<input class="form-control" id="txtNombre" name="txtNombre">
 						</div>
 					</div>

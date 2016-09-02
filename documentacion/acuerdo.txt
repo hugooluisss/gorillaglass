@@ -1,0 +1,12 @@
+1. Inicio de sesión: Para que los usuarios (cliente, administrador y vendedor) puedan identificarse en el sistema para ingresar
+2. Administración de usuarios: permitiendo así el crear cuentas de usuario
+3. Catálogo de colores: para definir los colores de los productos
+4. Catálogo de texturas: para definir las texturas, se pueden subir una imagen por cada textura
+5. Catálogo de tamaños: para definir los tamaños de las piezas
+6.  Catálogo de productos: donde se considera el nombre, clave, descripción, precio de venta. Por cada variación se podrá subir una imagen que la represente.
+6.1. Colores disponibles: para indicar en cada producto el color que tiene disponible en base al catálogo de colores
+6.2. Tamaños disponibles: para indicar los tamaños de cada producto en base al catálogo de tamaños y su precio
+6.3. Catálogo de texturas: para indicar las texturas disponibles de cada producto en base al catálogo de tamaños y su precio.
+7. Pedidos: donde el usuario de tipo vendedor podrá administrar los pedidos construidos. En este apartado es necesario proporcionar los datos del pedido (formato).
+7.1. Lista de pedidos: son los pedidos registrados
+7.2. Crear pedido: para poder registrar los pedidos que hacen los clientes

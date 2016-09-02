@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	getLista();
-	$('#txtCodigo').colorpicker();
 	
 	$("#panelTabs li a[href=#add]").click(function(){
 		$("#frmAdd").get(0).reset();
@@ -16,11 +15,10 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtCodigo: "required",
 			txtClave: {
 				required: true,
 				remote: {
-					url: "ccolores",
+					url: "ctexturas",
 					type: "post",
 					data: {
 						action: "validaClave",
@@ -38,12 +36,11 @@ $(document).ready(function(){
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
-			var obj = new TColor;
+			var obj = new TTextura;
 			obj.add(
 				$("#id").val(), 
 				$("#txtClave").val(), 
 				$("#txtNombre").val(), 
-				$("#txtCodigo").val(),
 				{
 					before: function(){
 						$(form).find("[type=submit]").prop("disabled", true);
@@ -65,12 +62,12 @@ $(document).ready(function(){
     });
 		
 	function getLista(){
-		$.get("listaColores", function( data ) {
+		$.get("listaTexturas", function( data ) {
 			$("#dvLista").html(data);
 			
 			$("[action=eliminar]").click(function(){
 				if(confirm("¿Seguro?")){
-					var obj = new TColor;
+					var obj = new TTextura;
 					obj.del($(this).attr("identificador"), {
 						after: function(data){
 							getLista();
@@ -82,10 +79,9 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idColor);
-				$("#txtClave").val(el.clave);
+				$("#id").val(el.idTextura);
 				$("#txtNombre").val(el.nombre);
-				$("#txtCodigo").val(el.codigo);
+				$("#txtClave").val(el.clave);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	getLista();
-	$('#txtCodigo').colorpicker();
 	
 	$("#panelTabs li a[href=#add]").click(function(){
 		$("#frmAdd").get(0).reset();
@@ -16,11 +15,10 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtCodigo: "required",
 			txtClave: {
 				required: true,
 				remote: {
-					url: "ccolores",
+					url: "csize",
 					type: "post",
 					data: {
 						action: "validaClave",
@@ -38,12 +36,11 @@ $(document).ready(function(){
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
-			var obj = new TColor;
+			var obj = new TSize;
 			obj.add(
 				$("#id").val(), 
 				$("#txtClave").val(), 
 				$("#txtNombre").val(), 
-				$("#txtCodigo").val(),
 				{
 					before: function(){
 						$(form).find("[type=submit]").prop("disabled", true);
@@ -65,12 +62,12 @@ $(document).ready(function(){
     });
 		
 	function getLista(){
-		$.get("listaColores", function( data ) {
+		$.get("listaSize", function( data ) {
 			$("#dvLista").html(data);
 			
 			$("[action=eliminar]").click(function(){
 				if(confirm("¿Seguro?")){
-					var obj = new TColor;
+					var obj = new TSize;
 					obj.del($(this).attr("identificador"), {
 						after: function(data){
 							getLista();
@@ -82,10 +79,9 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idColor);
+				$("#id").val(el.idSize);
 				$("#txtClave").val(el.clave);
 				$("#txtNombre").val(el.nombre);
-				$("#txtCodigo").val(el.codigo);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

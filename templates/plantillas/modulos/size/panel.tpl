@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Administración de colores</h1>
+		<h1 class="page-header">Administración de tamaños</h1>
 	</div>
 </div>
 
@@ -30,12 +30,6 @@
 						<label for="txtNombre" class="col-lg-2">Nombre</label>
 						<div class="col-lg-6">
 							<input class="form-control" id="txtNombre" name="txtNombre">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txtCodigo" class="col-lg-2">Código Hex</label>
-						<div class="col-lg-2">
-							<input class="form-control" id="txtCodigo" name="txtCodigo" type="text">
 						</div>
 					</div>
 				</div>

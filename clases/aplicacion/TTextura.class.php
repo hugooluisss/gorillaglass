@@ -1,16 +1,15 @@
 <?php
 /**
-* TColor
-* Colores
+* TTextura
+* Texturas
 * @package aplicacion
 * @autor Hugo Santiago hugooluisss@gmail.com
 **/
 
-class TColor{
-	private $idColor;
+class TTextura{
+	private $idTextura;
 	private $clave;
 	private $nombre;
-	private $color;
 	
 	/**
 	* Constructor de la clase
@@ -19,7 +18,7 @@ class TColor{
 	* @access public
 	* @param int $id identificador del objeto
 	*/
-	public function TColor($id = ''){
+	public function TTextura($id = ''){
 		$this->setId($id);		
 		return true;
 	}
@@ -37,7 +36,7 @@ class TColor{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from color where idColor = ".$id);
+		$rs = $db->Execute("select * from textura where idTextura = ".$id);
 		
 		foreach($rs->fields as $field => $val)
 			$this->$field = $val;
@@ -54,33 +53,7 @@ class TColor{
 	*/
 	
 	public function getId(){
-		return $this->idColor;
-	}
-	
-	/**
-	* Establece la clave
-	*
-	* @autor Hugo
-	* @access public
-	* @param string $val Clave
-	* @return boolean True si se realizó sin problemas
-	*/
-	
-	public function setClave($val = ""){
-		$this->clave = $val;
-		return true;
-	}
-	
-	/**
-	* Retorna la clave
-	*
-	* @autor Hugo
-	* @access public
-	* @return string Texto
-	*/
-	
-	public function getClave(){
-		return $this->clave;
+		return $this->idTextura;
 	}
 	
 	/**
@@ -110,29 +83,29 @@ class TColor{
 	}
 	
 	/**
-	* Establece el valor del código hexadecimal
+	* Establece la clave
 	*
 	* @autor Hugo
 	* @access public
-	* @param string $val Código
+	* @param string $val Clave
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setCodigo($val = '#000000'){
-		$this->codigo = $val;
+	public function setClave($val = ""){
+		$this->clave = $val;
 		return true;
 	}
 	
 	/**
-	* Retorna el código hexadecimal del color
+	* Retorna la clave
 	*
 	* @autor Hugo
 	* @access public
-	* @return string Código
+	* @return string Texto
 	*/
 	
-	public function getCodigo(){
-		return $this->codigo;
+	public function getClave(){
+		return $this->clave;
 	}
 	
 	/**
@@ -147,21 +120,20 @@ class TColor{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO color(clave, nombre) VALUES('".$this->getClave()."', '".$this->getNombre()."');");
+			$rs = $db->Execute("INSERT INTO textura(clave, nombre) VALUES('".$this->getClave()."', '".$this->getNombre()."');");
 			if (!$rs) return false;
 				
-			$this->idColor = $db->Insert_ID();
+			$this->idTextura = $db->Insert_ID();
 		}		
 		
 		if ($this->getId() == '')
 			return false;
 			
-		$rs = $db->Execute("UPDATE color
+		$rs = $db->Execute("UPDATE textura
 			SET
-				clave = '".$this->getClave()."',
 				nombre = '".$this->getNombre()."',
-				codigo = '".$this->getCodigo()."'
-			WHERE idColor = ".$this->getId());
+				clave = '".$this->getClave()."'
+			WHERE idTextura = ".$this->getId());
 			
 		return $rs?true:false;
 	}
@@ -178,7 +150,7 @@ class TColor{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from color where idColor = ".$this->getId());
+		$rs = $db->Execute("delete from textura where idTextura = ".$this->getId());
 		
 		return $rs?true:false;
 	}

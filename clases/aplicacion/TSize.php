@@ -1,16 +1,15 @@
 <?php
 /**
-* TColor
-* Colores
+* TSize
+* Tamaños
 * @package aplicacion
 * @autor Hugo Santiago hugooluisss@gmail.com
 **/
 
-class TColor{
-	private $idColor;
+class TSize{
+	private $idSize;
 	private $clave;
 	private $nombre;
-	private $color;
 	
 	/**
 	* Constructor de la clase
@@ -19,7 +18,7 @@ class TColor{
 	* @access public
 	* @param int $id identificador del objeto
 	*/
-	public function TColor($id = ''){
+	public function TSize($id = ''){
 		$this->setId($id);		
 		return true;
 	}
@@ -37,7 +36,7 @@ class TColor{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from color where idColor = ".$id);
+		$rs = $db->Execute("select * from size where idSize = ".$id);
 		
 		foreach($rs->fields as $field => $val)
 			$this->$field = $val;
@@ -54,7 +53,7 @@ class TColor{
 	*/
 	
 	public function getId(){
-		return $this->idColor;
+		return $this->idSize;
 	}
 	
 	/**
@@ -110,32 +109,6 @@ class TColor{
 	}
 	
 	/**
-	* Establece el valor del código hexadecimal
-	*
-	* @autor Hugo
-	* @access public
-	* @param string $val Código
-	* @return boolean True si se realizó sin problemas
-	*/
-	
-	public function setCodigo($val = '#000000'){
-		$this->codigo = $val;
-		return true;
-	}
-	
-	/**
-	* Retorna el código hexadecimal del color
-	*
-	* @autor Hugo
-	* @access public
-	* @return string Código
-	*/
-	
-	public function getCodigo(){
-		return $this->codigo;
-	}
-	
-	/**
 	* Guarda los datos en la base de datos
 	*
 	* @autor Hugo
@@ -147,21 +120,20 @@ class TColor{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO color(clave, nombre) VALUES('".$this->getClave()."', '".$this->getNombre()."');");
+			$rs = $db->Execute("INSERT INTO size(clave, nombre) VALUES('".$this->getClave()."', '".$this->getNombre()."');");
 			if (!$rs) return false;
 				
-			$this->idColor = $db->Insert_ID();
+			$this->idSize = $db->Insert_ID();
 		}		
 		
 		if ($this->getId() == '')
 			return false;
 			
-		$rs = $db->Execute("UPDATE color
+		$rs = $db->Execute("UPDATE size
 			SET
 				clave = '".$this->getClave()."',
-				nombre = '".$this->getNombre()."',
-				codigo = '".$this->getCodigo()."'
-			WHERE idColor = ".$this->getId());
+				nombre = '".$this->getNombre()."'
+			WHERE idSize = ".$this->getId());
 			
 		return $rs?true:false;
 	}
@@ -178,7 +150,7 @@ class TColor{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from color where idColor = ".$this->getId());
+		$rs = $db->Execute("delete from size where idSize = ".$this->getId());
 		
 		return $rs?true:false;
 	}

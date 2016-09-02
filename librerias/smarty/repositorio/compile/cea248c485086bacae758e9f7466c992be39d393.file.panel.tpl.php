@@ -1,27 +1,27 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-10 09:18:37
-         compiled from "templates/plantillas/modulos/modulos/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:35431092057aab34d314f10-65895183%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-02 13:04:30
+         compiled from "templates/plantillas/modulos/texturas/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:138745068757c9bdebc2ce14-12185442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '778e96007b7bc721a0a9606e738d3cdd4b4d6513' => 
+    'cea248c485086bacae758e9f7466c992be39d393' => 
     array (
-      0 => 'templates/plantillas/modulos/modulos/panel.tpl',
-      1 => 1470838654,
+      0 => 'templates/plantillas/modulos/texturas/panel.tpl',
+      1 => 1472839398,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '35431092057aab34d314f10-65895183',
+  'nocache_hash' => '138745068757c9bdebc2ce14-12185442',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57aab34d363989_91126970',
+  'unifunc' => 'content_57c9bdebc4a544_14864357',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57aab34d363989_91126970')) {function content_57aab34d363989_91126970($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_57c9bdebc4a544_14864357')) {function content_57c9bdebc4a544_14864357($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Administración de módulos</h1>
+		<h1 class="page-header">Administración de Texturas</h1>
 	</div>
 </div>
 
@@ -40,17 +40,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div id="add" class="tab-pane fade">
 		<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
 			<div class="box">
-				<div class="box-body">			
+				<div class="box-body">
 					<div class="form-group">
-						<label for="txtNombre" class="col-lg-2">Nombre completo</label>
-						<div class="col-lg-6">
-							<input class="form-control" id="txtNombre" name="txtNombre">
+						<label for="txtClave" class="col-lg-2">Clave</label>
+						<div class="col-lg-2">
+							<input class="form-control" id="txtClave" name="txtClave" type="text" maxlength="10">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtImporte" class="col-lg-2">Importe</label>
+						<label for="txtNombre" class="col-lg-2">Nombre</label>
 						<div class="col-lg-3">
-							<input class="form-control" id="txtImporte" name="txtImporte" type="text">
+							<input class="form-control" id="txtNombre" name="txtNombre">
 						</div>
 					</div>
 				</div>

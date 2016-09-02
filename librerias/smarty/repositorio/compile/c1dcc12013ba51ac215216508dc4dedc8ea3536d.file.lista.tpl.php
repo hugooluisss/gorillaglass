@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-02 13:24:36
-         compiled from "templates/plantillas/modulos/colores/lista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:177148151257c7b1bbb6f040-07601248%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-02 13:05:13
+         compiled from "templates/plantillas/modulos/texturas/lista.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:105901538957c9bf2f135e15-59850159%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '469b0e20fbaad85a5448614c9adddcf1e85f0ab1' => 
+    'c1dcc12013ba51ac215216508dc4dedc8ea3536d' => 
     array (
-      0 => 'templates/plantillas/modulos/colores/lista.tpl',
-      1 => 1472840673,
+      0 => 'templates/plantillas/modulos/texturas/lista.tpl',
+      1 => 1472839511,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '177148151257c7b1bbb6f040-07601248',
+  'nocache_hash' => '105901538957c9bf2f135e15-59850159',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57c7b1bbc90be1_44600075',
+  'unifunc' => 'content_57c9bf2f1e89e5_22194777',
   'variables' => 
   array (
     'lista' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57c7b1bbc90be1_44600075')) {function content_57c7b1bbc90be1_44600075($_smarty_tpl) {?><div class="box">
+<?php if ($_valid && !is_callable('content_57c9bf2f1e89e5_22194777')) {function content_57c9bf2f1e89e5_22194777($_smarty_tpl) {?><div class="box">
 	<div class="box-body">
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
@@ -32,7 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<th>#</th>
 					<th>Clave</th>
 					<th>Nombre</th>
-					<th>Código</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -43,20 +42,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
-						<td style="border-left: 2px solid <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value['idColor'];?>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </td>
-						<td style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
-</td>
 						<td class="text-right">
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>
-							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idColor'];?>
+							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
 "><i class="fa fa-times"></i></button>
 						</td>
 					</tr>
