@@ -1,14 +1,13 @@
 <?php
 /**
-* TSize
-* Tamaños
+* TEstado
 * @package aplicacion
 * @autor Hugo Santiago hugooluisss@gmail.com
 **/
 
-class TSize{
-	private $idSize;
-	private $clave;
+class TEstado{
+	private $idEstado;
+	private $color;
 	private $nombre;
 	
 	/**
@@ -18,8 +17,9 @@ class TSize{
 	* @access public
 	* @param int $id identificador del objeto
 	*/
-	public function TSize($id = ''){
-		$this->setId($id);		
+	public function TEstado($id = ''){
+		$this->setId($id);
+		
 		return true;
 	}
 	
@@ -36,7 +36,7 @@ class TSize{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from size where idSize = ".$id);
+		$rs = $db->Execute("select * from estadopedido where idEstado = ".$id);
 		
 		foreach($rs->fields as $field => $val)
 			$this->$field = $val;
@@ -45,41 +45,15 @@ class TSize{
 	}
 	
 	/**
-	* Retorna el identificador del objeto
-	*
-	* @autor Hugo
-	* @access public
-	* @return integer identificador
-	*/
-	
-	public function getId(){
-		return $this->idSize;
-	}
-	
-	/**
-	* Establece la clave
-	*
-	* @autor Hugo
-	* @access public
-	* @param string $val Clave
-	* @return boolean True si se realizó sin problemas
-	*/
-	
-	public function setClave($val = ""){
-		$this->clave = $val;
-		return true;
-	}
-	
-	/**
-	* Retorna la clave
+	* Retorna el id
 	*
 	* @autor Hugo
 	* @access public
 	* @return string Texto
 	*/
 	
-	public function getClave(){
-		return $this->clave;
+	public function getId(){
+		return $this->idEstado;
 	}
 	
 	/**
@@ -87,11 +61,11 @@ class TSize{
 	*
 	* @autor Hugo
 	* @access public
-	* @param string $val Nombre
+	* @param string $val Valor a asignar
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setNombre($val = ""){
+	public function setNombre($val = ''){
 		$this->nombre = $val;
 		return true;
 	}
@@ -109,7 +83,33 @@ class TSize{
 	}
 	
 	/**
-	* Guarda los datos en la base de datos
+	* Establece el color
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setColor($val = ''){
+		$this->color = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el color
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getColor(){
+		return $this->color;
+	}
+	
+	/**
+	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
 	* @access public
@@ -120,26 +120,26 @@ class TSize{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO size(clave, nombre) VALUES('".$this->getClave()."', '".$this->getNombre()."');");
+			$rs = $db->Execute("INSERT INTO estadopedido(nombre) VALUES('".$this->getNombre()."');");
 			if (!$rs) return false;
-				
-			$this->idSize = $db->Insert_ID();
-		}		
+			
+			$this->idEstado = $db->Insert_ID();
+		}
 		
 		if ($this->getId() == '')
 			return false;
 			
-		$rs = $db->Execute("UPDATE size
+		$rs = $db->Execute("UPDATE estadopedido
 			SET
-				clave = '".$this->getClave()."',
-				nombre = '".$this->getNombre()."'
-			WHERE idSize = ".$this->getId());
+				nombre = '".$this->getNombre()."',
+				color = '".$this->getColor()."'
+			WHERE idEstado = ".$this->getId());
 			
 		return $rs?true:false;
 	}
 	
 	/**
-	* Elimina el objeto de la base de datos
+	* Elimina el objeto
 	*
 	* @autor Hugo
 	* @access public
@@ -150,7 +150,7 @@ class TSize{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from size where idSize = ".$this->getId());
+		$rs = $db->Execute("delete from entregable where idEntregable = ".$this->getId());
 		
 		return $rs?true:false;
 	}

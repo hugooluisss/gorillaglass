@@ -106,18 +106,20 @@
 					</li>
 					{/if}
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('colores', 'texturas', 'size', 'producto'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('clientes', 'productos', 'estadoPedidos'))}active{/if} treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li {if $PAGE.modulo eq 'colores'}class="active"{/if}><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
-							<li {if $PAGE.modulo eq 'texturas'}class="active"{/if}><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
-							<li {if $PAGE.modulo eq 'size'}class="active"{/if}><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
-							<li {if $PAGE.modulo eq 'producto'}class="active"{/if}><a href="productos"><i class="fa fa-tags"></i> Productos</a></li>
+							<li {if $PAGE.modulo eq 'clientes'}class="active"{/if}><a href="clientes"><i class="fa fa-male"></i> Clientes</a></li>
+							<li {if $PAGE.modulo eq 'estadoPedidos'}class="active"{/if}><a href="estadoPedidos"><i class="fa fa-bookmark"></i> Estado de pedidos</a></li>
+							<li {if $PAGE.modulo eq 'productos'}class="active"{/if}><a href="productos"><i class="fa fa-tags"></i> Definición de productos</a></li>
 						</ul>
 					</li>
 					{/if}
+					
+					<br />
+					<li {if $PAGE.modulo eq 'pedidos'}class="active"{/if}><a href="pedidos"><i class="fa fa-shopping-cart"></i> Pedidos</a></li>
 				</ul>
 			</section>
 			<!-- /.sidebar -->

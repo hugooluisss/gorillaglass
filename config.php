@@ -89,76 +89,7 @@ $conf['panelPrincipal'] = array(
 	'js' => array(),
 	'capa' => LAYOUT_DEFECTO);
 
-#Colores
-$conf['colores'] = array(
-	'controlador' => 'colores.php',
-	'vista' => 'colores/panel.tpl',
-	'descripcion' => 'Administración de colores',
-	'seguridad' => true,
-	'js' => array('color.class.js'),
-	'jsTemplate' => array('colores.js'),
-	'capa' => LAYOUT_DEFECTO);
-
-$conf['listaColores'] = array(
-	'controlador' => 'colores.php',
-	'vista' => 'colores/lista.tpl',
-	'descripcion' => 'Lista de colores',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-	
-$conf['ccolores'] = array(
-	'controlador' => 'colores.php',
-	'descripcion' => 'Controlador de colores',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-	
-#Texturas
-$conf['texturas'] = array(
-	'controlador' => 'texturas.php',
-	'vista' => 'texturas/panel.tpl',
-	'descripcion' => 'Administración de texturas',
-	'seguridad' => true,
-	'js' => array('textura.class.js'),
-	'jsTemplate' => array('texturas.js'),
-	'capa' => LAYOUT_DEFECTO);
-
-$conf['listaTexturas'] = array(
-	'controlador' => 'texturas.php',
-	'vista' => 'texturas/lista.tpl',
-	'descripcion' => 'Lista de texturas',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-	
-$conf['ctexturas'] = array(
-	'controlador' => 'texturas.php',
-	'descripcion' => 'Controlador de texturas',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-	
-#Tamaños
-$conf['size'] = array(
-	'controlador' => 'size.php',
-	'vista' => 'size/panel.tpl',
-	'descripcion' => 'Administración de size',
-	'seguridad' => true,
-	'js' => array('size.class.js'),
-	'jsTemplate' => array('size.js'),
-	'capa' => LAYOUT_DEFECTO);
-
-$conf['listaSize'] = array(
-	'controlador' => 'size.php',
-	'vista' => 'size/lista.tpl',
-	'descripcion' => 'Lista de size',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-	
-$conf['csize'] = array(
-	'controlador' => 'size.php',
-	'descripcion' => 'Controlador de size',
-	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
-
-#Tamaños
+#Productos
 $conf['productos'] = array(
 	'controlador' => 'productos.php',
 	'vista' => 'productos/panel.tpl',
@@ -180,4 +111,51 @@ $conf['cproductos'] = array(
 	'descripcion' => 'Controlador de productos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/* Estados */
+$conf['estadoPedidos'] = array(
+	'controlador' => 'estados.php',
+	'vista' => 'estadoPedidos/panel.tpl',
+	'descripcion' => 'Estado de los pedidos',
+	'seguridad' => true,
+	'js' => array('estado.class.js'),
+	'jsTemplate' => array('estados.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listadoEstados'] = array(
+	'controlador' => 'estados.php',
+	'vista' => 'estadoPedidos/lista.tpl',
+	'descripcion' => 'Lista de estados para los pedidos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+$conf['cestados'] = array(
+	'controlador' => 'estados.php',
+	'descripcion' => 'Controlador de estados',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+/*Clientes*/
+$conf['clientes'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'clientes/panel.tpl',
+	'descripcion' => 'Administración de clientes',
+	'seguridad' => true,
+	'js' => array('cliente.class.js'),
+	'jsTemplate' => array('clientes.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaClientes'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'clientes/lista.tpl',
+	'descripcion' => 'Lista de clientes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['cclientes'] = array(
+	'controlador' => 'clientes.php',
+	'descripcion' => 'Controlador de clientes',
+	'seguridad' => false,
+	'capa' => LAYOUT_AJAX);
+
 ?>

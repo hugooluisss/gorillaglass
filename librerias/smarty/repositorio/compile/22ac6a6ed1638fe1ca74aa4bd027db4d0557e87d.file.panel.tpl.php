@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-11 23:15:15
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-12 11:56:51
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:172728358157d56879d85342-72536336%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1473653714,
+      1 => 1473699409,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57d56879dcaa62_38671614')) {function content_57d56879dcaa62_38671614($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Administración de colores</h1>
+		<h1 class="page-header">Administración de Productos</h1>
 	</div>
 </div>
 

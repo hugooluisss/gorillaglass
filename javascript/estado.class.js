@@ -1,14 +1,13 @@
-TTextura = function(){
+TEstado = function(){
 	var self = this;
 	
-	this.add = function(id,	clave, nombre, fn){
+	this.add = function(id,	nombre, color, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('ctexturas', {
+		$.post('?mod=cestados&action=add', {
 				"id": id,
-				"clave": clave,
 				"nombre": nombre,
-				"action": "add"
+				"color": color
 			}, function(data){
 				if (data.band == 'false')
 					console.log(data.mensaje);
@@ -19,14 +18,13 @@ TTextura = function(){
 	};
 	
 	this.del = function(id, fn){
-		$.post('ctexturas', {
+		$.post('?mod=cestados&action=del', {
 			"id": id,
-			"action": "del"
 		}, function(data){
 			if (fn.after != undefined)
 				fn.after(data);
 			if (data.band == 'false'){
-				alert("Ocurrió un error al eliminar");
+				alert("Ocurrió un error al eliminar el estado");
 			}
 		}, "json");
 	};

@@ -1,7 +1,9 @@
 {function menu level=1}
 	{foreach $data as $entry}
-		<tr class="treegrid-{$nodo} {if $level neq ""}treegrid-parent-{$level}{/if}">
-			<td>{$entry.nombre}</td>
+		<tr class="treegrid-{$entry.contador} {if $level neq ""}treegrid-parent-{$level}{/if}">
+			<td><span class="text-primary">{$entry.clave}</span> {$entry.nombre}</td>
+			<td class="text-right">{$entry.precio}</td>
+			<td class="text-right"><b>{$entry.total}</b></td>
 			<td>
 				<button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='{$entry.json}'><i class="fa fa-plus"></i></button>
 				<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='{$entry.json}'><i class="fa fa-pencil"></i></button>
@@ -12,21 +14,17 @@
 		</tr>
 		
 		{if is_array($entry.hijos)}
-			{menu data=$entry.hijos level=$nodo++}
-			
-			{assign var="nodo" value=$nodo++}
+			{menu data=$entry.hijos level=$entry.contador}
 		{/if}
 	{/foreach}
 {/function}
 
-{assign var="nodo" value=2}
-
 <table class="tree2 table-bordered table-striped table-condensed table" id="productos">
 	<tr class="treegrid-1">
-		<td>Productos</td>
-		<td>
-			<button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='{$row.json}'><i class="fa fa-plus"></i></button>
-		</td>
+		<th>Productos</th>
+		<th>Precio</th>
+		<th>Venta</th>
+		<th><button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='{$entry.json}'><i class="fa fa-plus"></i></button></th>
 	</tr>
-	{menu data=$productos.hijos}
+	{menu data=$productos.hijos level=$productos.contador}
 </table>

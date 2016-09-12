@@ -1,40 +1,35 @@
 <?php
 global $objModulo;
 switch($objModulo->getId()){
-	case 'listaSize':
+	case 'listadoEstados':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from size");
+		
+		$rs = $db->Execute("select * from estadopedido order by idEstado");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
+			
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}
 		
 		$smarty->assign("lista", $datos);
 	break;
-	case 'csize':
+	case 'cestados':
 		switch($objModulo->getAction()){
 			case 'add':
-				$obj = new TSize();
-				
+				$obj = new TEstado();
 				$obj->setId($_POST['id']);
-				$obj->setClave($_POST['clave']);
 				$obj->setNombre($_POST['nombre']);
-
+				$obj->setColor($_POST['color']);
+				
 				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'del':
-				$obj = new TSize($_POST['id']);
+				$obj = new TEstado($_POST['id']);
 				echo json_encode(array("band" => $obj->eliminar()));
-			break;
-			case 'validaClave':
-				$db = TBase::conectaDB();
-				$rs = $db->Execute("select idSize from size where clave = '".$_POST['txtClave']."' and not idSize = '".$_POST['id']."'");
-				
-				echo $rs->EOF?"true":"false";
 			break;
 		}
 	break;
-}
+};
 ?>

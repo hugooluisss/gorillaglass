@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('#txtColor').colorpicker();
 	getLista();
 	
 	$("#panelTabs li a[href=#add]").click(function(){
@@ -15,44 +16,27 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtClave: {
-				required: true,
-				remote: {
-					url: "csize",
-					type: "post",
-					data: {
-						action: "validaClave",
-						id: function(){
-							return $("#id").val();
-						}
-					}
-				}
-			}
-		},
-		messages:{
-			txtClave: {
-				remote: "La clave se encuentra repetida"
-			}
+			txtColor: "required",
 		},
 		wrapper: 'span', 
+		messages: {
+			txtNombre: "Este campo es necesario",
+			txtColor: "Este campo es necesario",
+		},
 		submitHandler: function(form){
-			var obj = new TSize;
+			var obj = new TEstado;
 			obj.add(
 				$("#id").val(), 
-				$("#txtClave").val(), 
-				$("#txtNombre").val(), 
+				$("#txtNombre").val(),
+				$("#txtColor").val(),
 				{
-					before: function(){
-						$(form).find("[type=submit]").prop("disabled", true);
-					},
 					after: function(datos){
-						$(form).find("[type=submit]").prop("disabled", false);
 						if (datos.band){
 							getLista();
 							$("#frmAdd").get(0).reset();
 							$('#panelTabs a[href="#listas"]').tab('show');
 						}else{
-							alert("Upps... No se pudo guardar");
+							alert("Upps... " + datos.mensaje);
 						}
 					}
 				}
@@ -62,13 +46,13 @@ $(document).ready(function(){
     });
 		
 	function getLista(){
-		$.get("listaSize", function( data ) {
+		$.get("?mod=listadoEstados", function( data ) {
 			$("#dvLista").html(data);
 			
 			$("[action=eliminar]").click(function(){
 				if(confirm("¿Seguro?")){
-					var obj = new TSize;
-					obj.del($(this).attr("identificador"), {
+					var obj = new TEstado;
+					obj.del($(this).attr("item"), {
 						after: function(data){
 							getLista();
 						}
@@ -79,22 +63,21 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idSize);
-				$("#txtClave").val(el.clave);
+				$("#id").val(el.idEstado);
 				$("#txtNombre").val(el.nombre);
-				
+				$("#txtColor").val(el.color);
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
 			
-			$("#tblDatos").DataTable({
+			$("#tblEstados").DataTable({
 				"responsive": true,
 				"language": espaniol,
-				"paging": true,
+				"paging": false,
 				"lengthChange": false,
 				"ordering": true,
 				"info": true,
 				"autoWidth": false
 			});
 		});
-	}
+	};
 });

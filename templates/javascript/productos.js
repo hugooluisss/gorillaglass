@@ -21,7 +21,7 @@ $(document).ready(function(){
 			},
 			txtPrecio: {
 				required: true,
-				digits: true
+				number: true
 			}
 		},
 		messages:{
@@ -65,7 +65,6 @@ $(document).ready(function(){
 				expanderCollapsedClass: 'fa fa-plus'
 			});
 			
-			
 			$("#productos").find("[action=agregar]").click(function(){
 				padre = 0;
 				try{
@@ -74,6 +73,20 @@ $(document).ready(function(){
 				}catch(err){
 					padre = 0;
 				}
+				
+				$("#winProductos").find("#padre").val(padre);
+				$("#winProductos").modal();
+			});
+			
+			$("#productos").find("[action=modificar]").click(function(){
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				var form = $("#frmProducto");
+				
+				form.find("#id").val(el.idProducto); 
+				form.find("#padre").val(el.idPadre);
+				form.find("#txtClave").val(el.clave);
+				form.find("#txtNombre").val(el.nombre);
+				form.find("#txtPrecio").val(el.precio);
 				
 				$("#winProductos").find("#padre").val(padre);
 				$("#winProductos").modal();
