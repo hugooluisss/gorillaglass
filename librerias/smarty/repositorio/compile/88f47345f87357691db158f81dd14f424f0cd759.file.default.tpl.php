@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-02 13:37:45
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-11 22:08:13
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2892515405779d4757b0160-13665111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1472841461,
+      1 => 1473649689,
       2 => 'file',
     ),
   ),
@@ -152,7 +152,7 @@ plugins/upload/css/jquery.fileupload.css">
 					</li>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('colores','texturas','size'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('colores','texturas','size','producto'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -160,6 +160,7 @@ plugins/upload/css/jquery.fileupload.css">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='colores'){?>class="active"<?php }?>><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='texturas'){?>class="active"<?php }?>><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='size'){?>class="active"<?php }?>><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='producto'){?>class="active"<?php }?>><a href="productos"><i class="fa fa-tags"></i> Productos</a></li>
 						</ul>
 					</li>
 					<?php }?>
@@ -299,6 +300,13 @@ plugins/bootstrap-select/css/bootstrap-select.min.css">
 plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
 	<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
+	
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/treegrid/css/jquery.treegrid.css" />
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/treegrid/js/jquery.treegrid.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
     
     <?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

@@ -106,7 +106,7 @@
 					</li>
 					{/if}
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('colores', 'texturas', 'size'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('colores', 'texturas', 'size', 'producto'))}active{/if} treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -114,6 +114,7 @@
 							<li {if $PAGE.modulo eq 'colores'}class="active"{/if}><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
 							<li {if $PAGE.modulo eq 'texturas'}class="active"{/if}><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
 							<li {if $PAGE.modulo eq 'size'}class="active"{/if}><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
+							<li {if $PAGE.modulo eq 'producto'}class="active"{/if}><a href="productos"><i class="fa fa-tags"></i> Productos</a></li>
 						</ul>
 					</li>
 					{/if}
@@ -211,6 +212,10 @@
     <link rel="stylesheet" href="{$PAGE.ruta}plugins/bootstrap-select/css/bootstrap-select.min.css">
     <script src="{$PAGE.ruta}plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
 	<script src="{$PAGE.ruta}plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
+	
+	<link rel="stylesheet" href="{$PAGE.ruta}plugins/treegrid/css/jquery.treegrid.css" />
+	<script type="text/javascript" src="{$PAGE.ruta}plugins/treegrid/js/jquery.treegrid.js"></script>
+	<script type="text/javascript" src="{$PAGE.ruta}plugins/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
     
     {foreach from=$PAGE.scriptsJS item=script}
 		<script type="text/javascript" src="{$script}?m={rand()}"></script>
