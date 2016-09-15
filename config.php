@@ -158,4 +158,40 @@ $conf['cclientes'] = array(
 	'seguridad' => false,
 	'capa' => LAYOUT_AJAX);
 
+/* Pedidos */
+$conf['pedidos'] = array(
+	'controlador' => 'pedidos.php',
+	'vista' => 'pedidos/panel.tpl',
+	'descripcion' => 'Administración de ventas',
+	'seguridad' => true,
+	'js' => array('pedido.class.js'),
+	'jsTemplate' => array('pedidos.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaVentas'] = array(
+	'controlador' => 'pedidos.php',
+	'vista' => 'pedidos/lista.tpl',
+	'descripcion' => 'Lista de ventas',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['cpedidos'] = array(
+	'controlador' => 'pedidos.php',
+	'descripcion' => 'Controlador de ventas',
+	'seguridad' => false,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['clientesPedido'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'pedidos/listaClientes.tpl',
+	'descripcion' => 'Lista de clientes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+$conf['productosPedido'] = array(
+	'controlador' => 'productos.php',
+	'vista' => 'pedidos/listaProductos.tpl',
+	'descripcion' => 'Lista de productos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

@@ -208,5 +208,35 @@ class TProducto{
 		
 		return $rs?true:false;
 	}
+	
+	/**
+	* Obtiene el nombre real del producto
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function getNombreCompleto(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$id = $this->getId();
+		$nombre = '';
+		$band = true;
+		do{
+			$rs = $db->Execute("select nombre, idPadre from producto where idProducto = ".$id);
+			$nombre = $rs->fields['nombre']." ".$nombre;
+		
+			if ($rs->fields['idPadre'] == '' or $rs->fields['idPadre'] == 0)
+				return $nombre;
+			else
+				$id = $rs->fields['idPadre'];
+				
+		}while(true);
+		
+		return $rs?true:false;
+	}
+	
 }
 ?>

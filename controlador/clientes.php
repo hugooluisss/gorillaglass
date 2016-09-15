@@ -4,7 +4,7 @@ switch($objModulo->getId()){
 	case 'clientes':
 		$smarty->assign("cliente", new TCliente);
 	break;
-	case 'listaClientes':
+	case 'listaClientes': case 'clientesPedido':
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select * from cliente");
 		$datos = array();

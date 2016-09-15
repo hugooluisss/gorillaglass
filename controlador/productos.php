@@ -6,6 +6,21 @@ switch($objModulo->getId()){
 		$datos = array("nombre" => "Productos", "total" => 0, "contador" => $contador++, "datos" => json_encode(array("idProducto" => 0)), "hijos" => recursionNodos(0, 0), "idProducto" => 0);
 		$smarty->assign("productos", $datos);
 	break;
+	case 'productosPedido':
+		#primero obtengo los que son último nodo
+		$db = TBase::conectaDB();
+		
+		$rs = $db->Execute("select idProducto from producto where not idProducto in (select idPadre from producto)");
+		
+		while(!$rs->EOF){
+			$producto = new TProducto($rs->fields['idProducto']);
+			$rs->fields['nombre'] = $producto->getNombreCompleto();
+			
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("lista", $datos);
+	break;
 	case 'cproductos':
 		switch($objModulo->getAction()){
 			case 'add':
