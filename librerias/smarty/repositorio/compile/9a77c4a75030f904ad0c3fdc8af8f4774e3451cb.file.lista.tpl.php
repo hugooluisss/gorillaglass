@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-12 13:46:06
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 12:01:35
          compiled from "templates/plantillas/modulos/estadoPedidos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18310978657d6f73ab07212-47984329%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a77c4a75030f904ad0c3fdc8af8f4774e3451cb' => 
     array (
       0 => 'templates/plantillas/modulos/estadoPedidos/lista.tpl',
-      1 => 1473705963,
+      1 => 1474909293,
       2 => 'file',
     ),
   ),
@@ -41,8 +41,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
-						<td style="border-left: 3px solid <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
-;"><?php echo $_smarty_tpl->tpl_vars['row']->value['idEstado'];?>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idEstado'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </td>

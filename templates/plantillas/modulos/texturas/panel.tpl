@@ -1,25 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 12:31:02
-         compiled from "templates/plantillas/modulos/texturas/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:138745068757c9bdebc2ce14-12185442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    'cea248c485086bacae758e9f7466c992be39d393' => 
-    array (
-      0 => 'templates/plantillas/modulos/texturas/panel.tpl',
-      1 => 1474910717,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '138745068757c9bdebc2ce14-12185442',
-  'function' => 
-  array (
-  ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57c9bdebc4a544_14864357',
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57c9bdebc4a544_14864357')) {function content_57c9bdebc4a544_14864357($_smarty_tpl) {?><div class="row">
+<div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de Texturas</h1>
 	</div>
@@ -62,4 +41,4 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</form>
 	</div>
-</div><?php }} ?>
+</div>

@@ -83,7 +83,7 @@ switch($objModulo->getId()){
 function recursionNodos($padre, $total = 0){
 	$db = TBase::conectaDB();
 	global $contador;
-	$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto");
+	$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto order by clave");
 	
 	
 	if ($rs->EOF)

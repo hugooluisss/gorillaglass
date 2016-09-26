@@ -1,6 +1,6 @@
 {function menu level=1}
 	{foreach $data as $entry}
-		<tr class="treegrid-{$entry.contador} {if $level neq ""}treegrid-parent-{$level}{/if}">
+		<tr class="treegrid-{$entry.contador} {if $level neq ""}treegrid-parent-{$level}{/if}" nivel="{$level}" producto="{$entry.idProducto}">
 			<td><span class="text-primary">{$entry.clave}</span> {$entry.nombre}</td>
 			<td class="text-right">{$entry.precio}</td>
 			<td class="text-right"><b>{$entry.total}</b></td>

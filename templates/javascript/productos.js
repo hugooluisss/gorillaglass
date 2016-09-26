@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	getLista();
+	getLista("");
 	
 	$("#winProductos").on('shown.bs.modal', function(){
 		$("#winProductos").find("#txtClave").focus();
@@ -45,7 +45,7 @@ $(document).ready(function(){
 						form.find("[type=submit]").prop("disabled", false);
 						
 						if (resp.band){
-							getLista();
+							getLista(form.find("#id").val() == ''?form.find("#padre").val():form.find("#id").val());
 							$("#winProductos").modal("hide");
 						}else
 							alert("Ocurrió un error");
@@ -57,7 +57,7 @@ $(document).ready(function(){
 	
 	
 		
-	function getLista(){
+	function getLista(idProducto){
 		$.get("listaProductos", function( data ) {
 			$("#dvLista").html(data);
 			
@@ -65,6 +65,26 @@ $(document).ready(function(){
 				expanderExpandedClass: 'fa fa-minus',
 				expanderCollapsedClass: 'fa fa-plus'
 			});
+			
+			function expandir(el){
+				try{
+					if (el.treegrid('isCollapsed')){
+						if (el.attr("nivel") != '')
+							expandir($(".treegrid-" + el.attr("nivel")));
+							
+						el.treegrid('expand');
+					}
+				}catch(err){
+					console.log("Error " + el.attr("class"));
+				}
+			}
+			
+			console.log(idProducto);
+			if(idProducto != ''){
+				$(".treegrid-parent-1").treegrid("collapseRecursive");
+				expandir($("[producto=" + idProducto +"]"));
+			}else
+				$(".treegrid-parent-1").treegrid("expandRecursive");
 			
 			$("#productos").find("[action=agregar]").click(function(){
 				padre = 0;
@@ -82,7 +102,7 @@ $(document).ready(function(){
 			$("#productos").find("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				var form = $("#frmProducto");
-				
+
 				form.find("#id").val(el.idProducto); 
 				form.find("#padre").val(el.idPadre);
 				form.find("#txtClave").val(el.clave);
@@ -90,7 +110,6 @@ $(document).ready(function(){
 				form.find("#txtDescripcion").val(el.descripcion);
 				form.find("#txtPrecio").val(el.precio);
 				
-				$("#winProductos").find("#padre").val(padre);
 				$("#winProductos").modal();
 			});
 			
@@ -128,6 +147,7 @@ $(document).ready(function(){
 			
 			$("#productos").find("[action=eliminar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
+				var producto = $(this);
 				
 				var obj = new TProducto;
 				obj.del(el.idProducto, {
@@ -137,7 +157,7 @@ $(document).ready(function(){
 						$(this).prop("disabled", false);
 						
 						if (resp.band)
-							getLista();
+							getLista(producto.attr("producto"));
 						else
 							alert("No se pudo eliminar el elemento");
 					}

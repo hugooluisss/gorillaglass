@@ -11,7 +11,7 @@
 			<tbody>
 				{foreach from=$lista item="row"}
 					<tr>
-						<td></td>
+						<td>{$row.idEstado}</td>
 						<td>{$row.nombre}</td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-success btn-circle" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>

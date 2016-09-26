@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-23 22:54:14
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 13:32:18
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:205137009457d5715843a362-94104829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1474689250,
+      1 => 1474914481,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,9 @@ $_smarty_tpl->tpl_vars['entry']->_loop = true;
 ?>
 		<tr class="treegrid-<?php echo $_smarty_tpl->tpl_vars['entry']->value['contador'];?>
  <?php if ($_smarty_tpl->tpl_vars['level']->value!=''){?>treegrid-parent-<?php echo $_smarty_tpl->tpl_vars['level']->value;?>
-<?php }?>">
+<?php }?>" nivel="<?php echo $_smarty_tpl->tpl_vars['level']->value;?>
+" producto="<?php echo $_smarty_tpl->tpl_vars['entry']->value['idProducto'];?>
+">
 			<td><span class="text-primary"><?php echo $_smarty_tpl->tpl_vars['entry']->value['clave'];?>
 </span> <?php echo $_smarty_tpl->tpl_vars['entry']->value['nombre'];?>
 </td>

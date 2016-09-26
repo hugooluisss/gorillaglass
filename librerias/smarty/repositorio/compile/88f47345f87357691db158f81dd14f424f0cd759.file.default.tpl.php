@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-20 22:37:07
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 12:30:57
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2892515405779d4757b0160-13665111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1473706175,
+      1 => 1474911056,
       2 => 'file',
     ),
   ),
@@ -152,13 +152,16 @@ plugins/upload/css/jquery.fileupload.css">
 					</li>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','productos','estadoPedidos'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','productos','estadoPedidos','colores','texturas','size'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='clientes'){?>class="active"<?php }?>><a href="clientes"><i class="fa fa-male"></i> Clientes</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='estadoPedidos'){?>class="active"<?php }?>><a href="estadoPedidos"><i class="fa fa-bookmark"></i> Estado de pedidos</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='colores'){?>class="active"<?php }?>><a href="colores"><i class="fa fa-circle"></i> Colores</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='texturas'){?>class="active"<?php }?>><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='size'){?>class="active"<?php }?>><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='productos'){?>class="active"<?php }?>><a href="productos"><i class="fa fa-tags"></i> Definición de productos</a></li>
 						</ul>
 					</li>
