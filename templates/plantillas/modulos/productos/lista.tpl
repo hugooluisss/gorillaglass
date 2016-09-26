@@ -6,6 +6,7 @@
 			<td class="text-right"><b>{$entry.total}</b></td>
 			<td>
 				<button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='{$entry.json}'><i class="fa fa-plus"></i></button>
+				<button type="button" class="btn btn-default" action="imagen" title="Imagen" identificador="{$entry.idProducto}"><i class="fa fa-picture-o"></i></button>
 				<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='{$entry.json}'><i class="fa fa-pencil"></i></button>
 				{if count($entry.hijos) eq 0}
 					<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" datos='{$entry.json}'><i class="fa fa-minus"></i></button>

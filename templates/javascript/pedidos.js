@@ -126,7 +126,7 @@ $(document).ready(function(){
 		errorElement : 'span',
 		errorLabelContainer: '.errorTxt',
 		submitHandler: function(form){
-			var obj = new TVenta;
+			var obj = new TPedido;
 			obj.addMovimiento(
 				"",
 				$("#id").val(), 
@@ -156,14 +156,14 @@ $(document).ready(function(){
     });
     
 	function getLista(){
-		$("#dvLista").html("Estamos actualizando la lista de clientes, por favor espere...");
-		$.get("listaVentas", function(html){
+		$("#dvLista").html("Estamos actualizando la lista de pedidos, por favor espere...");
+		$.get("listaPedidos", function(html){
 			$("#dvLista").html(html);
 			
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#frmAdd #id").val(el.idVenta);
+				$("#frmAdd #id").val(el.idPedido);
 				$("#frmAdd #txtCliente").val(el.nombre);
 				$("#frmAdd #txtCliente").attr("idCliente", el.idCliente);
 				$("#frmAdd #selPagos").val(el.pagos);
@@ -237,12 +237,12 @@ $(document).ready(function(){
 	
 	
 	function getListaMovimientos(){
-		$.post("listaMovimientosVenta", {"venta": $("#frmAdd #id").val()}, function(html){
+		$.post("listaMovimientosPedido", {"pedido": $("#frmAdd #id").val()}, function(html){
 			$("#lstMovimiento").html(html);
 			
 			$("#lstMovimiento [action=eliminar]").click(function(){
 				if(confirm("¿Seguro?")){
-					var obj = new TVenta;
+					var obj = new TPedido;
 					obj.delMovimiento($(this).attr("movimiento"), {
 						after: function(data){
 							if (data.band == false)

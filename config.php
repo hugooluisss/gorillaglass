@@ -168,7 +168,7 @@ $conf['pedidos'] = array(
 	'jsTemplate' => array('pedidos.js'),
 	'capa' => LAYOUT_DEFECTO);
 
-$conf['listaVentas'] = array(
+$conf['listaPedidos'] = array(
 	'controlador' => 'pedidos.php',
 	'vista' => 'pedidos/lista.tpl',
 	'descripcion' => 'Lista de ventas',
@@ -185,6 +185,13 @@ $conf['clientesPedido'] = array(
 	'controlador' => 'clientes.php',
 	'vista' => 'pedidos/listaClientes.tpl',
 	'descripcion' => 'Lista de clientes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+$conf['listaMovimientosPedido'] = array(
+	'controlador' => 'pedidos.php',
+	'vista' => 'pedidos/listaMovimientos.tpl',
+	'descripcion' => 'Lista de movimientos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 

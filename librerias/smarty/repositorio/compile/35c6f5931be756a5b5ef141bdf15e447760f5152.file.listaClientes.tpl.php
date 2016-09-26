@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-15 12:57:25
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-20 22:37:26
          compiled from "templates/plantillas/modulos/pedidos/listaClientes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:103462453157dae1056dea59-13423300%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '35c6f5931be756a5b5ef141bdf15e447760f5152' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/listaClientes.tpl',
-      1 => 1473962235,
+      1 => 1473966523,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57dae1057667e4_64430437',
   'variables' => 
   array (
     'lista' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57dae1057667e4_64430437',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57dae1057667e4_64430437')) {function content_57dae1057667e4_64430437($_smarty_tpl) {?><table id="tblClientes" class="table table-bordered table-hover">
 	<thead>

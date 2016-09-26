@@ -1,7 +1,7 @@
 TProducto = function(){
 	var self = this;
 	
-	this.add = function(id,	padre, clave, nombre, precio,fn){
+	this.add = function(id,	padre, clave, nombre, descripcion, precio,fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cproductos', {
@@ -9,6 +9,7 @@ TProducto = function(){
 				"padre": padre,
 				"clave": clave,
 				"nombre": nombre,
+				"descripcion": descripcion,
 				"precio": precio,
 				"action": "add"
 			}, function(data){
@@ -32,4 +33,14 @@ TProducto = function(){
 			}
 		}, "json");
 	};
+	
+	this.getImagenes = function(id, fn){
+		$.post('cproductos', {
+			"id": id,
+			"action": "getImagenes"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+		}, "json");
+	}
 };

@@ -35,6 +35,7 @@ $(document).ready(function(){
 				form.find("#padre").val(), 
 				form.find("#txtClave").val(),
 				form.find("#txtNombre").val(),
+				form.find("#txtDescripcion").val(),
 				form.find("#txtPrecio").val(),
 				{
 					before: function(){
@@ -86,10 +87,43 @@ $(document).ready(function(){
 				form.find("#padre").val(el.idPadre);
 				form.find("#txtClave").val(el.clave);
 				form.find("#txtNombre").val(el.nombre);
+				form.find("#txtDescripcion").val(el.descripcion);
 				form.find("#txtPrecio").val(el.precio);
 				
 				$("#winProductos").find("#padre").val(padre);
 				$("#winProductos").modal();
+			});
+			
+			$("#productos").find("[action=imagen]").click(function(){
+				var producto = $(this);
+				$("#winUploadImagen").find("form").attr("action", "?mod=cproductos&action=upload&producto=" + producto.attr("identificador"));
+				$("#winUploadImagen").find("form").find("#producto").val(producto.attr("identificador"));
+				
+				getImagenes(producto.attr("identificador"));
+				
+				$("#winUploadImagen").modal();
+			});
+			
+			
+			$("#winUploadImagen").find("form").fileupload({
+				// This function is called when a file is added to the queue
+				add: function (e, data) {
+			    	
+				
+					// Automatically upload the file once it is added to the queue
+					var jqXHR = data.submit();
+				},
+				progress: function(e, data){
+					if(progress == 100){
+						data.context.removeClass('working');
+						getImagenes($("#winUploadImagen").find("form").find("#producto").val());
+					}
+				},
+				fail: function(){
+					alert("Ocurrió un problema en el servidor, contacta al administrador del sistema");
+					
+					console.log("Error en el servidor al subir el archivo, checa permisos de la carpeta repositorio");
+				}
 			});
 			
 			$("#productos").find("[action=eliminar]").click(function(){
@@ -112,3 +146,57 @@ $(document).ready(function(){
 		});
 	}
 });
+
+function getImagenes(producto){
+	var obj = new TProducto;
+	obj.getImagenes(producto, {
+		before: function(){
+			$('#winUploadImagen .elementos').html("Estamos obteniendo las imágenes del servidor, por favor espere...");
+		},
+		after: function(data){
+			$('#winUploadImagen .elementos').html("");
+			$.each(data, function(i, el){
+				var tpl = $('<li class="list-group-item">'+
+            '<img style="width: 60px; height: 60px" src="repositorio/productos/producto_' + producto + '/' + el +'" />'+'<p></p><span></span><a class="btn btn-primary btn-xs vista">Vista previa</a><a class="btn btn-danger btn-xs eliminar">Eliminar</a></li>' );
+	            
+			     // Append the file name and file size
+			    tpl.find("a.eliminar").click(function(){
+			    	if (confirm("¿Seguro?")){
+				    	$.post('?mod=cproductos&action=delfile', {
+					    	"producto": $("#winUploadImagen form").find("#producto").val(),
+					    	"archivo": el
+					    }, function(data){
+					    	if(data.band)
+					    		tpl.remove();
+						}, "json");
+			    	}
+			    });
+			    
+			    tpl.find("a.vista").click(function(){
+			    	url = 'repositorio/productos/producto_' + $("#winUploadImagen form").find("#producto").val() + '/' + el;
+			    	
+			    	var win = window.open(url, '_blank');
+			    	win.focus();
+			    });
+			
+			     // Add the HTML to the UL element
+				data.context = tpl.appendTo($('#winUploadImagen .elementos'));
+			})
+		}
+	});
+}
+
+function formatFileSize(bytes) {
+	if (typeof bytes !== 'number') {
+	    return '';
+	}
+	
+	if (bytes >= 1000000000) {
+	    return (bytes / 1000000000).toFixed(2) + ' GB';
+	}
+	
+	if (bytes >= 1000000) {
+	    return (bytes / 1000000).toFixed(2) + ' MB';
+	}
+	return (bytes / 1000).toFixed(2) + ' KB';
+}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-12 12:35:12
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-23 22:54:14
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:205137009457d5715843a362-94104829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1473701698,
+      1 => 1474689250,
       2 => 'file',
     ),
   ),
@@ -57,6 +57,8 @@ $_smarty_tpl->tpl_vars['entry']->_loop = true;
 			<td>
 				<button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
 '><i class="fa fa-plus"></i></button>
+				<button type="button" class="btn btn-default" action="imagen" title="Imagen" identificador="<?php echo $_smarty_tpl->tpl_vars['entry']->value['idProducto'];?>
+"><i class="fa fa-picture-o"></i></button>
 				<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>
 				<?php if (count($_smarty_tpl->tpl_vars['entry']->value['hijos'])==0){?>

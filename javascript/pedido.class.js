@@ -18,13 +18,13 @@ TPedido = function(){
 		);
 	};
 	
-	this.addMovimiento = function(id, venta, clave, descripcion, cantidad, precio, descuento, fn){
+	this.addMovimiento = function(id, pedido, clave, descripcion, cantidad, precio, descuento, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('cventas', {
+		$.post('cpedidos', {
 				"action": "addMovimiento",
 				"id": id,
-				"venta": venta,
+				"pedido": pedido,
 				"clave": clave,
 				"descripcion": descripcion,
 				"cantidad": cantidad,
@@ -32,7 +32,7 @@ TPedido = function(){
 				"descuento": descuento
 			}, function(data) {
 				if (data.band == 'false')
-					console.log(data.mensaje == ''?"Upps. Ocurrió un error al agregar el movimiento a la venta":data.mensaje);
+					console.log(data.mensaje == ''?"Upps. Ocurrió un error al agregar el movimiento al pedido ":data.mensaje);
 				
 				if (fn.after !== undefined) fn.after(data);
 			}, "json"
@@ -42,12 +42,12 @@ TPedido = function(){
 	this.del = function(venta, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('cventas', {
+		$.post('cpedidos', {
 			"action": "del",
 			"id": venta,
 		}, function(data){
 			if (data.band == 'false')
-				console.log("Ocurrió un error al eliminar la venta");
+				console.log("Ocurrió un error al eliminar el pedido");
 			
 			if (fn.after !== undefined) fn.after(data);
 		}, "json");
@@ -56,7 +56,7 @@ TPedido = function(){
 	this.delMovimiento = function(movimiento, fn){
 		if (fn.before !== undefined) fn.before();
 		
-		$.post('cventas', {
+		$.post('cpedidos', {
 			"action": "delMovimiento",
 			"id": movimiento,
 		}, function(data){

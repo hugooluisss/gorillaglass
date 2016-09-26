@@ -10,7 +10,7 @@ class TProducto{
 	private $idProducto;
 	private $idPadre;
 	private $nombre;
-		
+	private $descripcion;
 	/**
 	* Constructor de la clase
 	*
@@ -135,6 +135,32 @@ class TProducto{
 	}
 	
 	/**
+	* Establece la descripcion
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Descripción
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setDescripcion($val = ""){
+		$this->descripcion = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna la descripcion
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getDescripcion(){
+		return $this->descripcion;
+	}
+	
+	/**
 	* Establece el precio
 	*
 	* @autor Hugo
@@ -186,7 +212,8 @@ class TProducto{
 			SET
 				nombre = '".$this->getNombre()."',
 				clave = '".$this->getClave()."',
-				precio = ".$this->getPrecio()."
+				precio = ".$this->getPrecio().",
+				descripcion = '".$this->getDescripcion()."'
 			WHERE idProducto = ".$this->getId());
 			
 		return $rs?true:false;
@@ -214,7 +241,7 @@ class TProducto{
 	*
 	* @autor Hugo
 	* @access public
-	* @return boolean True si se realizó sin problemas
+	* @return string Nombre
 	*/
 	
 	public function getNombreCompleto(){
@@ -238,5 +265,63 @@ class TProducto{
 		return $rs?true:false;
 	}
 	
+	/**
+	* Obtiene la clave real del producto
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Clave
+	*/
+	
+	public function getClaveCompleta(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$id = $this->getId();
+		$nombre = '';
+		$band = true;
+		do{
+			$rs = $db->Execute("select clave, idPadre from producto where idProducto = ".$id);
+			$nombre = $rs->fields['clave'].($nombre == ''?'':'-').$nombre;
+		
+			if ($rs->fields['idPadre'] == '' or $rs->fields['idPadre'] == 0)
+				return $nombre;
+			else
+				$id = $rs->fields['idPadre'];
+				
+		}while(true);
+		
+		return $rs?true:false;
+	}
+	
+	/**
+	* Obtiene El precio final
+	*
+	* @autor Hugo
+	* @access public
+	* @return float Precio
+	*/
+	
+	public function getPrecioCompleto(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$id = $this->getId();
+		$precio = 0;
+		$band = true;
+		
+		do{
+			$rs = $db->Execute("select precio, idPadre from producto where idProducto = ".$id);
+			$precio += $rs->fields['precio'];
+		
+			if ($rs->fields['idPadre'] == '' or $rs->fields['idPadre'] == 0)
+				return $precio;
+			else
+				$id = $rs->fields['idPadre'];
+				
+		}while(true);
+		
+		return $rs?true:false;
+	}
 }
 ?>

@@ -11,14 +11,18 @@ switch($objModulo->getId()){
 		$db = TBase::conectaDB();
 		
 		$rs = $db->Execute("select idProducto from producto where not idProducto in (select idPadre from producto)");
-		
+		$datos = array();
 		while(!$rs->EOF){
 			$producto = new TProducto($rs->fields['idProducto']);
 			$rs->fields['nombre'] = $producto->getNombreCompleto();
+			$rs->fields['clave'] = $producto->getClaveCompleta();
+			$rs->fields['precio'] = sprintf("%.2f", $producto->getPrecioCompleto());
 			
+			$rs->fields['json'] = json_encode($rs->fields);
+			
+			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}
-		
 		$smarty->assign("lista", $datos);
 	break;
 	case 'cproductos':
@@ -30,6 +34,7 @@ switch($objModulo->getId()){
 				$obj->setClave($_POST['clave']);
 				$obj->setNombre($_POST['nombre']);
 				$obj->setPrecio($_POST['precio']);
+				$obj->setDescripcion($_POST['descripcion']);
 				$obj->setPadre($_POST['padre']);
 				
 				echo json_encode(array("band" => $obj->guardar()));
@@ -37,6 +42,39 @@ switch($objModulo->getId()){
 			case 'del':
 				$obj = new TProducto($_POST['id']);
 				echo json_encode(array("band" => $obj->eliminar()));
+			break;
+			case 'upload':
+				if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0 && $_GET['producto'] <> ''){
+					$carpeta = "repositorio/productos/producto_".$_GET['producto']."/";
+					if (!file_exists($carpeta))
+						mkdir($carpeta, 0755);
+									
+					if(move_uploaded_file($_FILES['upl']['tmp_name'], $carpeta.$_FILES['upl']['name'])){
+						chmod($carpeta.$_FILES['upl']['name'], 0755);
+						echo '{"status":"success"}';
+						exit;
+					}
+				}
+				
+				echo '{"status":"error"}';
+			break;
+			case 'getImagenes':
+				$archivos = array();
+				$directorio  = scandir("repositorio/productos/producto_".$_POST['id']."/");
+				
+				foreach($directorio as $file){
+					if (!in_array($file, array("..", ".")))
+						array_push($archivos, $file);
+				}
+				
+				echo json_encode($archivos);
+			break;
+			case 'delfile':	
+				$ruta = "repositorio/productos/producto_".$_POST['producto']."/".$_POST['archivo'];
+				
+				$band = unlink($ruta)?true:false;
+				
+				echo json_encode(array("band" => $band));
 			break;
 		}
 	break;

@@ -5,13 +5,10 @@ switch($objModulo->getId()){
 	case 'listaPedidos':
 		$db = TBase::conectaDB();
 		global $userSesion;
-		$rs = $db->Execute("select a.*, b.* from venta a join cliente b using(idCliente) where idEmpresa = ".$userSesion->empresa->getId()." group by idVenta");
+		$rs = $db->Execute("select a.*, b.* from pedido a join cliente b using(idCliente)");
 		$datos = array();
 		while(!$rs->EOF){
-			$objVenta = new TVenta($rs->fields['idVenta']);
-			$rs->fields['monto'] = sprintf("%.2f", $objVenta->getMontoVenta());
-			$rs->fields['saldo'] = sprintf("%.2f", $rs->fields['monto'] - $objVenta->getMontoPagos());
-			$rs->fields['json']	= json_encode($rs->fields);
+			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			
 			$rs->moveNext();
@@ -19,11 +16,11 @@ switch($objModulo->getId()){
 
 		$smarty->assign("lista", $datos);
 	break;
-	case 'listaMovimientosPedidos':
+	case 'listaMovimientosPedido':
 		$db = TBase::conectaDB();
 		global $userSesion;
-		$rs = $db->Execute("select * from movventa where idVenta = ".$_POST['venta']);
-		$objVenta = new TVenta($_POST['venta']);
+		$rs = $db->Execute("select * from movpedido where idPedido = ".$_POST['pedido']);
+		$objPedido = new TPedido($_POST['pedido']);
 		
 		$datos = array();
 		$precio = 0;
@@ -36,9 +33,7 @@ switch($objModulo->getId()){
 		}
 
 		$smarty->assign("lista", $datos);
-		$smarty->assign("limiteCliente", sprintf("%.2f", $objVenta->cliente->getLimite()));
-		$smarty->assign("saldoCliente", sprintf("%.2f", $objVenta->cliente->getSaldo()));
-		$smarty->assign("sobrepaso", sprintf("%.2f", $objVenta->cliente->getSaldo() - $objVenta->cliente->getLimite()));
+		
 		$smarty->assign("total", sprintf("%.2f", $precio));
 	break;
 	case 'cpedidos':
@@ -60,7 +55,7 @@ switch($objModulo->getId()){
 			case 'addMovimiento':
 				$obj = new TMovimiento($_POST['id']);
 				
-				$obj->setVenta($_POST['venta']);
+				$obj->setPedido($_POST['pedido']);
 				$obj->setClave($_POST['clave']);
 				$obj->setDescripcion($_POST['descripcion']);
 				$obj->setCantidad($_POST['cantidad']);
