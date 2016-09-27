@@ -43,4 +43,20 @@ TProducto = function(){
 				fn.after(data);
 		}, "json");
 	}
+	
+	this.addMasiva = function(padre, items, fn){
+		if (fn.before !== undefined) fn.before();
+		console.log(items);
+		$.post('cproductos', {
+				"padre": padre,
+				"items": items,
+				"action": "addMasiva"
+			}, function(data){
+				if (data.band == 'false')
+					console.log(data.mensaje);
+					
+				if (fn.after !== undefined)
+					fn.after(data);
+			}, "json");
+	}
 };

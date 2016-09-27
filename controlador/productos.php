@@ -8,6 +8,7 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select * from color order by nombre");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}
@@ -17,6 +18,7 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select * from size order by nombre");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}
@@ -26,6 +28,7 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select * from textura order by nombre");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}
@@ -68,6 +71,21 @@ switch($objModulo->getId()){
 				$obj->setPadre($_POST['padre']);
 				
 				echo json_encode(array("band" => $obj->guardar()));
+			break;
+			case 'addMasiva':
+				foreach(json_decode($_POST['items']) as $item){
+					$obj = new TProducto;
+					
+					$obj->setClave($item->clave);
+					$obj->setNombre($item->nombre);
+					$obj->setPrecio($item->precio);
+					$obj->setDescripcion($item->descripcion);
+					$obj->setPadre($_POST['padre']);
+					
+					$obj->guardar();
+				}
+				
+				echo json_encode(array("band" => true));
 			break;
 			case 'del':
 				$obj = new TProducto($_POST['id']);

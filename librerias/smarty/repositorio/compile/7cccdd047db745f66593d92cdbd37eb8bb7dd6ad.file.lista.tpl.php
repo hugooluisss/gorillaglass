@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 21:55:56
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 09:42:18
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:205137009457d5715843a362-94104829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:117086656957ea854ae3c121-75955510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1474944953,
+      1 => 1474985007,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '205137009457d5715843a362-94104829',
+  'nocache_hash' => '117086656957ea854ae3c121-75955510',
   'function' => 
   array (
     'menu' => 
@@ -23,8 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       'compiled' => '',
     ),
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57d5715843b1f5_42547365',
   'variables' => 
   array (
     'data' => 0,
@@ -33,8 +31,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'productos' => 0,
   ),
   'has_nocache_code' => 0,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57ea854aee0131_94565265',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57d5715843b1f5_42547365')) {function content_57d5715843b1f5_42547365($_smarty_tpl) {?><?php if (!function_exists('smarty_template_function_menu')) {
+<?php if ($_valid && !is_callable('content_57ea854aee0131_94565265')) {function content_57ea854aee0131_94565265($_smarty_tpl) {?><?php if (!function_exists('smarty_template_function_menu')) {
     function smarty_template_function_menu($_smarty_tpl,$params) {
     $saved_tpl_vars = $_smarty_tpl->tpl_vars;
     foreach ($_smarty_tpl->smarty->template_functions['menu']['parameter'] as $key => $value) {$_smarty_tpl->tpl_vars[$key] = new Smarty_variable($value);};

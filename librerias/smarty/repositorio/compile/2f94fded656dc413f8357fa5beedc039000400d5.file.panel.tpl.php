@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-20 22:37:18
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 09:42:10
          compiled from "templates/plantillas/modulos/pedidos/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:155120009457dade6c5ee7e9-58719869%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:174423460757ea85425a0600-35661533%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2f94fded656dc413f8357fa5beedc039000400d5' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/panel.tpl',
-      1 => 1473966523,
+      1 => 1473964715,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '155120009457dade6c5ee7e9-58719869',
+  'nocache_hash' => '174423460757ea85425a0600-35661533',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57dade6c662ca4_58151008',
   'variables' => 
   array (
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57ea8542662ff5_20871330',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57dade6c662ca4_58151008')) {function content_57dade6c662ca4_58151008($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/gorillaglass/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_57ea8542662ff5_20871330')) {function content_57ea8542662ff5_20871330($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/gorillasglass/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Ventas</h1>

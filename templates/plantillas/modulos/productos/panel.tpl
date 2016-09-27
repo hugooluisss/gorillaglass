@@ -46,6 +46,7 @@
 					<input type="submit" value="Guardar" class="btn btn-success"/>
 					<input type="hidden" id="id" name="id" value="" />
 					<input type="hidden" id="padre" name="padre" value="" />
+					<input type="hidden" id="hijos" name="hijos" value="" />
 				</form>
 			</div>
 		</div>
@@ -105,13 +106,13 @@
 							<div class="panel-body">
 								{foreach from=$colores item="row"}
 									<div class="checkbox">
-										<label style="color: {$row.codigo}"><input type="checkbox" value="{$row.idColor}" class="colores">{$row.nombre}</label>
+										<label style="color: {$row.codigo}"><input type="checkbox" value="{$row.idColor}" class="colores" datos='{$row.json}'>{$row.nombre}</label>
 									</div>
 								{/foreach}
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="colores">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="colores">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>
@@ -127,14 +128,14 @@
 							<div class="panel-body">
 								{foreach from=$tamanos item="row"}
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idSize}" class="tamanos">{$row.nombre}</label>
+										<label><input type="checkbox" value="{$row.idSize}" class="tamanos" datos='{$row.json}'>{$row.nombre}</label>
 									</div>
 								{/foreach}
 								
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="tamanos">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="tamanos">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>
@@ -150,13 +151,13 @@
 							<div class="panel-body">
 								{foreach from=$texturas item="row"}
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idTextura}" class="texturas">{$row.nombre}</label>
+										<label><input type="checkbox" value="{$row.idTextura}" class="texturas" datos='{$row.json}'>{$row.nombre}</label>
 									</div>
 								{/foreach}
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="texturas">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="texturas">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>

@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 22:26:27
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 12:39:16
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:172728358157d56879d85342-72536336%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1474946785,
+      1 => 1474997729,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '172728358157d56879d85342-72536336',
+  'nocache_hash' => '89850336057ea8549a84898-40998385',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57d56879dcaa62_38671614',
+  'unifunc' => 'content_57ea8549abb4a4_18103495',
   'variables' => 
   array (
     'colores' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57d56879dcaa62_38671614')) {function content_57d56879dcaa62_38671614($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_57ea8549abb4a4_18103495')) {function content_57ea8549abb4a4_18103495($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de Productos</h1>
 	</div>
@@ -74,6 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<input type="submit" value="Guardar" class="btn btn-success"/>
 					<input type="hidden" id="id" name="id" value="" />
 					<input type="hidden" id="padre" name="padre" value="" />
+					<input type="hidden" id="hijos" name="hijos" value="" />
 				</form>
 			</div>
 		</div>
@@ -116,7 +117,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 									<label for="txtPrecio">Precio general</label>
 								</div>
 								<div class="col-md-7">
-									<input type="text" value="0" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
+									<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
 								</div>
 							</div>
 						</div>
@@ -139,14 +140,15 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 									<div class="checkbox">
 										<label style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
 "><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idColor'];?>
-" class="colores"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+" class="colores" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </label>
 									</div>
 								<?php } ?>
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="colores">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="colores">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>
@@ -167,7 +169,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 									<div class="checkbox">
 										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idSize'];?>
-" class="tamanos"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+" class="tamanos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </label>
 									</div>
 								<?php } ?>
@@ -175,7 +178,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="tamanos">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="tamanos">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>
@@ -196,14 +199,15 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 									<div class="checkbox">
 										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
-" class="texturas"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+" class="texturas" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </label>
 									</div>
 								<?php } ?>
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
-										<button class="btn btn-success" class="texturas">Agregar seleccionados</button>
+										<button class="btn btn-success" tipo="texturas">Agregar seleccionados</button>
 									</div>
 								</div>
 							</div>

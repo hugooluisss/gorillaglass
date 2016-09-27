@@ -66,14 +66,15 @@ $(document).ready(function(){
 				expanderCollapsedClass: 'fa fa-plus'
 			});
 			
-			function expandir(el){
+			function expandir(el, band = true){
 				try{
 					if (el.treegrid('isCollapsed')){
 						if (el.attr("nivel") != '')
-							expandir($(".treegrid-" + el.attr("nivel")));
+							expandir($(".treegrid-" + el.attr("nivel")), false);
 							
 						el.treegrid('expand');
-					}
+					}else
+						expandir($(".treegrid-" + el.attr("nivel")), false);
 				}catch(err){
 					console.log("Error " + el.attr("class"));
 				}
@@ -157,7 +158,7 @@ $(document).ready(function(){
 						$(this).prop("disabled", false);
 						
 						if (resp.band)
-							getLista(producto.attr("producto"));
+							getLista(el.idPadre);
 						else
 							alert("No se pudo eliminar el elemento");
 					}
@@ -165,7 +166,8 @@ $(document).ready(function(){
 			});
 			
 			$("#productos").find("[action=masivo]").click(function(){
-				var elemento = $(this);
+				var elemento = jQuery.parseJSON($(this).attr("datos"));
+				$("#winMasivo").attr("padre", elemento.idProducto);
 				
 				$("#winMasivo").modal();
 			});
@@ -175,6 +177,66 @@ $(document).ready(function(){
 	
 	$("#winMasivo").on('show.bs.modal', function(e){
 		$("[type=checkbox]").prop("checked", false);
+		
+		$("#winMasivo").find("botton").prop("disabled", false);
+	});
+	
+	$("#winMasivo").find("button").click(function(){
+		var boton = $(this);
+		var elementos = {};
+		var i = 0;
+		switch(boton.attr("tipo")){
+			case 'colores':
+				$("input.colores:checked").each(function(){
+					var el = jQuery.parseJSON($(this).attr("datos"));
+					objeto = {};
+					objeto['clave'] = el.clave;
+					objeto['nombre'] = el.nombre;
+					objeto['precio'] = $("#winMasivo").find("#txtPrecio").val();
+					elementos[i++] = objeto;
+				});
+			break;
+			case 'texturas':
+				$("input.texturas:checked").each(function(){
+					var el = jQuery.parseJSON($(this).attr("datos"));
+					objeto = {};
+					objeto['clave'] = el.clave;
+					objeto['nombre'] = el.nombre;
+					objeto['precio'] = $("#winMasivo").find("#txtPrecio").val();
+					elementos[i++] = objeto;
+				});
+			break;
+			case 'tamanos':
+				$("input.tamanos:checked").each(function(){
+					var el = jQuery.parseJSON($(this).attr("datos"));
+					objeto = {};
+					objeto['clave'] = el.clave;
+					objeto['nombre'] = el.nombre;
+					objeto['precio'] = $("#winMasivo").find("#txtPrecio").val();
+					elementos[i++] = objeto;
+				});
+			break;
+		}
+		
+		var obj = new TProducto;
+		elementos = JSON.stringify(elementos);
+		console.log(elementos);
+		
+		obj.addMasiva($("#winMasivo").attr("padre"), elementos, {
+			before: function(){
+				boton.prop("disabled", true);
+			},
+			after: function(resp){
+				boton.prop("disabled", false);
+				
+				if (resp.band){
+					$("#winMasivo").modal("hide");
+					getLista($("#winMasivo").attr("padre"));
+				}else
+					alert("Ocurrio un error al actualizar");
+			}
+		});
+		
 	});
 });
 
