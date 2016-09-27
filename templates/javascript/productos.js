@@ -163,8 +163,19 @@ $(document).ready(function(){
 					}
 				});
 			});
+			
+			$("#productos").find("[action=masivo]").click(function(){
+				var elemento = $(this);
+				
+				$("#winMasivo").modal();
+			});
 		});
 	}
+	
+	
+	$("#winMasivo").on('show.bs.modal', function(e){
+		$("[type=checkbox]").prop("checked", false);
+	});
 });
 
 function getImagenes(producto){

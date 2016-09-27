@@ -2,6 +2,36 @@
 global $objModulo;
 $contador = 1;
 switch($objModulo->getId()){
+	case 'productos':
+		$db = TBase::conectaDB();
+		
+		$rs = $db->Execute("select * from color order by nombre");
+		$datos = array();
+		while(!$rs->EOF){
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("colores", $datos);
+		
+		$rs = $db->Execute("select * from size order by nombre");
+		$datos = array();
+		while(!$rs->EOF){
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("tamanos", $datos);
+		
+		$rs = $db->Execute("select * from textura order by nombre");
+		$datos = array();
+		while(!$rs->EOF){
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("texturas", $datos);
+	break;
 	case 'listaProductos':
 		$datos = array("nombre" => "Productos", "total" => 0, "contador" => $contador++, "datos" => json_encode(array("idProducto" => 0)), "hijos" => recursionNodos(0, 0), "idProducto" => 0);
 		$smarty->assign("productos", $datos);

@@ -71,3 +71,99 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="winMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h1>Inserción masiva por caracteristicas</h1>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="alert alert-info">
+							<div class="row">
+								<div class="col-md-5">
+									<label for="txtPrecio">Precio general</label>
+								</div>
+								<div class="col-md-7">
+									<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#colores">Colores</a>
+							</h4>
+						</div>
+						<div id="colores" class="panel-collapse collapse in">
+							<div class="panel-body">
+								{foreach from=$colores item="row"}
+									<div class="checkbox">
+										<label style="color: {$row.codigo}"><input type="checkbox" value="{$row.idColor}" class="colores">{$row.nombre}</label>
+									</div>
+								{/foreach}
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="colores">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#tamano">Tamaños</a>
+							</h4>
+						</div>
+						<div id="tamano" class="panel-collapse collapse">
+							<div class="panel-body">
+								{foreach from=$tamanos item="row"}
+									<div class="checkbox">
+										<label><input type="checkbox" value="{$row.idSize}" class="tamanos">{$row.nombre}</label>
+									</div>
+								{/foreach}
+								
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="tamanos">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#texturas">Texturas</a>
+							</h4>
+						</div>
+						<div id="texturas" class="panel-collapse collapse">
+							<div class="panel-body">
+								{foreach from=$texturas item="row"}
+									<div class="checkbox">
+										<label><input type="checkbox" value="{$row.idTextura}" class="texturas">{$row.nombre}</label>
+									</div>
+								{/foreach}
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="texturas">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

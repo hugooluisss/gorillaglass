@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 13:43:08
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 22:26:27
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:172728358157d56879d85342-72536336%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1474915387,
+      1 => 1474946785,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.11',
   'unifunc' => 'content_57d56879dcaa62_38671614',
+  'variables' => 
+  array (
+    'colores' => 0,
+    'row' => 0,
+    'tamanos' => 0,
+    'texturas' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57d56879dcaa62_38671614')) {function content_57d56879dcaa62_38671614($_smarty_tpl) {?><div class="row">
@@ -88,6 +95,121 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<!-- The file list will be shown here -->
 					</ul>
 				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="winMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h1>Inserción masiva por caracteristicas</h1>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="alert alert-info">
+							<div class="row">
+								<div class="col-md-5">
+									<label for="txtPrecio">Precio general</label>
+								</div>
+								<div class="col-md-7">
+									<input type="text" value="0" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#colores">Colores</a>
+							</h4>
+						</div>
+						<div id="colores" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['colores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+									<div class="checkbox">
+										<label style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
+"><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idColor'];?>
+" class="colores"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</label>
+									</div>
+								<?php } ?>
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="colores">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#tamano">Tamaños</a>
+							</h4>
+						</div>
+						<div id="tamano" class="panel-collapse collapse">
+							<div class="panel-body">
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['tamanos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+									<div class="checkbox">
+										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idSize'];?>
+" class="tamanos"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</label>
+									</div>
+								<?php } ?>
+								
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="tamanos">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#texturas">Texturas</a>
+							</h4>
+						</div>
+						<div id="texturas" class="panel-collapse collapse">
+							<div class="panel-body">
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['texturas']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+									<div class="checkbox">
+										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
+" class="texturas"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</label>
+									</div>
+								<?php } ?>
+								<br />
+								<div class="row">
+									<div class="col-md-12 text-right">
+										<button class="btn btn-success" class="texturas">Agregar seleccionados</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

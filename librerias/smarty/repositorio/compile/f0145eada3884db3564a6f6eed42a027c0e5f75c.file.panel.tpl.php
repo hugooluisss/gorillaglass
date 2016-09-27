@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 12:27:44
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-26 21:55:12
          compiled from "templates/plantillas/modulos/colores/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:204967050057c7b148af1824-38491623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0145eada3884db3564a6f6eed42a027c0e5f75c' => 
     array (
       0 => 'templates/plantillas/modulos/colores/panel.tpl',
-      1 => 1474910280,
+      1 => 1474916764,
       2 => 'file',
     ),
   ),
