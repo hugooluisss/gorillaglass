@@ -1,6 +1,27 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 13:14:00
+         compiled from "templates/plantillas/modulos/size/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:132542941157eab6e872c1b1-78065428%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '85288d93d0f44e29bb6d088dc608d683a50c09d2' => 
+    array (
+      0 => 'templates/plantillas/modulos/size/panel.tpl',
+      1 => 1474910532,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '132542941157eab6e872c1b1-78065428',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57eab6e877d8c4_85019639',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_57eab6e877d8c4_85019639')) {function content_57eab6e877d8c4_85019639($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Administración de colores</h1>
+		<h1 class="page-header">Administración de tamaños</h1>
 	</div>
 </div>
 
@@ -32,12 +53,6 @@
 							<input class="form-control" id="txtNombre" name="txtNombre">
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="txtCodigo" class="col-lg-2">Código Hex</label>
-						<div class="col-lg-2">
-							<input class="form-control" id="txtCodigo" name="txtCodigo" type="text">
-						</div>
-					</div>
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
@@ -47,25 +62,4 @@
 			</div>
 		</form>
 	</div>
-</div>
-
-
-<div class="modal fade" id="winUploadImagen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h1>Imágenes</h1>
-			</div>
-			<div class="modal-body">
-				<form method="post" action="?mod=cpedidos&action=uploadfile2" enctype="multipart/form-data">
-					<input type="file" name="upl" multiple />
-					<input type="hidden" name="color" id="color" />
-					<ul class="elementos list-group">
-					<!-- The file list will be shown here -->
-					</ul>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+</div><?php }} ?>

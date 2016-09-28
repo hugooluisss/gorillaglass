@@ -34,6 +34,26 @@ switch($objModulo->getId()){
 				
 				echo $rs->EOF?"true":"false";
 			break;
+			case 'upload':
+				if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0 && $_GET['color'] <> ''){
+					$carpeta = "repositorio/colores/";
+					if (!file_exists($carpeta))
+						mkdir($carpeta, 0755);
+					
+					$ext = explode(".", $_FILES['upl']['name']);
+					$ext = $ext[count($ext)-1];
+					
+					if (in_array(strtolower($ext), array('jpg', 'png'))){
+						if(move_uploaded_file($_FILES['upl']['tmp_name'], $carpeta."color_".$_GET['color'].".jpg")){
+							chmod($carpeta."color_".$_GET['color'].".".$ext, 0755);
+							echo '{"status":"success"}';
+							exit;
+						}
+					}
+				}
+				
+				echo '{"status":"error"}';
+			break;
 		}
 	break;
 }

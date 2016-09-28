@@ -1,4 +1,25 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-28 08:39:20
+         compiled from "templates/plantillas/modulos/colores/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:69378910557eab6d2965ab7-17527998%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f0145eada3884db3564a6f6eed42a027c0e5f75c' => 
+    array (
+      0 => 'templates/plantillas/modulos/colores/panel.tpl',
+      1 => 1475069938,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '69378910557eab6d2965ab7-17527998',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57eab6d29c1aa4_92804613',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_57eab6d29c1aa4_92804613')) {function content_57eab6d29c1aa4_92804613($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de colores</h1>
 	</div>
@@ -68,4 +89,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div><?php }} ?>
