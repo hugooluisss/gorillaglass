@@ -3,7 +3,7 @@ global $objModulo;
 switch($objModulo->getId()){
 	case 'listaSize':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from size");
+		$rs = $db->Execute("select * from size order by clave");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);

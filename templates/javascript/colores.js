@@ -16,7 +16,7 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtCodigo: "required",
+			//txtCodigo: "required",
 			txtClave: {
 				required: true,
 				remote: {
