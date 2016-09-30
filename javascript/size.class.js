@@ -1,13 +1,14 @@
 TSize = function(){
 	var self = this;
 	
-	this.add = function(id,	clave, nombre, fn){
+	this.add = function(id,	clave, nombre, precio, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('csize', {
 				"id": id,
 				"clave": clave,
 				"nombre": nombre,
+				"precio": precio,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

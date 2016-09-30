@@ -81,20 +81,6 @@
 				<h1>Inserción masiva por caracteristicas</h1>
 			</div>
 			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<div class="alert alert-info">
-							<div class="row">
-								<div class="col-md-5">
-									<label for="txtPrecio">Precio general</label>
-								</div>
-								<div class="col-md-7">
-									<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="panel-group" id="accordion">
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -104,6 +90,15 @@
 						</div>
 						<div id="colores" class="panel-collapse collapse in">
 							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-3">
+										<label for="txtPrecio">Precio general</label>
+									</div>
+									<div class="col-md-2">
+										<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
+									</div>
+								</div>
+								<hr />
 								{foreach from=$colores item="row"}
 									<div class="checkbox">
 										<label style="color: {$row.codigo}"><input type="checkbox" value="{$row.idColor}" class="colores" datos='{$row.json}'>{$row.nombre}</label>
@@ -128,7 +123,7 @@
 							<div class="panel-body">
 								{foreach from=$tamanos item="row"}
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idSize}" class="tamanos" datos='{$row.json}'>{$row.nombre}</label>
+										<label><input type="checkbox" value="{$row.idSize}" class="tamanos" datos='{$row.json}'>{$row.nombre} <small class="text-muted">$ {$row.precio}</small></label>
 									</div>
 								{/foreach}
 								
@@ -151,7 +146,7 @@
 							<div class="panel-body">
 								{foreach from=$texturas item="row"}
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idTextura}" class="texturas" datos='{$row.json}'>{$row.nombre}</label>
+										<label><input type="checkbox" value="{$row.idTextura}" class="texturas" datos='{$row.json}'>{$row.nombre} <small class="text-muted">$ {$row.precio}</small></label>
 									</div>
 								{/foreach}
 								<br />

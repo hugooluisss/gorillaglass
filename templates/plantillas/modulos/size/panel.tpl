@@ -32,6 +32,12 @@
 							<input class="form-control" id="txtNombre" name="txtNombre">
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="txtPrecio" class="col-lg-2">Precio</label>
+						<div class="col-lg-2">
+							<input class="form-control text-right" id="txtPrecio" name="txtPrecio">
+						</div>
+					</div>
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>

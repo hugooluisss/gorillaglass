@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 12:39:16
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-30 08:36:09
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1474997729,
+      1 => 1475242566,
       2 => 'file',
     ),
   ),
@@ -109,20 +109,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<h1>Inserción masiva por caracteristicas</h1>
 			</div>
 			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<div class="alert alert-info">
-							<div class="row">
-								<div class="col-md-5">
-									<label for="txtPrecio">Precio general</label>
-								</div>
-								<div class="col-md-7">
-									<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="panel-group" id="accordion">
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -132,6 +118,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						</div>
 						<div id="colores" class="panel-collapse collapse in">
 							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-3">
+										<label for="txtPrecio">Precio general</label>
+									</div>
+									<div class="col-md-2">
+										<input type="text" value="0.00" id="txtPrecio" name="txtPrecio" class="form-control text-right" />
+									</div>
+								</div>
+								<hr />
 								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['colores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
@@ -171,7 +166,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idSize'];?>
 " class="tamanos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</label>
+ <small class="text-muted">$ <?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
+</small></label>
 									</div>
 								<?php } ?>
 								
@@ -201,7 +197,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
 " class="texturas" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</label>
+ <small class="text-muted">$ <?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
+</small></label>
 									</div>
 								<?php } ?>
 								<br />

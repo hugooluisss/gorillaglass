@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 13:14:00
+<?php /* Smarty version Smarty-3.1.11, created on 2016-09-30 08:30:36
          compiled from "templates/plantillas/modulos/size/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:132542941157eab6e872c1b1-78065428%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85288d93d0f44e29bb6d088dc608d683a50c09d2' => 
     array (
       0 => 'templates/plantillas/modulos/size/panel.tpl',
-      1 => 1474910532,
+      1 => 1475242164,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
   'unifunc' => 'content_57eab6e877d8c4_85019639',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57eab6e877d8c4_85019639')) {function content_57eab6e877d8c4_85019639($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
@@ -51,6 +51,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<label for="txtNombre" class="col-lg-2">Nombre</label>
 						<div class="col-lg-6">
 							<input class="form-control" id="txtNombre" name="txtNombre">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtPrecio" class="col-lg-2">Precio</label>
+						<div class="col-lg-2">
+							<input class="form-control text-right" id="txtPrecio" name="txtPrecio">
 						</div>
 					</div>
 				</div>

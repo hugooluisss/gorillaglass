@@ -27,7 +27,8 @@ $(document).ready(function(){
 						}
 					}
 				}
-			}
+			},
+			txtPrecio: "required"
 		},
 		messages:{
 			txtClave: {
@@ -41,6 +42,7 @@ $(document).ready(function(){
 				$("#id").val(), 
 				$("#txtClave").val(), 
 				$("#txtNombre").val(), 
+				$("#txtPrecio").val(), 
 				{
 					before: function(){
 						$(form).find("[type=submit]").prop("disabled", true);
@@ -82,6 +84,7 @@ $(document).ready(function(){
 				$("#id").val(el.idSize);
 				$("#txtClave").val(el.clave);
 				$("#txtNombre").val(el.nombre);
+				$("#txtPrecio").val(el.precio);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

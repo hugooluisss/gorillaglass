@@ -9,6 +9,7 @@ class TSize{
 	private $idSize;
 	private $clave;
 	private $nombre;
+	private $precio;
 	
 	/**
 	* Constructor de la clase
@@ -108,6 +109,32 @@ class TSize{
 	}
 	
 	/**
+	* Establece el precio
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val precio
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setPrecio($val = 0){
+		$this->precio = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el precio
+	*
+	* @autor Hugo
+	* @access public
+	* @return float precio
+	*/
+	
+	public function getPrecio(){
+		return $this->precio;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos
 	*
 	* @autor Hugo
@@ -131,7 +158,8 @@ class TSize{
 		$rs = $db->Execute("UPDATE size
 			SET
 				clave = '".$this->getClave()."',
-				nombre = '".$this->getNombre()."'
+				nombre = '".$this->getNombre()."',
+				precio = ".$this->getPrecio()."
 			WHERE idSize = ".$this->getId());
 			
 		return $rs?true:false;

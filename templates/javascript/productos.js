@@ -202,7 +202,7 @@ $(document).ready(function(){
 					objeto = {};
 					objeto['clave'] = el.clave;
 					objeto['nombre'] = el.nombre;
-					objeto['precio'] = $("#winMasivo").find("#txtPrecio").val();
+					objeto['precio'] = el.precio;
 					elementos[i++] = objeto;
 				});
 			break;
@@ -212,7 +212,7 @@ $(document).ready(function(){
 					objeto = {};
 					objeto['clave'] = el.clave;
 					objeto['nombre'] = el.nombre;
-					objeto['precio'] = $("#winMasivo").find("#txtPrecio").val();
+					objeto['precio'] = el.precio;
 					elementos[i++] = objeto;
 				});
 			break;

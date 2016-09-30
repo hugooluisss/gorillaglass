@@ -21,6 +21,7 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->setClave($_POST['clave']);
 				$obj->setNombre($_POST['nombre']);
+				$obj->setPrecio($_POST['precio']);
 				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'del':

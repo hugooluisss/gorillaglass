@@ -9,6 +9,7 @@ class TTextura{
 	private $idTextura;
 	private $clave;
 	private $nombre;
+	private $precio;
 	
 	/**
 	* Constructor de la clase
@@ -108,6 +109,32 @@ class TTextura{
 	}
 	
 	/**
+	* Establece el precio
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val precio
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setPrecio($val = 0){
+		$this->precio = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el precio
+	*
+	* @autor Hugo
+	* @access public
+	* @return float precio
+	*/
+	
+	public function getPrecio(){
+		return $this->precio;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos
 	*
 	* @autor Hugo
@@ -131,7 +158,8 @@ class TTextura{
 		$rs = $db->Execute("UPDATE textura
 			SET
 				nombre = '".$this->getNombre()."',
-				clave = '".$this->getClave()."'
+				clave = '".$this->getClave()."',
+				precio = ".$this->getPrecio()."
 			WHERE idTextura = ".$this->getId());
 			
 		return $rs?true:false;
