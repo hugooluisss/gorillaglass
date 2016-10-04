@@ -136,7 +136,6 @@ function recursionNodos($padre, $total = 0){
 	global $contador;
 	$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto order by clave");
 	
-	
 	if ($rs->EOF)
 		return null;
 	else{

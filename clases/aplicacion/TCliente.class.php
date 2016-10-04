@@ -17,6 +17,7 @@ class TCliente{
 	private $telefono;
 	private $cel;
 	private $observaciones;
+	private $sitioweb;
 	
 	/**
 	* Constructor de la clase
@@ -299,6 +300,32 @@ class TCliente{
 	}
 	
 	/**
+	* Establece el sitio web
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setSitioWeb($val = ''){
+		$this->sitioweb = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna la dirección del sitio web
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getSitioWeb(){
+		return $this->sitioweb;
+	}
+	
+	/**
 	* Establece el tipo (fisica o moral)
 	*
 	* @autor Hugo
@@ -356,6 +383,7 @@ class TCliente{
 				tel = '".$this->getTelefono()."',
 				cel = '".$this->getCelular()."',
 				observaciones = '".$this->getObservaciones()."',
+				sitioweb = '".$this->getSitioWeb()."',
 				tipo = '".$this->getTipo()."'
 			WHERE idCliente = ".$this->getId());
 			

@@ -80,7 +80,6 @@ $(document).ready(function(){
 				}
 			}
 			
-			console.log(idProducto);
 			if(idProducto != ''){
 				$(".treegrid-parent-1").treegrid("collapseRecursive");
 				expandir($("[producto=" + idProducto +"]"));
@@ -209,6 +208,7 @@ $(document).ready(function(){
 					}
 				}
 			});
+			
 		});
 	}
 	

@@ -50,6 +50,7 @@ $(document).ready(function(){
 				$("#txtCelular").val(),
 				$("#txtObservaciones").val(),
 				$("#selTipo").val(),
+				$("#txtSitio").val(),
 				{
 					after: function(datos){
 						if (datos.band){
@@ -95,6 +96,7 @@ $(document).ready(function(){
 				$("#txtCelular").val(el.cel);
 				$("#txtObservaciones").val(el.observaciones);
 				$("#selTipo").val(el.tipo);
+				$("#txtSitio").val(el.sitioweb);
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
 			

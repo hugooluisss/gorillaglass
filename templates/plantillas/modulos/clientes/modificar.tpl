@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtRazonSocial" class="col-lg-2">Razón social</label>
+				<label for="txtRazonSocial" class="col-lg-2">Nombre de la tienda / Razón social</label>
 				<div class="col-lg-3">
 					<input class="form-control" id="txtRazonSocial" name="txtRazonSocial" value="{$cliente->getRazonSocial()}">
 				</div>
@@ -54,9 +54,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtRFC" class="col-lg-2">RFC</label>
+				<label for="txtRFC" class="col-lg-2">TaxID/VAT/Import number</label>
 				<div class="col-lg-3">
 					<input class="form-control" id="txtRFC" name="txtRFC" type="text" value="{$cliente->getRFC()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtRFC" class="col-lg-2">Sitio web</label>
+				<div class="col-lg-3">
+					<input class="form-control" id="txtSitio" name="txtSitio" type="text" value="{$cliente->getSitioWeb()}">
 				</div>
 			</div>
 			<div class="form-group">
