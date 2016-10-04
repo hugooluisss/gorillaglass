@@ -6,7 +6,15 @@
 
 <div class="box">
 	<div class="box-body">
-		<div id="dvLista"></div>
+		<div class="row text-success text-center">
+			<div class="col-md-7">Productos</div>
+			<div class="col-md-1">Precio</div>
+			<div class="col-md-1">Venta</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
+		<hr />
+		<div id="dvLista">
+		</div>
 	</div>
 </div>
 

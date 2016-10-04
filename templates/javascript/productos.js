@@ -57,15 +57,34 @@ $(document).ready(function(){
 	
 	
 		
-	function getLista(idProducto){
-		$.get("listaProductos", function( data ) {
-			$("#dvLista").html(data);
+	function getLista(idProducto, precio, nivel){
+		var nivel = nivel == undefined?0:nivel;
+		var precio = precio == undefined?0:precio;
+		
+		$("#dvLista" + idProducto).html('Actualizando <i class="fa fa-cog fa-spin fa-fw"></i>')
+		$.post("listaProductos", {
+			"padre": idProducto,
+			"precio": precio,
+			"nivel": nivel
+		}, function( data ) {
+			var contenedor = $("#dvLista" + idProducto);
+			contenedor.html(data);
 			
+			contenedor.find("a").click(function(){
+				if ($(this).attr("hijos")){
+					var el = jQuery.parseJSON($(this).attr("datos"));
+					getLista(el.idProducto, el.precio, el.nivel);
+				}
+			});
+			
+			
+			/*
 			$('#productos').treegrid({
 				expanderExpandedClass: 'fa fa-minus',
 				expanderCollapsedClass: 'fa fa-plus'
 			});
-			
+			*/
+			/*
 			function expandir(el, band = true){
 				try{
 					if (el.treegrid('isCollapsed')){
@@ -78,8 +97,8 @@ $(document).ready(function(){
 				}catch(err){
 					console.log("Error " + el.attr("class"));
 				}
-			}
-			
+			}*/
+			/*
 			if(idProducto != ''){
 				$(".treegrid-parent-1").treegrid("collapseRecursive");
 				expandir($("[producto=" + idProducto +"]"));
@@ -98,8 +117,8 @@ $(document).ready(function(){
 				$("#winProductos").find("#padre").val(padre);
 				$("#winProductos").modal();
 			});
-			
-			$("#productos").find("[action=modificar]").click(function(){
+			*/
+			contenedor.find("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				var form = $("#frmProducto");
 

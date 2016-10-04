@@ -35,9 +35,32 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("texturas", $datos);
 	break;
-	case 'listaProductos':
+	case 'listaProductos_':
 		$datos = array("nombre" => "Productos", "total" => 0, "contador" => $contador++, "datos" => json_encode(array("idProducto" => 0)), "hijos" => recursionNodos(0, 0), "idProducto" => 0);
 		$smarty->assign("productos", $datos);
+	break;
+	case 'listaProductos':
+		$db = TBase::conectaDB();
+		$padre = $_POST['padre'] == ''?0:$_POST['padre'];
+		$precio = $_POST['precio'] == ''?0:$_POST['precio']; 
+		$nivel = $_POST['nivel'] == ''?1:$_POST['nivel'];
+		
+		$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto order by clave");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs2 = $db->Execute("select count(*) as total from producto where idPadre = ".$rs->fields['idProducto']);
+			$rs->fields['hijos'] = $rs2->fields['total'] > 0;
+			$rs->fields['venta'] = sprintf("%.2f", $precio + $rs->fields['precio']);
+			$rs->fields['nivel'] = $nivel+1;
+			$rs->fields['json'] = json_encode($rs->fields);
+			
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("productos", $datos);
+		$smarty->assign("padre", $padre);
+		$smarty->assign("nivel", $nivel);
 	break;
 	case 'productosPedido':
 		#primero obtengo los que son último nodo
@@ -145,7 +168,7 @@ function recursionNodos($padre, $total = 0){
 			$rs->fields['total'] = sprintf("%0.2f", $total + $rs->fields['precio']);
 			$rs->fields['json'] = json_encode($rs->fields);
 			
-			$rs->fields['hijos'] = recursionNodos($rs->fields['idProducto'], $total + $rs->fields['precio']);
+			#$rs->fields['hijos'] = recursionNodos($rs->fields['idProducto'], $total + $rs->fields['precio']);
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}

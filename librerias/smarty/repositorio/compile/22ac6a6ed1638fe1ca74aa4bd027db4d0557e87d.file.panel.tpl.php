@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-03 21:40:07
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 13:53:04
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1475243468,
+      1 => 1475607183,
       2 => 'file',
     ),
   ),
@@ -34,7 +34,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="box">
 	<div class="box-body">
-		<div id="dvLista"></div>
+		<div class="row text-success text-center">
+			<div class="col-md-7">Productos</div>
+			<div class="col-md-1">Precio</div>
+			<div class="col-md-1">Venta</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
+		<hr />
+		<div id="dvLista">
+		</div>
 	</div>
 </div>
 
