@@ -124,6 +124,9 @@ switch($objModulo->getId()){
 				
 				echo json_encode(array("band" => $band));
 			break;
+			case 'clonar':
+				echo json_encode(array("band" => clonar($_POST['copiar'], $_POST['en'])));
+			break;
 		}
 	break;
 }
@@ -151,5 +154,35 @@ function recursionNodos($padre, $total = 0){
 		return $datos;
 	}
 
+}
+
+function clonar($copiar = '', $en = ''){
+	if ($copiar == '') return false;
+	if ($en == '') return false;
+	
+	$db = TBase::conectaDB();
+	$rs = $db->Execute("select * from producto where idPadre = ".$copiar);
+	
+	while(!$rs->EOF){
+		if ($en == $rs->fields['idProducto']) return false;
+		
+		$obj = new TProducto;
+					
+		$obj->setClave($rs->fields['clave']);
+		$obj->setNombre($rs->fields['nombre']);
+		$obj->setPrecio($rs->fields['precio']);
+		$obj->setDescripcion($rs->fields['descripcion']);
+		$obj->setPadre($en);
+		
+		if (!$obj->guardar())
+			return false;
+		
+		if (!clonar($rs->fields['idProducto'], $obj->getId()))
+			return false;
+		
+		$rs->moveNext();
+	}
+	
+	return true;
 }
 ?>

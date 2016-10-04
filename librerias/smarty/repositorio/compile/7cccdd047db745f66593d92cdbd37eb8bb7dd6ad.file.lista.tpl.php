@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 09:42:18
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-03 22:00:51
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:117086656957ea854ae3c121-75955510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1474985007,
+      1 => 1475549720,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       'compiled' => '',
     ),
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57ea854aee0131_94565265',
   'variables' => 
   array (
     'data' => 0,
@@ -31,8 +33,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'productos' => 0,
   ),
   'has_nocache_code' => 0,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57ea854aee0131_94565265',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57ea854aee0131_94565265')) {function content_57ea854aee0131_94565265($_smarty_tpl) {?><?php if (!function_exists('smarty_template_function_menu')) {
     function smarty_template_function_menu($_smarty_tpl,$params) {
@@ -52,11 +52,13 @@ $_smarty_tpl->tpl_vars['entry']->_loop = true;
 			<td><span class="text-primary"><?php echo $_smarty_tpl->tpl_vars['entry']->value['clave'];?>
 </span> <?php echo $_smarty_tpl->tpl_vars['entry']->value['nombre'];?>
 </td>
+			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['entry']->value['idProducto'];?>
+</td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['entry']->value['precio'];?>
 </td>
 			<td class="text-right"><b><?php echo $_smarty_tpl->tpl_vars['entry']->value['total'];?>
 </b></td>
-			<td>
+			<td noselect>
 				<button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
 '><i class="fa fa-plus"></i></button>
 				<button type="button" class="btn btn-default" action="imagen" title="Imagen" identificador="<?php echo $_smarty_tpl->tpl_vars['entry']->value['idProducto'];?>
@@ -69,6 +71,8 @@ $_smarty_tpl->tpl_vars['entry']->_loop = true;
 					<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
 '><i class="fa fa-minus"></i></button>
 				<?php }?>
+				<button type="button" class="btn btn-default" action="pegar" title="Pegar" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
+'><i class="fa fa-paste"></i></button>
 			</td>
 		</tr>
 		
@@ -83,9 +87,10 @@ $_smarty_tpl->tpl_vars['entry']->_loop = true;
 <table class="tree2 table-bordered table-striped table-condensed table" id="productos">
 	<tr class="treegrid-1">
 		<th>Productos</th>
+		<th>Id</th>
 		<th>Precio</th>
 		<th>Venta</th>
-		<th><button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
+		<th noselect><button type="button" class="btn btn-success" action="agregar" title="Nuevo" datos='<?php echo $_smarty_tpl->tpl_vars['entry']->value['json'];?>
 '><i class="fa fa-plus"></i></button></th>
 	</tr>
 	<?php smarty_template_function_menu($_smarty_tpl,array('data'=>$_smarty_tpl->tpl_vars['productos']->value['hijos'],'level'=>$_smarty_tpl->tpl_vars['productos']->value['contador']));?>

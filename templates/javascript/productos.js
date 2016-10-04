@@ -171,6 +171,44 @@ $(document).ready(function(){
 				
 				$("#winMasivo").modal();
 			});
+			
+			$(".tree2 td:not([noselect])").each(function(){
+				var el = $(this);
+				el.click(function(){
+					$(".tree2 tr").each(function(){
+						$(this).removeClass("label-info");
+					});
+					
+					el.parent().addClass("label-info");
+				});
+			});
+			
+			$("#productos").find("[action=pegar]").click(function(){
+				var producto = $(".tree2 tr.label-info").attr("producto");
+				var elemento = jQuery.parseJSON($(this).attr("datos"));
+				if (producto == '' || producto == undefined)
+					alert("Selecciona un item de la lista para copiar sus hijos");
+				else if(producto == elemento.idProducto)
+					alert("El producto seleccionado no puede ser copiado en si mismo");
+				else{
+					if(confirm("¿Seguro de querer clonar a sus hijos?")){
+						var obj = new TProducto;
+						obj.clonar(producto, elemento.idProducto, {
+							before: function(){
+								$("#dvLista").html("Por favor espere mientras se realiza el proceso de clonado");
+							},
+							after: function(resp){
+								getLista(elemento.idProducto);
+								
+								if (resp.band)
+									alert("El clonado se realizó con éxito");
+								else
+									alert("No se completó el clonado");
+							}
+						});
+					}
+				}
+			});
 		});
 	}
 	
