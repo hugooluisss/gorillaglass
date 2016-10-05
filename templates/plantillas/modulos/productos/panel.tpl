@@ -4,6 +4,12 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-lg-12">
+		<button id="btnProductoPrincipal" class="btn btn-info"><i class="fa fa-plus"></i> Nodo principal</button>
+	</div>
+</div>
+<br />
 <div class="box">
 	<div class="box-body">
 		<div class="row text-success text-center">

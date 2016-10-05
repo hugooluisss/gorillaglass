@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 22:13:00
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 12:10:33
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1475637155,
+      1 => 1475687432,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-lg-12">
+		<button id="btnProductoPrincipal" class="btn btn-info"><i class="fa fa-plus"></i> Nodo principal</button>
+	</div>
+</div>
+<br />
 <div class="box">
 	<div class="box-body">
 		<div class="row text-success text-center">

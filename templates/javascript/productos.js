@@ -59,9 +59,20 @@ $(document).ready(function(){
 		}
 	});
 	
-	
+	$("#btnProductoPrincipal").click(function(){
+		var form = $("#frmProducto");
+		
+		form.find("#id").val(""); 
+		form.find("#padre").val(0);
+		form.find("#txtPrecio").val(0);
+		form.find("#nivel").val(1);
+		form.find("#venta").val(0);
+		
+		$("#winProductos").modal();
+	});
 		
 	function getLista(idProducto, precio, nivel){
+		var idProducto = idProducto < 1?'':idProducto;
 		var nivel = nivel == undefined?0:nivel;
 		var precio = precio == undefined?0:precio;
 		
@@ -77,8 +88,11 @@ $(document).ready(function(){
 			contenedor.find("button[action=hijos]").click(function(){
 				if ($(this).attr("hijos")){
 					var el = jQuery.parseJSON($(this).attr("datos"));
-					console.log(el.ventaPapa);
-					getLista(el.idProducto, parseFloat(el.ventaPapa) + parseFloat(el.precio), el.nivel);
+					if ($("#dvLista" + el.idProducto).html() == ''){
+						console.log(el.ventaPapa);
+						getLista(el.idProducto, parseFloat(el.ventaPapa) + parseFloat(el.precio), el.nivel);
+					}else
+						$("#dvLista" + el.idProducto).html("");
 				}
 			});
 			
