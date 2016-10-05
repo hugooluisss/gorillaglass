@@ -1,7 +1,7 @@
 TCliente = function(){
 	var self = this;
 	
-	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, fn){
+	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, estado, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cclientes', {
@@ -17,6 +17,7 @@ TCliente = function(){
 				"observaciones": observaciones,
 				"tipo": tipo,
 				"sitioWeb": sitioweb,
+				"estado": estado,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

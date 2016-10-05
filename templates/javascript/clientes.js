@@ -38,6 +38,7 @@ $(document).ready(function(){
 		},
 		submitHandler: function(form){
 			var obj = new TCliente;
+			
 			obj.add(
 				$("#id").val(), 
 				$("#txtNombre").val(), 
@@ -51,6 +52,7 @@ $(document).ready(function(){
 				$("#txtObservaciones").val(),
 				$("#selTipo").val(),
 				$("#txtSitio").val(),
+				$("#selEstado").val(),
 				{
 					after: function(datos){
 						if (datos.band){
@@ -97,6 +99,8 @@ $(document).ready(function(){
 				$("#txtObservaciones").val(el.observaciones);
 				$("#selTipo").val(el.tipo);
 				$("#txtSitio").val(el.sitioweb);
+				$("#selEstado").val(el.estado);
+				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
 			

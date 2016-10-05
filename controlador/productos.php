@@ -35,10 +35,6 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("texturas", $datos);
 	break;
-	case 'listaProductos_':
-		$datos = array("nombre" => "Productos", "total" => 0, "contador" => $contador++, "datos" => json_encode(array("idProducto" => 0)), "hijos" => recursionNodos(0, 0), "idProducto" => 0);
-		$smarty->assign("productos", $datos);
-	break;
 	case 'listaProductos':
 		$db = TBase::conectaDB();
 		$padre = $_POST['padre'] == ''?0:$_POST['padre'];
@@ -63,18 +59,52 @@ switch($objModulo->getId()){
 		$smarty->assign("padre", $padre);
 		$smarty->assign("nivel", $nivel);
 	break;
+	case 'updateProductos': #crea el catálogo de productos
+		$db = TBase::conectaDB();
+		$db->Execute("delete from articulo");
+		
+		$rs = $db->Execute("select * from producto where idProducto not in (select idPadre from producto)");
+		$buffer = array();
+		$cont = 0;
+		
+		while(!$rs->EOF){
+			$producto = $rs->fields;
+			$precio = $rs->fields['precio'];
+			$nombre = $rs->fields['nombre'];
+			$clave = $rs->fields['clave'];
+			
+			while($producto['idProducto'] <> $producto['idPadre']){
+				if (!isset($buffer[$producto['idPadre']])){
+					$rs2 = $db->Execute("select * from producto where idProducto = ".$producto['idPadre']);
+					if (!$rs2->EOF)
+						$buffer[$rs2->fields['idProducto']] = $rs2->fields;
+				}
+				
+				$producto = $buffer[$producto['idPadre']];
+				if ($producto['idProducto'] <> 0){
+					$nombre = $producto['nombre'].($nombre == ''?"":", ").$nombre;
+					$clave = $producto['clave'].($clave == ''?"":"-").$clave;
+					$precio += $producto['precio'];
+				}
+			}
+			$db->Execute("insert into articulo(idProducto, clave, nombre, descripcion, precio) value (".$rs->fields['idProducto'].", '".$clave."', '".$nombre."', '".$rs->fields['descripcion']."', ".$precio.")");
+			$rs->moveNext();
+			$cont++;
+		}
+		echo $cont;
+	break;
 	case 'productosPedido':
 		#primero obtengo los que son último nodo
 		$db = TBase::conectaDB();
 		
-		$rs = $db->Execute("select idProducto from producto where not idProducto in (select idPadre from producto)");
+		$rs = $db->Execute("select * from articulo");
 		$datos = array();
 		while(!$rs->EOF){
-			$producto = new TProducto($rs->fields['idProducto']);
+			/*$producto = new TProducto($rs->fields['idProducto']);
 			$rs->fields['nombre'] = $producto->getNombreCompleto();
 			$rs->fields['clave'] = $producto->getClaveCompleta();
 			$rs->fields['precio'] = sprintf("%.2f", $producto->getPrecioCompleto());
-			
+			*/
 			$rs->fields['json'] = json_encode($rs->fields);
 			
 			array_push($datos, $rs->fields);

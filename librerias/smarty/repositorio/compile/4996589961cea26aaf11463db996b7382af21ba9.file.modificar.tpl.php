@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 11:33:27
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 12:52:03
          compiled from "templates/plantillas/modulos/clientes/modificar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:203159213957f3d7835fbb94-67219096%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4996589961cea26aaf11463db996b7382af21ba9' => 
     array (
       0 => 'templates/plantillas/modulos/clientes/modificar.tpl',
-      1 => 1475598423,
+      1 => 1475689580,
       2 => 'file',
     ),
   ),
@@ -34,6 +34,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<select class="form-control" id="selTipo" name="selTipo">
 						<option value="F" <?php if ($_smarty_tpl->tpl_vars['cliente']->value->getTipo()=='F'){?>selected<?php }?>>Persona
 						<option value="E" <?php if ($_smarty_tpl->tpl_vars['cliente']->value->getTipo()=='M'){?>selected<?php }?>>Empresa
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="selTipo" class="col-lg-2">Estado</label>
+				<div class="col-lg-3">
+					<select class="form-control" id="selEstado" name="selEstado">
+						<option value="R" <?php if ($_smarty_tpl->tpl_vars['cliente']->value->getEstado()=='R'){?>selected<?php }?>>Registrado
+						<option value="A" <?php if ($_smarty_tpl->tpl_vars['cliente']->value->getEstado()=='A'){?>selected<?php }?>>Activo
 					</select>
 				</div>
 			</div>

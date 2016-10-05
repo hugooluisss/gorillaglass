@@ -48,6 +48,7 @@ switch($objModulo->getId()){
 				$obj->setObservaciones($_POST['observaciones']);
 				$obj->setTipo($_POST['tipo']);
 				$obj->setSitioWeb($_POST['sitioWeb']);
+				$obj->setEstado($_POST['estado']);
 				
 				if ($obj->guardar()){
 					$rs = $db->Execute("select * from cliente where idCliente = ".$obj->getId());

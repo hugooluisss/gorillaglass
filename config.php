@@ -267,4 +267,11 @@ $conf['csize'] = array(
 	'descripcion' => 'Controlador de size',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['updateProductos'] = array(
+	'controlador' => 'productos.php',
+	#'vista' => 'pedidos/listaProductos.tpl',
+	'descripcion' => 'Lista de productos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

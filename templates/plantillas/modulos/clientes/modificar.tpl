@@ -12,6 +12,15 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="selTipo" class="col-lg-2">Estado</label>
+				<div class="col-lg-3">
+					<select class="form-control" id="selEstado" name="selEstado">
+						<option value="R" {if $cliente->getEstado() eq 'R'}selected{/if}>Registrado
+						<option value="A" {if $cliente->getEstado() eq 'A'}selected{/if}>Activo
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="txtRazonSocial" class="col-lg-2">Nombre de la tienda / Razón social</label>
 				<div class="col-lg-3">
 					<input class="form-control" id="txtRazonSocial" name="txtRazonSocial" value="{$cliente->getRazonSocial()}">

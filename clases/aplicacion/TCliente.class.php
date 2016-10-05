@@ -18,6 +18,7 @@ class TCliente{
 	private $cel;
 	private $observaciones;
 	private $sitioweb;
+	private $estado;
 	
 	/**
 	* Constructor de la clase
@@ -350,6 +351,32 @@ class TCliente{
 	public function getTipo(){
 		return $this->tipo;
 	}
+	
+	/**
+	* Establece el estado
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setEstado($val = 'R'){
+		$this->estado = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el estado
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getEstado(){
+		return $this->estado == ''?'R':$this->estado;
+	}
 		
 	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
@@ -384,7 +411,8 @@ class TCliente{
 				cel = '".$this->getCelular()."',
 				observaciones = '".$this->getObservaciones()."',
 				sitioweb = '".$this->getSitioWeb()."',
-				tipo = '".$this->getTipo()."'
+				tipo = '".$this->getTipo()."',
+				estado = '".$this->getEstado()."'
 			WHERE idCliente = ".$this->getId());
 			
 		return $rs?true:false;
