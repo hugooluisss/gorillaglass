@@ -51,6 +51,7 @@ switch($objModulo->getId()){
 			$rs2 = $db->Execute("select count(*) as total from producto where idPadre = ".$rs->fields['idProducto']);
 			$rs->fields['hijos'] = $rs2->fields['total'] > 0;
 			$rs->fields['venta'] = sprintf("%.2f", $precio + $rs->fields['precio']);
+			$rs->fields['ventaPapa'] = sprintf("%.2f", $precio);
 			$rs->fields['nivel'] = $nivel+1;
 			$rs->fields['json'] = json_encode($rs->fields);
 			

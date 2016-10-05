@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 14:10:45
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 22:40:08
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:117086656957ea854ae3c121-75955510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1475608242,
+      1 => 1475638805,
       2 => 'file',
     ),
   ),
@@ -43,8 +43,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 		<div class="col-md-<?php echo 12-$_smarty_tpl->tpl_vars['nivel']->value;?>
  col-md-offset-<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 ">
-			<a href="#" action="hijos" title="Hijos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
-' hijos="<?php if ($_smarty_tpl->tpl_vars['row']->value['hijos']){?>si<?php }?>"><i class="fa fa-plus"></i></a>
+			<button class="btn btn-default btn-xs" action="hijos" title="Hijos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+' hijos="<?php if ($_smarty_tpl->tpl_vars['row']->value['hijos']){?>si<?php }?>"><i class="fa fa-plus"></i></button>
 			<?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 
 		</div>
@@ -54,18 +54,18 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 	<div class="col-md-1 text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['venta'];?>
 </div>
 	<div class="col-md-3">
+		<input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
+" title="Copiar" class="copiar"/> 
 		<button type="button" class="btn btn-success btn-xs" action="agregar" title="Nuevo" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-plus"></i></button>
 			<button type="button" class="btn btn-default btn-xs" action="imagen" title="Imagen" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
 "><i class="fa fa-picture-o"></i></button>
 			<button type="button" class="btn btn-default btn-xs" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>
-			<?php if (count($_smarty_tpl->tpl_vars['row']->value['hijos'])==0){?>
-				<button type="button" class="btn btn-info btn-xs" action="masivo" title="Insertar masivamente" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+			<button type="button" class="btn btn-info btn-xs" action="masivo" title="Insertar masivamente" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-flag"></i></button>
-				<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+			<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-minus"></i></button>
-			<?php }?>
 			<button type="button" class="btn btn-default btn-xs" action="pegar" title="Pegar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-paste"></i></button>
 	</div>

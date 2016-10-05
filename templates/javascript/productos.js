@@ -45,7 +45,11 @@ $(document).ready(function(){
 						form.find("[type=submit]").prop("disabled", false);
 						
 						if (resp.band){
-							getLista(form.find("#id").val() == ''?form.find("#padre").val():form.find("#id").val());
+							//getLista(form.find("#id").val() == ''?form.find("#padre").val():form.find("#id").val(), 0, parseInt($("#nivel").val()));
+							var nivel = parseInt($("#nivel").val());
+							nivel -= form.find("#padre").val() == ''?0:1;
+							getLista(form.find("#padre").val() == ''?form.find("#id").val():form.find("#padre").val(), form.find("#venta").val(), nivel);
+							
 							$("#winProductos").modal("hide");
 						}else
 							alert("Ocurrió un error");
@@ -70,54 +74,31 @@ $(document).ready(function(){
 			var contenedor = $("#dvLista" + idProducto);
 			contenedor.html(data);
 			
-			contenedor.find("a").click(function(){
+			contenedor.find("button[action=hijos]").click(function(){
 				if ($(this).attr("hijos")){
 					var el = jQuery.parseJSON($(this).attr("datos"));
-					getLista(el.idProducto, el.precio, el.nivel);
+					console.log(el.ventaPapa);
+					getLista(el.idProducto, parseFloat(el.ventaPapa) + parseFloat(el.precio), el.nivel);
 				}
 			});
 			
-			
-			/*
-			$('#productos').treegrid({
-				expanderExpandedClass: 'fa fa-minus',
-				expanderCollapsedClass: 'fa fa-plus'
-			});
-			*/
-			/*
-			function expandir(el, band = true){
-				try{
-					if (el.treegrid('isCollapsed')){
-						if (el.attr("nivel") != '')
-							expandir($(".treegrid-" + el.attr("nivel")), false);
-							
-						el.treegrid('expand');
-					}else
-						expandir($(".treegrid-" + el.attr("nivel")), false);
-				}catch(err){
-					console.log("Error " + el.attr("class"));
-				}
-			}*/
-			/*
-			if(idProducto != ''){
-				$(".treegrid-parent-1").treegrid("collapseRecursive");
-				expandir($("[producto=" + idProducto +"]"));
-			}else
-				$(".treegrid-parent-1").treegrid("expandRecursive");
-			
-			$("#productos").find("[action=agregar]").click(function(){
+			contenedor.find("[action=agregar]").click(function(){
 				padre = 0;
 				try{
 					var el = jQuery.parseJSON($(this).attr("datos"));
+					
 					padre = el.idProducto;
+					nivel = el.nivel;
 				}catch(err){
 					padre = 0;
+					nivel = 1;
 				}
 				
 				$("#winProductos").find("#padre").val(padre);
+				$("#winProductos").find("#nivel").val(nivel);
 				$("#winProductos").modal();
 			});
-			*/
+			
 			contenedor.find("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				var form = $("#frmProducto");
@@ -128,11 +109,13 @@ $(document).ready(function(){
 				form.find("#txtNombre").val(el.nombre);
 				form.find("#txtDescripcion").val(el.descripcion);
 				form.find("#txtPrecio").val(el.precio);
+				form.find("#nivel").val(el.nivel);
+				form.find("#venta").val(el.ventaPapa);
 				
 				$("#winProductos").modal();
 			});
 			
-			$("#productos").find("[action=imagen]").click(function(){
+			contenedor.find("[action=imagen]").click(function(){
 				var producto = $(this);
 				$("#winUploadImagen").find("form").attr("action", "?mod=cproductos&action=upload&producto=" + producto.attr("identificador"));
 				$("#winUploadImagen").find("form").find("#producto").val(producto.attr("identificador"));
@@ -164,7 +147,7 @@ $(document).ready(function(){
 				}
 			});
 			
-			$("#productos").find("[action=eliminar]").click(function(){
+			contenedor.find("[action=eliminar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				var producto = $(this);
 				
@@ -176,33 +159,36 @@ $(document).ready(function(){
 						$(this).prop("disabled", false);
 						
 						if (resp.band)
-							getLista(el.idPadre);
+							getLista(el.idPadre, el.ventaPapa, el.nivel-1);
 						else
 							alert("No se pudo eliminar el elemento");
 					}
 				});
 			});
 			
-			$("#productos").find("[action=masivo]").click(function(){
+			contenedor.find("[action=masivo]").click(function(){
 				var elemento = jQuery.parseJSON($(this).attr("datos"));
 				$("#winMasivo").attr("padre", elemento.idProducto);
+				$("#winMasivo").attr("ventaPapa", elemento.ventaPapa);
+				$("#winMasivo").attr("nivel", elemento.nivel);
 				
 				$("#winMasivo").modal();
 			});
 			
-			$(".tree2 td:not([noselect])").each(function(){
+			$(".copiar").each(function(){
 				var el = $(this);
+				
 				el.click(function(){
-					$(".tree2 tr").each(function(){
-						$(this).removeClass("label-info");
+					$(".copiar").each(function(){
+						$(this).prop("checked", false);
 					});
 					
-					el.parent().addClass("label-info");
+					el.prop("checked", true);
 				});
 			});
 			
-			$("#productos").find("[action=pegar]").click(function(){
-				var producto = $(".tree2 tr.label-info").attr("producto");
+			contenedor.find("[action=pegar]").click(function(){
+				var producto = $(".copiar:checked").val();
 				var elemento = jQuery.parseJSON($(this).attr("datos"));
 				if (producto == '' || producto == undefined)
 					alert("Selecciona un item de la lista para copiar sus hijos");
@@ -213,10 +199,10 @@ $(document).ready(function(){
 						var obj = new TProducto;
 						obj.clonar(producto, elemento.idProducto, {
 							before: function(){
-								$("#dvLista").html("Por favor espere mientras se realiza el proceso de clonado");
+								$("#dvLista" + elemento.idProducto).html("Por favor espere mientras se realiza el proceso de clonado");
 							},
 							after: function(resp){
-								getLista(elemento.idProducto);
+								getLista(elemento.idProducto, elemento.venta, elemento.nivel);
 								
 								if (resp.band)
 									alert("El clonado se realizó con éxito");
@@ -288,7 +274,7 @@ $(document).ready(function(){
 				
 				if (resp.band){
 					$("#winMasivo").modal("hide");
-					getLista($("#winMasivo").attr("padre"));
+					getLista($("#winMasivo").attr("padre"), $("#winMasivo").attr("ventaPapa"), $("#winMasivo").attr("nivel"));
 				}else
 					alert("Ocurrio un error al actualizar");
 			}

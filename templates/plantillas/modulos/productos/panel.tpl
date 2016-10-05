@@ -55,6 +55,8 @@
 					<input type="hidden" id="id" name="id" value="" />
 					<input type="hidden" id="padre" name="padre" value="" />
 					<input type="hidden" id="hijos" name="hijos" value="" />
+					<input type="hidden" id="nivel" name="nivel" value="" />
+					<input type="hidden" id="venta" name="venta" value="" />
 				</form>
 			</div>
 		</div>

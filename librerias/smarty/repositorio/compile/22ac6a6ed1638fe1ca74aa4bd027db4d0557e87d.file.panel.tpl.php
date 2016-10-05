@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 13:53:04
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-04 22:13:00
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1475607183,
+      1 => 1475637155,
       2 => 'file',
     ),
   ),
@@ -83,6 +83,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<input type="hidden" id="id" name="id" value="" />
 					<input type="hidden" id="padre" name="padre" value="" />
 					<input type="hidden" id="hijos" name="hijos" value="" />
+					<input type="hidden" id="nivel" name="nivel" value="" />
+					<input type="hidden" id="venta" name="venta" value="" />
 				</form>
 			</div>
 		</div>
