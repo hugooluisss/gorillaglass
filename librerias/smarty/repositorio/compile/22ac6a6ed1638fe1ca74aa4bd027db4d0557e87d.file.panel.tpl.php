@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 12:10:33
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 19:25:34
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89850336057ea8549a84898-40998385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1475687432,
+      1 => 1475713110,
       2 => 'file',
     ),
   ),
@@ -35,6 +35,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="row">
 	<div class="col-lg-12">
 		<button id="btnProductoPrincipal" class="btn btn-info"><i class="fa fa-plus"></i> Nodo principal</button>
+		<button id="btnGenerarArticulos" class="btn btn-danger pull-right"><i class="fa fa-wrench" aria-hidden="true"></i>
+ Actualizar catálogo de artículos</button>
 	</div>
 </div>
 <br />

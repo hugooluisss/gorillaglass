@@ -75,4 +75,15 @@ TProducto = function(){
 					fn.after(data);
 			}, "json");
 	}
+	
+	this.generarCatalogo = function(fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('cproductos', {
+				"action": "updateProductos"
+			}, function(data){	
+				if (fn.after !== undefined)
+					fn.after(data);
+			}, "json");
+	};
 };

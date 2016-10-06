@@ -7,6 +7,13 @@ $(document).ready(function(){
 		$("#frmAdd")[0].reset();
 		$("#frmAddProductos")[0].reset();
 		$("#frmAdd #id").val("");
+		
+		$("#selEstado").attr("anterior", "");
+		
+		$("#btnBuscarProductos").prop("disabled", false);
+		$("#btnBuscarClientes").prop("disabled", false);
+		$("#frmAdd").find("[type=submit]").prop("disabled", false);
+		
 		showDetalle();
 	});
 	
@@ -38,37 +45,40 @@ $(document).ready(function(){
 		});
 	});
 	
-	
+	var productos = false;
 	$("#btnBuscarProductos").click(function(){
 		$("#winProductos").modal();
 		
-		$("#winProductos .modal-body").html("Estamos actualizando la lista, por favor espere...");
-		
-		$.get("productosPedido", function(html){
-			$("#winProductos .modal-body").html(html);
+		if (!productos){
+			productos = true;
+			$("#winProductos .modal-body").html("Estamos actualizando la lista, por favor espere...");
 			
-			$("#winProductos #tblProductos button[action=seleccionar]").click(function(){
-				var el =  jQuery.parseJSON($(this).attr("producto"));
+			$.get("productosPedido", function(html){
+				$("#winProductos .modal-body").html(html);
 				
-				$("#frmAddProductos #txtClave").val(el.clave);
-				$("#frmAddProductos #txtDescripcion").val(el.nombre);
-				$("#frmAddProductos #txtPrecio").val(el.precio);
-				$("#frmAddProductos #txtCantidad").val(1);
-				$("#winProductos").modal("hide");
+				$("#winProductos #tblProductos button[action=seleccionar]").click(function(){
+					var el =  jQuery.parseJSON($(this).attr("producto"));
+					
+					$("#frmAddProductos #txtClave").val(el.clave);
+					$("#frmAddProductos #txtDescripcion").val(el.nombre);
+					$("#frmAddProductos #txtPrecio").val(el.precio);
+					$("#frmAddProductos #txtCantidad").val(1);
+					$("#winProductos").modal("hide");
+					
+					$("#frmAddProductos #txtCantidad").focus();
+				});
 				
-				$("#frmAddProductos #txtPrecio").focus();
+				$("#tblProductos").DataTable({
+					"responsive": true,
+					"language": espaniol,
+					"paging": true,
+					"lengthChange": false,
+					"ordering": true,
+					"info": true,
+					"autoWidth": true
+				});
 			});
-			
-			$("#tblProductos").DataTable({
-				"responsive": true,
-				"language": espaniol,
-				"paging": true,
-				"lengthChange": false,
-				"ordering": true,
-				"info": true,
-				"autoWidth": true
-			});
-		});
+		}
 	});
 	
 	$("#frmAdd").validate({
@@ -168,7 +178,12 @@ $(document).ready(function(){
 				$("#frmAdd #txtCliente").attr("idCliente", el.idCliente);
 				$("#frmAdd #selPagos").val(el.pagos);
 				$("#frmAdd #txtFecha").val(el.fecha);
+				$("#selEstado").val(el.idEstado);
+				$("#selEstado").attr("anterior", el.idEstado);
 				
+				$("#btnBuscarProductos").prop("disabled", el.idEstado != 1);
+				$("#btnBuscarClientes").prop("disabled", el.idEstado != 1);
+				$("#frmAdd").find("[type=submit]").prop("disabled", el.idEstado != 1);
 				showDetalle();
 				
 				$('.nav a[href="#add"]').tab('show');
@@ -267,103 +282,26 @@ $(document).ready(function(){
 		getLista();
 	}
 	
-	$("#frmAddPago").validate({
-		debug: false,
-		rules: {
-			txtFecha: "required",
-			txtMonto: {
-				required: true,
-				number: true,
-				min: 1,
-				max: function(){
-					return $("#saldo").val()
-				}
-			}
-		},
-		messages: {
-			txtMonto: {
-				max: "El pago no puede ser mayor que el monto del saldo"
-			}
-		},
-		errorElement : 'span',
-		errorLabelContainer: '.errorTxt',
-		submitHandler: function(form){
-			var obj = new TPago;
-			obj.add(
-				$("#frmAddPago #id").val(), 
-				$("#frmAddPago #venta").val(), 
-				$("#frmAddPago #txtFecha").val(),
-				$("#frmAddPago #txtMonto").val(),
-				{
-					before: function(){
-						$("#frmAddPago").prop("disabled", true);
-					},
-					after: function(datos){
-						$("#frmAddPago").prop("disabled", false);
-						
-						if (datos.band){
-							listaPagos($("#frmAddPago #venta").val());
-							getLista();
-							$("#frmAddPago")[0].reset();
-						}else{
-							alert("Upps... " + datos.mensaje);
-						}
+	$("#selEstado").change(function(){
+		if(confirm("¿Seguro de cambiar el estado del pedido?")){
+			var pedido = new TPedido;
+			
+			pedido.setEstado($("#id").val(), $("#selEstado").val(), {
+				before: function(){
+					$("#selEstado").prop("disabled", true);
+				}, after: function(resp){
+					$("#selEstado").prop("disabled", false);
+					
+					if (resp.band){
+						$("#selEstado").attr("anterior", $("#selEstado").val());
+						getLista();
+						getListaMovimientos();
+					}else{
+						alert("No se pudo actualizar el estado del pedido");
+						$("#selEstado").val($("#selEstado").attr("anterior"));
 					}
 				}
-			);
-        }
-
-    });
-    
-    function listaPagos(venta){
-	    $.post("listaPagos", {"venta": venta}, function(html){
-			$("#winPagos .modal-body #lista").html(html);
-			
-			$("#txtMonto").val($("#saldo").val());
-			
-			$("[action=eliminarPago]").click(function(){
-				if(confirm("¿Seguro?")){
-					var obj = new TPago;
-					obj.del($(this).attr("pago"), {
-						after: function(data){
-							if (data.band == false)
-								alert("Ocurrió un error al eliminar el pago");
-							else{
-								listaPagos(venta);
-								getLista();
-							}
-						}
-					});
-				}
 			});
-			
-			$("[action=enviarComprobante]").click(function(){
-				pago = new TPago;
-				var el = $(this);
-				
-				pago.sendComprobante(el.attr("pago"), {
-					before: function(){
-						el.prop("disabled", true);
-					}, after: function(resp){
-						el.prop("disabled", false);
-						
-						if (resp.band == true)
-							alert("El comprobante se envió con éxito");
-						else
-							alert("Ocurrió un error al enviar el comprobante");
-					}
-				});
-			});
-			
-			$("#tblPagos").DataTable({
-				"responsive": true,
-				"language": espaniol,
-				"paging": false,
-				"lengthChange": false,
-				"ordering": false,
-				"info": true,
-				"autoWidth": true
-			});
-		});
-	}
+		}
+	});
 });

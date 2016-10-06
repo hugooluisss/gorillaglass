@@ -39,7 +39,7 @@ class TMovimiento{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from movventa where idMovimiento = ".$id);
+		$rs = $db->Execute("select * from movpedido where idMovimiento = ".$id);
 		
 		foreach($rs->fields as $field => $val)
 			$this->$field = $val;

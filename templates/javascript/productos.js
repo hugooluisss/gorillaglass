@@ -1,6 +1,20 @@
 $(document).ready(function(){
 	getLista("");
 	
+	$("#btnGenerarArticulos").click(function(){
+		if (confirm("Este proceso puede tarde dependiendo de la velocidad de su conexión a internet, ¿está seguro de querer actualizar el catálogo de productos?")){
+			var obj = new TProducto;
+			obj.generarCatalogo({
+				before: function(){
+					$("#dvLista").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Por favor espere mientras actualizamos el catálogo');
+				}, after: function(resp){
+					alert("Se generaron " + resp.total + " productos en el catálogo");
+					getLista("");
+				}
+			});
+		}
+	});
+	
 	$("#winProductos").on('shown.bs.modal', function(){
 		$("#winProductos").find("#txtClave").focus();
 	});
@@ -230,7 +244,6 @@ $(document).ready(function(){
 			
 		});
 	}
-	
 	
 	$("#winMasivo").on('show.bs.modal', function(e){
 		$("[type=checkbox]").prop("checked", false);

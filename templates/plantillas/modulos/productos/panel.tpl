@@ -7,6 +7,8 @@
 <div class="row">
 	<div class="col-lg-12">
 		<button id="btnProductoPrincipal" class="btn btn-info"><i class="fa fa-plus"></i> Nodo principal</button>
+		<button id="btnGenerarArticulos" class="btn btn-danger pull-right"><i class="fa fa-wrench" aria-hidden="true"></i>
+ Actualizar catálogo de artículos</button>
 	</div>
 </div>
 <br />

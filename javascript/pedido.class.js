@@ -66,4 +66,20 @@ TPedido = function(){
 			if (fn.after !== undefined) fn.after(data);
 		}, "json");
 	};
+	
+	this.setEstado = function(id, estado, fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('cpedidos', {
+				"action": "cambiarEstado",
+				"id": id,
+				"estado": estado
+			}, function(data) {
+				if (data.band == false)
+					console.log(data.mensaje == ''?"Upps. Ocurrió un error al agregar la venta":data.mensaje);
+				
+				if (fn.after !== undefined) fn.after(data);
+			}, "json"
+		);
+	};
 };

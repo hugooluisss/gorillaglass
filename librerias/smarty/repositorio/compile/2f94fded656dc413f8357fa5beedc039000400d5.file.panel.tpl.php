@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-09-27 09:42:10
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 21:03:11
          compiled from "templates/plantillas/modulos/pedidos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:174423460757ea85425a0600-35661533%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2f94fded656dc413f8357fa5beedc039000400d5' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/panel.tpl',
-      1 => 1473964715,
+      1 => 1475719339,
       2 => 'file',
     ),
   ),
@@ -15,18 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57ea8542662ff5_20871330',
   'variables' => 
   array (
+    'estados' => 0,
+    'item' => 0,
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57ea8542662ff5_20871330',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ea8542662ff5_20871330')) {function content_57ea8542662ff5_20871330($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/gorillasglass/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_57ea8542662ff5_20871330')) {function content_57ea8542662ff5_20871330($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/gorillaglass/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Ventas</h1>
+		<h1 class="page-header">Pedidos</h1>
 	</div>
 </div>
 
@@ -71,10 +73,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="form-group">
 				<label for="txtClave" class="col-sm-2 control-label">Producto</label>
 				<div class="col-sm-2">
-					<input type="text" id="txtClave" name="txtClave" autofocus="true" class="form-control" autocomplete="false" placeholder="clave"/>
+					<input type="text" id="txtClave" name="txtClave" autofocus="true" class="form-control" autocomplete="false" placeholder="clave" disabled="false"/>
 				</div>
 				<div class="col-sm-5">
-					<input type="text" id="txtDescripcion" name="txtDescripcion" autofocus="true" class="form-control" autocomplete="false" placeholder="Descripción"/>
+					<input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control" autocomplete="false" placeholder="Descripción" disabled="false"/>
 				</div>
 				<div class="col-sm-3">
 					<button type="button" class="btn btn-default btn-block" id="btnBuscarProductos"><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
@@ -87,16 +89,36 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<label for="txtCantidad" class="col-sm-offset-2 col-sm-2 control-label">Precio Unitario</label>
 				<div class="col-sm-2">
-					<input type="text" id="txtPrecio" name="txtPrecio" autofocus="true" class="form-control text-right" autocomplete="false" placeholder="Precio"/>
+					<input type="text" id="txtPrecio" name="txtPrecio" class="form-control text-right" disabled readonly autocomplete="false" placeholder="Precio"/>
 				</div>
 				<div class="col-sm-1 text-right">
 					<button type="submit" id="btnReset" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</form>
-		<br/><br/>
-		<hr />
 		<br/>
+		<hr />
+		<div class="row">
+			<div class="col-md-3 col-md-offset-5 text-right">
+				<b>Estado</b>
+			</div>
+			<div class="col-md-4">
+				<select class="form-control" id="selEstado" name="selEstado" anterior="">
+					<?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['estados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value){
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
+						<option value="<?php echo $_smarty_tpl->tpl_vars['item']->value['idEstado'];?>
+"><?php echo $_smarty_tpl->tpl_vars['item']->value['nombre'];?>
+
+					<?php } ?>
+				</select>
+			</div>
+		</div>
+		<br />
 		<div id="lstMovimiento"></div>
 	</div>
 </div>

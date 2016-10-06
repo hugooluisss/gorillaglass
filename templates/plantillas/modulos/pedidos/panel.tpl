@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Ventas</h1>
+		<h1 class="page-header">Pedidos</h1>
 	</div>
 </div>
 
@@ -44,10 +44,10 @@
 			<div class="form-group">
 				<label for="txtClave" class="col-sm-2 control-label">Producto</label>
 				<div class="col-sm-2">
-					<input type="text" id="txtClave" name="txtClave" autofocus="true" class="form-control" autocomplete="false" placeholder="clave"/>
+					<input type="text" id="txtClave" name="txtClave" autofocus="true" class="form-control" autocomplete="false" placeholder="clave" disabled="false"/>
 				</div>
 				<div class="col-sm-5">
-					<input type="text" id="txtDescripcion" name="txtDescripcion" autofocus="true" class="form-control" autocomplete="false" placeholder="Descripción"/>
+					<input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control" autocomplete="false" placeholder="Descripción" disabled="false"/>
 				</div>
 				<div class="col-sm-3">
 					<button type="button" class="btn btn-default btn-block" id="btnBuscarProductos"><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
@@ -60,16 +60,28 @@
 				</div>
 				<label for="txtCantidad" class="col-sm-offset-2 col-sm-2 control-label">Precio Unitario</label>
 				<div class="col-sm-2">
-					<input type="text" id="txtPrecio" name="txtPrecio" autofocus="true" class="form-control text-right" autocomplete="false" placeholder="Precio"/>
+					<input type="text" id="txtPrecio" name="txtPrecio" class="form-control text-right" disabled readonly autocomplete="false" placeholder="Precio"/>
 				</div>
 				<div class="col-sm-1 text-right">
 					<button type="submit" id="btnReset" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</form>
-		<br/><br/>
-		<hr />
 		<br/>
+		<hr />
+		<div class="row">
+			<div class="col-md-3 col-md-offset-5 text-right">
+				<b>Estado</b>
+			</div>
+			<div class="col-md-4">
+				<select class="form-control" id="selEstado" name="selEstado" anterior="">
+					{foreach key=key item=item from=$estados}
+						<option value="{$item.idEstado}">{$item.nombre}
+					{/foreach}
+				</select>
+			</div>
+		</div>
+		<br />
 		<div id="lstMovimiento"></div>
 	</div>
 </div>

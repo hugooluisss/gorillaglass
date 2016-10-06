@@ -2,10 +2,24 @@
 global $objModulo;
 
 switch($objModulo->getId()){
+	case 'pedidos':
+		$db = TBase::conectaDB();
+		global $userSesion;
+		$rs = $db->Execute("select * from estadopedido");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			
+			$rs->moveNext();
+		}
+
+		$smarty->assign("estados", $datos);
+	break;
 	case 'listaPedidos':
 		$db = TBase::conectaDB();
 		global $userSesion;
-		$rs = $db->Execute("select a.*, b.* from pedido a join cliente b using(idCliente)");
+		$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado)");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
@@ -33,8 +47,28 @@ switch($objModulo->getId()){
 		}
 
 		$smarty->assign("lista", $datos);
+		$smarty->assign("pedido", $objPedido);
 		
-		$smarty->assign("total", sprintf("%.2f", $precio));
+		$smarty->assign("subtotal", sprintf("%.2f", $precio));
+		
+		if ($precio <= 500){
+			$descuento = 0;
+			$etiquetaDescuento = "0";
+		}elseif ($precio <= 1000){
+			$descuento = $precio * 0.05;
+			$etiquetaDescuento = "5";
+		}elseif ($precio <= 1500){
+			$descuento = $precio * 0.1;
+			$etiquetaDescuento = "10";
+		}else{
+			$descuento = $precio * 0.15;
+			$etiquetaDescuento = "15";
+		}
+			
+		$smarty->assign("descuento", sprintf("%.2f", $descuento));
+		$smarty->assign("total", sprintf("%.2f", $precio - $descuento));
+		
+		$smarty->assign("etiquetaDescuento", $etiquetaDescuento);
 	break;
 	case 'cpedidos':
 		switch($objModulo->getAction()){
@@ -82,6 +116,15 @@ switch($objModulo->getId()){
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));
+			break;
+			case 'cambiarEstado':
+				$obj = new TPedido($_POST['id']);
+				$obj->estado->setId($_POST['estado']);
+				
+				if ($obj->guardar())
+					echo json_encode(array("band" => true, "id" => $obj->getId()));
+				else
+					echo json_encode(array("band" => false));
 			break;
 		}
 	break;

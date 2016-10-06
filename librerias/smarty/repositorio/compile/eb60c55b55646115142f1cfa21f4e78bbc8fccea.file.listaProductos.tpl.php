@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 14:00:53
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 19:26:45
          compiled from "templates/plantillas/modulos/pedidos/listaProductos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50776839057f54de54be9f9-14016206%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb60c55b55646115142f1cfa21f4e78bbc8fccea' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/listaProductos.tpl',
-      1 => 1474902430,
+      1 => 1474999783,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57f54de54ee644_84467850',
   'variables' => 
   array (
     'lista' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57f54de54ee644_84467850',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57f54de54ee644_84467850')) {function content_57f54de54ee644_84467850($_smarty_tpl) {?><table id="tblProductos" class="table table-bordered table-hover">
 	<thead>
