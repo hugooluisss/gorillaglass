@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 20:45:11
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-07 13:18:01
          compiled from "templates/plantillas/modulos/pedidos/listaMovimientos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:39335715257f54de2d35de0-32024499%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2b6f7f4e0f664c7383bf75bc3d52e82eee038932' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/listaMovimientos.tpl',
-      1 => 1475718306,
+      1 => 1475864230,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f54de2daf349_90682754')) {function content_57f54de2daf349_90682754($_smarty_tpl) {?><table id="tblMovimientos" class="table table-bordered table-hover">
+<?php if ($_valid && !is_callable('content_57f54de2daf349_90682754')) {function content_57f54de2daf349_90682754($_smarty_tpl) {?><button class="btn btn-success" pedido="<?php echo $_smarty_tpl->tpl_vars['pedido']->value->getId();?>
+" id="btnImprimir"><i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
+<table id="tblMovimientos" class="table table-bordered table-hover">
 	<thead>
 		<tr>
 			<th>Clave</th>

@@ -126,6 +126,14 @@ switch($objModulo->getId()){
 				else
 					echo json_encode(array("band" => false));
 			break;
+			case 'imprimir':
+				#se genera el documento pdf
+				require_once(getcwd()."/repositorio/pdf/pedido.php");
+				$pdf = new RPedido($_POST['pedido']);
+				$pdf->generar();
+				
+				echo json_encode(array("band" => true, "documento" => $pdf->output()));
+			break;
 		}
 	break;
 }

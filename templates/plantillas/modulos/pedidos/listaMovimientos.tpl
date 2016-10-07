@@ -1,3 +1,4 @@
+<button class="btn btn-success" pedido="{$pedido->getId()}" id="btnImprimir"><i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
 <table id="tblMovimientos" class="table table-bordered table-hover">
 	<thead>
 		<tr>
