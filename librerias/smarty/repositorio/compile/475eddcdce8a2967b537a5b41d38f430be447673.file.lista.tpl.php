@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-07 12:51:59
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-08 23:46:13
          compiled from "templates/plantillas/modulos/pedidos/lista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:51387905457ea8543651887-35858502%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:107061296357f9bf09d837a3-19493630%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '475eddcdce8a2967b537a5b41d38f430be447673' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/lista.tpl',
-      1 => 1475780822,
+      1 => 1475988369,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '51387905457ea8543651887-35858502',
+  'nocache_hash' => '107061296357f9bf09d837a3-19493630',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57ea85436bbea1_06178161',
+  'unifunc' => 'content_57f9bf09e2cd56_05432747',
   'variables' => 
   array (
     'lista' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ea85436bbea1_06178161')) {function content_57ea85436bbea1_06178161($_smarty_tpl) {?><div class="box">
+<?php if ($_valid && !is_callable('content_57f9bf09e2cd56_05432747')) {function content_57f9bf09e2cd56_05432747($_smarty_tpl) {?><div class="box">
 	<div class="box-body">
 		<table id="tblPedidos" class="table table-bordered table-hover">
 			<thead>
@@ -51,7 +51,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 " class="text-center"><?php echo $_smarty_tpl->tpl_vars['row']->value['estado'];?>
 </td>
 						<td style="text-align: right">
-							<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+							<button type="button" class="btn btn-default" action="pdf" title="Imprimir" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-file-pdf-o"></i></button>
 							<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>

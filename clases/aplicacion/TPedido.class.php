@@ -12,7 +12,7 @@ class TPedido{
 	public $cliente;
 	public $usuario;
 	private $fecha;
-	private $movimientos;
+	public $movimientos;
 	
 	/**
 	* Constructor de la clase
@@ -56,7 +56,29 @@ class TPedido{
 			}
 		}
 		
+		$this->getMovimientos();
+		
+		return true;
+	}
+	
+	/**
+	* Carga los datos del objeto
+	*
+	* @autor Hugo
+	* @access public
+	* @param int $id identificador del objeto
+	* @return boolean True si se realizó sin problemas
+	*/
+	public function getMovimientos(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("select idMovimiento from movpedido where idPedido = ".$this->getId());
 		$this->movimientos = array();
+		while(!$rs->EOF){
+			array_push($this->movimientos, new TMovimiento($rs->fields['idMovimiento']));
+			$rs->moveNext();
+		}
 		
 		return true;
 	}

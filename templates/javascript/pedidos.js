@@ -170,6 +170,29 @@ $(document).ready(function(){
 		$.get("listaPedidos", function(html){
 			$("#dvLista").html(html);
 			
+			
+			$("[action=pdf]").click(function(){
+				var el = $(this);
+				var datos = jQuery.parseJSON($(this).attr("datos"));
+				el.prop("disabled", true);
+				
+				$.post("cpedidos", {
+						"pedido": datos.idPedido,
+						"action": "imprimir"
+					},function(data){
+						el.prop("disabled", false);
+						if (data.documento != ''){
+							if (ventanaPedido === undefined)
+								var ventanaPedido = window.open(data.documento, '_blank');
+							else
+								ventanaPedido.document.href = data.documento;
+								
+							ventanaPedido.focus();
+						}else
+							alert("El documento no se pudo generar");
+					}, "json");
+			});
+			
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				

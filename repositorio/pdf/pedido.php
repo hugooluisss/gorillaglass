@@ -21,20 +21,56 @@ class RPedido extends tFPDF{
 		$this->cleanFiles();
 		$this->SetAutoPageBreak(false, 0);
 		$this->formatoFondo = $formatoFondo;
+		$this->AliasNbPages();
 	}	
 	
-	public function Header($nombre){   	
-    	$this->SetFont('Arial', '', 8);
+	public function AddPage(){
+		parent::AddPage();
+		
+		$this->SetFont('Arial', 'B', 11);
+		$this->Image('repositorio/img/orden.jpg', 0, 0, 190, 240);
+		$this->SetXY(140, 32);
+		$this->Cell(0, 5, $this->pedido->getFecha(), 0, 0, 'C');
+		
+		$this->SetXY(35, 41);
+		$this->Cell(0, 5, utf8_decode(strtoupper($this->pedido->cliente->getNombre())));
+		
+		$this->SetXY(10, 69);
 	}
 	
-	public function generar($id){
-		$adicionalY = -20;
-		$adicionalX = -5;
-
-		$this->AddPage();
-		#if ($his->formatoFondo)
-			$this->Image('repositorio/img/orden.jpg', 0, 0, 190, 240);
+	public function generar($id = ''){
+		if ($id <> '')
+			$this->pedido = new TPedido($id);
 			
+		$this->AddPage();
+		$this->SetFont('Arial', '', 5);
+		$ancho = 3.4;
+		$total = 0;
+		$cont = 0;
+		#for($x = 0 ; $x < 20; $x ++)
+		foreach($this->pedido->movimientos as $mov){
+			$this->Cell(1, $ancho, "");
+			$this->Cell(27, $ancho, $mov->getClave());
+			$this->Cell(97, $ancho, $mov->getDescripcion());
+			$this->Cell(12, $ancho, $mov->getCantidad(), 0, 0, 'R');
+			$this->Cell(12.5, $ancho, sprintf("%.2f", $mov->getPrecio() / $mov->getCantidad()), 0, 0, 'R');
+			$this->Cell(19, $ancho, $mov->getPrecio(), 0, 0, 'R');
+			$total += $mov->getPrecio();
+			$this->Ln($ancho);
+			$cont++;
+			if ($cont % 38 == 0){
+				$this->Ln($ancho/2);
+				$this->SetFont('Arial', 'B', 11);
+				$this->Cell(0, $ancho, "--------", 0, 0, 'R');
+				$this->AddPage();
+				$this->SetFont('Arial', '', 5);
+			}
+		}
+		
+		
+		$this->SetFont('Arial', 'B', 11);
+		$this->SetXY(140, 200);
+		$this->Cell(0, $ancho, sprintf("%.2f", $total), 0, 0, 'R');
 	}
 		
 	private function cleanFiles(){
@@ -63,7 +99,12 @@ class RPedido extends tFPDF{
 	}
 	
 	function Footer(){
+		// Go to 1.5 cm from bottom
+		$this->SetY(-15);
+		// Select Arial italic 8
+		$this->SetFont('Arial','I',8);
+		// Print centered page number
+		$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}', 0, 0, 'C');
 	}
-
 }
 ?>

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-05 19:14:42
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-08 22:52:40
          compiled from "templates/plantillas/modulos/pedidos/winClientes.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:107833283857ea8542666731-63660547%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:44534647457f9bf08616976-60155215%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '107833283857ea8542666731-63660547',
+  'nocache_hash' => '44534647457f9bf08616976-60155215',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57ea854268d1a7_26719762',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57f9bf0861a736_39036797',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ea854268d1a7_26719762')) {function content_57ea854268d1a7_26719762($_smarty_tpl) {?><div class="modal fade" id="winClientes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<?php if ($_valid && !is_callable('content_57f9bf0861a736_39036797')) {function content_57f9bf0861a736_39036797($_smarty_tpl) {?><div class="modal fade" id="winClientes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
