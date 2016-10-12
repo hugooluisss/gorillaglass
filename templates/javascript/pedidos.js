@@ -204,9 +204,9 @@ $(document).ready(function(){
 				$("#selEstado").val(el.idEstado);
 				$("#selEstado").attr("anterior", el.idEstado);
 				
-				$("#btnBuscarProductos").prop("disabled", el.idEstado != 1);
-				$("#btnBuscarClientes").prop("disabled", el.idEstado != 1);
-				$("#frmAdd").find("[type=submit]").prop("disabled", el.idEstado != 1);
+				//$("#btnBuscarProductos").prop("disabled", el.idEstado != 1);
+				//$("#btnBuscarClientes").prop("disabled", el.idEstado != 1);
+				//$("#frmAdd").find("[type=submit]").prop("disabled", el.idEstado != 1);
 				showDetalle();
 				
 				$('.nav a[href="#add"]').tab('show');

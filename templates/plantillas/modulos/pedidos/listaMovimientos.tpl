@@ -18,11 +18,10 @@
 			<td>{$row.descripcion}</td>
 			<td>{$row.cantidad}</td>
 			<td>{$row.precio}</td>
-			{if $pedido->estado->getId() eq 1}
+			
 			<td class="text-right">
 				<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" movimiento="{$row.idMovimiento}"><i class="fa fa-times"></i></button>
 			</td>
-			{/if}
 		</tr>
 		{/foreach}
 	</tbody>

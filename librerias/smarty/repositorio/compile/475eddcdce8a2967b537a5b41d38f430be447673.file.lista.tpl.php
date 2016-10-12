@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-08 23:46:13
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-11 13:54:53
          compiled from "templates/plantillas/modulos/pedidos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:107061296357f9bf09d837a3-19493630%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '475eddcdce8a2967b537a5b41d38f430be447673' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/lista.tpl',
-      1 => 1475988369,
+      1 => 1476209317,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<table id="tblPedidos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
+					<th>#</th>
 					<th>Fecha</th>
 					<th>Cliente</th>
 					<th>Estado</th>
@@ -42,6 +43,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idPedido'];?>
+</td>
 						<td style="border-left: solid 1px <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['fecha'];?>
 </td>

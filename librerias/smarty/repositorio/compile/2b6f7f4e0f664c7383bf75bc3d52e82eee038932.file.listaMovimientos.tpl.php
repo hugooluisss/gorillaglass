@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-08 22:52:57
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-11 13:54:55
          compiled from "templates/plantillas/modulos/pedidos/listaMovimientos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26124802457f9bf194479f9-83237946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2b6f7f4e0f664c7383bf75bc3d52e82eee038932' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/listaMovimientos.tpl',
-      1 => 1475867144,
+      1 => 1476209090,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_57f9bf195100b6_99905548',
   'variables' => 
   array (
     'pedido' => 0,
@@ -26,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57f9bf195100b6_99905548',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57f9bf195100b6_99905548')) {function content_57f9bf195100b6_99905548($_smarty_tpl) {?><button class="btn btn-success" pedido="<?php echo $_smarty_tpl->tpl_vars['pedido']->value->getId();?>
 " id="btnImprimir"><i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
@@ -58,12 +58,11 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 </td>
 			<td><?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
 </td>
-			<?php if ($_smarty_tpl->tpl_vars['pedido']->value->estado->getId()==1){?>
+			
 			<td class="text-right">
 				<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" movimiento="<?php echo $_smarty_tpl->tpl_vars['row']->value['idMovimiento'];?>
 "><i class="fa fa-times"></i></button>
 			</td>
-			<?php }?>
 		</tr>
 		<?php } ?>
 	</tbody>

@@ -67,7 +67,34 @@ class RPedido extends tFPDF{
 			}
 		}
 		
-		
+		$descuento = 0;
+		if ($total < 500)
+			$descuento = 0;
+		elseif($total < 1000)
+			$descuento = .05;
+		elseif($total < 2000)
+			$descuento = 0.1;
+		else
+			$descuento = 0.15;
+			
+		if ($descuento > 0){
+			if ($cont % 38 == 0){
+				$this->Ln($ancho/2);
+				$this->SetFont('Arial', 'B', 11);
+				$this->Cell(0, $ancho, "--------", 0, 0, 'R');
+				$this->AddPage();
+				$this->SetFont('Arial', '', 5);
+			}
+			
+			$this->Cell(1, $ancho, "");
+			$this->Cell(27, $ancho, "Dis ".($descuento * 100)."%");
+			$this->Cell(97, $ancho, "Discount ".($descuento * 100)."%");
+			$this->Cell(12, $ancho, "", 0, 0, 'R');
+			$this->Cell(12.5, $ancho, "-".($descuento * 100)."%", 0, 0, 'R');
+			$this->Cell(19, $ancho, sprintf("%.2f", $total * $descuento), 0, 0, 'R');
+			$total -= $total * $descuento;
+			$this->Ln($ancho);
+		}
 		$this->SetFont('Arial', 'B', 11);
 		$this->SetXY(140, 200);
 		$this->Cell(0, $ancho, sprintf("%.2f", $total), 0, 0, 'R');

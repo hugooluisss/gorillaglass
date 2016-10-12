@@ -150,7 +150,7 @@ class TEstado{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from entregable where idEntregable = ".$this->getId());
+		$rs = $db->Execute("delete from estadopedido where idEstado = ".$this->getId());
 		
 		return $rs?true:false;
 	}
