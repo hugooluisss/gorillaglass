@@ -10,6 +10,7 @@ define('STATUS', 'En desarrollo');
 define('LAYOUT_DEFECTO', 'layout/default.tpl');
 define('LAYOUT_AJAX', 'layout/update.tpl');
 define('LAYOUT_JSON', 'layout/json.tpl');
+define('LAYOUT_HOME', 'layout/home.tpl');
 
 #Login y su controlador
 $conf['inicio'] = array(
@@ -274,4 +275,6 @@ $conf['updateProductos'] = array(
 	'descripcion' => 'Lista de productos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+
+include_once("config/front-end.php");
 ?>
