@@ -2,7 +2,7 @@
 #Home
 $conf['home'] = array(
 	#'controlador' => 'productos.php',
-	'vista' => 'productos/panel.tpl',
+	'vista' => 'front-end/home.tpl',
 	'descripcion' => 'El home',
 	'seguridad' => false,
 	#'js' => array('producto.class.js'),

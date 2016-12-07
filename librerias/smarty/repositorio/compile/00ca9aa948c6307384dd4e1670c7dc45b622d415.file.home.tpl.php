@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-06 13:44:49
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-07 13:56:56
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:134632205584703618a6d04-86959427%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481053486,
+      1 => 1481140615,
       2 => 'file',
     ),
   ),
@@ -43,36 +43,70 @@ bootstrap/css/bootstrap.min.css">
 dist/css/font-awesome.min.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					
-					
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">
-						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+		<nav class="menu-principal fixed">
+			<div class="barraNegra">&nbsp;</div>
+			
+			<div class="block left">
+				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 logo.png" class="logo"/>
-						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 nombre.png" />
-					</a>
-				</div>
-				<form class="navbar-form navbar-right" role="search">
+			</div>
+			
+			<div class="block right">
+				<form class="navbar-form" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control search" placeholder="Search">
 					</div>
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+iconCar.png">
 				</form>
 			</div>
 		</nav>
-  
-		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
-			<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+		<div class="bar icons">
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item1.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item2.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item1.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item2.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item1.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item2.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item1.png" /></a>
+			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+/tipos/item2.png" /></a>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6">
+					<h3 class="page-title">PLUGS</h3>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<label for="selSortBy" class="col-xs-4">SORT BY</label>
+					<div class="col-xs-8">
+						<select id="selSortBy" name="selSortBy" class="finder">
+							<option value="NEWEST">NEWEST</option>
+							<option value="MOST POPLUAR">MOST POPLUAR</option>
+							<option value="smtolg">GAUGE SIZE (SM TO LG)</option>
+							<option value="lgtosm">GAUGE SIZE (LG TO SM)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
+				<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-		<?php }?>
+			<?php }?>
+		</div>
 		
 		
 		<?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;

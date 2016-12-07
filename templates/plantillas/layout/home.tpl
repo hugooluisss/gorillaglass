@@ -13,33 +13,58 @@
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/font-awesome.min.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					
-					
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">
-						<img src="{$PAGE.iconos}logo.png" class="logo"/>
-						<img src="{$PAGE.iconos}nombre.png" />
-					</a>
-				</div>
-				<form class="navbar-form navbar-right" role="search">
+		<nav class="menu-principal fixed">
+			<div class="barraNegra">&nbsp;</div>
+			
+			<div class="block left">
+				<img src="{$PAGE.iconos}logo.png" class="logo"/>
+				<img src="{$PAGE.iconos}nombre.png" />
+			</div>
+			
+			<div class="block right">
+				<form class="navbar-form" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control search" placeholder="Search">
 					</div>
+					<img src="{$PAGE.iconos}iconCar.png">
 				</form>
 			</div>
 		</nav>
-  
-		{if $PAGE.vista neq ''}
-			{include file=$PAGE.vista}
-		{/if}
+		<div class="bar icons">
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item1.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item2.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item1.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item2.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item1.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item2.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item1.png" /></a>
+			<a href="#"><img src="{$PAGE.iconos}/tipos/item2.png" /></a>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6">
+					<h3 class="page-title">PLUGS</h3>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<label for="selSortBy" class="col-xs-4">SORT BY</label>
+					<div class="col-xs-8">
+						<select id="selSortBy" name="selSortBy" class="finder">
+							<option value="NEWEST">NEWEST</option>
+							<option value="MOST POPLUAR">MOST POPLUAR</option>
+							<option value="smtolg">GAUGE SIZE (SM TO LG)</option>
+							<option value="lgtosm">GAUGE SIZE (LG TO SM)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			{if $PAGE.vista neq ''}
+				{include file=$PAGE.vista}
+			{/if}
+		</div>
 		
 		
 		{foreach from=$PAGE.scriptsJS item=script}
