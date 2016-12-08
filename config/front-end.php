@@ -1,11 +1,11 @@
 <?php
 #Home
 $conf['home'] = array(
-	#'controlador' => 'productos.php',
+	'controlador' => 'home.php',
 	'vista' => 'front-end/home.tpl',
 	'descripcion' => 'El home',
 	'seguridad' => false,
 	#'js' => array('producto.class.js'),
-	#'jsTemplate' => array('productos.js'),
+	'jsTemplate' => array('home.js'),
 	'capa' => LAYOUT_HOME);
 ?>

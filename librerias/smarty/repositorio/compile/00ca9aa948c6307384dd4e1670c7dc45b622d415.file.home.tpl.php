@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-07 13:56:56
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-07 23:15:17
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:134632205584703618a6d04-86959427%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481140615,
+      1 => 1481174116,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,10 @@ bootstrap/css/bootstrap.min.css">
 		
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 dist/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+dist/css/ionicons.min.css">
+		
+		<base href="http://localhost/gorillaglass/" target="_blank">
 	</head>
 	<body>
 		<nav class="menu-principal fixed">
@@ -50,16 +54,16 @@ dist/css/font-awesome.min.css">
 				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 logo.png" class="logo"/>
 				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-nombre.png" />
+nombre.png" class="hidden-xs" />
 			</div>
 			
 			<div class="block right">
 				<form class="navbar-form" role="search">
-					<div class="form-group">
+					<div class="form-group text-right">
 						<input type="text" class="form-control search" placeholder="Search">
 					</div>
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-iconCar.png">
+iconCar.png" />
 				</form>
 			</div>
 		</nav>
@@ -84,23 +88,25 @@ iconCar.png">
 		
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-sm-6">
+				<div class="col-md-8 col-sm-6 col-xs-12">
 					<h3 class="page-title">PLUGS</h3>
 				</div>
-				<div class="col-md-4 col-sm-6">
-					<label for="selSortBy" class="col-xs-4">SORT BY</label>
-					<div class="col-xs-8">
-						<select id="selSortBy" name="selSortBy" class="finder">
-							<option value="NEWEST">NEWEST</option>
-							<option value="MOST POPLUAR">MOST POPLUAR</option>
-							<option value="smtolg">GAUGE SIZE (SM TO LG)</option>
-							<option value="lgtosm">GAUGE SIZE (LG TO SM)</option>
-						</select>
+				<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
+					SORT BY
+					<div class="btn-group order">
+						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
+						<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+						<div class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">NEWEST</a></li>
+							<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
+							<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
+							<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+		<br />
 		<div class="container">
 			<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
 				<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
@@ -108,7 +114,12 @@ iconCar.png">
 			<?php }?>
 		</div>
 		
-		
+		<div id="footer">
+			<div class="container text-center">
+				<a href="#">Where to buy?</a>
+			</div>
+		</div>
+    
 		<?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['script']->key => $_smarty_tpl->tpl_vars['script']->value){
@@ -118,6 +129,24 @@ $_smarty_tpl->tpl_vars['script']->_loop = true;
 ?m=<?php echo rand();?>
 "></script>
 		<?php } ?>
+		
+		<!-- jQuery 2.1.4 -->
+		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/jQuery/jQuery-2.1.4.min.js"></script>
+		<!-- jQuery UI 1.11.4 -->
+		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/jQueryUI/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/jQueryUI/jquery-ui.css" />
+		<!-- Bootstrap 3.3.5 -->
+		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/bootstrap-select/css/bootstrap-select.min.css" />
+		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
 	    
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
 	</body>

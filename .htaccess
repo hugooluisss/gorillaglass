@@ -2,5 +2,9 @@ RewriteEngine on
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+RewriteBase /gorillaglass/
+
+RewriteRule ^home/(.+)$ index.php?mod=home&item=$1 [QSA,L]
+RewriteRule ^home/(.+)/$ index.php?mod=home&item=$1 [QSA,L]
 RewriteRule ^(.*)$ index.php?mod=$1 [QSA,L]
 RewriteRule ^(.*)/$ index.php?mod=$1 [QSA,L]

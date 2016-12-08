@@ -1,55 +1,90 @@
-@color-gris: #848484;
+@import "../build/bootstrap-less/mixins.less";
+@import "../build/bootstrap-less/variables.less";
 
-nav.menu-principal{
+@color-gris: #848484;
+@color-gris-pie: #D8D8D8;
+
+nav{
 	&.fixed{
 		width: 100%;
+		position: fixed;
+		z-index: 999;
+		top: 0px;
 	}
 	
-	background: white;
-	height: 80px;
-	
-	.barraNegra{
-		background: black;
-		margin-top: 20px;
-		height: 40px;
-	}
-	
-	.block{
-		position: absolute;
-		top: 3px;
+	&.menu-principal{
+		background: white;
+		height: 80px;
 		
-		&.left{
-			left: 20px;
+		.barraNegra{
+			background: black;
+			margin-top: 20px;
+			height: 40px;
+		}
+		
+		.block{
+			position: absolute;
 			top: 3px;
 			
-			img.logo{
-				width: 75px;
-			}
-		}
-	
-		&.right{
-			right: 30px;
-			padding-top: 2px;
-			
-			img.logo{
-				width: 75px;
-			}
-			
-			.navbar-form{
-				margin-top: 0px;
-				margin-bottom: 0px;
+			&.left{
+				left: 20px;
+				top: 3px;
 				
-				padding-left: 0px;
-				padding-right: 0px;
+				img.logo{
+					width: 75px;
+				}
+			}
+		
+			&.right{
+				right: 30px;
+				padding-top: 2px;
+				width: 40%;
+				text-align: right;
+				
+				@media(max-width: @screen-xs-max){
+					right: 0px;
+					width: 70%;
+				}
+				
+				.navbar-form{
+					margin-top: 0px;
+					margin-bottom: 0px;
+					
+					padding-left: 0px;
+					padding-right: 0px;
+					
+					@media(max-width: @screen-xs-max){
+						padding-right: 0px;
+						width: 100%;
+						margin-left: 0px;
+						margin-right: 0px;
+						
+						.form-group{
+							width: 50%;
+							float: left;
+							input{
+								margin-top: 6px;
+								width: 90%;
+							}
+						}
+						
+						img{
+							width: 50%;
+							max-width: 75px;
+							margin-top: -10px;
+						}
+					}
+				}
 			}
 		}
 	}
 }
 
-.bar{
+div.bar{
 	width: 100%;
 	margin-bottom: 20px;
 	&.icons{
+		margin-top: 100px;
 		text-align: center;
 		a{
 			&:hover, &:focus{
@@ -74,19 +109,16 @@ nav.menu-principal{
 		margin-top: 0px;
 	}
 	
-	select.finder{
-		color: @color-gris;
-		border: 1px solid @color-gris;
-		
-		appearance:none;
-		-moz-appearance:none;
-		-webkit-appearance:none;
-		
-		padding-top: 3px;
-		padding-bottom: 3px;
-		
-		option{
-			margin-bottom: 1px solid @color-gris;
+	.order{
+		.dropdown-menu{
+			left: auto;
+			right: 0px;
+			a{
+				width: 100%;
+				font-size: 12px;
+				color: black;
+				float: none;
+			}
 		}
 	}
 	
@@ -99,5 +131,24 @@ nav.menu-principal{
 		b{
 			color: red;
 		}
+	}
+	
+	[item]{
+		cursor: pointer;
+	}
+}
+
+#footer{
+	background: @color-gris-pie;
+	height: 40px;
+	font-size: 16px;
+	padding-top: 8px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	
+	a{
+		color: black;
+		font-weight: bold;
 	}
 }
