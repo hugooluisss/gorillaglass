@@ -51,4 +51,15 @@ function getMiniatura($url, $miniatura_ancho_maximo = 80, $miniatura_alto_maximo
 	#header('Content-Type: image/jpeg');
 	return $thumb;
 }
+
+function getURI($uri = ""){
+	$uri = str_replace(" ", '+', $uri);
+	$uri = str_replace("(", '', $uri);
+	$uri = str_replace(")", '', $uri);
+	$uri = str_replace("/", 'x', $uri);
+	$uri = str_replace("'", 'in', $uri);
+	$uri = str_replace('"', 'in', $uri);
+	
+	return $uri;
+}
 ?>

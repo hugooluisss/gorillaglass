@@ -3,9 +3,12 @@ global $objModulo;
 switch($objModulo->getId()){
 	case 'home':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from producto where idPadre = 0;");
+		$padre = $_GET['id'] == ''?'0':$_GET['id'];
+		$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idProducto = 0");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['url'] = "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/";
+			
 			$directorio  = scandir("repositorio/productos/producto_".$rs->fields['idProducto']."/");
 			
 			$rs->fields['img'] = array();

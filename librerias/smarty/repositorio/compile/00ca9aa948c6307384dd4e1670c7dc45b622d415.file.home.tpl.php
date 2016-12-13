@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-07 23:15:17
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-12 22:40:00
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:134632205584703618a6d04-86959427%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481174116,
+      1 => 1481602874,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '134632205584703618a6d04-86959427',
+  'nocache_hash' => '2049699628584f7ba0b4e4a3-81677027',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5847036191dea9_64975626',
   'variables' => 
   array (
     'PAGE' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_584f7ba0cd00b9_16621546',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5847036191dea9_64975626')) {function content_5847036191dea9_64975626($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_584f7ba0cd00b9_16621546')) {function content_584f7ba0cd00b9_16621546($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -33,6 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<title>.:: <?php echo $_smarty_tpl->tpl_vars['PAGE']->value['empresaAcronimo'];?>
  ::.</title>
+		<base href="http://localhost/gorillaglass/index.php" target="_top">
 		<link rel="stylesheet/less" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 front-end/style.less" />
 		
@@ -43,8 +44,6 @@ bootstrap/css/bootstrap.min.css">
 dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 dist/css/ionicons.min.css">
-		
-		<base href="http://localhost/gorillaglass/" target="_blank">
 	</head>
 	<body>
 		<nav class="menu-principal fixed">

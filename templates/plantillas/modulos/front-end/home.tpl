@@ -1,6 +1,6 @@
 {foreach from=$nodosPadre item="row"}
-	<a href="home/{$row.idProducto}">
-		<div class="col-md-3 col-xs-12 col-sm-6" item={$row.idProducto}>
+	<a href="{$row.url}">
+		<div class="col-md-3 col-xs-12 col-sm-6" item="{$row.idProducto}">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<!--<img src="{$PAGE.iconos}/items.jpg"/>-->

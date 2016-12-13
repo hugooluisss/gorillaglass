@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-07 23:03:57
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-12 22:54:36
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2077486163584863e6381c28-02438639%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1481173436,
+      1 => 1481604873,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2077486163584863e6381c28-02438639',
+  'nocache_hash' => '1298453899584f7ba0d0a419-95858283',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_584863e63825f0_77012523',
+  'unifunc' => 'content_584f7ba0d77654_97551504',
   'variables' => 
   array (
     'nodosPadre' => 0,
@@ -25,15 +25,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_584863e63825f0_77012523')) {function content_584863e63825f0_77012523($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['nodosPadre']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-	<a href="home/<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
 ">
-		<div class="col-md-3 col-xs-12 col-sm-6" item=<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
->
+		<div class="col-md-3 col-xs-12 col-sm-6" item="<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
+">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>

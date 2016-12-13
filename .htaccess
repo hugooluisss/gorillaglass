@@ -1,10 +1,9 @@
 RewriteEngine on
+RewriteBase /gorillaglass/
+
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteBase /gorillaglass/
-
-RewriteRule ^home/(.+)$ index.php?mod=home&item=$1 [QSA,L]
-RewriteRule ^home/(.+)/$ index.php?mod=home&item=$1 [QSA,L]
-RewriteRule ^(.*)$ index.php?mod=$1 [QSA,L]
-RewriteRule ^(.*)/$ index.php?mod=$1 [QSA,L]
+RewriteRule ^([0-9a-zA-Z]*)/$ index.php?mod=$1 [QSA,L]
+RewriteRule ^([0-9a-zA-Z]*)/(\d*)\-([0-9a-zA-Z+]*)\/$ index.php?mod=$1&id=$2 [QSA,L]
+RewriteRule ^(.*)\/$ index.php?mod=$1 [QSA,L]
