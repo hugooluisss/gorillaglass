@@ -88,7 +88,8 @@ $datosPlantilla = array(
 	"rutaModulos" => TEMPLATE,
 	"modulo" => $modulo,
 	"scriptsJS" => $objModulo->getScriptsJS(),
-	"usuario" => $pageSesion);
+	"usuario" => $pageSesion,
+	"url" => $ini['sistema']['url']);
 
 foreach($_GET as $indice => $valor){
 	$_GET[$indice] = ereg_replace('\\"', "",$_GET[$indice]);
