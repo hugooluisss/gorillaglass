@@ -1,4 +1,16 @@
-{foreach from=$nodosPadre item="row"}
+<ol class="breadcrumb hidden-xs">
+	{foreach from=$breadcrumb item="row"}
+		<li><a href="{$row.url}">{$row.nombre}</a></li>
+	{/foreach}
+</ol>
+
+<ol class="breadcrumb visible-xs">
+	{foreach from=$breadcrumb item="row"}
+		<li><a href="{$row.url}">{$row.clave}</a></li>
+	{/foreach}
+</ol>
+
+{foreach from=$hijos item="row"}
 	<a href="{$row.url}">
 		<div class="col-md-3 col-xs-12 col-sm-6" item="{$row.idProducto}">
 			<div class="panel panel-default">

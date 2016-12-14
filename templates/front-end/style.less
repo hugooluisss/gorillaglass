@@ -3,6 +3,7 @@
 
 @color-gris: #848484;
 @color-gris-pie: #D8D8D8;
+@color-focus: red;
 
 nav{
 	&.fixed{
@@ -103,10 +104,16 @@ div.bar{
 	color: @color-gris;
 	
 	b{
-		color: red;
+		color: @color-focus;
 	}
 	.page-title{
 		margin-top: 0px;
+	}
+	
+	.breadcrumb{
+		a:hover{
+			color: @color-focus;
+		}
 	}
 	
 	.order{
@@ -129,15 +136,45 @@ div.bar{
 		}
 		
 		b{
-			color: red;
+			color: @color-focus;
 		}
 	}
 	
 	[item]{
 		cursor: pointer;
+		
+		.panel{
+			.panel-body{
+				text-align: center;
+			}
+		}
+		
+		&:hover{
+			.panel{
+				border-color: @color-gris-pie;
+				transition: all 1s ease;
+				
+				.panel-footer{
+					border-color: @color-gris-pie;
+					transition: all 1s ease;
+					background: @color-gris-pie;
+				}
+			}
+		}
 	}
-	
+}
+
+#redesSociales{
 	margin-bottom: 40px;
+	a{
+		color: @color-gris;
+		
+		&:hover{
+			text-decoration: none;
+			color: red;
+			transition:all 1s ease;
+		}
+	}
 }
 
 #footer{

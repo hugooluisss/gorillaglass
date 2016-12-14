@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 08:43:40
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 10:46:42
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1481641028,
+      1 => 1481734001,
       2 => 'file',
     ),
   ),
@@ -19,14 +19,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_584f7ba0d77654_97551504',
   'variables' => 
   array (
-    'nodosPadre' => 0,
+    'breadcrumb' => 0,
     'row' => 0,
+    'hijos' => 0,
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['nodosPadre']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?><ol class="breadcrumb hidden-xs">
+	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['breadcrumb']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+		<li><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</a></li>
+	<?php } ?>
+</ol>
+
+<ol class="breadcrumb visible-xs">
+	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['breadcrumb']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+		<li><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
+</a></li>
+	<?php } ?>
+</ol>
+
+<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['hijos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>

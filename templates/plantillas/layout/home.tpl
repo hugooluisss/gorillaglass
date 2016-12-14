@@ -70,6 +70,43 @@
 			{/if}
 		</div>
 		
+		<div id="redesSociales" class="container text-center">
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-instagram fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-youtube-play fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-envelope-o fa-stack-1x"></i>
+				</span>
+			</a>
+		</div>
+		
 		<div id="footer">
 			<div class="container text-center">
 				<a href="#">Where to buy?</a>

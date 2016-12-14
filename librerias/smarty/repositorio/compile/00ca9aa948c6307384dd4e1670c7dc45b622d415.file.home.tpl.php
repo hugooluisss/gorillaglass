@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 08:46:35
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 10:08:19
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481726793,
+      1 => 1481731698,
       2 => 'file',
     ),
   ),
@@ -27,11 +27,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_584f7ba0cd00b9_16621546')) {function content_584f7ba0cd00b9_16621546($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title>.:: <?php echo $_smarty_tpl->tpl_vars['PAGE']->value['empresaAcronimo'];?>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Tell the browser to be responsive to screen width -->
+	    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<title>.:: <?php echo $_smarty_tpl->tpl_vars['PAGE']->value['empresaAcronimo'];?>
  ::.</title>
 		<base href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
 index.php" target="_top">
@@ -112,6 +112,43 @@ iconCar.png" />
 				<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 			<?php }?>
+		</div>
+		
+		<div id="redesSociales" class="container text-center">
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-instagram fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-youtube-play fa-stack-1x"></i>
+				</span>
+			</a>
+			
+			<a href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-envelope-o fa-stack-1x"></i>
+				</span>
+			</a>
 		</div>
 		
 		<div id="footer">
