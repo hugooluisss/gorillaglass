@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 10:46:42
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 22:16:10
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1481734001,
+      1 => 1481775368,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?><ol class="breadcrumb hidden-xs">
+<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?>
+<ol class="breadcrumb hidden-xs">
 	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['breadcrumb']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
@@ -50,34 +51,39 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 	<?php } ?>
 </ol>
 
-<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+<?php if (count($_smarty_tpl->tpl_vars['hijos']->value)>0){?>
+	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['hijos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-	<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+		<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
 ">
-		<div class="col-md-3 col-xs-12 col-sm-6" item="<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
+			<div class="col-md-3 col-xs-12 col-sm-6" item="<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
 ">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 /items.jpg"/>-->
-					<?php if (count($_smarty_tpl->tpl_vars['row']->value['img'])==0){?>
-						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+						<?php if (count($_smarty_tpl->tpl_vars['row']->value['img'])==0){?>
+							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 /items.jpg"/>
-					<?php }else{ ?>
-						<img src="repositorio/productos/producto_<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
+						<?php }else{ ?>
+							<img src="repositorio/productos/producto_<?php echo $_smarty_tpl->tpl_vars['row']->value['idProducto'];?>
 /<?php echo $_smarty_tpl->tpl_vars['row']->value['img'][0];?>
 "/>
-					<?php }?>
-				</div>
-				<div class="panel-footer">
-					<?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+						<?php }?>
+					</div>
+					<div class="panel-footer">
+						<?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
  <b><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </b>
+					</div>
 				</div>
 			</div>
-		</div>
-	</a>
-<?php } ?><?php }} ?>
+		</a>
+	<?php } ?>
+<?php }else{ ?>
+	<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/front-end/elemento.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<?php }?><?php }} ?>

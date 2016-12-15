@@ -106,7 +106,15 @@
 				</span>
 			</a>
 		</div>
+		<div id="otherLinks" class="container text-center">
+			<a href="#">BUY WHOLESALE</a>
+			<a href="#">BUY RETAIL</a>
+			<a href="#">CONTACT US</a>
+		</div>
 		
+		<div id="copyright" class="container text-center">
+			{date("Y")} GORILLA GLASS
+		</div>
 		<div id="footer">
 			<div class="container text-center">
 				<a href="#">Where to buy?</a>

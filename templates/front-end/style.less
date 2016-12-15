@@ -95,6 +95,11 @@ div.bar{
 			img{
 				width: 45px;
 				height: 40px;
+				
+				@media(max-width: @screen-xs-max){
+					width: 30px;
+					height: 25px;
+				}
 			}
 		}
 	}
@@ -111,6 +116,7 @@ div.bar{
 	}
 	
 	.breadcrumb{
+		font-size: 12px;
 		a:hover{
 			color: @color-focus;
 		}
@@ -162,18 +168,66 @@ div.bar{
 			}
 		}
 	}
+	
+	.producto{
+		.panel-footer{
+			p{
+				color: @color-gris-pie - #222;
+			}
+		}
+	}
 }
 
 #redesSociales{
-	margin-bottom: 40px;
 	a{
 		color: @color-gris;
 		
+		@media(max-width: @screen-xs-max){
+			.fa-2x{
+				font-size: 1em;
+			}
+		}
+		
 		&:hover{
 			text-decoration: none;
-			color: red;
+			color: @color-focus;
 			transition:all 1s ease;
 		}
+	}
+}
+
+#otherLinks{
+	margin-bottom: 30px;
+	margin-top: 20px;
+	@media(max-width: @screen-xs-max){
+		margin-bottom: 15px;
+		margin-top: 10px;
+	}
+	
+	a{
+		color: @color-gris;
+		font-size: 20px;
+		margin-right: 15px;
+		
+		@media(max-width: @screen-xs-max){
+			font-size: 12px;
+		}
+		
+		&:last-child{
+			margin-right: 0px;
+		}
+		
+		&:hover{
+			color: @color-focus;
+			transition:all 1s ease;
+		}
+	}
+}
+
+#copyright{
+	margin-bottom: 60px;
+	@media(max-width: @screen-xs-max){
+		margin-bottom: 40px;
 	}
 }
 

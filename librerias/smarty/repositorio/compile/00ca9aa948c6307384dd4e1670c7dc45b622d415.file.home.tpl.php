@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 10:08:19
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 22:02:11
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481731698,
+      1 => 1481774529,
       2 => 'file',
     ),
   ),
@@ -150,7 +150,16 @@ iconCar.png" />
 				</span>
 			</a>
 		</div>
+		<div id="otherLinks" class="container text-center">
+			<a href="#">BUY WHOLESALE</a>
+			<a href="#">BUY RETAIL</a>
+			<a href="#">CONTACT US</a>
+		</div>
 		
+		<div id="copyright" class="container text-center">
+			<?php echo date("Y");?>
+ GORILLA GLASS
+		</div>
 		<div id="footer">
 			<div class="container text-center">
 				<a href="#">Where to buy?</a>

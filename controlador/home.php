@@ -43,6 +43,13 @@ switch($objModulo->getId()){
 				"nombre" => $rs->fields['nombre'] == ''?'Home':$rs->fields['nombre']
 		));
 		$smarty->assign("breadcrumb", array_reverse($datos));
+		
+		if (count($hijos) == 0){
+			$padre = $_GET['id'] == ''?'0':$_GET['id'];
+			$rs = $db->Execute("select * from producto where idProducto = ".$padre);
+			
+			$smarty->assign("item", $rs->fields);
+		}
 	break;
 }
 ?>
