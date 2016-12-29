@@ -11,7 +11,7 @@
 			<div class="panel-footer">
 				{$item.nombre} <b>{$item.clave}</b>
 				<p>
-					{$item.descripcion}asdf
+					{$item.descripcion}
 				</p>
 			</div>
 		</div>

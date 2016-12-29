@@ -16,6 +16,7 @@
 			<button type="button" class="btn btn-info btn-xs" action="masivo" title="Insertar masivamente" datos='{$row.json}'><i class="fa fa-flag"></i></button>
 			<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" datos='{$row.json}'><i class="fa fa-minus"></i></button>
 			<button type="button" class="btn btn-default btn-xs" action="pegar" title="Pegar" datos='{$row.json}'><i class="fa fa-paste"></i></button>
+			<button type="button" class="btn btn-default btn-xs" action="html" title="Vista en HTML" datos='{$row.json}'><i class="fa fa-code"></i></button>
 	</div>
 </div>
 

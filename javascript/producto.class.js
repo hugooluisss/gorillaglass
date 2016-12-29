@@ -86,4 +86,20 @@ TProducto = function(){
 					fn.after(data);
 			}, "json");
 	};
+	
+	this.setVista = function(id, html, fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('cproductos', {
+				"id": id,
+				"html": html,
+				"action": "setVista"
+			}, function(data){
+				if (data.band == 'false')
+					console.log(data.mensaje);
+					
+				if (fn.after !== undefined)
+					fn.after(data);
+			}, "json");
+	}
 };

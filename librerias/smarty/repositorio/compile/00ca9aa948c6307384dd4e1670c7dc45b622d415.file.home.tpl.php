@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-12-14 22:02:11
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-27 23:30:01
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1481774529,
+      1 => 1482903000,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'PAGE' => 0,
+    'nodosPrimerNivel' => 0,
+    'row' => 0,
+    'nombreItem' => 0,
+    'vista' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
@@ -68,42 +72,39 @@ iconCar.png" />
 			</div>
 		</nav>
 		<div class="bar icons">
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+			<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+			<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 /tipos/item1.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item2.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item1.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item2.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item1.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item2.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item1.png" /></a>
-			<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-/tipos/item2.png" /></a>
+			<?php } ?>
 		</div>
 		
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-6 col-xs-12">
-					<h3 class="page-title">PLUGS</h3>
+					<h3 class="page-title"><?php echo $_smarty_tpl->tpl_vars['nombreItem']->value;?>
+</h3>
 				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
-					SORT BY
-					<div class="btn-group order">
-						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
-						<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-						<div class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">NEWEST</a></li>
-							<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
+				<?php if ($_smarty_tpl->tpl_vars['vista']->value==''){?>
+					<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
+						SORT BY
+						<div class="btn-group order">
+							<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
+							<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+							<div class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">NEWEST</a></li>
+								<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
+								<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
+								<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
+							</div>
 						</div>
 					</div>
-				</div>
+				<?php }?>
 			</div>
 		</div>
 		<br />

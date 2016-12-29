@@ -242,6 +242,29 @@ $(document).ready(function(){
 				}
 			});
 			
+			contenedor.find("[action=html]").click(function(){
+				var producto = jQuery.parseJSON($(this).attr("datos"));
+				$("#winHTML").attr("idProducto", producto.idProducto);
+				$("#winHTML").modal();
+			});
+			
+			
+			$("#winHTML").find("#txtHTML").change(function(){
+				var obj = new TProducto;
+				
+				obj.setVista($("#winHTML").attr("idProducto"), $("#winHTML").find("#txtHTML").val(), {
+					before: function(){
+						$("#winHTML").find("#txtHTML").prop("disabled", true);
+					}, after: function(resp){
+						$("#winHTML").find("#txtHTML").prop("disabled", false);
+						
+						if(resp.band)
+							$("#winHTML").modal("hide");
+						else
+							alert("No se pudo guardar la vista");
+					}
+				});
+			});
 		});
 	}
 	
@@ -307,6 +330,16 @@ $(document).ready(function(){
 			}
 		});
 		
+	});
+	
+	
+	$("#winHTML").on('show.bs.modal', function(e){
+		$.post("cproductos", {
+			"action": "getVista",
+			"id": $("#winHTML").attr("idProducto")
+		}, function(resp){
+			$("#winHTML").find("#txtHTML").val(resp);
+		});
 	});
 });
 

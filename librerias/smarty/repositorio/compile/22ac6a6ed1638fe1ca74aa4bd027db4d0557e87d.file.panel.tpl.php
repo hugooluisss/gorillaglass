@@ -1,4 +1,32 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2016-12-27 22:57:01
+         compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:182822455586343b83e36a4-70762282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
+    array (
+      0 => 'templates/plantillas/modulos/productos/panel.tpl',
+      1 => 1482900718,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '182822455586343b83e36a4-70762282',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_586343b84cae87_65245048',
+  'variables' => 
+  array (
+    'colores' => 0,
+    'row' => 0,
+    'tamanos' => 0,
+    'texturas' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_586343b84cae87_65245048')) {function content_586343b84cae87_65245048($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de Productos</h1>
 	</div>
@@ -117,11 +145,19 @@
 									</div>
 								</div>
 								<hr />
-								{foreach from=$colores item="row"}
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['colores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
 									<div class="checkbox">
-										<label style="color: {$row.codigo}"><input type="checkbox" value="{$row.idColor}" class="colores" datos='{$row.json}'>{$row.nombre}</label>
+										<label style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
+"><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idColor'];?>
+" class="colores" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</label>
 									</div>
-								{/foreach}
+								<?php } ?>
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
@@ -139,11 +175,19 @@
 						</div>
 						<div id="tamano" class="panel-collapse collapse">
 							<div class="panel-body">
-								{foreach from=$tamanos item="row"}
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['tamanos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idSize}" class="tamanos" datos='{$row.json}'>{$row.nombre} <small class="text-muted">$ {$row.precio}</small></label>
+										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idSize'];?>
+" class="tamanos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+ <small class="text-muted">$ <?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
+</small></label>
 									</div>
-								{/foreach}
+								<?php } ?>
 								
 								<br />
 								<div class="row">
@@ -162,11 +206,19 @@
 						</div>
 						<div id="texturas" class="panel-collapse collapse">
 							<div class="panel-body">
-								{foreach from=$texturas item="row"}
+								<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['texturas']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
 									<div class="checkbox">
-										<label><input type="checkbox" value="{$row.idTextura}" class="texturas" datos='{$row.json}'>{$row.nombre} <small class="text-muted">$ {$row.precio}</small></label>
+										<label><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idTextura'];?>
+" class="texturas" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+ <small class="text-muted">$ <?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
+</small></label>
 									</div>
-								{/foreach}
+								<?php } ?>
 								<br />
 								<div class="row">
 									<div class="col-md-12 text-right">
@@ -196,4 +248,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div><?php }} ?>

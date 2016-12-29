@@ -182,6 +182,15 @@ switch($objModulo->getId()){
 				
 				echo json_encode(array("total" => $cont));
 			break;
+			case 'getVista':
+				$producto = new TProducto($_POST['id']);
+				
+				echo $producto->getVista();
+			break;
+			case 'setVista':
+				$producto = new TProducto($_POST['id']);				
+				echo json_encode(array("band" => $producto->setVista($_POST['html'])));
+			break;
 		}
 	break;
 }

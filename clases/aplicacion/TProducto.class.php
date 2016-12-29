@@ -11,6 +11,7 @@ class TProducto{
 	private $idPadre;
 	private $nombre;
 	private $descripcion;
+	private $html;
 	/**
 	* Constructor de la clase
 	*
@@ -36,7 +37,7 @@ class TProducto{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from producto where idProducto = ".$id);
+		$rs = $db->Execute("select * from producto left join vista using(idProducto) where idProducto = ".$id);
 		
 		foreach($rs->fields as $field => $val)
 			$this->$field = $val;
@@ -322,6 +323,47 @@ class TProducto{
 		}while(true);
 		
 		return $rs?true:false;
+	}
+	
+	/**
+	* Guarda los datos en la base de datos
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setVista($html = ''){
+		if ($this->getId() == '') return false;
+		
+		#ahora se borra
+		$db = TBase::conectaDB();
+		$db->Execute("delete from vista where idProducto = ".$this->getId());
+		
+		if ($html <> ''){
+			$rs = $db->Execute("INSERT INTO vista(idProducto, html) VALUES(".$this->getId().", '".$html."');");
+			if (!$rs) return false;
+		}		
+					
+		return true;
+	}
+	
+	/**
+	* Obtiene el código de la vista
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function getVista($html = ''){
+		if ($this->getId() == '') return false;
+		
+		#ahora se borra
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("select html from vista where idProducto = ".$this->getId());
+		
+		return $rs->fields['html'];
 	}
 }
 ?>
