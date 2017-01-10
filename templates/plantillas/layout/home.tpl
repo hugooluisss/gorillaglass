@@ -32,40 +32,10 @@
 				</form>
 			</div>
 		</nav>
-		<div class="bar icons">
-			{foreach from=$nodosPrimerNivel item="row"}
-			<a href="{$row.url}" title="{$row.nombre}"><img src="{$PAGE.iconos}/tipos/item1.png" /></a>
-			{/foreach}
-		</div>
 		
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-sm-6 col-xs-12">
-					<h3 class="page-title">{$nombreItem}</h3>
-				</div>
-				{if $vista eq ''}
-					<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
-						SORT BY
-						<div class="btn-group order">
-							<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
-							<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-							<div class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">NEWEST</a></li>
-								<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
-								<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
-								<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
-							</div>
-						</div>
-					</div>
-				{/if}
-			</div>
-		</div>
-		<br />
-		<div class="container">
-			{if $PAGE.vista neq ''}
-				{include file=$PAGE.vista}
-			{/if}
-		</div>
+		{if $PAGE.vista neq ''}
+			{include file=$PAGE.vista}
+		{/if}
 		
 		<div id="redesSociales" class="container text-center">
 			<a href="#">
@@ -114,13 +84,15 @@
 		</div>
 		<div id="footer">
 			<div class="container text-center">
-				<a href="#">Where to buy?</a>
+				{if $PAGE.sesion.perfil eq "cliente"}
+					<a href="#" class="addProducto" identificador="{$itemId}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+				{else}
+					<a href="inicio">Where to buy?</a>
+				{/if}
 			</div>
 		</div>
-    
-		{foreach from=$PAGE.scriptsJS item=script}
-			<script type="text/javascript" src="{$script}?m={rand()}"></script>
-		{/foreach}
+		
+		{include file=$PAGE.ruta|cat:"plantillas/modulos/front-end/carrito.tpl"}
 		
 		<!-- jQuery 2.1.4 -->
 		<script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -134,5 +106,14 @@
 		<script src="{$PAGE.ruta}plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
 	    
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
+    	
+    	<link rel="stylesheet" href="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.css">
+		<script src="{$PAGE.ruta}plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.min.js"></script>
+		<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>
+    	
+    	{foreach from=$PAGE.scriptsJS item=script}
+			<script type="text/javascript" src="{$script}?m={rand()}"></script>
+		{/foreach}
 	</body>
 </html>

@@ -16,9 +16,16 @@ $smarty->assign("nodosPrimerNivel", $datos);
 switch($objModulo->getId()){
 	case 'home':
 		$db = TBase::conectaDB();
+		global $sesion;
+		$rs = $db->Execute("select idPedido from pedido where idEstado = 1 and idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
+		
+		$smarty->assign("idPedido", $rs->fields['idPedido']);
+		$smarty->assign("cliente", $sesion['usuario']);
+		
 		$padre = $_GET['id'] == ''?'0':$_GET['id'];
 		$producto = new TProducto($padre);
 		$smarty->assign("nombreItem", $producto->getNombre());
+		$smarty->assign("itemId", $producto->getId());
 		
 		if($producto->getVista() <> '')
 			$smarty->assign("vista", $producto->getVista());
@@ -45,7 +52,7 @@ switch($objModulo->getId()){
 		}
 		#obtener la ruta del padre
 		$datos = array();
-		do{
+		while($padre <> 0){
 			$rs = $db->Execute("select idProducto, nombre, clave, idPadre from producto where idProducto = ".$padre);
 			$padre = $rs->fields['idPadre'];
 			array_push($datos, array(
@@ -53,16 +60,16 @@ switch($objModulo->getId()){
 				"clave" => $rs->fields['clave'],
 				"nombre" => $rs->fields['nombre']
 			));
-		}while($padre <> 0);
+		}
 		
-		if ($padre <> 0){
+		#if ($padre <> 0){
 			$rs = $db->Execute("select idProducto, nombre, clave, idPadre from producto where idProducto = ".$padre);
 			array_push($datos, array(
-					"url" => "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/",
-					"clave" => $rs->fields['clave'] == ''?'Home':$rs->fields['clave'],
-					"nombre" => $rs->fields['nombre'] == ''?'Home':$rs->fields['nombre']
+				"url" => "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/",
+				"clave" => $rs->fields['clave'] == ''?'Home':$rs->fields['clave'],
+				"nombre" => $rs->fields['nombre'] == ''?'Home':$rs->fields['nombre']
 			));
-		}
+		#}
 		
 		$smarty->assign("breadcrumb", array_reverse($datos));
 		
@@ -72,6 +79,26 @@ switch($objModulo->getId()){
 			
 			$smarty->assign("item", $rs->fields);
 		}
+	break;
+	case 'itemsElemento':
+		$item = $_POST['item'];
+		$db = TBase::conectaDB();
+		$index = $_POST['index'] + 1;
+		
+		if ($index > 3)
+			$rs = $db->Execute("select * from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0");
+		else
+			$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields["nombre2"] = substr($rs->fields['nombre'], 0, 10);
+			$rs->fields["index"] = $index;
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("lista", $datos);
 	break;
 }
 ?>

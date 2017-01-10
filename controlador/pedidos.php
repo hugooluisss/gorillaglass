@@ -75,11 +75,16 @@ switch($objModulo->getId()){
 			case 'guardar':
 				$obj = new TPedido($_POST['id']);
 				global $userSesion;
+				global $sesion;
 				$obj->setFecha($_POST['fecha']);
 				$obj->cliente->setId($_POST['cliente']);
 				
-				if ($_POST['id'] == '')
-					$obj->usuario->setId($_POST['usuario'] == ''?$userSesion->getId():$_POST['usuario']);
+				if ($_POST['id'] == ''){
+					if($sesion['perfil'] == 'cliente')
+						$obj->usuario->setId(15);
+					else
+						$obj->usuario->setId($_POST['usuario'] == ''?$userSesion->getId():$_POST['usuario']);
+				}
 				
 				if ($obj->guardar())
 					echo json_encode(array("band" => true, "id" => $obj->getId()));
@@ -110,9 +115,15 @@ switch($objModulo->getId()){
 					echo json_encode(array("band" => "false"));
 			break;
 			case 'delMovimiento':
-				$obj = new TMovimiento($_POST['id']);
+				$obj = new TMovimiento();
+				$band = true;
+				foreach(explode(",", $_POST['id']) as $el){
+					$obj->setId($el);
+					
+					$band = $obj->eliminar()?$band:false;
+				}
 				
-				if ($obj->eliminar())
+				if ($band)
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));

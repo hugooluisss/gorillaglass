@@ -19,6 +19,7 @@ class TCliente{
 	private $observaciones;
 	private $sitioweb;
 	private $estado;
+	private $pass;
 	
 	/**
 	* Constructor de la clase
@@ -377,6 +378,32 @@ class TCliente{
 	public function getEstado(){
 		return $this->estado == ''?'R':$this->estado;
 	}
+	
+	/**
+	* Establece su contraseña
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setPass($val = ''){
+		$this->pass = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el estado
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getPass(){
+		return $this->pass;
+	}
 		
 	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
@@ -412,7 +439,8 @@ class TCliente{
 				observaciones = '".$this->getObservaciones()."',
 				sitioweb = '".$this->getSitioWeb()."',
 				tipo = '".$this->getTipo()."',
-				estado = '".$this->getEstado()."'
+				estado = '".$this->getEstado()."',
+				pass = '".$this->getPass()."'
 			WHERE idCliente = ".$this->getId());
 			
 		return $rs?true:false;

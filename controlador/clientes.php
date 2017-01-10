@@ -18,6 +18,31 @@ switch($objModulo->getId()){
 	break;
 	case 'cclientes':
 		switch($objModulo->getAction()){
+			case 'confirmacion':
+				$obj = new TCliente();
+				$obj->setId(base64_decode($_GET['cliente']));
+				
+				$obj->setEstado("A");
+				$obj->guardar();
+				
+				$email = new TMail;
+				global $ini;
+				$email->setTema("Bienvenido");
+				$email->setDestino($obj->getEmail(), utf8_decode($obj->getNombre()));
+				
+				$datos = array();
+				$datos['cliente.nombre'] = $obj->getNombre();
+				$datos['sitio.url'] = $ini["sistema"]["urlmail"];
+				$datos['sitio.nombre'] = $ini["sistema"]["nombreEmpresa"];
+				$datos['cliente.urlconfirmacion'] = "?mod=cclientes&action=confirmacion&cliente=".base64_encode($obj->getId());
+				$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
+				
+				$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/confirmacionCuenta.html"), $datos)));
+				
+				$emailBand = $email->send();
+				
+				header('Location: inicio');
+			break;
 			case 'add':
 				$db = TBase::conectaDB();
 				$obj = new TCliente();
@@ -37,6 +62,7 @@ switch($objModulo->getId()){
 				$obj = new TCliente();
 				
 				$obj->setId($_POST['id']);
+				$emailBand = $obj->getNombre() == '';
 				$obj->setNombre($_POST['nombre']);
 				$obj->setRFC($_POST['rfc']);
 				$obj->setEmail($_POST['email']);
@@ -49,10 +75,32 @@ switch($objModulo->getId()){
 				$obj->setTipo($_POST['tipo']);
 				$obj->setSitioWeb($_POST['sitioWeb']);
 				$obj->setEstado($_POST['estado']);
+				$obj->setPass($_POST['pass']);
 				
+				$emailBand = true;
 				if ($obj->guardar()){
+					if ($emailBand){
+						$email = new TMail;
+						global $ini;
+						$email->setTema("Bienvenido");
+						$email->setDestino($obj->getEmail(), utf8_decode($obj->getNombre()));
+						
+						$datos = array();
+						$datos['cliente.nombre'] = $obj->getNombre();
+						$datos['sitio.url'] = $ini["sistema"]["urlmail"];
+						$datos['sitio.nombre'] = $ini["sistema"]["nombreEmpresa"];
+						$datos['cliente.urlconfirmacion'] = "?mod=cclientes&action=confirmacion&cliente=".base64_encode($obj->getId());
+						$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
+						$datos['cliente.email'] = $obj->getEmail();
+						$datos['cliente.pass'] = $obj->getPass();
+						
+						$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos)));
+						
+						$emailBand = $email->send();
+					}
+					
 					$rs = $db->Execute("select * from cliente where idCliente = ".$obj->getId());
-					echo json_encode(array("band" => true, "cliente" => $obj->getid(), "data" => json_encode($rs->fields)));
+					echo json_encode(array("band" => true, "cliente" => $obj->getid(), "data" => json_encode($rs->fields), "sendEmail" => $emailBand));
 				}else
 					echo json_encode(array("band" => false, "cliente" => $obj->getid()));
 				

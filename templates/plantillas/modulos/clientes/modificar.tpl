@@ -63,6 +63,12 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="txtPass" class="col-lg-2">Contraseña</label>
+				<div class="col-lg-3">
+					<input class="form-control" id="txtPass" name="txtPass" type="text" value="{$cliente->getPass()}">
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="txtRFC" class="col-lg-2">TaxID/VAT/Import number</label>
 				<div class="col-lg-3">
 					<input class="form-control" id="txtRFC" name="txtRFC" type="text" value="{$cliente->getRFC()}">

@@ -83,7 +83,7 @@ $conf['admonUsuarios'] = array(
 	'capa' => LAYOUT_DEFECTO);
 	
 $conf['panelPrincipal'] = array(
-	#'controlador' => 'index.php',
+	'controlador' => 'panelPrincipal.php',
 	'vista' => 'inicio.tpl',
 	'descripcion' => 'Vista del panel',
 	'seguridad' => true,

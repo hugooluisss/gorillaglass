@@ -1,0 +1,47 @@
+#modal-car{
+	background: rgba(0, 0, 0, 0.9);
+	color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	transition: all .5s;
+	z-index: 99999;
+	
+	display: none;
+	
+	table{
+		font-size: 12px;
+	}
+	
+	.modal-car-body{
+		background: white;
+		border: 2px solid black;
+		
+		&:first-child{
+			margin-top: 100px;
+		}
+		
+		&:last-child{
+			margin-top: 70px;
+		}
+	}
+	
+	.btn-addProducto{
+		border-radius: 10px;
+		border: @color-gris 1px solid;
+		
+	}
+	
+	#lnkCerrar{
+		color: @color-gris;
+	}
+	
+	.btn-delete{
+		background: #81BEF7;
+		font-size: 14px;
+		color: black;
+		margin-bottom: 15px;
+	}
+}

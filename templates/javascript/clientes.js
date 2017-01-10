@@ -28,6 +28,9 @@ $(document).ready(function(){
 				minlength: 7,
 				maxlength: 15,
 				number: true
+			},
+			txtPass: {
+				required: true
 			}
 		},
 		wrapper: 'span', 
@@ -53,12 +56,16 @@ $(document).ready(function(){
 				$("#selTipo").val(),
 				$("#txtSitio").val(),
 				$("#selEstado").val(),
+				$("#txtPass").val(),
 				{
 					after: function(datos){
 						if (datos.band){
 							getLista();
 							$("#frmAdd").get(0).reset();
 							$('#panelTabs a[href="#listas"]').tab('show');
+							
+							if(datos.sendEmail)
+								alert("Se envió un correo al cliente pidiendo que confirme su cuenta");
 						}else{
 							alert("Upps... No se guardaron los datos");
 						}
@@ -100,6 +107,7 @@ $(document).ready(function(){
 				$("#selTipo").val(el.tipo);
 				$("#txtSitio").val(el.sitioweb);
 				$("#selEstado").val(el.estado);
+				$("#txtPass").val(el.pass);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
