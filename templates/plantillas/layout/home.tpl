@@ -7,7 +7,7 @@
 	    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<title>.:: {$PAGE.empresaAcronimo} ::.</title>
 		<base href="{$PAGE.url}index.php" target="_top">
-		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}front-end/style.less" />
+		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}front-end/style.less?m={rand()}" />
 		
 		<link rel="stylesheet" href="{$PAGE.ruta}bootstrap/css/bootstrap.min.css">
 		
@@ -38,21 +38,21 @@
 		{/if}
 		
 		<div id="redesSociales" class="container text-center">
-			<a href="#">
+			<a href="https://www.facebook.com/GorillaGlass/">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-facebook fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="http://instagram.com/gorillaglass/">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-instagram fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="https://twitter.com/GorillaGlass1">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-twitter fa-stack-1x"></i>
@@ -85,7 +85,11 @@
 		<div id="footer">
 			<div class="container text-center">
 				{if $PAGE.sesion.perfil eq "cliente"}
-					<a href="#" class="addProducto" identificador="{$itemId}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+					{if $vista eq ''}
+						Our products
+					{else}
+						<a href="#" class="addProducto" identificador="{$itemId}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+					{/if}
 				{else}
 					<a href="inicio">Where to buy?</a>
 				{/if}

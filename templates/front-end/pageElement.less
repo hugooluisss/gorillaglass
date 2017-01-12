@@ -1,5 +1,10 @@
 #vistaPage{
 	color: #333;
+	overflow-x: hidden;
+	
+	img.full_width{
+		width: 100%;
+	}
 	
 	#color_swatches{
 		table{
@@ -10,7 +15,12 @@
 				height: 120px;
 				margin: 2% 10% 10%;
 				text-align: center;
-				width: 100px;
+				width: 90px;
+				
+				@media(max-width: @screen-xs-max){
+					width: auto;
+					font-size: 12px;
+				}
 				
 				dt{
 					display: block;
