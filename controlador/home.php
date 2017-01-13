@@ -27,6 +27,15 @@ switch($objModulo->getId()){
 		$smarty->assign("nombreItem", $producto->getNombre());
 		$smarty->assign("itemId", $producto->getId());
 		
+		$directorio  = scandir("repositorio/productos/producto_".$producto->getId()."/");			
+		$images = array();
+		foreach($directorio as $file){
+			if (!in_array($file, array("..", ".")))
+				array_push($images, $file);
+		}
+		$smarty->assign("images", $images);
+		
+		
 		if($producto->getVista() <> '')
 			$smarty->assign("vista", $producto->getVista());
 		else{
@@ -86,9 +95,9 @@ switch($objModulo->getId()){
 		$index = $_POST['index'] + 1;
 		
 		if ($index > 3)
-			$rs = $db->Execute("select * from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0");
+			$rs = $db->Execute("select * from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0 order by clave");
 		else
-			$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0");
+			$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0 order by clave");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields["nombre2"] = substr($rs->fields['nombre'], 0, 10);

@@ -25,10 +25,10 @@
 		<div class="col-md-offset-1 col-md-5 modal-car-body">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					{if count($item.img) eq 0}
-						<img src="{$PAGE.iconos}/items.jpg"/>
+					{if count($images) eq 0}
+						<img src="{$PAGE.iconos}/items.jpg" class="img-responsive"/>
 					{else}
-						<img src="repositorio/productos/producto_{$item.idProducto}/{$item.img[0]}"/>
+						<img src="repositorio/productos/producto_{$itemId}/{$images[0]}" class="img-responsive"/>
 					{/if}
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="col-md-5">
-						COLOR
+						VARATIONS <!--COLOR-->
 					</div>
 					<div class="col-md-7" id="color">
 						<div class="btn-group order">
@@ -49,7 +49,7 @@
 					</div>
 					<br /><br />
 					<div class="col-md-5">
-						VARATIONS
+						SIZE<!--VARATIONS-->
 					</div>
 					<div class="col-md-7" id="variacion">
 						<div class="btn-group order">
@@ -62,7 +62,7 @@
 					</div>
 					<br /><br />
 					<div class="col-md-5">
-						SIZE
+						VARATIONS<!--SIZE-->
 					</div>
 					<div class="col-md-7" id="size">
 						<div class="btn-group order">
