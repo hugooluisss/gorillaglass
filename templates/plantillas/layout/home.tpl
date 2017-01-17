@@ -80,7 +80,7 @@
 		</div>
 		
 		<div id="copyright" class="container text-center">
-			{date("Y")} GORILLA GLASS
+			{date("Y")} GORILLA GLASS &#8482;
 		</div>
 		<div id="footer">
 			<div class="container text-center">
@@ -88,15 +88,13 @@
 					{if $vista eq ''}
 						Our products
 					{else}
-						<a href="#" class="addProducto" identificador="{$itemId}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+						<a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
 					{/if}
 				{else}
 					<a href="inicio">Where to buy?</a>
 				{/if}
 			</div>
 		</div>
-		
-		{include file=$PAGE.ruta|cat:"plantillas/modulos/front-end/carrito.tpl"}
 		
 		<!-- jQuery 2.1.4 -->
 		<script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>

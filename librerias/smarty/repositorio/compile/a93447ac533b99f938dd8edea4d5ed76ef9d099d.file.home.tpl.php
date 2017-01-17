@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-12 09:12:45
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 08:59:10
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1484233872,
+      1 => 1484664785,
       2 => 'file',
     ),
   ),
@@ -182,4 +182,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 
 		</div>
 	</div>
+	
+	<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['ruta']).("plantillas/modulos/front-end/carrito.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 <?php }?><?php }} ?>

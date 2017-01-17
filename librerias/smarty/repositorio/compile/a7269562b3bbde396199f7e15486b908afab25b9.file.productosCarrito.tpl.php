@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-07 19:31:40
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 13:58:37
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1483839095,
+      1 => 1484683112,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'lista' => 0,
     'row' => 0,
+    'etiquetaDescuento' => 0,
+    'total' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -29,10 +31,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<tr>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
-			<th>Description</th>
-			<th>Quantity</th>
-			<th>Unit Price</th>
-			<th>Product Total</th>
+			<th class="hidden-xs text-center">Description</th>
+			<th class="text-center">
+				<span class="hidden-xs">Quantity</span>
+				<span class="visible-xs">Q</span>
+			</th>
+			<th class="text-center">
+				<span class="hidden-xs">Unit Price</span>
+				<span class="visible-xs">UP</span>
+			</th>
+			<th class="text-center">
+				<span class="hidden-xs">Product Total</span>
+				<span class="visible-xs">PT</span>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,9 +55,9 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 		<tr>
 			<td><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idMovimiento'];?>
 "/></td>
-			<td><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
+			<td ><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </td>
-			<td><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
+			<td class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
 </td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
 </td>
@@ -63,4 +74,22 @@ if (!$_smarty_tpl->tpl_vars["row"]->_loop) {
 			</tr>
 		<?php } ?>
 	</tbody>
-</table><?php }} ?>
+</table>
+
+<div class="row">
+	<div class="col-md-5">
+		<a class="btn btn-delete btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Remove selected items</a>
+	</div>
+	<div class="col-md-7">
+		<div class="alert alert-gris">
+			<div class="row">
+				<div class="col-xs-6 text-right">DISCOUNT</div>
+				<div class="col-xs-6 text-right"><?php echo $_smarty_tpl->tpl_vars['etiquetaDescuento']->value;?>
+%</div>
+				<div class="col-xs-6 text-right">SUBTOTAL(USD)</div>
+				<div class="col-xs-6 text-right"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+</div>
+			</div>
+		</div>
+	</div>
+</div><?php }} ?>

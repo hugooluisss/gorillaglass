@@ -6,7 +6,8 @@ TCarrito = function(){
 		
 		$.post("itemsElemento", {
 	    	"item": datos.identificador,
-	    	"index": datos.index
+	    	"index": datos.index,
+	    	"total": datos.total
 	    }, function(data){	
 			if (datos.after !== undefined)
 				datos.after(data);

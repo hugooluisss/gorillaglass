@@ -102,4 +102,6 @@
 		{$vista}
 		</div>
 	</div>
+	
+	{include file=$PAGE.ruta|cat:"plantillas/modulos/front-end/carrito.tpl"}
 {/if}

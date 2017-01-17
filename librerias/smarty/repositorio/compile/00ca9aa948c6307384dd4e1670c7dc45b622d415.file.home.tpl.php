@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-12 09:12:45
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 12:41:42
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484233872,
+      1 => 1484678498,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'PAGE' => 0,
+    'vista' => 0,
     'itemId' => 0,
+    'etiquetas' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
@@ -37,7 +39,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<base href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
 index.php" target="_top">
 		<link rel="stylesheet/less" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-front-end/style.less" />
+front-end/style.less?m=<?php echo rand();?>
+" />
 		
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 bootstrap/css/bootstrap.min.css">
@@ -75,21 +78,21 @@ iconCar.png" />
 		<?php }?>
 		
 		<div id="redesSociales" class="container text-center">
-			<a href="#">
+			<a href="https://www.facebook.com/GorillaGlass/">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-facebook fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="http://instagram.com/gorillaglass/">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-instagram fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="https://twitter.com/GorillaGlass1">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-twitter fa-stack-1x"></i>
@@ -118,21 +121,23 @@ iconCar.png" />
 		
 		<div id="copyright" class="container text-center">
 			<?php echo date("Y");?>
- GORILLA GLASS
+ GORILLA GLASS &#8482;
 		</div>
 		<div id="footer">
 			<div class="container text-center">
 				<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['sesion']['perfil']=="cliente"){?>
-					<a href="#" class="addProducto" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
+					<?php if ($_smarty_tpl->tpl_vars['vista']->value==''){?>
+						Our products
+					<?php }else{ ?>
+						<a href="#" class="addProducto" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
+" totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
 "><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+					<?php }?>
 				<?php }else{ ?>
 					<a href="inicio">Where to buy?</a>
 				<?php }?>
 			</div>
 		</div>
-		
-		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['ruta']).("plantillas/modulos/front-end/carrito.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
 		
 		<!-- jQuery 2.1.4 -->
 		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
