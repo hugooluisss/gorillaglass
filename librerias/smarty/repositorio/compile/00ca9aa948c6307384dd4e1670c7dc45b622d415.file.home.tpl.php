@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 12:41:42
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 22:54:01
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484678498,
+      1 => 1484714708,
       2 => 'file',
     ),
   ),
@@ -67,11 +67,17 @@ nombre.png" class="hidden-xs" />
 						<input type="text" class="form-control search" placeholder="Search">
 					</div>
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
-iconCar.png" />
+iconCar.png" id="mnuProfile" />
 				</form>
 			</div>
 		</nav>
-		
+		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['sesion']['perfil']=="cliente"){?>
+		<ul class="list-group" id="menuPrincipal">
+			<li class="list-group-item"><a href="profile">Profile</a></li>
+			<li class="list-group-item">Second item</li>
+			<li class="list-group-item">Third item</li>
+		</ul>
+		<?php }?>
 		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
 			<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

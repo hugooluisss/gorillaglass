@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/ionicons.min.css">
 	</head>
-	<body>
+	<body class="userConfig">
 		<nav class="menu-principal fixed">
 			<div class="barraNegra">&nbsp;</div>
 			
@@ -39,9 +39,20 @@
 			<li class="list-group-item">Third item</li>
 		</ul>
 		{/if}
-		{if $PAGE.vista neq ''}
-			{include file=$PAGE.vista}
-		{/if}
+		<div class="cuerpo">
+			<div class="col-sm-3">
+				<ul class="list-group">
+					<li class="list-group-item">First item</li>
+					<li class="list-group-item">Second item</li>
+					<li class="list-group-item">Third item</li>
+				</ul>
+			</div>
+			<div class="col-sm-9 border-left">
+				{if $PAGE.vista neq ''}
+					{include file=$PAGE.vista}
+				{/if}
+			</div>
+		</div>
 		
 		<div id="redesSociales" class="container text-center">
 			<a href="https://www.facebook.com/GorillaGlass/">

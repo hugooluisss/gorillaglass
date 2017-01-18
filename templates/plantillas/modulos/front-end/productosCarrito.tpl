@@ -2,7 +2,7 @@
 	<thead>
 		<tr>
 			<th>&nbsp;</th>
-			<th>&nbsp;</th>
+			<th class="visible-xs">&nbsp;</th>
 			<th class="hidden-xs text-center">Description</th>
 			<th class="text-center">
 				<span class="hidden-xs">Quantity</span>
@@ -22,7 +22,7 @@
 		{foreach from=$lista item="row"}
 		<tr>
 			<td><input type="checkbox" value="{$row.idMovimiento}"/></td>
-			<td >{$row.clave}</td>
+			<td class="visible-xs">{$row.clave}</td>
 			<td class="hidden-xs">{$row.descripcion}</td>
 			<td class="text-right">{$row.cantidad}</td>
 			<td class="text-right">{$row.precio / $row.cantidad}</td>

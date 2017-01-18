@@ -21,5 +21,14 @@ $conf['productosPedido'] = array(
 	'vista' => 'front-end/productosCarrito.tpl',
 	'descripcion' => 'Productos agregados a la compra',
 	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);	
+	'capa' => LAYOUT_AJAX);
+	
+$conf['profile'] = array(
+	#'controlador' => 'home.php',
+	'vista' => 'front-end/userAdmin/profile.tpl',
+	'descripcion' => 'El home',
+	'seguridad' => true,
+	'js' => array('carrito.class.js', 'pedido.class.js'),
+	'jsTemplate' => array('home.js'),
+	'capa' => LAYOUT_USER);
 ?>

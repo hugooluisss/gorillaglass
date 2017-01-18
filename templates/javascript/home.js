@@ -47,7 +47,6 @@ $(document).ready(function(){
 	});
 	
 	$("[href=#lnkCerrar]").each(function(i, el){
-		console.info(el);
 		$(el).click(function(){
 			$("#modal-car").fadeOut("slow");
 		});
@@ -123,4 +122,9 @@ $(document).ready(function(){
 			}
 		});
 	}
+	
+	
+	$("#mnuProfile").click(function(){
+		$("#menuPrincipal").toggle("slow");
+	});
 });

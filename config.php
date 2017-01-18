@@ -11,6 +11,7 @@ define('LAYOUT_DEFECTO', 'layout/default.tpl');
 define('LAYOUT_AJAX', 'layout/update.tpl');
 define('LAYOUT_JSON', 'layout/json.tpl');
 define('LAYOUT_HOME', 'layout/home.tpl');
+define('LAYOUT_USER', 'layout/userAdmin.tpl');
 
 #Login y su controlador
 $conf['inicio'] = array(
