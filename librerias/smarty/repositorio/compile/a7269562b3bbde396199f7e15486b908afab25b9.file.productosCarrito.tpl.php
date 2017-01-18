@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 13:58:37
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 09:42:20
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1484683112,
+      1 => 1484749506,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<thead>
 		<tr>
 			<th>&nbsp;</th>
-			<th>&nbsp;</th>
+			<th class="visible-xs">&nbsp;</th>
 			<th class="hidden-xs text-center">Description</th>
 			<th class="text-center">
 				<span class="hidden-xs">Quantity</span>
@@ -55,7 +55,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 		<tr>
 			<td><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idMovimiento'];?>
 "/></td>
-			<td ><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
+			<td class="visible-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </td>
 			<td class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
 </td>

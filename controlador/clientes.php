@@ -47,7 +47,7 @@ switch($objModulo->getId()){
 				$db = TBase::conectaDB();
 				$obj = new TCliente();
 				
-				if ($_POST['cliente'] <> ''){
+				if ($_POST['id'] <> ''){
 					$rs = $db->Execute("select idCliente from cliente where email = '".$_POST['email']."'");
 					
 					if (!$rs->EOF){ #si es que encontró el email
@@ -77,7 +77,7 @@ switch($objModulo->getId()){
 				$obj->setEstado($_POST['estado']);
 				$obj->setPass($_POST['pass']);
 				
-				$emailBand = true;
+				#$emailBand = true;
 				if ($obj->guardar()){
 					if ($emailBand){
 						$email = new TMail;

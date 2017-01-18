@@ -19,8 +19,10 @@
 			<div class="barraNegra">&nbsp;</div>
 			
 			<div class="block left">
-				<img src="{$PAGE.iconos}logo.png" class="logo"/>
-				<img src="{$PAGE.iconos}nombre.png" class="hidden-xs" />
+				<a href="welcome">
+					<img src="{$PAGE.iconos}logo.png" class="logo"/>
+					<img src="{$PAGE.iconos}nombre.png" class="hidden-xs" />
+				</a>
 			</div>
 			
 			<div class="block right">
@@ -32,83 +34,20 @@
 				</form>
 			</div>
 		</nav>
-		{if $PAGE.sesion.perfil eq "cliente"}
-		<ul class="list-group" id="menuPrincipal">
-			<li class="list-group-item"><a href="profile">Profile</a></li>
-			<li class="list-group-item">Second item</li>
-			<li class="list-group-item">Third item</li>
-		</ul>
-		{/if}
+		{include file=$PAGE.rutaModulos|cat:"modulos/front-end/menuPrincipal.tpl"}
 		<div class="cuerpo">
-			<div class="col-sm-3">
-				<ul class="list-group">
-					<li class="list-group-item">First item</li>
-					<li class="list-group-item">Second item</li>
-					<li class="list-group-item">Third item</li>
+			<div class="col-sm-3 hidden-xs">
+				<ul class="list-group menu">
+					<li class="list-group-item"><a href="home">Home</a></li>
+					<li class="list-group-item"><a href="profile">Profile</a></li>
+					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
+					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
+					<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-9 border-left">
 				{if $PAGE.vista neq ''}
 					{include file=$PAGE.vista}
-				{/if}
-			</div>
-		</div>
-		
-		<div id="redesSociales" class="container text-center">
-			<a href="https://www.facebook.com/GorillaGlass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-facebook fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="http://instagram.com/gorillaglass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-instagram fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="https://twitter.com/GorillaGlass1">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-twitter fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="#">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-youtube-play fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="#">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-envelope-o fa-stack-1x"></i>
-				</span>
-			</a>
-		</div>
-		<div id="otherLinks" class="container text-center">
-			<a href="#">BUY WHOLESALE</a>
-			<a href="#">BUY RETAIL</a>
-			<a href="#">CONTACT US</a>
-		</div>
-		
-		<div id="copyright" class="container text-center">
-			{date("Y")} GORILLA GLASS &#8482;
-		</div>
-		<div id="footer">
-			<div class="container text-center">
-				{if $PAGE.sesion.perfil eq "cliente"}
-					{if $vista eq ''}
-						Our products
-					{else}
-						<a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
-					{/if}
-				{else}
-					<a href="inicio">Where to buy?</a>
 				{/if}
 			</div>
 		</div>
@@ -129,7 +68,8 @@
     	<link rel="stylesheet" href="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.css">
 		<script src="{$PAGE.ruta}plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.min.js"></script>
-		<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>
+		<!--<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>-->
+		<script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.js"></script>
     	
     	{foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>

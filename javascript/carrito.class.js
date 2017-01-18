@@ -17,7 +17,7 @@ TCarrito = function(){
 	this.getProductos = function(datos){
 		if (datos.before !== undefined) datos.before();
 		
-		$.post("productosPedido", {
+		$.post("productosPedidoCarrito", {
 			"idPedido": datos.idPedido
 		},
 		function(data){	

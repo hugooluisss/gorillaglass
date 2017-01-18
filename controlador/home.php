@@ -82,13 +82,14 @@ switch($objModulo->getId()){
 			));
 		}
 		
+		/*
 		$rs = $db->Execute("select idProducto, nombre, clave, idPadre from producto where idProducto = ".$padre);
 		array_push($datos, array(
 			"url" => "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/",
 			"clave" => $rs->fields['clave'] == ''?'Home':$rs->fields['clave'],
 			"nombre" => $rs->fields['nombre'] == ''?'Home':$rs->fields['nombre']
 		));
-		
+		*/
 		$smarty->assign("breadcrumb", array_reverse($datos));
 		
 		if (count($hijos) == 0){

@@ -19,8 +19,10 @@
 			<div class="barraNegra">&nbsp;</div>
 			
 			<div class="block left">
-				<img src="{$PAGE.iconos}logo.png" class="logo"/>
-				<img src="{$PAGE.iconos}nombre.png" class="hidden-xs" />
+				<a href="welcome">
+					<img src="{$PAGE.iconos}logo.png" class="logo"/>
+					<img src="{$PAGE.iconos}nombre.png" class="hidden-xs" />
+				</a>
 			</div>
 			
 			<div class="block right">
@@ -32,17 +34,16 @@
 				</form>
 			</div>
 		</nav>
-		{if $PAGE.sesion.perfil eq "cliente"}
-		<ul class="list-group" id="menuPrincipal">
-			<li class="list-group-item"><a href="profile">Profile</a></li>
-			<li class="list-group-item">Second item</li>
-			<li class="list-group-item">Third item</li>
-		</ul>
-		{/if}
+		{include file=$PAGE.rutaModulos|cat:"modulos/front-end/menuPrincipal.tpl"}
 		{if $PAGE.vista neq ''}
 			{include file=$PAGE.vista}
 		{/if}
-		
+		<div id="footer_icons" class="col-xs-12 text-center">
+					{foreach from=$nodosPrimerNivel item="row"}
+						<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
+					{/foreach}
+            </div>
+            
 		<div id="redesSociales" class="container text-center">
 			<a href="https://www.facebook.com/GorillaGlass/">
 				<span class="fa-stack fa-2x">
@@ -65,14 +66,14 @@
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="https://www.youtube.com/c/GorillaGlassJewelry">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-youtube-play fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="#">
+			<a href="mailto:sales@getgorilla.com">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-envelope-o fa-stack-1x"></i>
@@ -80,9 +81,9 @@
 			</a>
 		</div>
 		<div id="otherLinks" class="container text-center">
-			<a href="#">BUY WHOLESALE</a>
-			<a href="#">BUY RETAIL</a>
-			<a href="#">CONTACT US</a>
+			<a href="welcome">BUY WHOLESALE</a>
+			<a href="retailLocator">BUY RETAIL</a>
+			<a href="contact">CONTACT US</a>
 		</div>
 		
 		<div id="copyright" class="container text-center">
@@ -91,13 +92,13 @@
 		<div id="footer">
 			<div class="container text-center">
 				{if $PAGE.sesion.perfil eq "cliente"}
-					{if $vista eq ''}
-						Our products
-					{else}
+					{if $vista neq ''}
 						<a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
+					{else}
+						Choose a product
 					{/if}
 				{else}
-					<a href="inicio">Where to buy?</a>
+					<a href="retailLocator">Where to buy?</a>
 				{/if}
 			</div>
 		</div>
@@ -119,6 +120,8 @@
 		<script src="{$PAGE.ruta}plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.min.js"></script>
 		<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>
+		
+		<script src="{$PAGE.ruta}plugins/sldr.js"></script>
     	
     	{foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>

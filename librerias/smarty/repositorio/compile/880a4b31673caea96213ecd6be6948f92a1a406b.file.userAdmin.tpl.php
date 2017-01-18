@@ -1,35 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 13:52:40
-         compiled from "templates/plantillas/layout/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 11:18:21
+         compiled from "templates/plantillas/layout/userAdmin.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:737534811587f7d5e2ec5a5-22847262%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
+    '880a4b31673caea96213ecd6be6948f92a1a406b' => 
     array (
-      0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484769158,
+      0 => 'templates/plantillas/layout/userAdmin.tpl',
+      1 => 1484759888,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2049699628584f7ba0b4e4a3-81677027',
+  'nocache_hash' => '737534811587f7d5e2ec5a5-22847262',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_584f7ba0cd00b9_16621546',
+  'unifunc' => 'content_587f7d5e3b24c9_26657684',
   'variables' => 
   array (
     'PAGE' => 0,
-    'nodosPrimerNivel' => 0,
-    'row' => 0,
-    'vista' => 0,
-    'itemId' => 0,
-    'etiquetas' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_584f7ba0cd00b9_16621546')) {function content_584f7ba0cd00b9_16621546($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_587f7d5e3b24c9_26657684')) {function content_587f7d5e3b24c9_26657684($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -52,17 +47,15 @@ dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 dist/css/ionicons.min.css">
 	</head>
-	<body>
+	<body class="userConfig">
 		<nav class="menu-principal fixed">
 			<div class="barraNegra">&nbsp;</div>
 			
 			<div class="block left">
-				<a href="welcome">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 logo.png" class="logo"/>
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
+				<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 nombre.png" class="hidden-xs" />
-				</a>
 			</div>
 			
 			<div class="block right">
@@ -77,80 +70,20 @@ iconCar.png" id="mnuProfile" />
 		</nav>
 		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/front-end/menuPrincipal.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
-			<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+		<div class="cuerpo">
+			<div class="col-sm-3 hidden-xs">
+				<ul class="list-group menu">
+					<li class="list-group-item"><a href="home">Home</a></li>
+					<li class="list-group-item"><a href="profile">Profile</a></li>
+					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
+					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
+					<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 border-left">
+				<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
+					<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-		<?php }?>
-		<div id="footer_icons" class="col-xs-12 text-center">
-					<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
-$_smarty_tpl->tpl_vars["row"]->_loop = true;
-?>
-						<div class="footer_link"><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</a></div>
-					<?php } ?>
-            </div>
-            
-		<div id="redesSociales" class="container text-center">
-			<a href="https://www.facebook.com/GorillaGlass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-facebook fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="http://instagram.com/gorillaglass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-instagram fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="https://twitter.com/GorillaGlass1">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-twitter fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="https://www.youtube.com/c/GorillaGlassJewelry">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-youtube-play fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="mailto:sales@getgorilla.com">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-envelope-o fa-stack-1x"></i>
-				</span>
-			</a>
-		</div>
-		<div id="otherLinks" class="container text-center">
-			<a href="welcome">BUY WHOLESALE</a>
-			<a href="retailLocator">BUY RETAIL</a>
-			<a href="contact">CONTACT US</a>
-		</div>
-		
-		<div id="copyright" class="container text-center">
-			<?php echo date("Y");?>
- GORILLA GLASS &#8482;
-		</div>
-		<div id="footer">
-			<div class="container text-center">
-				<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['sesion']['perfil']=="cliente"){?>
-					<?php if ($_smarty_tpl->tpl_vars['vista']->value!=''){?>
-						<a href="#" class="addProducto" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
-" totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
-"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
-					<?php }else{ ?>
-						Choose a product
-					<?php }?>
-				<?php }else{ ?>
-					<a href="retailLocator">Where to buy?</a>
 				<?php }?>
 			</div>
 		</div>
@@ -181,11 +114,10 @@ plugins/datatables/dataTables.bootstrap.css">
 plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/datatables/dataTables.bootstrap.min.js"></script>
-		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-plugins/datatables/lenguaje/ES-mx.js"></script>
-		
-		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-plugins/sldr.js"></script>
+		<!--<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/datatables/lenguaje/ES-mx.js"></script>-->
+		<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/validate/validate.js"></script>
     	
     	<?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

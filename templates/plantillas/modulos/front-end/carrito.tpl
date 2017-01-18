@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-6">
 					Done adding products?<br />
-					<a href="#">Go to your prole page to place the order</a>
+					<a href="#">Go to your profile page to place the order</a>
 				</div>
 			</div>
 		</div>
