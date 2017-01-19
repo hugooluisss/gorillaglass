@@ -83,12 +83,27 @@ $conf['contact'] = array(
 	'descripcion' => 'Contacto',
 	'seguridad' => false,
 	#'js' => array('carrito.class.js', 'pedido.class.js'),
-	#'jsTemplate' => array('welcome.js', 'menuPrincipal.js'),
+	'jsTemplate' => array('menuPrincipal.js'),
 	'capa' => LAYOUT_HOME);
 	
 $conf['chome'] = array(
 	'controlador' => 'home.php',
 	'descripcion' => 'controlador del home',
 	'seguridad' => false,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['signup'] = array(
+	#'controlador' => 'signup.php',
+	'vista' => 'front-end/signup.tpl',
+	'descripcion' => 'Registro de clientes',
+	'seguridad' => false,
+	'js' => array('cliente.class.js'),
+	'jsTemplate' => array('registro.js', 'menuPrincipal.js'),
+	'capa' => LAYOUT_REGISTRO);
+	
+$conf['cuserAdmin'] = array(
+	'controlador' => 'userAdmin.php',
+	'descripcion' => 'Controlador para las acciones del usuario',
+	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 ?>

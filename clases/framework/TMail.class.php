@@ -23,12 +23,12 @@ class TMail{
 		$datos = $rs->fields;
 		#$this->phpMailer->CharSet("UTF8");
 		
-		#$this->phpMailer->SMTPDebug  = 1;
-		
+		#$this->phpMailer->SMTPDebug  = 2;
+
 		$this->empresa['nombreCorto'] = utf8_decode($ini['sistema']['nombreEmpresa']);
 		$this->phpMailer->IsSMTP();
 		$this->phpMailer->Port = 25;
-		$this->phpMailer->Host = $ini['mail']['server'];
+		$this->phpMailer->Host = "mail.getgorilla.com";
 
 		$this->phpMailer->SMTPAuth = true;
 		$this->phpMailer->Username = $ini['mail']['user'];

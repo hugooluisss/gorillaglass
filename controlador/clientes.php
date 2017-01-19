@@ -47,17 +47,17 @@ switch($objModulo->getId()){
 				$db = TBase::conectaDB();
 				$obj = new TCliente();
 				
-				if ($_POST['id'] <> ''){
+				//if ($_POST['id'] <> ''){
 					$rs = $db->Execute("select idCliente from cliente where email = '".$_POST['email']."'");
 					
 					if (!$rs->EOF){ #si es que encontró el email
 						if ($rs->fields["idCliente"] <> $_POST['id']){
 							$obj->setId($rs->fields['idCliente']);
-							echo json_encode(array("band" => false, "mensaje" => "El correo electrónico ya se encuentra registrado con el cliente ".$obj->getNombre()));
+							echo json_encode(array("band" => false, "mensaje" => "El correo electrónico ya se encuentra registrado con el cliente ".$obj->getNombre(), "message" => "Email account is already registered with another user"));
 							exit(1);
 						}
 					}
-				}
+				//}
 
 				$obj = new TCliente();
 				
@@ -77,7 +77,7 @@ switch($objModulo->getId()){
 				$obj->setEstado($_POST['estado']);
 				$obj->setPass($_POST['pass']);
 				
-				#$emailBand = true;
+				$emailBand = true;
 				if ($obj->guardar()){
 					if ($emailBand){
 						$email = new TMail;

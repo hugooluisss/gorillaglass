@@ -1,10 +1,16 @@
 $(document).ready(function(){
 	$(".generarListaPrecios").click(function(){
-		var valor = $(".generarListaPrecios").val();
+		var valor = $("#multiplicador").val();
 		if (valor < 1 || valor == '')
-			alert("Indica un valor mayor a 0");
+			alert("Indicates a value greater than 0");
 		else{
-			alert("Ok");
+			$.post("cuserAdmin", {
+				"multiplicador": valor,
+				"action": "multiplicador",
+				"json": 1
+			}, function(resp){
+				
+			}, "json");
 		}
 	});
 });

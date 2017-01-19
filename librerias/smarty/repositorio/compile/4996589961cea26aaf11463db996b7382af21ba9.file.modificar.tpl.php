@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-04 11:28:03
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 10:53:59
          compiled from "templates/plantillas/modulos/clientes/modificar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:592971822586d30a37992c4-11249721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4996589961cea26aaf11463db996b7382af21ba9' => 
     array (
       0 => 'templates/plantillas/modulos/clientes/modificar.tpl',
-      1 => 1475694184,
+      1 => 1484233872,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_586d30a3844573_81743194',
   'variables' => 
   array (
     'PAGE' => 0,
     'cliente' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_586d30a3844573_81743194',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_586d30a3844573_81743194')) {function content_586d30a3844573_81743194($_smarty_tpl) {?><form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
 	<div class="box">
@@ -92,6 +92,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<label for="txtEmail" class="col-lg-2">Correo electrónico</label>
 				<div class="col-lg-3">
 					<input class="form-control" id="txtEmail" name="txtEmail" type="email" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getEmail();?>
+">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtPass" class="col-lg-2">Contraseña</label>
+				<div class="col-lg-3">
+					<input class="form-control" id="txtPass" name="txtPass" type="text" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getPass();?>
 ">
 				</div>
 			</div>

@@ -151,6 +151,13 @@ switch($objModulo->getId()){
 				$db = TBase::conectaDB();
 				$db->Execute("delete from articulo");
 				
+				$colores = array();
+				$rs = $db->Execute("select * from color");
+				while(!$rs->EOF){
+					array_push($colores, $rs->fields['clave']);
+					$rs->moveNext();
+				}
+				
 				$rs = $db->Execute("select * from producto where idProducto not in (select idPadre from producto)");
 				$buffer = array();
 				$cont = 0;
@@ -160,6 +167,9 @@ switch($objModulo->getId()){
 					$precio = $rs->fields['precio'];
 					$nombre = $rs->fields['nombre'];
 					$clave = $rs->fields['clave'];
+					
+					if (!in_array($clave, $colores))
+						$nombre2 = $rs->fields['nombre'];
 					
 					while($producto['idProducto'] <> $producto['idPadre']){
 						if (!isset($buffer[$producto['idPadre']])){
@@ -173,9 +183,12 @@ switch($objModulo->getId()){
 							$nombre = $producto['nombre'].($nombre == ''?"":", ").$nombre;
 							$clave = $producto['clave'].($clave == ''?"":"-").$clave;
 							$precio += $producto['precio'];
+							
+							if (!in_array($producto['clave'], $colores))
+								$nombre2 = $producto['nombre'].($nombre2 == ''?"":", ").$nombre2;
 						}
 					}
-					$db->Execute("insert into articulo(idProducto, clave, nombre, descripcion, precio) value (".$rs->fields['idProducto'].", '".$clave."', '".$nombre."', '".$rs->fields['descripcion']."', ".$precio.")");
+					$db->Execute("insert into articulo(idProducto, clave, nombre, descripcion, descripcion2, precio) value (".$rs->fields['idProducto'].", '".$clave."', '".$nombre."', '".$nombre2."', '".$rs->fields['descripcion']."', ".$precio.")");
 					$rs->moveNext();
 					$cont++;
 				}

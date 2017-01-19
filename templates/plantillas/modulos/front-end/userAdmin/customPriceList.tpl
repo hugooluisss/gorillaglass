@@ -12,7 +12,9 @@
 		<br />
 	</div>
 </div>
-
+<div class="alert alert-danger" style="display: none">
+	<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> <strong>Please wait</strong> we are evaluating your registration.
+</div>
 <div class="row">
 	<div class="col-xs-12">
 		What is your maekup rate? <input type="number" id="multiplicador" /> <span class="text-muted">All wholesale prices will be multiplied by this number</span>

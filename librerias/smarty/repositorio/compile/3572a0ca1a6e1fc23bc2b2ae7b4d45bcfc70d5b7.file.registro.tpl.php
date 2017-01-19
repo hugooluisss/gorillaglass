@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 09:53:21
-         compiled from "templates/plantillas/layout/userAdmin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:737534811587f7d5e2ec5a5-22847262%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 10:00:32
+         compiled from "templates/plantillas/layout/registro.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:136771655880e154490179-57722569%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '880a4b31673caea96213ecd6be6948f92a1a406b' => 
+    '3572a0ca1a6e1fc23bc2b2ae7b4d45bcfc70d5b7' => 
     array (
-      0 => 'templates/plantillas/layout/userAdmin.tpl',
-      1 => 1484763024,
+      0 => 'templates/plantillas/layout/registro.tpl',
+      1 => 1484841581,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '737534811587f7d5e2ec5a5-22847262',
+  'nocache_hash' => '136771655880e154490179-57722569',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_587f7d5e3b24c9_26657684',
+  'unifunc' => 'content_5880e1545423f5_85682253',
   'variables' => 
   array (
     'PAGE' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_587f7d5e3b24c9_26657684')) {function content_587f7d5e3b24c9_26657684($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5880e1545423f5_85682253')) {function content_5880e1545423f5_85682253($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -47,7 +47,7 @@ dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 dist/css/ionicons.min.css">
 	</head>
-	<body class="userConfig">
+	<body class="registro">
 		<nav class="menu-principal fixed">
 			<div class="barraNegra">&nbsp;</div>
 			
@@ -73,16 +73,7 @@ iconCar.png" id="mnuProfile" />
 		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/front-end/menuPrincipal.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 		<div class="cuerpo">
-			<div class="col-sm-3 hidden-xs">
-				<ul class="list-group menu">
-					<li class="list-group-item"><a href="home">Home</a></li>
-					<li class="list-group-item"><a href="profile">Profile</a></li>
-					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
-					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
-					<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-9 border-left">
+			<div class="col-xs-12">
 				<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
 					<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

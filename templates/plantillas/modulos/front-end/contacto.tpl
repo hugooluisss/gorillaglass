@@ -1,8 +1,13 @@
 <div class="container reatilLocator">
 	<div class="row">
+		<br />
+		<br />
+		<br />
 		<!-- BEGIN COLUMN -->
 		<div class="col-xs-12">
-			<h2 class="product_name">Contact</h2>
+			<div class="page-header">
+				<h3>Contact</h3>
+			</div>
 			<p>Contact us to place your wholesale orders, send us your questions, requests for custom pieces and any other inquiries to our email: <a href="mailto:sales@getgorilla.com">sales@getgorilla.com</a>  </p>
 			<p><a href="mailto:sales@getgorilla.com">Click here to use your default email client.  </a></p>
 			<p>Or give us a call to (831) 469-3665  from Monday to Friday 8am - 4.30pm CST </p>
@@ -14,12 +19,6 @@
 			<p>Gorilla Glass Inc.  <br>
 			848 N Rainbow Blvd #3492 <br>
 			Las Vegas, NV 89107</p>
-			
-			<div id="footer_icons" class="col-xs-12">
-				{foreach from=$nodosPrimerNivel item="row"}
-					<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
-				{/foreach}
-            </div>
 		
 		</div>
 		<!-- END COLUMN -->

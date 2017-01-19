@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 09:36:40
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 10:45:10
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484840199,
+      1 => 1484844309,
       2 => 'file',
     ),
   ),
@@ -102,7 +102,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 	        	</div>
 			</div>
         <?php }?>
-            
+            <br />
 		<div id="redesSociales" class="container text-center">
 			<a href="https://www.facebook.com/GorillaGlass/">
 				<span class="fa-stack fa-2x">

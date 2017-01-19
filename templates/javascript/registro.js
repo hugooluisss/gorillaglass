@@ -3,6 +3,12 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
+			txtTienda: "required",
+			txtDireccion: "required",
+			txtEmail:{
+				required: true,
+				email: true
+			},
 			txtTelefono: {
 				required : false,
 				minlength: 7,
@@ -17,6 +23,9 @@ $(document).ready(function(){
 			},
 			txtPass: {
 				required: true
+			},
+			txtPassConfirm:{
+				equalTo: "#txtPass"
 			}
 		},
 		wrapper: 'span', 
@@ -41,13 +50,16 @@ $(document).ready(function(){
 				{
 					before: function(){
 						$("#frmAdd").find("[type=submit]").prop("disabled", true);
+						$(".alert").show();
 					},
 					after: function(datos){
 						$("#frmAdd").find("[type=submit]").prop("disabled", false);
+						$(".alert").hide();
 						if (datos.band){
-							alert("Gracias por actualizar tu información");
+							alert("Thanks for registering with us, we are evaluating your information and we will notify you when your account is activated");
+							location.href = "welcome";
 						}else{
-							alert("Upps... No se guardaron los datos");
+							alert(datos.message);
 						}
 					}
 				}

@@ -12,7 +12,7 @@ switch($objModulo->getId()){
 		switch($objModulo->getAction()){
 			case 'login': case 'validarCredenciales':
 				$db = TBase::conectaDB();
-				$rs = $db->Execute("select idCliente, pass from cliente where upper(email) = upper('".$_POST['usuario']."')");
+				$rs = $db->Execute("select idCliente, pass from cliente where upper(email) = upper('".$_POST['usuario']."') and estado = 'A'");
 				$result = array('band' => false, 'mensaje' => 'Error al consultar los datos');
 				
 				if($rs->EOF)

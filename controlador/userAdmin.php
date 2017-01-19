@@ -52,5 +52,43 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("ordenes", $datos);
 	break;
+	case 'cuserAdmin':
+		switch($objModulo->getAction()){
+			case 'multiplicador':
+				print_r(recursionNodos(0));
+			break;
+		}
+	break;
+}
+
+
+function recursionNodos($padre, $total = 0){
+	$db = TBase::conectaDB();
+	global $contador;
+	$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto order by clave");
+	
+	while(!$rs->EOF){
+		
+		$rs->moveNext();
+	}
+	/*
+	
+	if ($rs->EOF)
+		return null;
+	else{
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['contador'] = $contador++;
+			$rs->fields['total'] = sprintf("%0.2f", $total + $rs->fields['precio']);
+			$rs->fields['json'] = json_encode($rs->fields);
+			
+			#$rs->fields['hijos'] = recursionNodos($rs->fields['idProducto'], $total + $rs->fields['precio']);
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		return $datos;
+	}
+	*/
 }
 ?>

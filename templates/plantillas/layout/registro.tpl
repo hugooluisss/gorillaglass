@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/ionicons.min.css">
 	</head>
-	<body>
+	<body class="registro">
 		<nav class="menu-principal fixed">
 			<div class="barraNegra">&nbsp;</div>
 			
@@ -35,80 +35,10 @@
 			</div>
 		</nav>
 		{include file=$PAGE.rutaModulos|cat:"modulos/front-end/menuPrincipal.tpl"}
-		{if $PAGE.vista neq ''}
-			{include file=$PAGE.vista}
-		{/if}
-		{if $PAGE.modulo neq 'welcome'}
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-			        	{foreach from=$nodosPrimerNivel item="row"}
-			        		<div class="col-xs-6 col-sm-2 text-center">
-			        			 <span class="product_link">
-			        			 	<a href="{$row.url}">{$row.nombre}</a>
-			        			 </span>
-			        		</div>
-						{/foreach}
-					</div>
-	        	</div>
-			</div>
-        {/if}
-            <br />
-		<div id="redesSociales" class="container text-center">
-			<a href="https://www.facebook.com/GorillaGlass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-facebook fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="http://instagram.com/gorillaglass/">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-instagram fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="https://twitter.com/GorillaGlass1">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-twitter fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="https://www.youtube.com/c/GorillaGlassJewelry">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-youtube-play fa-stack-1x"></i>
-				</span>
-			</a>
-			
-			<a href="mailto:sales@getgorilla.com">
-				<span class="fa-stack fa-2x">
-					<i class="fa fa-circle-thin fa-stack-2x"></i>
-					<i class="fa fa-envelope-o fa-stack-1x"></i>
-				</span>
-			</a>
-		</div>
-		<div id="otherLinks" class="container text-center">
-			<a href="welcome">BUY WHOLESALE</a>
-			<a href="retailLocator">BUY RETAIL</a>
-			<a href="contact">CONTACT US</a>
-		</div>
-		
-		<div id="copyright" class="container text-center">
-			{date("Y")} GORILLA GLASS &#8482;
-		</div>
-		<div id="footer">
-			<div class="container text-center">
-				{if $PAGE.sesion.perfil eq "cliente"}
-					{if $vista neq ''}
-						<a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a>
-					{else}
-						Choose a product
-					{/if}
-				{else}
-					<a href="retailLocator">Where to buy?</a>
+		<div class="cuerpo">
+			<div class="col-xs-12">
+				{if $PAGE.vista neq ''}
+					{include file=$PAGE.vista}
 				{/if}
 			</div>
 		</div>
@@ -129,9 +59,8 @@
     	<link rel="stylesheet" href="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.css">
 		<script src="{$PAGE.ruta}plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="{$PAGE.ruta}plugins/datatables/dataTables.bootstrap.min.js"></script>
-		<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>
-		
-		<script src="{$PAGE.ruta}plugins/sldr.js"></script>
+		<!--<script src="{$PAGE.ruta}plugins/datatables/lenguaje/ES-mx.js"></script>-->
+		<script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.js"></script>
     	
     	{foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>
