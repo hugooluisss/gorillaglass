@@ -12,6 +12,7 @@ class TProducto{
 	private $nombre;
 	private $descripcion;
 	private $html;
+	private $visita;
 	/**
 	* Constructor de la clase
 	*
@@ -364,6 +365,24 @@ class TProducto{
 		$rs = $db->Execute("select html from vista where idProducto = ".$this->getId());
 		
 		return $rs->fields['html'];
+	}
+	
+	/**
+	* Incrementa el número de visitas
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function addVisita(){
+		if ($this->getId() == '') return false;
+		
+		#ahora se borra
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("update producto set visitas = visitas + 1 where idProducto = ".$this->getId());
+		
+		return $rs?true:false;
 	}
 }
 ?>

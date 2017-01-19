@@ -122,4 +122,12 @@ $(document).ready(function(){
 			}
 		});
 	}
+	
+	$("a.order").click(function(){
+		var orden = $(this).attr("valor");
+		document.cookie = "ordenProductos=" + orden;
+		location.reload();
+		
+		return false;
+	});
 });

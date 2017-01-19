@@ -16,13 +16,11 @@
 				<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
 					SORT BY
 					<div class="btn-group order">
-						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
+						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{if $ordenProductos eq ''}NEWEST{else}{$ordenProductos}{/if}&nbsp;</button>
 						<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 						<div class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">NEWEST</a></li>
-							<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
+							<li><a class="dropdown-item order" valor="NEWEST" href="#">NEWEST</a></li>
+							<li><a class="dropdown-item order" valor="MOST POPULAR" href="#">MOST POPULAR</a></li>
 						</div>
 					</div>
 				</div>

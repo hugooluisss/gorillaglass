@@ -38,11 +38,17 @@
 		{if $PAGE.vista neq ''}
 			{include file=$PAGE.vista}
 		{/if}
-		<div id="footer_icons" class="col-xs-12 text-center">
-					{foreach from=$nodosPrimerNivel item="row"}
-						<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
-					{/foreach}
-            </div>
+		{if $PAGE.modulo neq 'welcome'}
+			<div class="container">
+				<div class="row">
+					<div id="footer_iconss" class="col-xs-12">
+						{foreach from=$nodosPrimerNivel item="row"}
+							<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
+						{/foreach}
+					</div>
+				</div>
+			</div>
+        {/if}
             
 		<div id="redesSociales" class="container text-center">
 			<a href="https://www.facebook.com/GorillaGlass/">

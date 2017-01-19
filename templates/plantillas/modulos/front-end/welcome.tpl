@@ -30,10 +30,17 @@
       <div class="row">
       	<!-- BEGIN LEFT COLUMN -->
         <div class="col-sm-7">
+        	<div class="row">
+        	{foreach from=$nodosPrimerNivel item="row"}
+        		<div class="col-xs-2 col-sm-2">
+					<div class="footer_links"><a href="{$row.url}">{$row.nombre}</a></div>
+        		</div>
+			{/foreach}
+        	</div>
         	<div id="footer_icons" class="col-xs-12">
-					{foreach from=$nodosPrimerNivel item="row"}
-						<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
-					{/foreach}
+				{foreach from=$nodosPrimerNivel item="row"}
+					<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
+				{/foreach}
             </div><!-- /footer_icons -->
             
             <div class="featured_product">

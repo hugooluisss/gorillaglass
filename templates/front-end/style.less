@@ -343,26 +343,43 @@ ul.animate {
 	}
 }
 
+div.footer_links{
+	background: url("../../repositorio/img/anterior/footer_link_bg.png") center center no-repeat;
+	height: 80px;
+	width: 80px;
+	text-align: center;
+	line-height: 1.1;
+	
+	a{
+		padding-top: 35px;
+		color: white;
+	}
+}
+
 div#footer_icons {
     margin: 2em auto;
-    text-align: center;
-    
-    div {
+    display: flex;
+    justify-content: center;
+    div{
 		background-image: url("../../repositorio/img/anterior/footer_link_bg.png");
 		color: white;
-		float: left;
 		font-size: 75%;
 		height: 80px;
-		line-height: 1.1;
-		margin: 20px;
-		text-align: center;
-		text-transform: uppercase;
 		width: 80px;
-		display: inline;
+		min-height: 80px;
+		min-width: 80px;
+		//line-height: 1.1;
+		margin: 20px;
+		text-transform: uppercase;
+		text-align: center;
+		padding-top: 35px;
+		float: left;
+		
 		a{
 			color: white;
-			display: block;
 			margin-top: 35px;
+			margin-left: auto;
+			width: 80px;
 		}
 	}
 }

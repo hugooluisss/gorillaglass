@@ -142,6 +142,13 @@
 	#product_specs{
 		margin: 3em 0;
 		
+		.observation {
+			color: #bebab9;
+			margin-top: 0.75em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		
 		.wrap{
 			float: left;
 			white-space: nowrap;
@@ -179,6 +186,69 @@
 			font-weight: bold;
 			text-align: center;
 			text-transform: uppercase;
+		}
+		
+		h3.material{
+			color: #bebab9;
+			font-size: 120%;
+			margin-top: 0.75em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		
+		table{
+			&.product_weight, &.product_code_size{
+				th{
+					color: #bebab9;
+					font-size: 120%;
+					font-weight: normal;
+					margin-top: 0.75em;
+					text-align: center;
+					text-transform: uppercase;
+				}
+				
+				td.product_size_gague {
+					font-weight: bold;
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+			}
+			
+			&.product_weight{
+				width: 100%;
+				
+				tr{
+					float: none;
+					//display: block;
+					th{
+						text-align: center;
+						color: #bebab9;
+						font-size: 120%;
+						font-weight: normal;
+						margin-top: 0.75em;
+						text-transform: uppercase;
+					}
+					
+					+ tr{
+						float: left;
+						
+						+ tr{
+							float: right;
+						}
+					}
+					
+					td{
+						padding: 0 5px;
+						&.product_weight_oz{
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		
+			&.product_code_size{
+				margin: 2em auto;
+			}
 		}
 	}
 	

@@ -30,6 +30,9 @@ switch($objModulo->getId()){
 		$smarty->assign("nombreItem", $producto->getNombre());
 		$smarty->assign("itemId", $producto->getId());
 		
+		if ($producto->getId() <> 0 )
+			$producto->addVisita();
+		
 		$productoPadre = new TProducto($producto->getPadre());
 		if ($productoPadre->getPadre() == 0){
 			$json = json_decode(file_get_contents("repositorio/etiquetas/etiquetas.json"));
@@ -46,11 +49,23 @@ switch($objModulo->getId()){
 		}
 		$smarty->assign("images", $images);
 		
-		
 		if($producto->getVista() <> '')
 			$smarty->assign("vista", $producto->getVista());
 		else{
-			$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idProducto = 0");
+			switch($_COOKIE['ordenProductos']){
+				case 'MOST POPULAR':
+					$orden = "order by visitas desc";
+				break;
+				case 'NEWEST': default:
+					$orden = "order by idProducto desc";
+					#setcookie("ordenProductos", "NEWEST");
+					$_COOKIE['ordenProductos'] = "NEWEST";
+				break;
+			}
+			
+			$smarty->assign("ordenProductos", $_COOKIE['ordenProductos']);
+			
+			$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idProducto = 0 ".$orden);
 			$datos = array();
 			while(!$rs->EOF){
 				$rs->fields['url'] = "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/";
@@ -118,6 +133,14 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("lista", $datos);
+	break;
+	case 'chome':
+		switch($objModulo->getAction()){
+			case 'setOrden':
+				#setcookie("ordenProductos", $_POST['orden'], time() + 3600);
+				$_COOKIE['ordenProductos'] = $_POST['orden'];
+			break;
+		}
 	break;
 }
 ?>

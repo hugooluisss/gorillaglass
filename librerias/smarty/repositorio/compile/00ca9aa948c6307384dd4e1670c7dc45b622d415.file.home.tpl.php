@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 13:52:40
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 23:11:30
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484769158,
+      1 => 1484802688,
       2 => 'file',
     ),
   ),
@@ -81,17 +81,23 @@ iconCar.png" id="mnuProfile" />
 			<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 		<?php }?>
-		<div id="footer_icons" class="col-xs-12 text-center">
-					<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']!='welcome'){?>
+			<div class="container">
+				<div class="row">
+					<div id="footer_icons" class="col-xs-12">
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-						<div class="footer_link"><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+							<div class="footer_link"><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </a></div>
-					<?php } ?>
-            </div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+        <?php }?>
             
 		<div id="redesSociales" class="container text-center">
 			<a href="https://www.facebook.com/GorillaGlass/">

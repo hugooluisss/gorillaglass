@@ -1,7 +1,7 @@
 <?php
 global $objModulo;
 switch($objModulo->getId()){
-	case 'productosPedido':
+	case 'productosPedidoCarrito':
 		if ($_POST['idPedido']){
 			$db = TBase::conectaDB();
 			$rs = $db->Execute("select * from movpedido where idPedido = ".$_POST['idPedido']);

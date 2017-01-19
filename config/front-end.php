@@ -85,4 +85,10 @@ $conf['contact'] = array(
 	#'js' => array('carrito.class.js', 'pedido.class.js'),
 	#'jsTemplate' => array('welcome.js', 'menuPrincipal.js'),
 	'capa' => LAYOUT_HOME);
+	
+$conf['chome'] = array(
+	'controlador' => 'home.php',
+	'descripcion' => 'controlador del home',
+	'seguridad' => false,
+	'capa' => LAYOUT_AJAX);
 ?>

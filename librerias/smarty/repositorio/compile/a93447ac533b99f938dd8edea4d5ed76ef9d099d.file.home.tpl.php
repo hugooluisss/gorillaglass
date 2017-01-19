@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 10:10:59
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 22:48:24
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1484753336,
+      1 => 1484800849,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nodosPrimerNivel' => 0,
     'row' => 0,
     'nombreItem' => 0,
+    'ordenProductos' => 0,
     'breadcrumb' => 0,
     'hijos' => 0,
     'PAGE' => 0,
@@ -57,13 +58,12 @@ _hover.png"' onmouseout='javascript: this.src="repositorio/img/iconosproductos/<
 				<div class="col-md-4 col-sm-6 col-xs-12 pull-right text-right">
 					SORT BY
 					<div class="btn-group order">
-						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NEWEST</button>
+						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php if ($_smarty_tpl->tpl_vars['ordenProductos']->value==''){?>NEWEST<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['ordenProductos']->value;?>
+<?php }?>&nbsp;</button>
 						<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 						<div class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">NEWEST</a></li>
-							<li><a class="dropdown-item" href="#">MOST POPLUAR</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (SM TO LG)</a></li>
-							<li><a class="dropdown-item" href="#">GAUGE SIZE (LG TO SM)</a></li>
+							<li><a class="dropdown-item order" valor="NEWEST" href="#">NEWEST</a></li>
+							<li><a class="dropdown-item order" valor="MOST POPULAR" href="#">MOST POPULAR</a></li>
 						</div>
 					</div>
 				</div>
