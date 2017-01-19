@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 22:04:20
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 09:29:04
          compiled from "templates/plantillas/modulos/front-end/welcome.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176813172587fb01526a4d9-97341779%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e496914c7860c136c99b068bd20d43d1247eb3d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/welcome.tpl',
-      1 => 1484769785,
+      1 => 1484839730,
       2 => 'file',
     ),
   ),
@@ -56,22 +56,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="row">
       	<!-- BEGIN LEFT COLUMN -->
         <div class="col-sm-7">
-        	<div id="footer_icons" class="col-xs-12">
-					<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+        	<div class="row">
+        	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-						<div class="footer_link"><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+        		<div class="col-xs-6 col-sm-2 text-center">
+        			 <span class="product_link">
+        			 	<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</a></div>
-					<?php } ?>
-            </div><!-- /footer_icons -->
+</a>
+        			 </span>
+        		</div>
+			<?php } ?>
+        	</div>
             
             <div class="featured_product">
             	<h2>Featured Design</h2>
                 <h3>Dichroic Crescent Hoops</h3>
-                <a href="crescent_dichroic_hoops.php"><img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" /></a>
+                <img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" />
             </div><!-- /featured_product -->
             
         </div>
@@ -93,15 +97,15 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
             <div class="locator">
             	<h2>Where to Purchase</h2>
                 <div class="col-xs-4">
-                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla" /></a>
-                	<h3><a href="inicio.php">Wholesale</a></h3>
+                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="inicio.php">Wholesale</a>
                 </div>
                 <div class="col-xs-4">
-                	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" />
+                	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" class="img-responsive" />
                 </div>
                 <div class="col-xs-4">
-                	<a href="retailLocator"><img src="repositorio/img/anterior/home_gorilla_right.png" alt="Gorilla" class="gorilla" /></a>
-                	<h3><a href="retailLocator">Retail Locator</a></h3>
+                	<a href="retailLocator"><img src="repositorio/img/anterior/home_gorilla_right.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="retailLocator">Retail Locator</a>
                 </div>
             </div>
                 

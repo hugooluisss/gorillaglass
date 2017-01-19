@@ -41,12 +41,16 @@
 		{if $PAGE.modulo neq 'welcome'}
 			<div class="container">
 				<div class="row">
-					<div id="footer_iconss" class="col-xs-12">
-						{foreach from=$nodosPrimerNivel item="row"}
-							<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
+					<div class="col-md-10 col-md-offset-1">
+			        	{foreach from=$nodosPrimerNivel item="row"}
+			        		<div class="col-xs-6 col-sm-2 text-center">
+			        			 <span class="product_link">
+			        			 	<a href="{$row.url}">{$row.nombre}</a>
+			        			 </span>
+			        		</div>
 						{/foreach}
 					</div>
-				</div>
+	        	</div>
 			</div>
         {/if}
             

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 23:11:30
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 09:36:40
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484802688,
+      1 => 1484840199,
       2 => 'file',
     ),
   ),
@@ -84,18 +84,22 @@ iconCar.png" id="mnuProfile" />
 		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']!='welcome'){?>
 			<div class="container">
 				<div class="row">
-					<div id="footer_icons" class="col-xs-12">
-						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+					<div class="col-md-10 col-md-offset-1">
+			        	<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-							<div class="footer_link"><a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
+			        		<div class="col-xs-6 col-sm-2 text-center">
+			        			 <span class="product_link">
+			        			 	<a href="<?php echo $_smarty_tpl->tpl_vars['row']->value['url'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</a></div>
+</a>
+			        			 </span>
+			        		</div>
 						<?php } ?>
 					</div>
-				</div>
+	        	</div>
 			</div>
         <?php }?>
             

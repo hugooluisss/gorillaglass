@@ -32,21 +32,18 @@
         <div class="col-sm-7">
         	<div class="row">
         	{foreach from=$nodosPrimerNivel item="row"}
-        		<div class="col-xs-2 col-sm-2">
-					<div class="footer_links"><a href="{$row.url}">{$row.nombre}</a></div>
+        		<div class="col-xs-6 col-sm-2 text-center">
+        			 <span class="product_link">
+        			 	<a href="{$row.url}">{$row.nombre}</a>
+        			 </span>
         		</div>
 			{/foreach}
         	</div>
-        	<div id="footer_icons" class="col-xs-12">
-				{foreach from=$nodosPrimerNivel item="row"}
-					<div class="footer_link"><a href="{$row.url}">{$row.nombre}</a></div>
-				{/foreach}
-            </div><!-- /footer_icons -->
             
             <div class="featured_product">
             	<h2>Featured Design</h2>
                 <h3>Dichroic Crescent Hoops</h3>
-                <a href="crescent_dichroic_hoops.php"><img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" /></a>
+                <img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" />
             </div><!-- /featured_product -->
             
         </div>
@@ -68,15 +65,15 @@
             <div class="locator">
             	<h2>Where to Purchase</h2>
                 <div class="col-xs-4">
-                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla" /></a>
-                	<h3><a href="inicio.php">Wholesale</a></h3>
+                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="inicio.php">Wholesale</a>
                 </div>
                 <div class="col-xs-4">
-                	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" />
+                	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" class="img-responsive" />
                 </div>
                 <div class="col-xs-4">
-                	<a href="retailLocator"><img src="repositorio/img/anterior/home_gorilla_right.png" alt="Gorilla" class="gorilla" /></a>
-                	<h3><a href="retailLocator">Retail Locator</a></h3>
+                	<a href="retailLocator"><img src="repositorio/img/anterior/home_gorilla_right.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="retailLocator">Retail Locator</a>
                 </div>
             </div>
                 
