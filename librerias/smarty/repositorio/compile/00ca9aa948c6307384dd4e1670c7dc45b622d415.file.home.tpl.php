@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 21:47:01
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-20 09:41:39
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484884019,
+      1 => 1484926896,
       2 => 'file',
     ),
   ),
@@ -68,7 +68,7 @@ nombre.png" class="hidden-xs" />
 			<div class="block right">
 				<form class="navbar-form" role="search">
 					<div class="form-group text-right">
-						<input type="text" class="form-control search" placeholder="Search">
+						<!--<input type="text" class="form-control search" placeholder="Search">-->
 					</div>
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 iconCar.png" id="mnuProfile" />

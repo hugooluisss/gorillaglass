@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /gorillaglass/
+RewriteBase /gorillasglass/
 #RewriteBase /gorillaglass/
 
 RewriteCond %{SCRIPT_FILENAME} !-d

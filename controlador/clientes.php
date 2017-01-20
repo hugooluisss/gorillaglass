@@ -63,6 +63,9 @@ switch($objModulo->getId()){
 				
 				$obj->setId($_POST['id']);
 				$emailBand = $obj->getNombre() == '';
+				
+				$edo = $obj->getEstado();
+				
 				$obj->setNombre($_POST['nombre']);
 				$obj->setRFC($_POST['rfc']);
 				$obj->setEmail($_POST['email']);
@@ -77,26 +80,57 @@ switch($objModulo->getId()){
 				$obj->setEstado($_POST['estado']);
 				$obj->setPass($_POST['pass']);
 				
-				$emailBand = true;
+				//$emailBand = true;
 				if ($obj->guardar()){
-					if ($emailBand){
+					global $ini;
+					$datos = array();
+					$datos['cliente.nombre'] = $obj->getNombre();
+					$datos['sitio.url'] = $ini["sistema"]["urlmail"];
+					$datos['sitio.nombre'] = $ini["sistema"]["nombreEmpresa"];
+					$datos['cliente.urlconfirmacion'] = "?mod=cclientes&action=confirmacion&cliente=".base64_encode($obj->getId());
+					$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
+					$datos['cliente.email'] = $obj->getEmail();
+					$datos['cliente.pass'] = $obj->getPass();
+						
+					if ($_POST['id'] == ''){
 						$email = new TMail;
-						global $ini;
-						$email->setTema("Bienvenido");
-						$email->setDestino($obj->getEmail(), utf8_decode($obj->getNombre()));
 						
-						$datos = array();
-						$datos['cliente.nombre'] = $obj->getNombre();
-						$datos['sitio.url'] = $ini["sistema"]["urlmail"];
-						$datos['sitio.nombre'] = $ini["sistema"]["nombreEmpresa"];
-						$datos['cliente.urlconfirmacion'] = "?mod=cclientes&action=confirmacion&cliente=".base64_encode($obj->getId());
-						$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
-						$datos['cliente.email'] = $obj->getEmail();
-						$datos['cliente.pass'] = $obj->getPass();
+						#$email->setTema("Bienvenido");
+						#$email->setDestino($obj->getEmail(), utf8_decode($obj->getNombre()));
 						
-						$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos)));
+						#$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos)));
+						$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos));
+						$subject = "Bienvenido";
 						
-						$emailBand = $email->send();
+						$headers   = array();
+						$headers = "MIME-Version: 1.0;\r\n";
+						$headers .= "Content-type: text/html; charset=iso-8859-1;\r\n";
+						$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
+						$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
+						#$headers .= "Subject: Bienvenido;\r\n";
+						#$headers .= "X-Mailer: PHP/".phpversion().";\r\n";  
+						#$headers .= "Content-Transfer-Encoding: 8bit;\r\n";  
+						
+						//$emailBand = $email->send();
+						#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
+						$emailBand = imap_mail($obj->getEmail(), $subject, $message, $headers);
+					}else{
+						#hay que ver si cambió a activado
+						if ($edo == 'R' and $obj->getEstado() == 'A'){
+							$email = new TMail;
+							
+							$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/confirmacionCuenta.html"), $datos));
+							$subject = "Cuenta activada";
+							
+							$headers   = array();
+							$headers = "MIME-Version: 1.0;\r\n";
+							$headers .= "Content-type: text/html; charset=iso-8859-1;\r\n";
+							$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
+							$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
+							
+							$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
+							$emailBand = imap_mail($obj->getEmail(), $subject, $message, $headers);
+						}
 					}
 					
 					$rs = $db->Execute("select * from cliente where idCliente = ".$obj->getId());

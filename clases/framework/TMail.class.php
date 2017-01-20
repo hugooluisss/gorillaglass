@@ -23,20 +23,21 @@ class TMail{
 		$datos = $rs->fields;
 		#$this->phpMailer->CharSet("UTF8");
 		
-		#$this->phpMailer->SMTPDebug  = 2;
+		$this->phpMailer->SMTPDebug  = 2;
 
 		$this->empresa['nombreCorto'] = utf8_decode($ini['sistema']['nombreEmpresa']);
 		$this->phpMailer->IsSMTP();
-		$this->phpMailer->Port = 25;
+		$this->phpMailer->Port = 587;
 		$this->phpMailer->Host = "mail.getgorilla.com";
 
 		$this->phpMailer->SMTPAuth = true;
-		$this->phpMailer->Username = $ini['mail']['user'];
-		$this->phpMailer->Password = $ini['mail']['pass'];
+		#$this->phpMailer->Username = $ini['mail']['user'];
+		$this->phpMailer->Username = "ggcart@getgorilla.com";
+		$this->phpMailer->Password = "g0r1ll4#89";
 		$this->phpMailer->IsHTML(true);
 		$this->phpMailer->FromName = utf8_decode($ini['sistema']['nombre']);
 		$this->setDirOrigen($ini['mail']['user']);
-		#$this->phpMailer->SMTPSecure = 'tls';
+		$this->phpMailer->SMTPSecure = 'tls';
 		if ($ini['mail']['contestarA'] <> '')
 			$this->phpMailer->AddReplyTo($ini['mail']['contestarA']);
 			

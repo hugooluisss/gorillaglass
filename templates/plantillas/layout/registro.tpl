@@ -28,7 +28,7 @@
 			<div class="block right">
 				<form class="navbar-form" role="search">
 					<div class="form-group text-right">
-						<input type="text" class="form-control search" placeholder="Search">
+						<!--<input type="text" class="form-control search" placeholder="Search">-->
 					</div>
 					<img src="{$PAGE.iconos}iconCar.png" id="mnuProfile" />
 				</form>
