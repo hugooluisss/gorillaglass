@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 22:16:29
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-20 12:47:22
          compiled from "templates/plantillas/modulos/front-end/userAdmin/customPriceList.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:229630043587fa0ea14d3b0-13207640%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '49628b3ad6124495d2be5c33c39a3be70374116c' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/customPriceList.tpl',
-      1 => 1484856389,
+      1 => 1484925144,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		What is your maekup rate? <input type="number" id="multiplicador" /> <span class="text-muted">All wholesale prices will be multiplied by this number</span>
+		What is your maekup rate? <input type="number" id="multiplicador" value="1" class="text-right"/> <span class="text-muted">All wholesale prices will be multiplied by this number</span>
 	</div>
 </div>
 <div class="row">

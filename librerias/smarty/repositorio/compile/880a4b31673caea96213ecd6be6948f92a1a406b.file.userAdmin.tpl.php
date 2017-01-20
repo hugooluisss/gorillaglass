@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 22:17:49
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-20 12:47:22
          compiled from "templates/plantillas/layout/userAdmin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:737534811587f7d5e2ec5a5-22847262%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '880a4b31673caea96213ecd6be6948f92a1a406b' => 
     array (
       0 => 'templates/plantillas/layout/userAdmin.tpl',
-      1 => 1484885867,
+      1 => 1484926922,
       2 => 'file',
     ),
   ),
@@ -63,7 +63,7 @@ nombre.png" class="hidden-xs" />
 			<div class="block right">
 				<form class="navbar-form" role="search">
 					<div class="form-group text-right">
-						<input type="text" class="form-control search" placeholder="Search">
+						<!--<input type="text" class="form-control search" placeholder="Search">-->
 					</div>
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['iconos'];?>
 iconCar.png" id="mnuProfile" />
@@ -75,11 +75,12 @@ iconCar.png" id="mnuProfile" />
 		<div class="cuerpo">
 			<div class="col-sm-3 hidden-xs">
 				<ul class="list-group menu">
-					<li class="list-group-item"><a href="home">Home</a></li>
+					<li class="list-group-item"><a href="welcome">Home</a></li>
 					<li class="list-group-item"><a href="profile">Profile</a></li>
 					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
 					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
 					<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
+					<li class="list-group-item"><a href="cuseradmin" target="_blank">Price List</a></li>
 					<li class="list-group-item"><a href="logout">Logout</a></li>
 				</ul>
 			</div>

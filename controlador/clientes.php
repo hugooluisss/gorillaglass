@@ -128,7 +128,7 @@ switch($objModulo->getId()){
 							$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
 							$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
 							
-							$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
+							#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
 							$emailBand = imap_mail($obj->getEmail(), $subject, $message, $headers);
 						}
 					}
@@ -156,7 +156,7 @@ switch($objModulo->getId()){
 					foreach($rs->fields as $key => $val)
 						$el[$key] = $val;
 						
-					array_push($datos, $el);
+					$datos[$codigo] = $el;
 					$rs->moveNext();
 				}
 				

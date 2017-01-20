@@ -30,7 +30,7 @@ class RProductos extends tFPDF{
 		$this->SetXY(95, 20);
 		$this->Ln(1);
 		$this->Cell(0, 5, "GorillaGlass", 0, 0, 'C');
-		$this->SetFont('Arial', 'B', 8);
+		$this->SetFont('Arial', 'B', 6);
 		$this->Ln(5);
 		$this->Cell(50, 5, "DATE: ".date("Y-m-d"), 0, 0, 'L');
 		
@@ -39,9 +39,11 @@ class RProductos extends tFPDF{
 		$this->SetXY(10, 40);
 		$ancho = 4;
 		$this->SetTextColor(255, 255, 255);
-		$this->Cell(37, $ancho, "CODE", 1, 0, 'C', true);
-		$this->Cell(117, $ancho, "DESCRIPTION", 1, 0, 'C', true);
-		$this->Cell(12, $ancho, "PRICE", 1, 1, 'C', true);
+		$this->Cell(27, $ancho, "CODE", 1, 0, 'C', true);
+		$this->Cell(100, $ancho, "DESCRIPTION", 1, 0, 'C', true);
+		$this->SetFont('Arial', 'B', 4);
+		$this->Cell(19.5, $ancho, "PRICE PER PIECE (USD)", 1, 0, 'C', true);
+		$this->Cell(19.5, $ancho, "PRICE PER PAIR (USD)", 1, 1, 'C', true);
 		$this->SetTextColor(0, 0, 0);
 		$this->SetFont('Arial', '', 7);
 	}
@@ -54,9 +56,16 @@ class RProductos extends tFPDF{
 		$cont = 0;
 		
 		foreach($productos as $producto){
-			$this->Cell(37, $ancho, $producto["clave"], "LR");
-			$this->Cell(117, $ancho, $producto["descripcion2"], 'R');
-			$this->Cell(12, $ancho, sprintf("%.2f", $producto["precio"]), 'R', 0, 'R');
+			$this->Cell(27, $ancho, $producto["clave"], "LR");
+			$this->Cell(100, $ancho, $producto["descripcion2"], 'R');
+			$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"]), 'R', 0, 'R');
+			
+			$clave = explode("-", $producto["clave"]);
+			if(in_array($clave[0], array("P", "W", "E", "F")))
+				$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"] * 2), 'R', 0, 'R');
+			else
+				$this->Cell(19.5, $ancho, "", 'R', 0, 'R');
+				
 			$this->Ln($ancho);
 			$cont++;
 			if ($cont % 53 == 0){

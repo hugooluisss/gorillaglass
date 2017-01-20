@@ -61,9 +61,24 @@ switch($objModulo->getId()){
 			case 'multiplicador': default:
 				$db = TBase::conectaDB();
 				$multiplicador = $_POST['multiplicador'] == ''?1:$_POST['multiplicador'];
+				$colores = array();
+				$rs = $db->Execute("select * from color");
+				while(!$rs->EOF){
+					array_push($colores, $rs->fields['clave']);
+					$rs->moveNext();
+				}
+				
+				
 				$rs = $db->Execute("select * from articulo group by descripcion2");
 				$datos = array();
 				while(!$rs->EOF){
+					$codigo = "";
+					foreach(explode("-", $rs->fields["clave"]) as $code){
+						if (!in_array($code, $colores))
+							$codigo .= ($codigo == ''?'':'-').$code;
+					}
+					
+					$rs->fields['clave'] = $codigo;
 					$rs->fields["precio"] *= $multiplicador;
 					array_push($datos, $rs->fields);
 					$rs->moveNext();
@@ -71,6 +86,7 @@ switch($objModulo->getId()){
 				
 				require_once(getcwd()."/repositorio/pdf/productos.php");
 				$pdf = new RProductos();
+				asort($datos);
 				$pdf->generar($datos);
 				if($objModulo->getAction() == '')
 					$pdf->Output2();
