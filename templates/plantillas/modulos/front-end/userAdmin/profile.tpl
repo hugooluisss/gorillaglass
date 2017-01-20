@@ -18,13 +18,13 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtTienda" class="col-sm-2 col-form-label col-form-label-lg">Store Name</label>
+				<label for="txtTienda" class="col-sm-2 col-form-label col-form-label-lg">Business Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control form-control-lg" id="txtTienda" name="txtTienda" value="{$cliente->getRazonSocial()}">
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtDireccion" class="col-sm-2 col-form-label col-form-label-lg">Store Address</label>
+				<label for="txtDireccion" class="col-sm-2 col-form-label col-form-label-lg">Business Address</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control form-control-lg" id="txtDireccion" name="txtDireccion" value="{$cliente->getDireccion()}">
 				</div>
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtSitioWeb" class="col-sm-2 col-form-label col-form-label-lg">Website</label>
+				<label for="txtSitioWeb" class="col-sm-2 col-form-label col-form-label-lg">Website/Social Media</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="{$cliente->getSitioweb()}">
 				</div>

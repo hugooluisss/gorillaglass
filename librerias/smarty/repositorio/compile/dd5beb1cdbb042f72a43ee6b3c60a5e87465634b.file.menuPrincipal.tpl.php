@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 22:48:24
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 22:17:49
          compiled from "templates/plantillas/modulos/front-end/menuPrincipal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1404781656587f8a2ddd1597-55379527%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dd5beb1cdbb042f72a43ee6b3c60a5e87465634b' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/menuPrincipal.tpl',
-      1 => 1484801008,
+      1 => 1484885850,
       2 => 'file',
     ),
   ),
@@ -29,10 +29,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
 		<li class="list-group-item"><a href="orderHistory">Order History</a></li>
 		<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
+		<li class="list-group-item"><a href="logout">Logout</a></li>
 	</ul>		
 <?php }else{ ?>
 	<ul class="list-group" id="menuPrincipal">
-		<li class="list-group-item">Are you a vendedor?<br /><a href="signup">Sign up for a wholesale account!</a></li>
+		<li class="list-group-item">Are you a vendor?<br /><a href="signup">Sign up for a wholesale account!</a></li>
 		<li class="list-group-item"><a href="inicio">Log in</a></li>
 	</ul>
 <?php }?><?php }} ?>

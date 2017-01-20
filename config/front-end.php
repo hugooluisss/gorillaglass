@@ -106,4 +106,6 @@ $conf['cuserAdmin'] = array(
 	'descripcion' => 'Controlador para las acciones del usuario',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['cuseradmin'] = $conf['cuserAdmin'];
 ?>

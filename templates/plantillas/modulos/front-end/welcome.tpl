@@ -65,8 +65,8 @@
             <div class="locator">
             	<h2>Where to Purchase</h2>
                 <div class="col-xs-4">
-                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
-                	<a href="inicio.php">Wholesale</a>
+                	<a href="inicio"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="signup">Wholesale</a>
                 </div>
                 <div class="col-xs-4">
                 	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" class="img-responsive" />

@@ -18,6 +18,9 @@ switch($objModulo->getId()){
 		
 			$smarty->assign("idPedido", $rs->fields['idPedido']);
 			$smarty->assign("cliente", $sesion['usuario']);
+			
+			if ($sesion['perfil'] == "cliente")
+				$smarty->assign("clienteObj", new TCliente($sesion['usuario']));
 		}
 	break;
 	case 'orderHistory':
@@ -53,42 +56,28 @@ switch($objModulo->getId()){
 		$smarty->assign("ordenes", $datos);
 	break;
 	case 'cuserAdmin':
+	case 'cuseradmin':
 		switch($objModulo->getAction()){
-			case 'multiplicador':
-				print_r(recursionNodos(0));
+			case 'multiplicador': default:
+				$db = TBase::conectaDB();
+				$multiplicador = $_POST['multiplicador'] == ''?1:$_POST['multiplicador'];
+				$rs = $db->Execute("select * from articulo group by descripcion2");
+				$datos = array();
+				while(!$rs->EOF){
+					$rs->fields["precio"] *= $multiplicador;
+					array_push($datos, $rs->fields);
+					$rs->moveNext();
+				}
+				
+				require_once(getcwd()."/repositorio/pdf/productos.php");
+				$pdf = new RProductos();
+				$pdf->generar($datos);
+				if($objModulo->getAction() == '')
+					$pdf->Output2();
+				else
+					$smarty->assign("json", array("band" => true, "documento" => $pdf->output()));
 			break;
 		}
 	break;
-}
-
-
-function recursionNodos($padre, $total = 0){
-	$db = TBase::conectaDB();
-	global $contador;
-	$rs = $db->Execute("select * from producto where idPadre = ".$padre." and not idPadre = idProducto order by clave");
-	
-	while(!$rs->EOF){
-		
-		$rs->moveNext();
-	}
-	/*
-	
-	if ($rs->EOF)
-		return null;
-	else{
-		$datos = array();
-		while(!$rs->EOF){
-			$rs->fields['contador'] = $contador++;
-			$rs->fields['total'] = sprintf("%0.2f", $total + $rs->fields['precio']);
-			$rs->fields['json'] = json_encode($rs->fields);
-			
-			#$rs->fields['hijos'] = recursionNodos($rs->fields['idProducto'], $total + $rs->fields['precio']);
-			array_push($datos, $rs->fields);
-			$rs->moveNext();
-		}
-		
-		return $datos;
-	}
-	*/
 }
 ?>

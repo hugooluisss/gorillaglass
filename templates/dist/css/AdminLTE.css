@@ -4727,3 +4727,11 @@ table.text-center th {
     white-space: normal!important;
   }
 }
+
+.login-page{
+	background: white;
+}
+
+.login-page .login-box .login-box-body{
+	background: #eaeaea;
+}

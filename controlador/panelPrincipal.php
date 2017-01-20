@@ -5,6 +5,6 @@ switch($objModulo->getId()){
 		global $sesion;
 		
 		if ($sesion['perfil'] == "cliente")
-			header('Location: home');
+			header('Location: welcome');
 	break;
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 09:29:04
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 16:11:32
          compiled from "templates/plantillas/modulos/front-end/welcome.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176813172587fb01526a4d9-97341779%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e496914c7860c136c99b068bd20d43d1247eb3d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/welcome.tpl',
-      1 => 1484839730,
+      1 => 1484863891,
       2 => 'file',
     ),
   ),
@@ -97,8 +97,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
             <div class="locator">
             	<h2>Where to Purchase</h2>
                 <div class="col-xs-4">
-                	<a href="login.php"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
-                	<a href="inicio.php">Wholesale</a>
+                	<a href="inicio"><img src="repositorio/img/anterior/home_gorilla_left.png" alt="Gorilla" class="gorilla img-responsive" /></a>
+                	<a href="signup">Wholesale</a>
                 </div>
                 <div class="col-xs-4">
                 	<img src="repositorio/img/anterior/logo_entre_gorillas.png" alt="Gorilla Glass" class="img-responsive" />

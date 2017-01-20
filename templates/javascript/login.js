@@ -8,11 +8,7 @@ $(document).ready(function(){
 			txtUsuario: "required",
 			txtPass: "required"
 		},
-		wrapper: 'span', 
-		messages: {
-			txtUsuario: "La CURP es necesaria",
-			txtPass: "Tu contraseña o NIP es necesario"
-		},
+		wrapper: 'span',
 		submitHandler: function(form){
 			var obj = new TUsuario;
 			obj.login($("#txtUsuario").val(), $("#txtPass").val(), {
@@ -20,7 +16,7 @@ $(document).ready(function(){
 					if (datos.band)
 						location.href = "panelPrincipal";
 					else{
-						alert("Los datos son incorrectos, corrigelos y vuelve a intentarlo");
+						alert("The username or password you have entered is invalid, please try again.");
 					}
 				}
 			});

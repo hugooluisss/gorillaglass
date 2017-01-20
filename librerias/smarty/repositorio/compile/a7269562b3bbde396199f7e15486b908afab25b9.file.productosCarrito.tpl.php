@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 09:42:20
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 22:02:56
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1484749506,
+      1 => 1484884972,
       2 => 'file',
     ),
   ),
@@ -33,8 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<th class="visible-xs">&nbsp;</th>
 			<th class="hidden-xs text-center">Description</th>
 			<th class="text-center">
-				<span class="hidden-xs">Quantity</span>
-				<span class="visible-xs">Q</span>
+				<span class="hidden-xs">Pieces</span>
+				<span class="visible-xs">P</span>
 			</th>
 			<th class="text-center">
 				<span class="hidden-xs">Unit Price</span>
@@ -61,7 +61,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
 </td>
-			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['precio']/$_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
+			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['precio']/sprintf("%.2f",$_smarty_tpl->tpl_vars['row']->value['cantidad']);?>
 </td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
 </td>

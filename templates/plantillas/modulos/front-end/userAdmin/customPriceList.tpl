@@ -17,7 +17,7 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		What is your maekup rate? <input type="number" id="multiplicador" /> <span class="text-muted">All wholesale prices will be multiplied by this number</span>
+		What is your maekup rate? <input type="number" id="multiplicador" value="1" class="text-right"/> <span class="text-muted">All wholesale prices will be multiplied by this number</span>
 	</div>
 </div>
 <div class="row">

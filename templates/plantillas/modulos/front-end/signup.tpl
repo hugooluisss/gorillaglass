@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="txtSitioWeb" class="col-sm-4 col-form-label col-form-label-lg">Website / Social Media</label>
+			<label for="txtSitioWeb" class="col-sm-4 col-form-label col-form-label-lg">Website / Social Media*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="">
 			</div>
@@ -83,6 +83,9 @@
 		</div>
 	</form>
 	<br />
+	<br />
+	<small class="text-mute" style="font-wight: normal">*required fields</small>
+	<br /><br />
 	<p>
 		You will receive conrmation to the email you provided once our account is approved!
 	</p>

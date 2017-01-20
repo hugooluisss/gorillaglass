@@ -167,9 +167,11 @@ switch($objModulo->getId()){
 					$precio = $rs->fields['precio'];
 					$nombre = $rs->fields['nombre'];
 					$clave = $rs->fields['clave'];
+					$nombre2 = "";
 					
-					if (!in_array($clave, $colores))
+					if (!in_array($clave, $colores)){
 						$nombre2 = $rs->fields['nombre'];
+					}
 					
 					while($producto['idProducto'] <> $producto['idPadre']){
 						if (!isset($buffer[$producto['idPadre']])){
@@ -188,7 +190,7 @@ switch($objModulo->getId()){
 								$nombre2 = $producto['nombre'].($nombre2 == ''?"":", ").$nombre2;
 						}
 					}
-					$db->Execute("insert into articulo(idProducto, clave, nombre, descripcion, descripcion2, precio) value (".$rs->fields['idProducto'].", '".$clave."', '".$nombre."', '".$nombre2."', '".$rs->fields['descripcion']."', ".$precio.")");
+					$db->Execute("insert into articulo(idProducto, clave, nombre, descripcion, descripcion2, precio) value (".$rs->fields['idProducto'].", '".$clave."', '".$nombre."', '".$rs->fields['descripcion']."', '".$nombre2."', ".$precio.")");
 					$rs->moveNext();
 					$cont++;
 				}

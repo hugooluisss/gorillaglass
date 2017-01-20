@@ -71,6 +71,12 @@
 							<button class="btn btn-addProducto">ADD</button>
 						</div>
 					</div>
+					<div class="row">
+						<br />
+						<div class="col-xs-12">
+							<small class="text-mute">All items are single pieces.You must order two pieces to receive a matching pair</small>
+						</div>
+					</div>
 				</div>
 			</div>
 			<br /><br />

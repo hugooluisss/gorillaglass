@@ -26,7 +26,8 @@ $(document).ready(function(){
 			},
 			txtPassConfirm:{
 				equalTo: "#txtPass"
-			}
+			},
+			txtSitioWeb: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){

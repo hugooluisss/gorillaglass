@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 10:51:17
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 16:13:06
          compiled from "templates/plantillas/modulos/front-end/signup.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4440623985880e12059fe22-48727991%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '873341db084da56cd046121a7415aff90197e412' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/signup.tpl',
-      1 => 1484844675,
+      1 => 1484863954,
       2 => 'file',
     ),
   ),
@@ -77,7 +77,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="txtSitioWeb" class="col-sm-4 col-form-label col-form-label-lg">Website / Social Media</label>
+			<label for="txtSitioWeb" class="col-sm-4 col-form-label col-form-label-lg">Website / Social Media*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="">
 			</div>

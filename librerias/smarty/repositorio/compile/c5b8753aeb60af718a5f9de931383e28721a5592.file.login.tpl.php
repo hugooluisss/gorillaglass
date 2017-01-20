@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 09:01:10
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 16:10:31
          compiled from "templates/plantillas/layout/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16498836615862962c257418-02607551%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5b8753aeb60af718a5f9de931383e28721a5592' => 
     array (
       0 => 'templates/plantillas/layout/login.tpl',
-      1 => 1481729692,
+      1 => 1484863830,
       2 => 'file',
     ),
   ),
@@ -78,27 +78,31 @@ dist/css/skins/_all-skins.css" />
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<a href="index.php">Panel<b>Admin</b></a>
+				<!--<a href="index.php">Panel<b>Admin</b></a>-->
 			</div><!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 img/logo.png" class="img-rounded"/>
 					<br />
-					Identificate para iniciar sesión
+					Please enter your login information
 				</p>
 			<form action="#" id="frmLogin" method="post">
 				<div class="form-group has-feedback">
-					<input type="text" class="form-control" placeholder="email" id="txtUsuario" name="txtUsuario">
+					<input type="text" class="form-control" placeholder="Email" id="txtUsuario" name="txtUsuario">
 					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="Contraseña" id="txtPass" name="txtPass">
+					<input type="password" class="form-control" placeholder="Password" id="txtPass" name="txtPass">
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row">
 					<!-- /.col -->
-					<div class="col-xs-offset-8 col-xs-4">
+					<div class="col-xs-8" style="padding-top: 13px;">
+						<span>New user?</span>
+						<a href="signup">Register here</a>
+					</div>
+					<div class="col-xs-4">
 						<button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar</button>
 					</div><!-- /.col -->
 				</div>

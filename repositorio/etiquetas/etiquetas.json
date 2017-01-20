@@ -3,13 +3,13 @@
 		"Variations",
 		"Size",
 		"Color",
-		"Surface"
+		"Surface Treatment"
 	],
 	"W":[
 		"Variations",
 		"Size",
 		"Color",
-		"Surface"
+		"Surface Treatment"
 	],
 	"E":[
 		"Variations",
@@ -22,9 +22,8 @@
 		"Color"
 	],
 	"R":[
-		"Variations",
-		"Size 1",
-		"Size 2"
+		"Gauge Size",
+		"Wearable Length"
 	],
 	"S":[
 		"Sizes",
@@ -35,6 +34,6 @@
 		"Color"
 	],
 	"L":[
-		"Sizes", "Color"
+		"Sizes", "Total Length", "Color"
 	]
 }
