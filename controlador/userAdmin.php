@@ -84,8 +84,15 @@ switch($objModulo->getId()){
 					$rs->moveNext();
 				}
 				
+				$rs = $db->Execute("select * from producto where idPadre = 0 and not idProducto = 0");
+				$madres = array();
+				while(!$rs->EOF){
+					$madres[$rs->fields['clave']] = $rs->fields;
+					$rs->moveNext();
+				}
+				
 				require_once(getcwd()."/repositorio/pdf/productos.php");
-				$pdf = new RProductos();
+				$pdf = new RProductos($madres);
 				asort($datos);
 				$pdf->generar($datos);
 				if($objModulo->getAction() == '')

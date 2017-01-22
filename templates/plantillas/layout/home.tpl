@@ -7,7 +7,8 @@
 	    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<title>.:: {$PAGE.empresaAcronimo} ::.</title>
 		<base href="{$PAGE.url}index.php" target="_top">
-		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}front-end/style.less?m={rand()}" />
+		<!--<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}front-end/style.less?m={rand()}" />-->
+		<link rel="stylesheet" href="{$PAGE.ruta}front-end/style.css">
 		
 		<link rel="stylesheet" href="{$PAGE.ruta}bootstrap/css/bootstrap.min.css">
 		
