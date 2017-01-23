@@ -43,7 +43,7 @@
 					<li class="list-group-item"><a href="profile">Profile</a></li>
 					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
 					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
-					<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>
+					<!--<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>-->
 					<li class="list-group-item"><a href="cuseradmin" target="_blank">Price List</a></li>
 					<li class="list-group-item"><a href="logout">Logout</a></li>
 				</ul>

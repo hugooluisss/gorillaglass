@@ -107,5 +107,14 @@ $conf['cuserAdmin'] = array(
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 	
+$conf['placeOrder'] = array(
+	'controlador' => 'home.php',
+	'vista' => 'front-end/userAdmin/placeorder.tpl',
+	'descripcion' => 'Contacto',
+	'seguridad' => false,
+	#'js' => array('carrito.class.js', 'pedido.class.js'),
+	'jsTemplate' => array('menuPrincipal.js'),
+	'capa' => LAYOUT_USER);
+	
 $conf['cuseradmin'] = $conf['cuserAdmin'];
 ?>

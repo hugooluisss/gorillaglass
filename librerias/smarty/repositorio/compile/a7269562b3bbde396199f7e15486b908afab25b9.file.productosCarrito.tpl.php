@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-19 22:02:56
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:17
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1484884972,
+      1 => 1485186318,
       2 => 'file',
     ),
   ),
@@ -70,7 +70,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 if (!$_smarty_tpl->tpl_vars["row"]->_loop) {
 ?>
 			<tr>
-				<td class="text-center" colspan="6">Sin productos</td>
+				<td class="text-center" colspan="6">None</td>
 			</tr>
 		<?php } ?>
 	</tbody>

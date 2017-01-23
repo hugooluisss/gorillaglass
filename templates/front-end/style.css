@@ -72,7 +72,7 @@ nav.menu-principal .block.right .navbar-form {
   display: none;
 }
 #menuPrincipal li {
-  background: #D8D8D8;
+  background: #d8d8d8;
   border-bottom: 2px solid white;
 }
 #menuPrincipal li a {
@@ -143,7 +143,7 @@ div.bar.icons a img {
   color: red;
 }
 .container .panel .panel-body {
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
 }
 .container .panel .panel-footer {
   height: 60px;
@@ -157,7 +157,7 @@ div.bar.icons a img {
   text-align: center;
 }
 .container [item]:hover .panel {
-  border-color: #D8D8D8;
+  border-color: #d8d8d8;
   transition: all 1s ease;
   background: none;
 }
@@ -170,7 +170,7 @@ div.bar.icons a img {
   background: none;
 }
 .container [item]:hover .panel .panel-footer {
-  border-color: #D8D8D8;
+  border-color: #d8d8d8;
   transition: all 1s ease;
 }
 .container .producto .panel-footer p {
@@ -228,7 +228,7 @@ div.bar.icons a img {
   }
 }
 #footer {
-  background: #D8D8D8;
+  background: #d8d8d8;
   height: 45px;
   font-size: 16px;
   padding-top: 8px;
@@ -346,6 +346,9 @@ div#footer_icons {
 }
 #vistaPage img.full_width {
   width: 100%;
+}
+#vistaPage #color_swatches.row {
+  margin-left: 0px;
 }
 #vistaPage #color_swatches table {
   width: 100%;
@@ -661,9 +664,9 @@ body.userConfig #tblOrdenes thead tr th {
   border: none;
 }
 body.userConfig #tblOrdenes tbody tr {
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
-  border-bottom: 1px solid #D8D8D8;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
 }
 body.userConfig #tblOrdenes .colorEstado {
   padding: 5px 5px 5px 5px;
@@ -671,7 +674,7 @@ body.userConfig #tblOrdenes .colorEstado {
 body.userConfig .generarListaPrecios {
   font-size: 20px;
   font-weight: bold;
-  background: #D8D8D8;
+  background: #d8d8d8;
   border: none;
 }
 body.registro p {
@@ -694,7 +697,7 @@ body.registro .cuerpo {
 body.registro a.btn.btn-default,
 body.registro input.btn.btn-default {
   font-size: 26px;
-  background: #D8D8D8;
+  background: #d8d8d8;
   border: none;
 }
 body.registro form .col-form-label {

@@ -36,7 +36,7 @@ class RProductos extends tFPDF{
 		$this->Ln(5);
 		$this->Cell(50, 5, "DATE: ".date("Y-m-d"), 0, 0, 'L');
 		
-		$this->Cell(0, 5, utf8_decode(strtoupper("product catalog")), 0, 0, 'R');
+		$this->Cell(0, 5, utf8_decode(("Wholesale price list")), 0, 0, 'R');
 		
 		$this->SetXY(10, 33);
 		$ancho = 4;
@@ -57,9 +57,11 @@ class RProductos extends tFPDF{
 		$total = 0;
 		$cont = 0;
 		$madre = '';
+		$bufClave = "";
 		
 		foreach($productos as $producto){
 			$clave = explode("-", $producto["clave"]);
+			$otraClave = $clave[1];
 			$clave = $clave[0];
 			if ($madre <> $clave){
 				$madre = $clave;
@@ -67,36 +69,45 @@ class RProductos extends tFPDF{
 				
 				$this->AddPage();
 				$this->SetFillColor(255);
-				$this->Rect(0, 0, 255, 60, "F");
+				$this->Rect(0, 30, 255, 60, "F");
 				$this->SetFillColor(0);
-				$this->Image('repositorio/img/logo.jpg', 43, 25, 100, 100);
+				#$this->Image('repositorio/img/logo.jpg', 43, 25, 100, 100);
+				$this->SetFont('Arial', 'B', 25);
+				$this->Ln(60);
+				$this->Cell(0, $ancho, "Gorilla Glass wholesale price list.", 0, 0, 'C');
 				$this->SetFont('Arial', 'B', 20);
-				$this->SetXY(0, 150);
+				$this->SetXY(0, 120);
 				$this->Ln(5);
 				$this->Cell(0, $ancho, $this->madres[$madre]['nombre'], 0, 0, 'C');
 				
 				$this->SetFont('Arial', '', 7);
+				$cont = 0;
 				$this->AddPage();
-			}
-		
-		
-			$this->Cell(27, $ancho, $producto["clave"], "LR");
-			$this->Cell(101, $ancho, $producto["descripcion2"], 'R');
-			$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"]), 'R', 0, 'R');
+				$bufClave = "";
+			}else if ($otraClave <> $bufClave and $bufClave <> ""){
+				$this->Cell(0, 2, "", "TB", 1, 'C');
+				$bufClave = $otraClave;
+			}else{
+				$bufClave = $otraClave;
 			
-			#$clave = explode("-", $producto["clave"]);
-			if(in_array($clave, array("P", "W", "E", "F")))
-				$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"] * 2), 'R', 0, 'R');
-			else
-				$this->Cell(19.5, $ancho, "", 'R', 0, 'R');
+				$this->Cell(27, $ancho, $producto["clave"], "LR");
+				$this->Cell(101, $ancho, $producto["descripcion2"], 'R');
+				$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"]), 'R', 0, 'R');
 				
-			$this->Ln($ancho);
-			$cont++;
-			if ($cont % 53 == 0){
-				$this->Cell(0, $ancho, "", "T");
-				
-				$this->Ln($ancho/2);
-				$this->AddPage();
+				#$clave = explode("-", $producto["clave"]);
+				if(in_array($clave, array("P", "W", "E", "F")))
+					$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"] * 2), 'R', 0, 'R');
+				else
+					$this->Cell(19.5, $ancho, "", 'R', 0, 'R');
+					
+				$this->Ln($ancho);
+				$cont++;
+				if ($cont % 53 == 0){
+					$this->Cell(0, $ancho, "", "T");
+					
+					$this->Ln($ancho/2);
+					$this->AddPage();
+				}
 			}
 		}
 		

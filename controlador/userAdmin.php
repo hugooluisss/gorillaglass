@@ -14,9 +14,9 @@ switch($objModulo->getId()){
 		$db = TBase::conectaDB();
 		
 		if($sesion['usuario'] <> ''){
-			$rs = $db->Execute("select idPedido from pedido where idEstado = 1 and idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
+			$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
 		
-			$smarty->assign("idPedido", $rs->fields['idPedido']);
+			$smarty->assign("idPedido", ($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");
 			$smarty->assign("cliente", $sesion['usuario']);
 			
 			if ($sesion['perfil'] == "cliente")
@@ -63,13 +63,14 @@ switch($objModulo->getId()){
 				$multiplicador = $_POST['multiplicador'] == ''?1:$_POST['multiplicador'];
 				$colores = array();
 				$rs = $db->Execute("select * from color");
+				
 				while(!$rs->EOF){
 					array_push($colores, $rs->fields['clave']);
 					$rs->moveNext();
 				}
 				
 				
-				$rs = $db->Execute("select * from articulo group by descripcion2");
+				$rs = $db->Execute("select * from articulo group by clave");
 				$datos = array();
 				while(!$rs->EOF){
 					$codigo = "";
@@ -80,7 +81,8 @@ switch($objModulo->getId()){
 					
 					$rs->fields['clave'] = $codigo;
 					$rs->fields["precio"] *= $multiplicador;
-					array_push($datos, $rs->fields);
+					$datos[$rs->fields['clave']] = $rs->fields;
+					#array_push($datos, $rs->fields);
 					$rs->moveNext();
 				}
 				
@@ -93,7 +95,12 @@ switch($objModulo->getId()){
 				
 				require_once(getcwd()."/repositorio/pdf/productos.php");
 				$pdf = new RProductos($madres);
-				asort($datos);
+				ksort($datos);/*
+				foreach($datos as $key => $el){
+					echo $key." => ";
+					print_r($el);
+					echo "<br />";
+				}*/
 				$pdf->generar($datos);
 				if($objModulo->getAction() == '')
 					$pdf->Output2();

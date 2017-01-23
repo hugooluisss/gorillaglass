@@ -19,9 +19,8 @@ switch($objModulo->getId()){
 		global $sesion;
 		
 		if($sesion['usuario'] <> ''){
-			$rs = $db->Execute("select idPedido from pedido where idEstado = 1 and idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
-		
-			$smarty->assign("idPedido", $rs->fields['idPedido']);
+			$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
+			$smarty->assign("idPedido", ($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");
 			$smarty->assign("cliente", $sesion['usuario']);
 		}
 		
@@ -133,6 +132,68 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("lista", $datos);
+	break;
+	case 'placeOrder':
+		$db = TBase::conectaDB();
+		global $sesion;
+		global $ini;
+		require_once(getcwd()."/repositorio/pdf/pedido.php");
+		$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$sesion['usuario']." order by idPedido desc limit 1");
+		
+		$pedido = new TPedido($rs->fields['idPedido']);
+		$pedido->estado->setId(2);
+		$pedido->setFecha(date("Y-m-d"));
+		$pedido->guardar();
+		
+		$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");
+		$pdf->generar();
+		$archivo = $pdf->output();
+		//$obj->setId($_POST['id']);
+		
+		$obj = new TCliente($sesion['usuario']);
+		$datos = array();
+		$datos['cliente.nombre'] = $obj->getNombre();
+		$datos['sitio.url'] = $ini["sistema"]["urlmail"];
+		$datos['sitio.nombre'] = $ini["sistema"]["nombreEmpresa"];
+		$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
+		$datos['cliente.email'] = $obj->getEmail();
+		$datos['cliente.pass'] = $obj->getPass();
+		
+		$email = new TMail;
+		$cuerpo = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/setOrden.html"), $datos));
+		$subject = "Your order";
+		$random_hash = md5(date('r', time())); 
+		
+		//$headers   = array();
+		$headers = "MIME-Version: 1.0;\r\n";
+		$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
+		$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
+		$headers .= "Content-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
+		
+		$adjuntos = chunk_split(base64_encode(file_get_contents($archivo))); 
+
+		$salto = "\r";
+		
+		$msg = "--PHP-mixed-".$random_hash.$salto;
+		$msg .= 'Content-Type: multipart/alternative; boundary="PHP-alt-'.$random_hash.'"'.$salto; 
+		$msg .= '--PHP-alt-'.$random_hash.$salto;
+		$msg .= 'Content-Type: text/html; charset="iso-8859-1"'.$salto;
+		$msg .= 'Content-Transfer-Encoding: 7bit'.$salto.$salto;
+		$msg .= $cuerpo;
+
+		$msg .= '--PHP-alt-'.$random_hash.'--'.$salto;
+
+		$msg .= '--PHP-mixed-'.$random_hash.$salto;
+
+		$msg .= 'Content-Type: application/x-pdf; name="order.pdf"'.$salto;
+		$msg .= 'Content-Transfer-Encoding: base64'.$salto;
+		$msg .= 'Content-Disposition: attachment'.$salto;
+
+		$msg .= $adjuntos;
+		$msg .= '--PHP-mixed-'.$random_hash.'--'.$salto;
+
+		$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
+		#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
 	break;
 	case 'chome':
 		switch($objModulo->getAction()){

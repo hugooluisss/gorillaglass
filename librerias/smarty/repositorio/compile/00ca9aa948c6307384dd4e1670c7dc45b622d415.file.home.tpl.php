@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-20 09:41:39
+<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:10
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1484926896,
+      1 => 1485185750,
       2 => 'file',
     ),
   ),
@@ -40,9 +40,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  ::.</title>
 		<base href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
 index.php" target="_top">
-		<link rel="stylesheet/less" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+		<!--<link rel="stylesheet/less" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 front-end/style.less?m=<?php echo rand();?>
-" />
+" />-->
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+front-end/style.css">
 		
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 bootstrap/css/bootstrap.min.css">

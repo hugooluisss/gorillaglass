@@ -30,7 +30,7 @@
 		</tr>
 		{foreachelse}
 			<tr>
-				<td class="text-center" colspan="6">Sin productos</td>
+				<td class="text-center" colspan="6">None</td>
 			</tr>
 		{/foreach}
 	</tbody>

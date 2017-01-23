@@ -18,6 +18,7 @@ switch($objModulo->getId()){
 	break;
 	case 'cclientes':
 		switch($objModulo->getAction()){
+			/*
 			case 'confirmacion':
 				$obj = new TCliente();
 				$obj->setId(base64_decode($_GET['cliente']));
@@ -43,6 +44,7 @@ switch($objModulo->getId()){
 				
 				header('Location: inicio');
 			break;
+			*/
 			case 'add':
 				$db = TBase::conectaDB();
 				$obj = new TCliente();
@@ -100,7 +102,7 @@ switch($objModulo->getId()){
 						
 						#$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos)));
 						$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/bienvenida.html"), $datos));
-						$subject = "Bienvenido";
+						$subject = "Request received";
 						
 						$headers   = array();
 						$headers = "MIME-Version: 1.0;\r\n";
@@ -120,7 +122,7 @@ switch($objModulo->getId()){
 							$email = new TMail;
 							
 							$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/confirmacionCuenta.html"), $datos));
-							$subject = "Cuenta activada";
+							$subject = "Welcome";
 							
 							$headers   = array();
 							$headers = "MIME-Version: 1.0;\r\n";
