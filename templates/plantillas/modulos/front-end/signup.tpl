@@ -8,9 +8,9 @@
 		Interested in carrying our jewelry in your store?
 	</p>
 	<p>
-		Please ll out the following application form. Once approved
+		Please fill out the following application form. Once approved
 		you will be able to check out our wholesale pricelist and use
-		our wholesale shopping cart .
+		our wholesale shopping cart.
 	</p>
 	
 	<br />

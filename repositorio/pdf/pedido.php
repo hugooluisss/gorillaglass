@@ -53,7 +53,7 @@ class RPedido extends tFPDF{
 			$this->Cell(27, $ancho, $mov->getClave());
 			$this->Cell(97, $ancho, $mov->getDescripcion());
 			$this->Cell(12, $ancho, $mov->getCantidad(), 0, 0, 'R');
-			$this->Cell(12.5, $ancho, sprintf("%.2f", $mov->getPrecio() / $mov->getCantidad()), 0, 0, 'R');
+			$this->Cell(12.5, $ancho, sprintf("$ %.2f", $mov->getPrecio() / $mov->getCantidad()), 0, 0, 'R');
 			$this->Cell(19, $ancho, $mov->getPrecio(), 0, 0, 'R');
 			$total += $mov->getPrecio();
 			$this->Ln($ancho);
@@ -91,13 +91,13 @@ class RPedido extends tFPDF{
 			$this->Cell(97, $ancho, "Discount ".($descuento * 100)."%");
 			$this->Cell(12, $ancho, "", 0, 0, 'R');
 			$this->Cell(12.5, $ancho, "-".($descuento * 100)."%", 0, 0, 'R');
-			$this->Cell(19, $ancho, sprintf("%.2f", $total * $descuento), 0, 0, 'R');
+			$this->Cell(19, $ancho, sprintf("$ %.2f", $total * $descuento), 0, 0, 'R');
 			$total -= $total * $descuento;
 			$this->Ln($ancho);
 		}
 		$this->SetFont('Arial', 'B', 11);
 		$this->SetXY(140, 200);
-		$this->Cell(0, $ancho, sprintf("%.2f", $total), 0, 0, 'R');
+		$this->Cell(0, $ancho, sprintf("$ %.2f", $total), 0, 0, 'R');
 	}
 		
 	private function cleanFiles(){

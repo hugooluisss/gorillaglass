@@ -119,7 +119,7 @@ switch($objModulo->getId()){
 		$index = $_POST['index'];
 		
 		if ($index == $_POST['total'])
-			$rs = $db->Execute("select a.*, b.precio, b.nombre as nombreAdd from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0 order by a.clave");
+			$rs = $db->Execute("select a.*, b.precio, b.nombre as nombreAdd, b.clave from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0 order by a.clave");
 		else
 			$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0 order by clave");
 		$datos = array();
@@ -161,7 +161,7 @@ switch($objModulo->getId()){
 		
 		$email = new TMail;
 		$cuerpo = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/setOrden.html"), $datos));
-		$subject = "Your order";
+		$subject = utf8_decode("Your order: ".$obj->getRazonSocial()." ".$pedido->getId()." ".$pedido->getFecha());
 		$random_hash = md5(date('r', time())); 
 		
 		//$headers   = array();
@@ -193,6 +193,7 @@ switch($objModulo->getId()){
 		$msg .= '--PHP-mixed-'.$random_hash.'--'.$salto;
 
 		$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
+		#$emailBand = imap_mail("sales@getgorilla.com", $subject, $msg, $headers);
 		#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
 	break;
 	case 'chome':

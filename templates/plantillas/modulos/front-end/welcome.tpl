@@ -43,7 +43,7 @@
             <div class="featured_product">
             	<h2>Featured Design</h2>
                 <h3>Dichroic Crescent Hoops</h3>
-                <img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" />
+                <a href="home/50537-Crescent+Dichroic+Hoops/"><img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" /></a>
             </div><!-- /featured_product -->
             
         </div>
