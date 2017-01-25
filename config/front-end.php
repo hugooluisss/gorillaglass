@@ -68,6 +68,15 @@ $conf['customPriceList'] = array(
 	'jsTemplate' => array('customPrice.js', 'menuPrincipal.js'),
 	'capa' => LAYOUT_USER);
 	
+$conf['priceList'] = array(
+	'controlador' => 'userAdmin.php',
+	'vista' => 'front-end/userAdmin/priceList.tpl',
+	'descripcion' => 'Definición de precios',
+	'seguridad' => true,
+	#'js' => array('carrito.class.js'),
+	'jsTemplate' => array('priceList.js', 'menuPrincipal.js'),
+	'capa' => LAYOUT_USER);
+	
 $conf['retailLocator'] = array(
 	#'controlador' => 'home.php',
 	'vista' => 'front-end/retailLocator.tpl',

@@ -109,7 +109,7 @@
 						<b>Choose a product</b>
 					{/if}
 				{else}
-					<a href="retailLocator">Where to buy?</a>
+					<a href="retailLocator">Where to buy</a>
 				{/if}
 			</div>
 		</div>

@@ -55,6 +55,40 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("ordenes", $datos);
 	break;
+	case 'priceList':
+		$db = TBase::conectaDB();
+		$multiplicador = 1;
+		$colores = array();
+		$rs = $db->Execute("select * from color");
+		
+		while(!$rs->EOF){
+			array_push($colores, $rs->fields['clave']);
+			$rs->moveNext();
+		}
+		
+		
+		$rs = $db->Execute("select * from articulo group by clave");
+		$datos = array();
+		while(!$rs->EOF){
+			$codigo = "";
+			#$principal = explode("-", $rs->fields["clave"]);
+			#$principal = $principal[0];
+			foreach(explode("-", $rs->fields["clave"]) as $code){
+				if (!in_array($code, $colores))
+					$codigo .= ($codigo == ''?'':'-').$code;
+			}
+			
+			$rs->fields['clave'] = $codigo;
+			$rs->fields["precio"] *= $multiplicador;
+			#$rs->fields["madre"] = $principal;
+			
+			$datos[$rs->fields['clave']] = $rs->fields;
+			#array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("lista", $datos);
+	break;
 	case 'cuserAdmin':
 	case 'cuseradmin':
 		switch($objModulo->getAction()){
@@ -95,12 +129,8 @@ switch($objModulo->getId()){
 				
 				require_once(getcwd()."/repositorio/pdf/productos.php");
 				$pdf = new RProductos($madres);
-				ksort($datos);/*
-				foreach($datos as $key => $el){
-					echo $key." => ";
-					print_r($el);
-					echo "<br />";
-				}*/
+				ksort($datos);
+				
 				$pdf->generar($datos);
 				if($objModulo->getAction() == '')
 					$pdf->Output2();
