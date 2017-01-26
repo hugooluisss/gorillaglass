@@ -56,28 +56,28 @@
         {/if}
             <br />
 		<div id="redesSociales" class="container text-center">
-			<a href="https://www.facebook.com/GorillaGlass/">
+			<a href="https://www.facebook.com/GorillaGlass/" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-facebook fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="http://instagram.com/gorillaglass/">
+			<a href="http://instagram.com/gorillaglass/" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-instagram fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="https://twitter.com/GorillaGlass1">
+			<a href="https://twitter.com/GorillaGlass1" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-twitter fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="https://www.youtube.com/c/GorillaGlassJewelry">
+			<a href="https://www.youtube.com/c/GorillaGlassJewelry" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-youtube-play fa-stack-1x"></i>

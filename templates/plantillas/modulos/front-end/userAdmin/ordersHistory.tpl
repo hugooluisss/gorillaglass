@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="box">
-			<div class="box-body">
+			<div class="box-body" style="width: 100%; overflow-x: scroll">
 				<table id="tblOrdenes" class="table table-hover">
 					<thead>
 						<tr>

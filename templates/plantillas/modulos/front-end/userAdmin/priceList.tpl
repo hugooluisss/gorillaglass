@@ -29,14 +29,20 @@
 </div>
 <br />
 <div class="box">
-	<div class="box-body">
+	<div class="box-body" style="width: 95%; overflow-x: scroll;">
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
 					<th>CODE</th>
 					<th>DESCRIPTION</th>
-					<th>PRICE PER PIECE (USD)</th>
-					<th>PRICE PER PAIR (USD)</th>
+					<th>
+						<span class="hidden-xs">PRICE PER PIECE (USD)</span>
+						<span class="visible-xs">PIECE (USD)</span>
+					</th>
+					<th>
+						<span class="hidden-xs">PRICE PER PAIR (USD)</span>
+						<span class="visible-xs">PAIR (USD)</span>
+					</th>
 				</tr>
 			</thead>
 			<tbody>

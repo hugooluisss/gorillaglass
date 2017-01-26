@@ -83,7 +83,7 @@ $conf['retailLocator'] = array(
 	'descripcion' => 'Puntos de las tiendas',
 	'seguridad' => false,
 	#'js' => array('carrito.class.js', 'pedido.class.js'),
-	#'jsTemplate' => array('welcome.js', 'menuPrincipal.js'),
+	'jsTemplate' => array('menuPrincipal.js'),
 	'capa' => LAYOUT_HOME);
 	
 $conf['contact'] = array(

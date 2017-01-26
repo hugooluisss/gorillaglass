@@ -67,7 +67,14 @@
 	</div>
 {else}
 	<br />
-	<br />
+	<div class="bar icons">
+		{foreach from=$nodosPrimerNivel item="row"}
+			<a href="{$row.url}" title="{$row.nombre}">
+				<img src="repositorio/img/iconosproductos/{$row.idProducto}.png" onmouseover='javascript: this.src="repositorio/img/iconosproductos/{$row.idProducto}_hover.png"' onmouseout='javascript: this.src="repositorio/img/iconosproductos/{$row.idProducto}.png"'/>
+			</a>
+		{/foreach}
+	</div>
+	<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-sm-6 col-xs-12">
@@ -75,7 +82,7 @@
 			</div>
 		</div>
 	</div>
-	<br />
+	<br />-->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-sm-6 col-xs-12">
