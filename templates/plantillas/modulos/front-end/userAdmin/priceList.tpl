@@ -34,7 +34,7 @@
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>CODE</th>
+					<!--<th>CODE</th>-->
 					<th>DESCRIPTION</th>
 					<th>
 						<span class="hidden-xs">PRICE PER PIECE (USD)</span>
@@ -49,7 +49,7 @@
 			<tbody>
 				{foreach from=$lista item="row"}
 					<tr>
-						<td>{$row.clave}</td>
+						<!--<td>{$row.clave}</td>-->
 						<td>{$row.descripcion2}</td>
 						<td class="text-right" price="{$row.precio}">{$row.precio|string_format:"%.02f"}</td>
 						{if in_array($row.clave[0], array("P", "W", "E", "F"))}

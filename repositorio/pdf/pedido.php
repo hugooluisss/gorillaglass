@@ -44,7 +44,7 @@ class RPedido extends tFPDF{
 			$this->pedido = new TPedido($id);
 			
 		$this->AddPage();
-		$this->SetFont('Arial', '', 5);
+		$this->SetFont('Arial', '', 8);
 		$ancho = 3.4;
 		$total = 0;
 		$cont = 0;

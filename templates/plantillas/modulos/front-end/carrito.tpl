@@ -45,7 +45,7 @@
 					<br />
 					{foreach name="etiquetas" from=$etiquetas item="row"}
 						<div class="row">
-							<div class="col-xs-5 col-sm-5 col-md-5">
+							<div class="col-xs-5 col-sm-5 col-md-5 text-right">
 								{$row}
 							</div>
 							<div class="col-xs-7 col-sm-7 col-md-7" nivel="{$smarty.foreach.etiquetas.iteration}" total="{$etiquetas|@count}">
@@ -57,8 +57,10 @@
 								</div>
 							</div>
 						</div>
+						<br />
 					{/foreach}
 					<div class="row">
+						<br />
 						<br />
 						<div class="col-xs-5 col-sm-5 col-md-5 text-right">PIECES</div>
 						<div class="col-xs-7 col-sm-7 col-md-3">
@@ -74,7 +76,7 @@
 					<div class="row">
 						<br />
 						<div class="col-xs-12">
-							<small class="text-mute">All items are single pieces.You must order two pieces to receive a matching pair</small>
+							<span class="text-danger">All items are single pieces.You must order two pieces to receive a matching pair</span>
 						</div>
 					</div>
 				</div>
