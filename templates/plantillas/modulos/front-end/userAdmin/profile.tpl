@@ -44,7 +44,7 @@
 			<div class="form-group row">
 				<label for="txtSitioWeb" class="col-sm-2 col-form-label col-form-label-lg">Website/Social Media</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="{$cliente->getSitioweb()}">
+					<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="{$cliente->getSitioWeb()}">
 				</div>
 			</div>
 			<hr />
@@ -52,6 +52,12 @@
 				<label for="txtPass" class="col-sm-2 col-form-label col-form-label-lg">Password</label>
 				<div class="col-sm-6">
 					<input type="password" class="form-control form-control-lg" id="txtPass" name="txtPass" value="{$cliente->getPass()}">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="txtConfirm" class="col-sm-2 col-form-label col-form-label-lg">Confirm</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control form-control-lg" id="txtConfirm" name="txtConfirm" value="{$cliente->getPass()}">
 				</div>
 			</div>
 			<br />

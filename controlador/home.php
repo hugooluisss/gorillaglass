@@ -182,10 +182,11 @@ switch($objModulo->getId()){
 		$msg .= $cuerpo;
 
 		$msg .= '--PHP-alt-'.$random_hash.'--'.$salto;
-
+		$cuerpo = $msg;
+		
 		$msg .= '--PHP-mixed-'.$random_hash.$salto;
 
-		$msg .= 'Content-Type: application/x-pdf; name="order.pdf"'.$salto;
+		$msg .= 'Content-Type: application/x-pdf; name="'.$obj->getRazonSocial()."_".$pedido->getId()."_".$pedido->getFecha().'.pdf"'.$salto;
 		$msg .= 'Content-Transfer-Encoding: base64'.$salto;
 		$msg .= 'Content-Disposition: attachment'.$salto;
 
@@ -193,8 +194,24 @@ switch($objModulo->getId()){
 		$msg .= '--PHP-mixed-'.$random_hash.'--'.$salto;
 
 		$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
-		#$emailBand = imap_mail("sales@getgorilla.com", $subject, $msg, $headers);
 		#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
+		
+		$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", true);
+		$pdf->generar();
+		$archivo = $pdf->output();
+		
+		$msg = "";
+		$msg .= '--PHP-mixed-'.$random_hash.$salto;
+
+		$msg .= 'Content-Type: application/x-pdf; name="'.$obj->getRazonSocial()."_".$pedido->getId()."_".$pedido->getFecha().'.pdf"'.$salto;
+		$msg .= 'Content-Transfer-Encoding: base64'.$salto;
+		$msg .= 'Content-Disposition: attachment'.$salto;
+		
+		$adjuntos = chunk_split(base64_encode(file_get_contents($archivo))); 
+		$msg .= $adjuntos;
+		$msg .= '--PHP-mixed-'.$random_hash.'--'.$salto;
+		$emailBand = imap_mail("sales@getgorilla.com", $subject, $msg, $headers);
+		#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $cuerpo.$msg, $headers);
 	break;
 	case 'chome':
 		switch($objModulo->getAction()){

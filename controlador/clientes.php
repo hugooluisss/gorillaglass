@@ -79,7 +79,8 @@ switch($objModulo->getId()){
 				$obj->setObservaciones($_POST['observaciones']);
 				$obj->setTipo($_POST['tipo']);
 				$obj->setSitioWeb($_POST['sitioWeb']);
-				$obj->setEstado($_POST['estado']);
+				if ($_POST['estado'] <> '')
+					$obj->setEstado($_POST['estado']);
 				$obj->setPass($_POST['pass']);
 				
 				//$emailBand = true;

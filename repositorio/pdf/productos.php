@@ -8,9 +8,9 @@
  */
 class RProductos extends tFPDF{
 	private $cotizacion;
-	private $formatoFondo;
+	private $showCodigo;
 	
-	public function RProductos($madres){
+	public function RProductos($madres, $codigo = false){
 		parent::tFPDF('P', 'mm', array(187, 239));
 		$this->AddFont('Sans','', 'DejaVuSans.ttf', true);
 		$this->AddFont('Sans','B', 'DejaVuSans-Bold.ttf', true);
@@ -22,6 +22,7 @@ class RProductos extends tFPDF{
 		$this->AliasNbPages();
 		
 		$this->madres = $madres;
+		$this->showCodigo = $codigo;
 	}	
 	
 	public function AddPage(){
@@ -90,7 +91,7 @@ class RProductos extends tFPDF{
 			}else{
 				$bufClave = $otraClave;
 			
-				$this->Cell(27, $ancho, $producto["clave"], "LR");
+				$this->Cell(27, $ancho, $this->showCodigo?$producto["clave"]:"", "LR");
 				$this->Cell(101, $ancho, $producto["descripcion2"], 'R');
 				$this->Cell(19.5, $ancho, sprintf("%.2f", $producto["precio"]), 'R', 0, 'R');
 				

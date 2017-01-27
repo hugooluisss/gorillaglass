@@ -60,7 +60,7 @@
 					{/foreach}
 					<div class="row">
 						<br />
-						<div class="col-xs-5 col-sm-5 col-md-5 text-right">QUANTITY</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 text-right">PIECES</div>
 						<div class="col-xs-7 col-sm-7 col-md-3">
 							<input type="number" value="0" id="txtCantidad" name="txtCantidad" class="form-control" />
 						</div>

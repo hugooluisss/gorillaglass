@@ -8,9 +8,9 @@
  */
 class RPedido extends tFPDF{
 	private $cotizacion;
-	private $formatoFondo;
+	private $showCodigo;
 	
-	public function RPedido($id, $formatoFondo = true){
+	public function RPedido($id, $codigo = false){
 		$this->pedido = new TPedido($id);
 		
 		parent::tFPDF('P', 'mm', array(187, 239));
@@ -20,20 +20,21 @@ class RPedido extends tFPDF{
 		$this->AddFont('Sans','BU', 'DejaVuSans-BoldOblique.ttf', true);
 		$this->cleanFiles();
 		$this->SetAutoPageBreak(false, 0);
-		$this->formatoFondo = $formatoFondo;
+		//$this->formatoFondo = $formatoFondo;
 		$this->AliasNbPages();
+		$this->showCodigo = $codigo;
 	}	
 	
 	public function AddPage(){
 		parent::AddPage();
 		
-		$this->SetFont('Arial', 'B', 11);
+		$this->SetFont('Arial', 'B', 10);
 		$this->Image('repositorio/img/orden.jpg', 0, 0, 190, 240);
 		$this->SetXY(140, 32);
 		$this->Cell(0, 5, $this->pedido->getFecha(), 0, 0, 'C');
 		
 		$this->SetXY(35, 41);
-		$this->Cell(0, 5, utf8_decode(strtoupper($this->pedido->cliente->getNombre())));
+		$this->Cell(0, 5, utf8_decode(strtoupper($this->pedido->cliente->getRazonSocial(). ' - '.$this->pedido->cliente->getNombre())));
 		
 		$this->SetXY(10, 69);
 	}
@@ -50,8 +51,12 @@ class RPedido extends tFPDF{
 		#for($x = 0 ; $x < 20; $x ++)
 		foreach($this->pedido->movimientos as $mov){
 			$this->Cell(1, $ancho, "");
-			$this->Cell(27, $ancho, $mov->getClave());
-			$this->Cell(97, $ancho, $mov->getDescripcion());
+			if ($this->showCodigo){
+				$this->Cell(27, $ancho, $mov->getClave());
+				$this->Cell(97, $ancho, $mov->getDescripcion());
+			}else{
+				$this->Cell(124, $ancho, $mov->getDescripcion());
+			}
 			$this->Cell(12, $ancho, $mov->getCantidad(), 0, 0, 'R');
 			$this->Cell(12.5, $ancho, sprintf("$ %.2f", $mov->getPrecio() / $mov->getCantidad()), 0, 0, 'R');
 			$this->Cell(19, $ancho, $mov->getPrecio(), 0, 0, 'R');

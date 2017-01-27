@@ -9,7 +9,7 @@
 </div>
 <br />
 <br />-->
-
+<!--
 <div class="row">
 	<div class="col-xs-12 text-right">
 		PRICE X 
@@ -28,6 +28,7 @@
 	</div>
 </div>
 <br />
+-->
 <div class="box">
 	<div class="box-body" style="width: 95%; overflow-x: scroll;">
 		<table id="tblDatos" class="table table-bordered table-hover">

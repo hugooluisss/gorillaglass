@@ -19,8 +19,8 @@
 						<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{if $ordenProductos eq ''}NEWEST{else}{$ordenProductos}{/if}&nbsp;</button>
 						<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 						<div class="dropdown-menu">
-							<li><a class="dropdown-item order" valor="NEWEST" href="#">NEWEST</a></li>
-							<li><a class="dropdown-item order" valor="MOST POPULAR" href="#">MOST POPULAR</a></li>
+							<li><a class="dropdown-item order" valor="NEWEST" href="#" onclick="javascript: return false">NEWEST</a></li>
+							<li><a class="dropdown-item order" valor="MOST POPULAR" href="#" onclick="javascript: return false">MOST POPULAR</a></li>
 						</div>
 					</div>
 				</div>

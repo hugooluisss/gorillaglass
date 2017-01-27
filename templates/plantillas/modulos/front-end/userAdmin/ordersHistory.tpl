@@ -19,7 +19,7 @@
 						{foreach from=$ordenes item="row"}
 							<tr>
 								<td>{$row.fecha|date_format}</td>
-								<td class="text-right">$ {$row.subtotal}</td>
+								<td class="text-right">$ {$row.subtotal|string_format:"%.02f"}</td>
 								<td class="text-center">
 									<span class="colorEstado" style="background: {$row.color}">
 										{$row.estado}

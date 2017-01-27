@@ -17,6 +17,9 @@ $(document).ready(function(){
 			},
 			txtPass: {
 				required: true
+			},
+			txtConfirm:{
+				equalTo: "#txtPass"
 			}
 		},
 		wrapper: 'span', 
@@ -29,13 +32,13 @@ $(document).ready(function(){
 				$("#txtEmail").val(),
 				$("#txtRFC").val(),
 				$("#txtDireccion").val(),
-				$("#txtRazonSocial").val(),
+				$("#txtTienda").val(),
 				$("#txtLocalidad").val(),
 				$("#txtTelefono").val(),
 				$("#txtCelular").val(),
 				$("#txtObservaciones").val(),
 				$("#selTipo").val(),
-				$("#txtSitio").val(),
+				$("#txtSitioWeb").val(),
 				$("#selEstado").val(),
 				$("#txtPass").val(),
 				{
@@ -53,6 +56,9 @@ $(document).ready(function(){
 				}
 			);
         }
-
+    });
+    
+    $("#txtPass").change(function(){
+    	$("#txtConfirm").val("");
     });
 });
