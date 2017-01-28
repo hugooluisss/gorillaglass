@@ -44,7 +44,7 @@
 					<br />
 					<br />
 					{foreach name="etiquetas" from=$etiquetas item="row"}
-						<div class="row">
+						<div class="row" style="margin-bottom: 10px;">
 							<div class="col-xs-5 col-sm-5 col-md-5 text-right">
 								{$row}
 							</div>
@@ -57,7 +57,6 @@
 								</div>
 							</div>
 						</div>
-						<br />
 					{/foreach}
 					<div class="row">
 						<br />

@@ -48,9 +48,9 @@ $(document).ready(function(){
 					after: function(datos){
 						$("#frmAdd").find("[type=submit]").prop("disabled", false);
 						if (datos.band){
-							alert("Gracias por actualizar tu información");
+							alert("hank you for updating your info!");
 						}else{
-							alert("Upps... No se guardaron los datos");
+							alert("Not found");
 						}
 					}
 				}

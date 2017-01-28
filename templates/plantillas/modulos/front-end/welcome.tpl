@@ -39,13 +39,11 @@
         		</div>
 			{/foreach}
         	</div>
-            
             <div class="featured_product">
             	<h2>Featured Design</h2>
-                <h3>Dichroic Crescent Hoops</h3>
-                <a href="home/50537-Crescent+Dichroic+Hoops/"><img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" /></a>
+                <h3>Crescent Ibex Hoops</h3>
+                <a href="home/50239-Crescent+Ibex+Hoops/"><img src="repositorio/img/anterior/primary/weights_ibex.jpg" alt="hive ovoid weights" class="img-responsive" /></a>
             </div><!-- /featured_product -->
-            
         </div>
         <!-- END LEFT COLUMN -->
         

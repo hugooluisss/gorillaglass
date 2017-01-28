@@ -52,13 +52,13 @@ switch($objModulo->getId()){
 			$smarty->assign("vista", $producto->getVista());
 		else{
 			switch($_COOKIE['ordenProductos']){
-				case 'MOST POPULAR':
-					$orden = "order by visitas desc";
-				break;
-				case 'NEWEST': default:
+				case 'NEWEST':
 					$orden = "order by idProducto desc";
 					#setcookie("ordenProductos", "NEWEST");
 					$_COOKIE['ordenProductos'] = "NEWEST";
+				break;
+				case 'MOST POPULAR': default:
+					$orden = "order by visitas desc";
 				break;
 			}
 			
