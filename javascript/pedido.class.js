@@ -82,4 +82,22 @@ TPedido = function(){
 			}, "json"
 		);
 	};
+	
+	this.setEnvio = function(pedido, paqueteria, codigo, comentario, fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('cpedidos', {
+				"action": "setEnvio",
+				"id": pedido,
+				"paqueteria": paqueteria,
+				"codigo": codigo,
+				"comentario": comentario
+			}, function(data) {
+				if (data.band == false)
+					console.log(data.mensaje == ''?"Upps. Ocurrió un error al guardar el codigo de rastreo":data.mensaje);
+				
+				if (fn.after !== undefined) fn.after(data);
+			}, "json"
+		);
+	}
 };

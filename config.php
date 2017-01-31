@@ -277,6 +277,29 @@ $conf['updateProductos'] = array(
 	'descripcion' => 'Lista de productos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+#paqueteria
+$conf['paqueteria'] = array(
+	'controlador' => 'paqueteria.php',
+	'vista' => 'paqueteria/panel.tpl',
+	'descripcion' => 'Administración de paqueteria',
+	'seguridad' => true,
+	'js' => array('paqueteria.class.js'),
+	'jsTemplate' => array('paqueteria.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaPaqueteria'] = array(
+	'controlador' => 'paqueteria.php',
+	'vista' => 'paqueteria/lista.tpl',
+	'descripcion' => 'Lista de size',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['cpaqueteria'] = array(
+	'controlador' => 'paqueteria.php',
+	'descripcion' => 'Controlador de paqueteria',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 
 include_once("config/front-end.php");
 ?>

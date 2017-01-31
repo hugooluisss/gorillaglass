@@ -248,6 +248,17 @@ $(document).ready(function(){
 				}
 			});
 			
+			$("[action=rastreo]").click(function(){
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				
+				$("#winRastreo").find("#selPaqueteria").val(el.idPaqueteria);
+				$("#winRastreo").find("#txtRastreo").val(el.codigo);
+				$("#winRastreo").find("#txtComentario").val(el.comentarioEnvio);
+				$("#winRastreo").find("#pedido").val(el.idPedido);
+				
+				$("#winRastreo").modal();
+			});
+			
 			$("#tblPedidos").DataTable({
 				"responsive": true,
 				"language": espaniol,
@@ -348,4 +359,40 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	$("#frmAddRastreo").validate({
+		debug: false,
+		rules: {
+			selPaqueteria: "required",
+			txtRastreo: "required"
+		},
+		errorElement : 'span',
+		errorLabelContainer: '.errorTxt',
+		submitHandler: function(form){
+			var obj = new TPedido;
+			obj.setEnvio(
+				$("#frmAddRastreo").find("#pedido").val(), 
+				$("#frmAddRastreo").find("#selPaqueteria").val(), 
+				$("#frmAddRastreo").find("#txtRastreo").val(),
+				$("#frmAddRastreo").find("#txtComentario").val(),
+				{
+					before: function(){
+						$("#frmAdd").prop("disabled", true);
+					},
+					after: function(datos){
+						$("#frmAdd").prop("disabled", false);
+						
+						if (datos.band){
+							$("#frmAdd #id").val(datos.id);
+							getLista();
+							$("#winRastreo").modal("hide");
+						}else{
+							alert("Upps... No se pudo guardar el código de rastreo");
+						}
+					}
+				}
+			);
+        }
+
+    });
 });

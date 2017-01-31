@@ -29,7 +29,7 @@ switch($objModulo->getId()){
 		
 		$datos = array();
 		if($sesion['perfil'] == 'cliente'){
-			$rs = $db->Execute("select idPedido, fecha, sum(precio) as subtotal, c.*, c.nombre as estado from pedido a join movpedido b using(idPedido) join estadopedido c using(idEstado) where idCliente = ".$sesion['usuario']." group by idPedido order by fecha desc");
+			$rs = $db->Execute("select idPedido, fecha, sum(precio) as subtotal, c.*, c.nombre as estado, d.codigo, e.nombre as paqueteria, e.url from pedido a join movpedido b using(idPedido) join estadopedido c using(idEstado) left join envio d using(idPedido) left join paqueteria e using(idPaqueteria) where idCliente = ".$sesion['usuario']." group by idPedido order by fecha desc");
 			
 			while(!$rs->EOF){
 				$precio = $rs->fields['subtotal'];

@@ -89,3 +89,4 @@
 
 {include file=$PAGE.rutaModulos|cat:"modulos/pedidos/winClientes.tpl"}
 {include file=$PAGE.rutaModulos|cat:"modulos/pedidos/winProductos.tpl"}
+{include file=$PAGE.rutaModulos|cat:"modulos/pedidos/winPaqueteria.tpl"}

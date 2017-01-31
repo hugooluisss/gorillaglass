@@ -198,5 +198,29 @@ class TPedido{
 		$db = TBase::conectaDB();
 		return $db->Execute("delete from pedido where idPedido = ".$this->getId())?true:false;
 	}
+	
+	/**
+	* Establece el código de envío
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCodigoEnvio($paqueteria = '', $codigo = '', $comentario = ''){
+		if ($this->getId() == '') return false;
+		if ($paqueteria == '') return false;
+		if ($codigo == '') return false;
+		
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("select codigo from envio where idPedido = ".$this->getId());
+		
+		if ($rs->EOF)
+			$rs = $db->Execute("insert into envio(idPaqueteria, idPedido, codigo, comentario) values (".$paqueteria.", ".$this->getId().", '".$codigo."', '".$comentario."')");
+		else
+			$rs = $db->Execute("update envio set idPaqueteria = ".$paqueteria.", codigo = '".$codigo."', comentario = '".$comentario."' where idPedido = ".$this->getId());
+			
+		return $rs?true:false;
+	}
 }
 ?>

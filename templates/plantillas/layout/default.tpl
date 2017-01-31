@@ -107,7 +107,7 @@
 					</li>
 					{/if}
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('clientes', 'productos', 'estadoPedidos', 'colores', 'texturas', 'size'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('clientes', 'productos', 'estadoPedidos', 'colores', 'texturas', 'size', 'paqueteria'))}active{/if} treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -118,6 +118,7 @@
 							<li {if $PAGE.modulo eq 'texturas'}class="active"{/if}><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
 							<li {if $PAGE.modulo eq 'size'}class="active"{/if}><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
 							<li {if $PAGE.modulo eq 'productos'}class="active"{/if}><a href="productos"><i class="fa fa-tags"></i> Definición de productos</a></li>
+							<li {if $PAGE.modulo eq 'paqueteria'}class="active"{/if}><a href="paqueteria"><i class="fa fa-motorcycle" aria-hidden="true"></i> Paqueteria</a></li>
 						</ul>
 					</li>
 					{/if}

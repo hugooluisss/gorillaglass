@@ -21,9 +21,15 @@
 								<td>{$row.fecha|date_format}</td>
 								<td class="text-right">$ {$row.subtotal|string_format:"%.02f"}</td>
 								<td class="text-center">
-									<span class="colorEstado" style="background: {$row.color}">
+									<div class="colorEstado" style="background: {$row.color}">
 										{$row.estado}
-									</span>
+										{if $row.codigo}
+										<br />
+										<small><a target="_blank" href="{$row.url}">{$row.paqueteria}</a><br />
+										<b>Code: </b>{$row.codigo}
+										</small>
+										{/if}
+									</div>
 								</td>
 								<td style="text-align: center">
 									<button class="btn btn-gris viewOrder" pedido="{$row.idPedido}">VIEW ORDER</button>

@@ -15,11 +15,22 @@ switch($objModulo->getId()){
 		}
 
 		$smarty->assign("estados", $datos);
+		
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("select * from paqueteria where visible = 1");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("listaPaqueteria", $datos);
 	break;
 	case 'listaPedidos':
 		$db = TBase::conectaDB();
 		global $userSesion;
-		$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado)");
+		$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado, d.idPaqueteria, d.codigo, d.comentario as comentarioEnvio from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado) left join envio d using(idPedido)");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
@@ -144,6 +155,10 @@ switch($objModulo->getId()){
 				$pdf->generar();
 				
 				echo json_encode(array("band" => true, "documento" => $pdf->output()));
+			break;
+			case 'setEnvio':
+				$obj = new TPedido($_POST['id']);
+				echo json_encode(array("band" => $obj->setCodigoEnvio($_POST['paqueteria'], $_POST['codigo'], $_POST['comentario'])));
 			break;
 		}
 	break;
