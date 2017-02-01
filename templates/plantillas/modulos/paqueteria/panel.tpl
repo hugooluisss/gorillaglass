@@ -30,6 +30,12 @@
 							<input class="form-control" id="txtURL" name="txtURL" type="text">
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="txtCosto" class="col-lg-2">Costo</label>
+						<div class="col-lg-2">
+							<input class="form-control text-right" id="txtCosto" name="txtCosto" type="number">
+						</div>
+					</div>
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>

@@ -72,6 +72,16 @@ class RPedido extends tFPDF{
 			}
 		}
 		
+		$this->Ln($ancho);
+		
+		$this->Cell(1, $ancho, "");
+		$this->Cell(27, $ancho, "");
+		$this->Cell(97, $ancho, "Subtotal");
+		$this->Cell(12, $ancho, "", 0, 0, 'R');
+		$this->Cell(12.5, $ancho, "", 0, 0, 'R');
+		$this->Cell(19, $ancho, sprintf("$ %.2f", $total), 0, 0, 'R');
+		$this->Ln($ancho);
+		
 		$descuento = 0;
 		if ($total < 500)
 			$descuento = 0;
@@ -100,6 +110,22 @@ class RPedido extends tFPDF{
 			$total -= $total * $descuento;
 			$this->Ln($ancho);
 		}
+		
+		$db = TBase::conectaDB();
+		
+		$rs = $db->Execute("select a.*, b.nombre from envio a join paqueteria b using(idPaqueteria) where idPedido = ".$this->pedido->getId());
+		if(!$rs->EOF and $rs->fields['costo'] > 0){
+			$this->Cell(1, $ancho, "");
+			$this->Cell(27, $ancho, "");
+			$this->Cell(97, $ancho, "Shipping ".$rs->fields['nombre']);
+			$this->Cell(12, $ancho, "", 0, 0, 'R');
+			$this->Cell(12.5, $ancho, "", 0, 0, 'R');
+			$this->Cell(19, $ancho, sprintf("$ %.2f", $rs->fields['costo']), 0, 0, 'R');
+			$this->Ln($ancho);
+			
+			$total += $rs->fields['costo'];
+		}
+		
 		$this->SetFont('Arial', 'B', 11);
 		$this->SetXY(140, 200);
 		$this->Cell(0, $ancho, sprintf("$ %.2f", $total), 0, 0, 'R');

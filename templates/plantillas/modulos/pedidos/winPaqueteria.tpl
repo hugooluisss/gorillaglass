@@ -12,7 +12,7 @@
 						<div class="col-sm-8">
 							<select class="form-control" id="selPaqueteria" name="selPaqueteria">
 								{foreach from=$listaPaqueteria item=paqueteria}
-									<option value="{$paqueteria.idPaqueteria}">{$paqueteria.nombre}</option>
+									<option value="{$paqueteria.idPaqueteria}">{$paqueteria.nombre} - {$paqueteria.costo}</option>
 								{/foreach}
 							</select>
 						</div>

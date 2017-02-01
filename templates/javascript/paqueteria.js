@@ -16,7 +16,7 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtURL: "required"
+			txtCosto: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -25,6 +25,7 @@ $(document).ready(function(){
 				$("#id").val(), 
 				$("#txtURL").val(), 
 				$("#txtNombre").val(), 
+				$("#txtCosto").val(), 
 				{
 					before: function(){
 						$(form).find("[type=submit]").prop("disabled", true);
@@ -63,9 +64,10 @@ $(document).ready(function(){
 			$("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idColor);
+				$("#id").val(el.idPaqueteria);
 				$("#txtURL").val(el.url);
 				$("#txtNombre").val(el.nombre);
+				$("#txtCosto").val(el.costo);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

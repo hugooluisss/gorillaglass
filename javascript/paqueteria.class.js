@@ -1,13 +1,14 @@
 TPaqueteria = function(){
 	var self = this;
 	
-	this.add = function(id,	url, nombre, fn){
+	this.add = function(id,	url, nombre, costo, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cpaqueteria', {
 				"id": id,
 				"url": url,
 				"nombre": nombre,
+				"costo": costo,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

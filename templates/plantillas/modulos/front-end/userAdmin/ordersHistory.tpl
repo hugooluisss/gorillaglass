@@ -25,7 +25,12 @@
 										{$row.estado}
 										{if $row.codigo}
 										<br />
-										<small><a target="_blank" href="{$row.url}">{$row.paqueteria}</a><br />
+										<small>
+										{if $row.url neq ''}
+											<a target="_blank" href="{$row.url}">{$row.paqueteria}</a><br />
+										{else}
+											{$row.paqueteria}<br />
+										{/if}
 										<b>Code: </b>{$row.codigo}
 										</small>
 										{/if}

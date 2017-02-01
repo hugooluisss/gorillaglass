@@ -6,9 +6,10 @@
 * @autor Hugo Santiago hugooluisss@gmail.com
 **/
 class TPaqueteria{
-	private $idPaeuteria;
+	private $idPaqueteria;
 	private $url;
 	private $nombre;
+	private $costo;
 	
 	/**
 	* Constructor de la clase
@@ -108,6 +109,32 @@ class TPaqueteria{
 	}
 	
 	/**
+	* Establece el costo
+	*
+	* @autor Hugo
+	* @access public
+	* @param float $val valor
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCosto($val = 0){
+		$this->costo = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el costo
+	*
+	* @autor Hugo
+	* @access public
+	* @return float costo
+	*/
+	
+	public function getCosto(){
+		return $this->costo;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos
 	*
 	* @autor Hugo
@@ -131,7 +158,8 @@ class TPaqueteria{
 		$rs = $db->Execute("UPDATE paqueteria
 			SET
 				url = '".$this->getURL()."',
-				nombre = '".$this->getNombre()."'
+				nombre = '".$this->getNombre()."',
+				costo = ".$this->getCosto()."
 			WHERE idPaqueteria = ".$this->getId());
 			
 		return $rs?true:false;

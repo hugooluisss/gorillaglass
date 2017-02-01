@@ -21,6 +21,7 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->setURL($_POST['url']);
 				$obj->setNombre($_POST['nombre']);
+				$obj->setCosto($_POST['costo']);
 
 				echo json_encode(array("band" => $obj->guardar()));
 			break;

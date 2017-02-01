@@ -158,7 +158,8 @@ switch($objModulo->getId()){
 			break;
 			case 'setEnvio':
 				$obj = new TPedido($_POST['id']);
-				echo json_encode(array("band" => $obj->setCodigoEnvio($_POST['paqueteria'], $_POST['codigo'], $_POST['comentario'])));
+				$paqueteria = new TPaqueteria($_POST['paqueteria']);
+				echo json_encode(array("band" => $obj->setCodigoEnvio($_POST['paqueteria'], $_POST['codigo'], $_POST['comentario'], $paqueteria->getCosto())));
 			break;
 		}
 	break;

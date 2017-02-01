@@ -207,18 +207,17 @@ class TPedido{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setCodigoEnvio($paqueteria = '', $codigo = '', $comentario = ''){
+	public function setCodigoEnvio($paqueteria = '', $codigo = '', $comentario = '', $costo = 0){
 		if ($this->getId() == '') return false;
 		if ($paqueteria == '') return false;
-		if ($codigo == '') return false;
 		
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select codigo from envio where idPedido = ".$this->getId());
 		
 		if ($rs->EOF)
-			$rs = $db->Execute("insert into envio(idPaqueteria, idPedido, codigo, comentario) values (".$paqueteria.", ".$this->getId().", '".$codigo."', '".$comentario."')");
+			$rs = $db->Execute("insert into envio(idPaqueteria, idPedido, codigo, comentario, costo) values (".$paqueteria.", ".$this->getId().", '".$codigo."', '".$comentario."', ".$costo.")");
 		else
-			$rs = $db->Execute("update envio set idPaqueteria = ".$paqueteria.", codigo = '".$codigo."', comentario = '".$comentario."' where idPedido = ".$this->getId());
+			$rs = $db->Execute("update envio set idPaqueteria = ".$paqueteria.", codigo = '".$codigo."', comentario = '".$comentario."', costo = ".$costo." where idPedido = ".$this->getId());
 			
 		return $rs?true:false;
 	}
