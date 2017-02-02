@@ -163,7 +163,7 @@ switch($objModulo->getId()){
 			break;
 			case 'placeOrder':
 				#$db = TBase::conectaDB();
-				$comentario = $_POST['cargo'] == 1?"Yes, please wait until I approve the final invoice before charging and shipping my order":("No, Please charge the card you have on file ending in ".$_POST['tarjeta']);
+				$comentario = $_POST['cargo'] == 1?"Yes, please wait until I approve the final invoice before charging and shipping my order":("No. Please charge the card you have on file and ship my order as soon as possible. The last four digits of the card I am authorizing you to charge are ".$_POST['tarjeta']);
 				$paqueteria = new TPaqueteria($_POST['paqueteria']);
 				
 				$obj = new TPedido($_POST['pedido']);

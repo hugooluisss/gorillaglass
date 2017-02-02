@@ -23,7 +23,7 @@
 			<b>Do you wish to confirm your final invoice before we charge your card and ship your order?</b>
 			<select class="form-control" id="selCargo" name="selCargo">
 				<option value="1">Yes, please wait until I approve the final invoice before charging and shipping my order</option>
-				<option value="2">No, Please charge the card you have on file ending in</option>
+				<option value="2">No. Please charge the card you have on file and ship my order as soon as possible. The last four digits of the card I am authorizing you to charge are</option>
 			</select>
 			<br />
 			<div class="row">

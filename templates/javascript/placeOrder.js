@@ -17,7 +17,7 @@ $(document).ready(function(){
 	
 	$("#btnSubmit").click(function(){
 		if ($("#selCargo").val() == 2 && $("#txtCode").val() == ""){
-			alert("Indicates the last 4 digits of your card");
+			alert("Please indicate the 4 last digits of your card");
 			$("#txtCode").focus();
 		}else{
 			$("#btnSubmit").prop("disabled", true);
