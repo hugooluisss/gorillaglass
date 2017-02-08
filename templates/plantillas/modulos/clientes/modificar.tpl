@@ -62,13 +62,12 @@
 					<input class="form-control" id="txtEmail" name="txtEmail" type="email" value="{$cliente->getEmail()}">
 				</div>
 			</div>
-			<!--
 			<div class="form-group">
 				<label for="txtPass" class="col-lg-2">Contraseña</label>
 				<div class="col-lg-3">
-					<input class="form-control" id="txtPass" name="txtPass" type="text" value="{$cliente->getPass()}">
+					<input class="form-control" id="txtPass" name="txtPass" type="password" value="{$cliente->getPass()}">
 				</div>
-			</div>-->
+			</div>
 			<div class="form-group">
 				<label for="txtRFC" class="col-lg-2">TaxID/VAT/Import number</label>
 				<div class="col-lg-3">
@@ -92,7 +91,7 @@
 			<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
 			<button type="submit" class="btn btn-info pull-right">Guardar</button>
 			<input type="hidden" id="id" value="{$cliente->getId()}"/>
-			<input class="form-control" id="txtPass" name="txtPass" type="hidden" value="{$cliente->getPass()}">
+			<!--<input class="form-control" id="txtPass" name="txtPass" type="hidden" value="{$cliente->getPass()}">-->
 		</div>
 	</div>
 </form>

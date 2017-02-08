@@ -59,6 +59,7 @@ switch($objModulo->getId()){
 				break;
 				case 'MOST POPULAR': default:
 					$orden = "order by visitas desc";
+					$_COOKIE['ordenProductos'] = "MOST POPULAR";
 				break;
 			}
 			

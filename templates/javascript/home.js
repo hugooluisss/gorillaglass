@@ -83,7 +83,7 @@ $(document).ready(function(){
 				
 				$(".btn-delete").click(function(){
 					if ($("#tblCarrito").find("[type=checkbox]:checked").length > 0){
-						if(confirm("¿Seguro?")){
+						if(confirm("Are you sure?")){
 							var codigos = "";
 							$("#tblCarrito").find("[type=checkbox]:checked").each(function(){
 								codigos += $(this).val() + ",";
@@ -97,7 +97,7 @@ $(document).ready(function(){
 									$(".btn-delete").prop("dissabled", false);
 									
 									if(!resp.band)
-										alert("Ocurrieron errores al borrar los elementos");
+										alert("Could not be deleted");
 									
 									listaPedidos();
 								}

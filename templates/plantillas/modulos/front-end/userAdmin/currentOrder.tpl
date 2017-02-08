@@ -48,6 +48,6 @@
 </div>
 <div class="row">
 	<div class="col-sm-3">
-		<a href="home">Back to catalog</a>
+		<a href="welcome">Back to catalog</a>
 	</div>
 </div>

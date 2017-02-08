@@ -234,7 +234,7 @@ switch($objModulo->getId()){
 				$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
 				//$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
 				
-				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", true);
+				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", false);
 				$pdf->generar();
 				$archivo = $pdf->output();
 				

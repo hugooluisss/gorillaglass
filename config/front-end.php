@@ -46,7 +46,7 @@ $conf['currentOrder'] = array(
 	'vista' => 'front-end/userAdmin/currentOrder.tpl',
 	'descripcion' => 'El estado del carrito',
 	'seguridad' => true,
-	'js' => array('carrito.class.js'),
+	'js' => array('carrito.class.js', 'pedido.class.js'),
 	'jsTemplate' => array('currentOrder.js', 'menuPrincipal.js'),
 	'capa' => LAYOUT_USER);
 	
