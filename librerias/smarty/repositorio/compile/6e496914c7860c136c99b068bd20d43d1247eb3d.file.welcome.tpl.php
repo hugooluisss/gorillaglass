@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-20 09:40:32
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:24:49
          compiled from "templates/plantillas/modulos/front-end/welcome.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176813172587fb01526a4d9-97341779%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e496914c7860c136c99b068bd20d43d1247eb3d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/welcome.tpl',
-      1 => 1484925144,
+      1 => 1488220707,
       2 => 'file',
     ),
   ),
@@ -41,8 +41,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <li class="elmnt-six"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_6.jpg" width="623" height="400"></div></div></li>
                             <li class="elmnt-seven"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_7.jpg" width="623" height="400"></div></div></li>
                             <li class="elmnt-eight"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_8.jpg" width="623" height="400"></div></div></li>
-                            <li class="elmnt-nine"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_9.jpg" width="623" height="400"></div></div></li>
+                            <!--<li class="elmnt-nine"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_9.jpg" width="623" height="400"></div></div></li>-->
                             <li class="elmnt-ten"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_10.jpg" width="623" height="400"></div></div></li>
+                            <li class="elmnt-ten"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_11.jpg" width="623" height="400"></div></div></li>
+                            <!--<li class="elmnt-ten"><div><div class="wrap"><img src="repositorio/img/anterior/homeslide/slide_12.jpg" width="623" height="400"></div></div></li>-->
                         </ul>
                     </div>
                 </div>
@@ -71,13 +73,11 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
         		</div>
 			<?php } ?>
         	</div>
-            
             <div class="featured_product">
             	<h2>Featured Design</h2>
-                <h3>Dichroic Crescent Hoops</h3>
-                <img src="repositorio/img/anterior/featured/dichroic_crescent_hoops.jpg" alt="hive ovoid weights" class="img-responsive" />
+                <h3>Crescent Ibex Hoops</h3>
+                <a href="home/50239-Crescent+Ibex+Hoops/"><img src="repositorio/img/anterior/primary/weights_ibex.jpg" alt="hive ovoid weights" class="img-responsive" /></a>
             </div><!-- /featured_product -->
-            
         </div>
         <!-- END LEFT COLUMN -->
         

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:14
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:27:04
          compiled from "templates/plantillas/layout/userAdmin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:737534811587f7d5e2ec5a5-22847262%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '880a4b31673caea96213ecd6be6948f92a1a406b' => 
     array (
       0 => 'templates/plantillas/layout/userAdmin.tpl',
-      1 => 1485186164,
+      1 => 1485536818,
       2 => 'file',
     ),
   ),
@@ -82,7 +82,7 @@ iconCar.png" id="mnuProfile" />
 					<li class="list-group-item"><a href="currentOrder">Current Order</a></li>
 					<li class="list-group-item"><a href="orderHistory">Order History</a></li>
 					<!--<li class="list-group-item"><a href="customPriceList">Custom Price List</a></li>-->
-					<li class="list-group-item"><a href="cuseradmin" target="_blank">Price List</a></li>
+					<li class="list-group-item"><a href="priceList">Price List</a></li>
 					<li class="list-group-item"><a href="logout">Logout</a></li>
 				</ul>
 			</div>

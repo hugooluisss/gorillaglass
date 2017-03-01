@@ -104,7 +104,14 @@
 			{/foreach}
 		</ol>
 		<div id="vistaPage">
-		{$vista}
+			{$vista}
+			{if $PAGE.sesion.perfil eq "cliente"}
+			<div class="text-center">
+					<b><a href="#" class="addProducto btn btn-info" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add to cart!</a></b>
+					<br />
+					<br />
+			</div>
+			{/if}
 		</div>
 	</div>
 	

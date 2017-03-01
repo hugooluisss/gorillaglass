@@ -59,4 +59,8 @@ $(document).ready(function(){
 	}
 	
 	$(".table-responsive").css("height", $(window).height() * 40 / 100);
+	
+	$("[href=placeOrder]").click(function(){
+		location.href = "?mod=placeOrder&comentario=" + $("#txtComentarios").val();
+	});
 });

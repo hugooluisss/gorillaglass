@@ -112,6 +112,7 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("listaPaqueteria", $datos);
+		$smarty->assign("comentarios", $_GET['comentario']);
 	break;
 	case 'cuserAdmin':
 	case 'cuseradmin':
@@ -178,7 +179,7 @@ switch($objModulo->getId()){
 				$pedido = new TPedido($rs->fields['idPedido']);
 				$pedido->estado->setId(2);
 				$pedido->setFecha(date("Y-m-d"));
-				$pedido->guardar();
+				//$pedido->guardar();
 				
 				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");
 				$pdf->generar();
@@ -193,6 +194,8 @@ switch($objModulo->getId()){
 				$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
 				$datos['cliente.email'] = $obj->getEmail();
 				$datos['cliente.pass'] = $obj->getPass();
+				
+				$datos['orden.comentario'] = $_POST['comentarios'];
 				
 				$auxEnvio = $db->Execute("select comentario from envio where idPedido = ".$pedido->getId());
 				$datos['comentarios'] = $auxEnvio->fields['comentario'];
@@ -217,7 +220,7 @@ switch($objModulo->getId()){
 				$msg .= '--PHP-alt-'.$random_hash.$salto;
 				$msg .= 'Content-Type: text/html; charset="iso-8859-1"'.$salto;
 				$msg .= 'Content-Transfer-Encoding: 7bit'.$salto.$salto;
-				$msg .= $cuerpo;
+				$msg .= $cuerpo.$salto;
 		
 				$msg .= '--PHP-alt-'.$random_hash.'--'.$salto;
 				$cuerpo = $msg;
@@ -232,7 +235,7 @@ switch($objModulo->getId()){
 				$msg .= '--PHP-mixed-'.$random_hash.'--'.$salto;
 				
 				$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
-				//$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
+				#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
 				
 				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", false);
 				$pdf->generar();
@@ -247,7 +250,7 @@ switch($objModulo->getId()){
 				$msg .= '--PHP-alt-'.$random_hash.$salto;
 				$msg .= 'Content-Type: text/html; charset="iso-8859-1"'.$salto;
 				$msg .= 'Content-Transfer-Encoding: 7bit'.$salto.$salto;
-				$msg .= $cuerpo;
+				$msg .= $cuerpo.$salto;
 				$msg .= '--PHP-alt-'.$random_hash.'--'.$salto;
 				$msg .= '--PHP-mixed-'.$random_hash.$salto;
 		

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:10
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:24:49
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1485185750,
+      1 => 1485786904,
       2 => 'file',
     ),
   ),
@@ -106,28 +106,28 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
         <?php }?>
             <br />
 		<div id="redesSociales" class="container text-center">
-			<a href="https://www.facebook.com/GorillaGlass/">
+			<a href="https://www.facebook.com/GorillaGlass/" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-facebook fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="http://instagram.com/gorillaglass/">
+			<a href="http://instagram.com/gorillaglass/" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-instagram fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="https://twitter.com/GorillaGlass1">
+			<a href="https://twitter.com/GorillaGlass1" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-twitter fa-stack-1x"></i>
 				</span>
 			</a>
 			
-			<a href="https://www.youtube.com/c/GorillaGlassJewelry">
+			<a href="https://www.youtube.com/c/GorillaGlassJewelry" target="_blank">
 				<span class="fa-stack fa-2x">
 					<i class="fa fa-circle-thin fa-stack-2x"></i>
 					<i class="fa fa-youtube-play fa-stack-1x"></i>
@@ -157,12 +157,12 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 					<?php if ($_smarty_tpl->tpl_vars['vista']->value!=''){?>
 						<b><a href="#" class="addProducto" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
 " totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
-"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a></b>
+" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a></b>
 					<?php }else{ ?>
 						<b>Choose a product</b>
 					<?php }?>
 				<?php }else{ ?>
-					<a href="retailLocator">Where to buy?</a>
+					<a href="retailLocator">Where to buy</a>
 				<?php }?>
 			</div>
 		</div>

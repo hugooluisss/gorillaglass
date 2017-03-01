@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 22:04:26
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:25:52
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:281916842586d524e2a0497-78349095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1484769785,
+      1 => 1485786904,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="col-md-6">
 					Done adding products?<br />
-					<a href="#">Go to your profile page to place the order</a>
+					<a href="currentOrder">Go to your profile page to place the order</a>
 				</div>
 			</div>
 		</div>
@@ -84,8 +84,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']["etiquetas"]['iteration']++;
 ?>
-						<div class="row">
-							<div class="col-xs-5 col-sm-5 col-md-5">
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-xs-5 col-sm-5 col-md-5 text-right">
 								<?php echo $_smarty_tpl->tpl_vars['row']->value;?>
 
 							</div>
@@ -103,7 +103,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 					<?php } ?>
 					<div class="row">
 						<br />
-						<div class="col-xs-5 col-sm-5 col-md-5 text-right">QUANTITY</div>
+						<br />
+						<div class="col-xs-5 col-sm-5 col-md-5 text-right">PIECES</div>
 						<div class="col-xs-7 col-sm-7 col-md-3">
 							<input type="number" value="0" id="txtCantidad" name="txtCantidad" class="form-control" />
 						</div>
@@ -112,6 +113,12 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<br />
 						<div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 text-center">
 							<button class="btn btn-addProducto">ADD</button>
+						</div>
+					</div>
+					<div class="row">
+						<br />
+						<div class="col-xs-12">
+							<span class="text-danger">All items are single pieces.You must order two pieces to receive a matching pair</span>
 						</div>
 					</div>
 				</div>

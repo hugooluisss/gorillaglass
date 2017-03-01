@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-17 09:01:25
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:25:01
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:105885602258629663435879-69371871%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1484233871,
+      1 => 1485886180,
       2 => 'file',
     ),
   ),
@@ -154,7 +154,7 @@ plugins/upload/css/jquery.fileupload.css">
 					</li>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','productos','estadoPedidos','colores','texturas','size'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','productos','estadoPedidos','colores','texturas','size','paqueteria'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -165,6 +165,7 @@ plugins/upload/css/jquery.fileupload.css">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='texturas'){?>class="active"<?php }?>><a href="texturas"><i class="fa fa-braille"></i> Texturas</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='size'){?>class="active"<?php }?>><a href="size"><i class="fa fa-ellipsis-h"></i> Tamaños</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='productos'){?>class="active"<?php }?>><a href="productos"><i class="fa fa-tags"></i> Definición de productos</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='paqueteria'){?>class="active"<?php }?>><a href="paqueteria"><i class="fa fa-motorcycle" aria-hidden="true"></i> Paqueteria</a></li>
 						</ul>
 					</li>
 					<?php }?>

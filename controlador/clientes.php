@@ -117,6 +117,19 @@ switch($objModulo->getId()){
 						//$emailBand = $email->send();
 						#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
 						$emailBand = imap_mail($obj->getEmail(), $subject, $message, $headers);
+						
+						
+						$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/clienteRegistrado.html"), $datos));
+						$subject = "Request received";
+						
+						$headers   = array();
+						$headers = "MIME-Version: 1.0;\r\n";
+						$headers .= "Content-type: text/html; charset=iso-8859-1;\r\n";
+						$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
+						$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
+						
+						#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
+						$emailBand = imap_mail("sales@getgorilla.com", $subject, $message, $headers);
 					}else{
 						#hay que ver si cambió a activado
 						if ($edo == 'R' and $obj->getEstado() == 'A'){
@@ -133,6 +146,18 @@ switch($objModulo->getId()){
 							
 							#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
 							$emailBand = imap_mail($obj->getEmail(), $subject, $message, $headers);
+							
+							$message = utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/clienteConfirmado.html"), $datos));
+							$subject = "Confirmed data";
+							
+							$headers   = array();
+							$headers = "MIME-Version: 1.0;\r\n";
+							$headers .= "Content-type: text/html; charset=iso-8859-1;\r\n";
+							$headers .= "From: GorillaGlass <".$ini['mail']['user'].">;\r\n";
+							$headers .= "Reply-To: <".$ini['mail']['user'].">;\r\n";
+							
+							#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $message, $headers);
+							$emailBand = imap_mail("sales@getgorilla.com", $subject, $message, $headers);
 						}
 					}
 					

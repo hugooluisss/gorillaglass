@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:17
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:27:05
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1485186318,
+      1 => 1485543167,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<thead>
 		<tr>
 			<th>&nbsp;</th>
-			<th class="visible-xs">&nbsp;</th>
+			<!--<th class="visible-xs">&nbsp;</th>-->
 			<th class="hidden-xs text-center">Description</th>
 			<th class="text-center">
 				<span class="hidden-xs">Pieces</span>
@@ -55,8 +55,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 		<tr>
 			<td><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idMovimiento'];?>
 "/></td>
-			<td class="visible-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
-</td>
+			<!--<td class="visible-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
+</td> -->
 			<td class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
 </td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
@@ -70,7 +70,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 if (!$_smarty_tpl->tpl_vars["row"]->_loop) {
 ?>
 			<tr>
-				<td class="text-center" colspan="6">None</td>
+				<td class="text-center" colspan="5">None</td>
 			</tr>
 		<?php } ?>
 	</tbody>
@@ -83,11 +83,13 @@ if (!$_smarty_tpl->tpl_vars["row"]->_loop) {
 	<div class="col-md-7">
 		<div class="alert alert-gris">
 			<div class="row">
-				<div class="col-xs-6 text-right">DISCOUNT</div>
-				<div class="col-xs-6 text-right"><?php echo $_smarty_tpl->tpl_vars['etiquetaDescuento']->value;?>
+				<div class="col-xs-9 text-right">DISCOUNT</div>
+				<div class="col-xs-3 text-right"><?php echo $_smarty_tpl->tpl_vars['etiquetaDescuento']->value;?>
 %</div>
-				<div class="col-xs-6 text-right">SUBTOTAL(USD)</div>
-				<div class="col-xs-6 text-right"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 text-right">ESTIMATED SUBTOTAL(USD)</div>
+				<div class="col-xs-3 text-right"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 </div>
 			</div>
 		</div>

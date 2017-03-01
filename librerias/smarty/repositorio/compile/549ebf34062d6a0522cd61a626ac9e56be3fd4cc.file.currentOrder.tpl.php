@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-23 11:56:14
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:27:04
          compiled from "templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:786501328587f8aa285edd0-71067383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '549ebf34062d6a0522cd61a626ac9e56be3fd4cc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl',
-      1 => 1485186429,
+      1 => 1488220706,
       2 => 'file',
     ),
   ),
@@ -25,11 +25,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_587f8aa285fb22_46936429')) {function content_587f8aa285fb22_46936429($_smarty_tpl) {?><div class="page-header">
-	<h1><?php echo $_smarty_tpl->tpl_vars['clienteObj']->value->getNombre();?>
+	<h1><?php echo $_smarty_tpl->tpl_vars['clienteObj']->value->getRazonSocial();?>
+ - <?php echo $_smarty_tpl->tpl_vars['clienteObj']->value->getNombre();?>
 </h1>
 	<h3>Current Order</h3>
 </div>
-
+<div class="row">
+	<div class="col-xs-12 text-right">
+		<button class="btn btn-default" id="print">Print Order</button>
+	</div>
+</div>
+<br /><br />
 <div class="table-responsive">
 </div>
 
@@ -44,8 +50,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="placeOrder" class="btn btn-blue">Place Order</a>
 	</div>
 </div>
+<br />
 <div class="row">
-	<div class="col-sm-3 col-sm-offset-9 text-center">
+	<div class="col-sm-4">
+		<small>
+		<p>This is an estimate. The final invoice will be sent to your registered email address after the order is processed. Custom pieces and special requests are not included in this estimate.</p>
+		</small>
+	</div>
+	<div class="col-sm-5">
+		<small>
+		<p>Please note that orders under $100 will have a $15 surcharge.</p>
+		<p>The standard bulk discounts are as follows:</p>
+		5%   discount for sales of $500.00 and above.<br />
+10% discount for sales of $1,000.00 and above.<br />
+15% discount for sales of $2,000.00 and above.<br />
+		</small>
+	</div>
+	<div class="col-sm-3 text-center">
 		<br />
 		<p>
 			<b>Any questions?</b><br />
@@ -56,6 +77,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 <div class="row">
 	<div class="col-sm-3">
-		<a href="home">Back to catalog</a>
+		<a href="welcome">Back to catalog</a>
 	</div>
 </div><?php }} ?>

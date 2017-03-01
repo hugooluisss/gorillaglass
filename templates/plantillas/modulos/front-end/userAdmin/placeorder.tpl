@@ -49,3 +49,5 @@
 	<br /><br /><br />
 	<p><a href="welcome">Go back to the homepage</a></p>
 </div>
+
+<input type="hidden" id="comentarios" value="{$comentarios}" />

@@ -31,7 +31,11 @@
 					<div class="form-group text-right">
 						<!--<input type="text" class="form-control search" placeholder="Search">-->
 					</div>
-					<img src="{$PAGE.iconos}iconCar.png" id="mnuProfile" />
+					{if $PAGE.sesion.perfil eq "cliente"}
+						<img src="{$PAGE.iconos}iconCar.png" id="mnuProfile" />
+					{else}
+						<img src="{$PAGE.iconos}wholesale.png" id="mnuProfile" style="margin-top: 15px; cursor: pointer;"/>
+					{/if}
 				</form>
 			</div>
 		</nav>

@@ -12,13 +12,21 @@
 </div>
 
 <input id="idPedido" type="hidden" value="{$idPedido}" />
-
+<div class="row">
+	<div class="col-sm-6">
+		If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided.
+	</div>
+	<div class="col-sm-6">
+		<textarea id="txtComentarios" name="txtComentarios" class="form-control"></textarea>
+	</div>
+</div>
+<br />
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-6 text-center">
 		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
 	</div>
 	<div class="col-sm-3">
-		<a href="placeOrder" class="btn btn-blue">Place Order</a>
+		<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>
 	</div>
 </div>
 <br />

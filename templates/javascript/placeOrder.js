@@ -27,6 +27,7 @@ $(document).ready(function(){
 				"pedido": $("#pedido").val(),
 				"tarjeta": $("#txtCode").val(),
 				"cargo": $("#selCargo").val(),
+				"comentarios": $("#comentarios").val(),
 				"paqueteria": $("#selPaqueteria").val()
 			}, function(resp){
 				if (!resp.band)
