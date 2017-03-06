@@ -13,11 +13,8 @@
 
 <input id="idPedido" type="hidden" value="{$idPedido}" />
 <div class="row">
-	<div class="col-sm-6">
-		If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided.
-	</div>
-	<div class="col-sm-6">
-		<textarea id="txtComentarios" name="txtComentarios" class="form-control"></textarea>
+	<div class="col-sm-6 col-sm-offset-6">
+		<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5"></textarea>
 	</div>
 </div>
 <br />
