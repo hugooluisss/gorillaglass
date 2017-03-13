@@ -35,6 +35,7 @@
 	</div>
 	<div class="col-sm-5">
 		<small>
+		<p>Wholesale orders have a $100.00 minimum.</p>
 		<p>Please note that orders under $100 will have a $15 surcharge.</p>
 		<p>The standard bulk discounts are as follows:</p>
 		5%   discount for sales of $500.00 and above.<br />

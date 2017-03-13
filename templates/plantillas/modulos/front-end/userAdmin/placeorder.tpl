@@ -1,4 +1,4 @@
-
+{if $subtotal >= 100}
 <div class="page-header">
 	<h1>Thank you for ordering Gorilla Glass!</h1>
 </div>
@@ -51,3 +51,12 @@
 </div>
 
 <input type="hidden" id="comentarios" value="{$comentarios}" />
+{else}
+<div class="page-header">
+	<h1>Wholesale orders have a $100.00 minimum.</h1>
+</div>
+<br />
+<br /><br />
+<center><a href="home/18039-Plugs/" class="btn btn-primary">Continue shopping</a></center>
+<br /><br />
+{/if}

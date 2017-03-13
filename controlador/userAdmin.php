@@ -101,6 +101,35 @@ switch($objModulo->getId()){
 			
 			if ($sesion['perfil'] == "cliente")
 				$smarty->assign("clienteObj", new TCliente($sesion['usuario']));
+				
+				
+			$rs = $db->Execute("select * from movpedido where idPedido = ".$rs->fields['idPedido']);
+			$precio = 0;
+			//$datos = array();
+			while(!$rs->EOF){
+				$precio +=  $rs->fields['precio'];
+				$rs->moveNext();
+			}
+			
+			$smarty->assign("subtotal", sprintf("%.2f", $precio));
+			
+			if ($precio <= 500){
+				$descuento = 0;
+				$etiquetaDescuento = "0";
+			}elseif ($precio <= 1000){
+				$descuento = $precio * 0.05;
+				$etiquetaDescuento = "5";
+			}elseif ($precio <= 1500){
+				$descuento = $precio * 0.1;
+				$etiquetaDescuento = "10";
+			}else{
+				$descuento = $precio * 0.15;
+				$etiquetaDescuento = "15";
+			}
+				
+			$smarty->assign("descuento", sprintf("%.2f", $descuento));
+			$smarty->assign("total", sprintf("%.2f", $precio - $descuento));
+			$smarty->assign("etiquetaDescuento", $etiquetaDescuento);
 		}
 		
 		$rs = $db->Execute("select * from paqueteria where visible = 1");
@@ -179,7 +208,7 @@ switch($objModulo->getId()){
 				$pedido = new TPedido($rs->fields['idPedido']);
 				$pedido->estado->setId(2);
 				$pedido->setFecha(date("Y-m-d"));
-				//$pedido->guardar();
+				$pedido->guardar();
 				
 				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");
 				$pdf->generar();
@@ -237,7 +266,7 @@ switch($objModulo->getId()){
 				$emailBand = imap_mail($obj->getEmail(), $subject, $msg, $headers);
 				#$emailBand = imap_mail("hugooluisss@gmail.com", $subject, $msg, $headers);
 				
-				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", false);
+				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"", true);
 				$pdf->generar();
 				$archivo = $pdf->output();
 				

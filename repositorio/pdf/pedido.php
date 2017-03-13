@@ -32,7 +32,11 @@ class RPedido extends tFPDF{
 		$this->Image('repositorio/img/orden.jpg', 0, 0, 190, 240);
 		$this->SetXY(140, 32);
 		$this->Cell(0, 5, $this->pedido->getFecha(), 0, 0, 'C');
-		
+		$this->SetXY(140, 40);
+		$this->SetFont('Arial', '', 10);
+		if ($this->showCodigo)
+			$this->Cell(0, 5, "Purchase order: #".$this->pedido->getId(), 0, 0, 'C');
+		$this->SetFont('Arial', 'B', 10);
 		$this->SetXY(35, 41);
 		$this->Cell(0, 5, utf8_decode(strtoupper($this->pedido->cliente->getRazonSocial(). ' - '.$this->pedido->cliente->getNombre())));
 		

@@ -108,7 +108,7 @@
 			<div class="container text-center">
 				{if $PAGE.sesion.perfil eq "cliente"}
 					{if $vista neq ''}
-						<b><a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a></b>
+						<b><a href="#" class="addProducto" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Click here to select the size and color</a></b>
 					{else}
 						<b>Choose a product</b>
 					{/if}
