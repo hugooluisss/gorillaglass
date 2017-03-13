@@ -21,7 +21,7 @@
 							<button type="button" class="btn btn-default" action="rastreo" title="Envio" datos='{$row.json}'><i class="fa fa-motorcycle"></i></button>
 							<button type="button" class="btn btn-default" action="pdf" title="Imprimir" datos='{$row.json}'><i class="fa fa-file-pdf-o"></i></button>
 							<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
-							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" venta="{$row.idVenta}"><i class="fa fa-times"></i></button>
+							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" pedido="{$row.idPedido}"><i class="fa fa-times"></i></button>
 						</td>
 					</tr>
 				{/foreach}

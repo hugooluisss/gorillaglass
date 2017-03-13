@@ -39,12 +39,12 @@ TPedido = function(){
 		);
 	};
 	
-	this.del = function(venta, fn){
+	this.del = function(id, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cpedidos', {
 			"action": "del",
-			"id": venta,
+			"id": id,
 		}, function(data){
 			if (data.band == 'false')
 				console.log("Ocurrió un error al eliminar el pedido");

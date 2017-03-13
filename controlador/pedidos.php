@@ -118,7 +118,7 @@ switch($objModulo->getId()){
 					echo json_encode(array("band" => false, "mensaje" => "No se guardó"));
 			break;
 			case 'del':
-				$obj = new TVenta($_POST['id']);
+				$obj = new TPedido($_POST['id']);
 				
 				if ($obj->eliminar())
 					echo json_encode(array("band" => "true"));

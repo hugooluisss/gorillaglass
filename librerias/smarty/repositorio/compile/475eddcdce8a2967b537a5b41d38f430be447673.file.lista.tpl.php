@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 08:32:54
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-07 12:52:20
          compiled from "templates/plantillas/modulos/pedidos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115925172586d3088aa30a5-62389873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '475eddcdce8a2967b537a5b41d38f430be447673' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/lista.tpl',
-      1 => 1481048343,
+      1 => 1488912735,
       2 => 'file',
     ),
   ),
@@ -54,11 +54,13 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 " class="text-center"><?php echo $_smarty_tpl->tpl_vars['row']->value['estado'];?>
 </td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-default" action="rastreo" title="Envio" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><i class="fa fa-motorcycle"></i></button>
 							<button type="button" class="btn btn-default" action="pdf" title="Imprimir" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-file-pdf-o"></i></button>
 							<button type="button" class="btn btn-default" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>
-							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" venta="<?php echo $_smarty_tpl->tpl_vars['row']->value['idVenta'];?>
+							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" pedido="<?php echo $_smarty_tpl->tpl_vars['row']->value['idPedido'];?>
 "><i class="fa fa-times"></i></button>
 						</td>
 					</tr>

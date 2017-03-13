@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:25:52
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-06 12:57:29
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1485540047,
+      1 => 1488820255,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'breadcrumb' => 0,
     'hijos' => 0,
     'PAGE' => 0,
+    'itemId' => 0,
+    'etiquetas' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -194,8 +196,17 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			<?php } ?>
 		</ol>
 		<div id="vistaPage">
-		<?php echo $_smarty_tpl->tpl_vars['vista']->value;?>
+			<?php echo $_smarty_tpl->tpl_vars['vista']->value;?>
 
+			<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['sesion']['perfil']=="cliente"){?>
+			<div class="text-center">
+					<b><a href="#" class="addProducto btn btn-info" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
+" totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
+" onclick="javascript: return false;" style="font-size: 16px"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add to cart!</a></b>
+					<br />
+					<br />
+			</div>
+			<?php }?>
 		</div>
 	</div>
 	

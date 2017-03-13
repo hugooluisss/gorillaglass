@@ -39,7 +39,7 @@ $(document).ready(function(){
 				$("#txtEmail").val(),
 				$("#txtRFC").val(),
 				$("#txtDireccion").val(),
-				$("#txtRazonSocial").val(),
+				$("#txtTienda").val(),
 				$("#txtLocalidad").val(),
 				$("#txtTelefono").val(),
 				$("#txtCelular").val(),
