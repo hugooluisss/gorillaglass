@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:19:28
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 12:03:01
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1490109566,
+      1 => 1490115681,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5871167c527334_46662464')) {function content_5871167c527334_46662464($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/gorillaglass/librerias/smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5871167c527334_46662464')) {function content_5871167c527334_46662464($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/gorillasglass/librerias/smarty/plugins/modifier.truncate.php';
 ?><table id="tblCarrito" class="table table-hover table-condensed">
 	<thead>
 		<tr>

@@ -1,3 +1,5 @@
+<select class="selectpicker" {if $index eq $etiquetas}multiple{/if} nivels="{$index}" total="{$etiquetas|@count}">
 {foreach from=$lista item="row"}
-	<li><a class="dropdown-item" href="#" datos='{$row.json}'>{$row.nombre}</a></li>
+	<option value='{$row.idProducto}'>{$row.nombre}</option>
 {/foreach}
+</select>

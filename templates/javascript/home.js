@@ -36,15 +36,32 @@ $(document).ready(function(){
 		listaPedidos();
 		
 		function getHijos(index, item, total){
+			$("[nivel=" + index + "]").html("Updating...");
 			carrito.getChildrens({
 				"identificador": item,
 				"index": index,
 				"total": total,
-				after: function(html){
+				after: function(elementos){
 					var contenedor = $("[nivel=" + index + "]");
-					contenedor.find(".dropdown-menu").html(html);
-					contenedor.find("[data-toggle=dropdown]:first-child").html("SELECT");
+					contenedor.html(elementos);
 					
+					contenedor.find("select").change(function(){
+						var el = $(this);
+						if (index < $(".addProducto").attr("totalEtiquetas"))
+							getHijos(index + 1, el.val(), $(".addProducto").attr("totalEtiquetas"));
+					});
+					
+					for(var cont = index+1 ; cont < 15 ; cont++){
+						$("[nivel=" + cont + "]").html("");
+					}
+					
+					$('select').selectpicker('render');
+						
+					//contenedor.append(html);
+					//console.log(contenedor);
+					//contenedor.find("[data-toggle=dropdown]:first-child").html("SELECT");
+					
+					/*
 					contenedor.find(".dropdown-menu").find("a").click(function(){
 						var el = jQuery.parseJSON($(this).attr("datos"));
 						
@@ -63,6 +80,8 @@ $(document).ready(function(){
 						
 						return false;
 					});
+					
+					*/
 				}
 			});
 		}
@@ -77,8 +96,8 @@ $(document).ready(function(){
 	});
 	
 	$("#modal-car").find(".btn-addProducto").click(function(){
-		var producto = $("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("[data-toggle=dropdown]:first-child").attr("producto");
-		if (producto === undefined || producto == null || producto == ''){
+		var producto = $("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("select");
+		if (producto === undefined || producto == null || producto.length == 0){
 			alert("Select all options");
 		}else{
 			if($("#idPedido").val() == ''){
@@ -134,7 +153,7 @@ $(document).ready(function(){
 	}
 	
 	function addProducto(){
-		var el = jQuery.parseJSON($("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("[data-toggle=dropdown]:first-child").attr("datos"));
+		var el = jQuery.parseJSON($("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("select").attr("datos"));
 		var obj = new TPedido;
 		obj.addMovimiento("", $("#idPedido").val(), el.clave, el.nombreAdd, $("#txtCantidad").val(), el.precio, el.descuento, {
 			after: function(resp){

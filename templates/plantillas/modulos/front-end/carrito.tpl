@@ -68,13 +68,9 @@
 							<div class="col-xs-5 col-sm-5 col-md-5 text-right">
 								{$row}
 							</div>
-							<div class="col-xs-7 col-sm-7 col-md-7" nivel="{$smarty.foreach.etiquetas.iteration}" total="{$etiquetas|@count}">
-								<div class="btn-group order">
-									<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SELECT</button>
-									<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-									<div class="dropdown-menu">
-									</div>
-								</div>
+							<div class="col-xs-7 col-sm-7 col-md-7" nivel="{$smarty.foreach.etiquetas.iteration}">
+								<select class="selectpicker" nivels="{$smarty.foreach.etiquetas.iteration}" total="{$etiquetas|@count}">
+								</select>
 							</div>
 						</div>
 					{/foreach}

@@ -115,24 +115,34 @@ switch($objModulo->getId()){
 		}
 	break;
 	case 'itemsElemento':
-		$item = $_POST['item'];
 		$db = TBase::conectaDB();
-		$index = $_POST['index'];
-		
-		if ($index == $_POST['total'])
-			$rs = $db->Execute("select a.*, b.precio, b.nombre as nombreAdd, b.clave from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0 order by a.clave");
-		else
-			$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0 order by clave");
 		$datos = array();
-		while(!$rs->EOF){
-			$rs->fields["nombre2"] = substr($rs->fields['nombre'], 0, 10);
-			$rs->fields["index"] = $index+1;
-			$rs->fields['json'] = json_encode($rs->fields);
-			array_push($datos, $rs->fields);
-			$rs->moveNext();
+		if (is_array($_POST['item']))
+			$items = $_POST['item'];
+		else
+			$items = array($_POST['item']);
+			
+		foreach($items as $i => $item){
+			$index = $_POST['index'];
+			
+			if ($index == $_POST['total'])
+				$rs = $db->Execute("select a.*, b.precio, b.nombre as nombreAdd, b.clave from producto a join articulo b using(idProducto) where idPadre = ".$item." and not idProducto = 0 order by a.clave");
+			else
+				$rs = $db->Execute("select * from producto where idPadre = ".$item." and not idProducto = 0 order by clave");
+				
+			while(!$rs->EOF){
+				$rs->fields["nombre2"] = substr($rs->fields['nombre'], 0, 10);
+				$rs->fields["index"] = $index+1;
+				$rs->fields['json'] = json_encode($rs->fields);
+				array_push($datos, $rs->fields);
+				$rs->moveNext();
+			}
 		}
 		
 		$smarty->assign("lista", $datos);
+		$smarty->assign("index", $index);
+		$smarty->assign("etiquetas", $_POST['total']);
+		//echo json_encode($datos);
 	break;
 	case 'placeOrder':
 		$db = TBase::conectaDB();
