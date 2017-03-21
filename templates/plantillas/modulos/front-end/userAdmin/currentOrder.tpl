@@ -47,7 +47,7 @@
 		</small>
 	</div>
 	<div class="col-sm-3 text-center">
-		<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
+		<a href="placeOrder" onclick="javascript: return false;" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 		<br />
 		<p>
 			<b>Any questions?</b><br />

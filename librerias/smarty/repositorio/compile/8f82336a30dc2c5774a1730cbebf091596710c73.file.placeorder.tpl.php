@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:20:58
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 10:01:03
          compiled from "templates/plantillas/modulos/front-end/userAdmin/placeorder.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1893679310588643f715bd34-40937948%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8f82336a30dc2c5774a1730cbebf091596710c73' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/placeorder.tpl',
-      1 => 1490059255,
+      1 => 1490112062,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'subtotal' => 0,
     'listaPaqueteria' => 0,
     'paqueteria' => 0,
-    'idPedido' => 0,
     'comentarios' => 0,
+    'idPedido' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_588643f71f3d70_12801967')) {function content_588643f71f3d70_12801967($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['subtotal']->value>=100){?>
 <div class="page-header">
-	<h1>Choose a shipping method</h1>
+	<h1>Choose a shipping method and send the order.</h1>
 </div>
 
 <div id="info">
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</span>
 		</div>
 		<div class="col-xs-10">
-			<b>Optional: Do you want to add an estimate of your shipping cost to your Order?</b> <br/>
+			<b>Add an estimate of your shipping cost to your order</b> <br/>
 			<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a> <br />
 			<br />
 			<select class="form-control" id="selPaqueteria" name="selPaqueteria">
@@ -92,8 +92,12 @@ $_smarty_tpl->tpl_vars['paqueteria']->_loop = true;
 		</div>
 		<div class="col-xs-10">
 			<p><b>Send us the order. You will receive the order as a pdf to your email address.</b></p>
-			<p class="text-right">
-				<button class="btn btn-default" id="btnSubmit">Send</button>
+			<p>
+				<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5"><?php echo $_smarty_tpl->tpl_vars['comentarios']->value;?>
+</textarea>
+			</p>
+			<p class="text-center">
+				<button class="btn btn-info" id="btnSubmit">Send</button>
 			</p>
 			<input type="hidden" id="pedido" name="pedido" value="<?php echo $_smarty_tpl->tpl_vars['idPedido']->value;?>
 " />
@@ -108,8 +112,8 @@ $_smarty_tpl->tpl_vars['paqueteria']->_loop = true;
 	<p><a href="welcome">Go back to the homepage</a></p>
 </div>
 
-<input type="hidden" id="comentarios" value="<?php echo $_smarty_tpl->tpl_vars['comentarios']->value;?>
-" />
+<!--<input type="hidden" id="comentarios" value="<?php echo $_smarty_tpl->tpl_vars['comentarios']->value;?>
+" />-->
 <?php }else{ ?>
 <div class="page-header">
 	<h1>Wholesale orders have a $100.00 minimum.</h1>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:03:57
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 10:02:57
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:281916842586d524e2a0497-78349095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1490058228,
+      1 => 1490112166,
       2 => 'file',
     ),
   ),
@@ -67,7 +67,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="col-md-7">
 					<p class="text-justify">After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
 					<p class="text-justify">
-						<a href="currentOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
+						<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 					</p>
 				</div>
 			</div>

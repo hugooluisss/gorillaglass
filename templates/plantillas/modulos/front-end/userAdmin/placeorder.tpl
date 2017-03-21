@@ -12,7 +12,7 @@
 			</span>
 		</div>
 		<div class="col-xs-10">
-			<b>Optional: Do you want to add an estimate of your shipping cost to your Order?</b> <br/>
+			<b>Add an estimate of your shipping cost to your order</b> <br/>
 			<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a> <br />
 			<br />
 			<select class="form-control" id="selPaqueteria" name="selPaqueteria">
@@ -56,8 +56,11 @@
 		</div>
 		<div class="col-xs-10">
 			<p><b>Send us the order. You will receive the order as a pdf to your email address.</b></p>
-			<p class="text-right">
-				<button class="btn btn-default" id="btnSubmit">Send</button>
+			<p>
+				<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5">{$comentarios}</textarea>
+			</p>
+			<p class="text-center">
+				<button class="btn btn-info" id="btnSubmit">Send</button>
 			</p>
 			<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
 		</div>
@@ -71,7 +74,7 @@
 	<p><a href="welcome">Go back to the homepage</a></p>
 </div>
 
-<input type="hidden" id="comentarios" value="{$comentarios}" />
+<!--<input type="hidden" id="comentarios" value="{$comentarios}" />-->
 {else}
 <div class="page-header">
 	<h1>Wholesale orders have a $100.00 minimum.</h1>

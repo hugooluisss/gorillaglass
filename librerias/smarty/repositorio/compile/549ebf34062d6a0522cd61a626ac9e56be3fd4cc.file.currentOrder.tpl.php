@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:12:16
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:48:45
          compiled from "templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:786501328587f8aa285edd0-71067383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '549ebf34062d6a0522cd61a626ac9e56be3fd4cc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl',
-      1 => 1490109135,
+      1 => 1490111324,
       2 => 'file',
     ),
   ),
@@ -76,7 +76,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</small>
 	</div>
 	<div class="col-sm-3 text-center">
-		<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
+		<a href="placeOrder" onclick="javascript: return false;" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 		<br />
 		<p>
 			<b>Any questions?</b><br />

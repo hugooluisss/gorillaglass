@@ -36,7 +36,7 @@
 				<div class="col-md-7">
 					<p class="text-justify">After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
 					<p class="text-justify">
-						<a href="currentOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
+						<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 					</p>
 				</div>
 			</div>

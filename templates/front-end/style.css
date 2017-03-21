@@ -357,9 +357,9 @@ div#footer_icons {
   background: #FFBD51;
   color: black;
 }
-.texto-negro {
-  color: black;
-  font-height: bold;
+.btn-info {
+  color: black !important;
+  font-weight: bold !important;
 }
 #vistaPage {
   color: #333;
