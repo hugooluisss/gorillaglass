@@ -3,8 +3,10 @@
 	<h3>Current Order</h3>
 </div>
 <div class="row">
-	<div class="col-xs-12 text-right">
-		<button class="btn btn-default" id="print">Print Order</button>
+	<div class="col-xs-12 col-sm-4 col-sm-offset-8 text-center">
+		<span class="text-center"><small><b>Review your order here if you <br />are on a mobile device.</b></small></span><br />
+		<button class="btn btn-yellow text-right viewOrder">Mobile version</button><br />
+		<span class="text-center"><small><b>You can also download and print this file</b></small></span>
 	</div>
 </div>
 <br /><br />

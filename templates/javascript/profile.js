@@ -48,7 +48,7 @@ $(document).ready(function(){
 					after: function(datos){
 						$("#frmAdd").find("[type=submit]").prop("disabled", false);
 						if (datos.band){
-							alert("hank you for updating your info!");
+							alert("Thank you for updating your info!");
 						}else{
 							alert("Not found");
 						}

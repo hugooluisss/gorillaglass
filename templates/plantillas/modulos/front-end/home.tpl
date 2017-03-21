@@ -107,7 +107,7 @@
 			{$vista}
 			{if $PAGE.sesion.perfil eq "cliente"}
 			<div class="text-center">
-					<b><a href="#" class="addProducto btn btn-info" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}" onclick="javascript: return false;" style="font-size: 16px"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add to cart!</a></b>
+					<b><a href="#" class="addProducto btn btn-info" identificador="{$itemId}" totalEtiquetas="{$etiquetas|@count}" onclick="javascript: return false;" style="font-size: 16px; color: black"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add to cart!</a></b>
 					<br />
 					<br />
 			</div>

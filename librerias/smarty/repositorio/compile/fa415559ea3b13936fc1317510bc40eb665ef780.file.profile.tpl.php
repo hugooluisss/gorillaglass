@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-01-18 08:55:55
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:19:53
          compiled from "templates/plantillas/modulos/front-end/userAdmin/profile.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1334981194587f7d5e3b6f61-93493317%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa415559ea3b13936fc1317510bc40eb665ef780' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/profile.tpl',
-      1 => 1484751346,
+      1 => 1485547297,
       2 => 'file',
     ),
   ),
@@ -45,14 +45,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtTienda" class="col-sm-2 col-form-label col-form-label-lg">Store Name</label>
+				<label for="txtTienda" class="col-sm-2 col-form-label col-form-label-lg">Business Name</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control form-control-lg" id="txtTienda" name="txtTienda" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getRazonSocial();?>
 ">
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtDireccion" class="col-sm-2 col-form-label col-form-label-lg">Store Address</label>
+				<label for="txtDireccion" class="col-sm-2 col-form-label col-form-label-lg">Business Address</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control form-control-lg" id="txtDireccion" name="txtDireccion" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getDireccion();?>
 ">
@@ -73,9 +73,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtSitioWeb" class="col-sm-2 col-form-label col-form-label-lg">Website</label>
+				<label for="txtSitioWeb" class="col-sm-2 col-form-label col-form-label-lg">Website/Social Media</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getSitioweb();?>
+					<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getSitioWeb();?>
 ">
 				</div>
 			</div>
@@ -84,6 +84,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<label for="txtPass" class="col-sm-2 col-form-label col-form-label-lg">Password</label>
 				<div class="col-sm-6">
 					<input type="password" class="form-control form-control-lg" id="txtPass" name="txtPass" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getPass();?>
+">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="txtConfirm" class="col-sm-2 col-form-label col-form-label-lg">Confirm</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control form-control-lg" id="txtConfirm" name="txtConfirm" value="<?php echo $_smarty_tpl->tpl_vars['cliente']->value->getPass();?>
 ">
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:10:36
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:12:16
          compiled from "templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:786501328587f8aa285edd0-71067383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '549ebf34062d6a0522cd61a626ac9e56be3fd4cc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl',
-      1 => 1490058633,
+      1 => 1490109135,
       2 => 'file',
     ),
   ),
@@ -31,8 +31,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<h3>Current Order</h3>
 </div>
 <div class="row">
-	<div class="col-xs-12 text-right">
-		<button class="btn btn-default" id="print">Print Order</button>
+	<div class="col-xs-12 col-sm-4 col-sm-offset-8 text-center">
+		<span class="text-center"><small><b>Review your order here if you <br />are on a mobile device.</b></small></span><br />
+		<button class="btn btn-yellow text-right viewOrder">Mobile version</button><br />
+		<span class="text-center"><small><b>You can also download and print this file</b></small></span>
 	</div>
 </div>
 <br /><br />

@@ -87,7 +87,7 @@
 	<small class="text-mute" style="font-wight: normal">*required fields</small>
 	<br /><br />
 	<p>
-		You will receive confirmation to the email you provided once our account is approved!
+		You will receive confirmation to the email you provided once our account is approved!
 	</p>
 	<a href="contact" class="big-text">Contact us here with any questions!</a>
 	<br />

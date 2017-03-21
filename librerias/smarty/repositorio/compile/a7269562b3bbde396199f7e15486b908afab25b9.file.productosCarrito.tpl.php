@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:08:27
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:19:28
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1490058505,
+      1 => 1490109566,
       2 => 'file',
     ),
   ),
@@ -26,23 +26,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5871167c527334_46662464')) {function content_5871167c527334_46662464($_smarty_tpl) {?><table id="tblCarrito" class="table table-hover table-condensed">
+<?php if ($_valid && !is_callable('content_5871167c527334_46662464')) {function content_5871167c527334_46662464($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/gorillaglass/librerias/smarty/plugins/modifier.truncate.php';
+?><table id="tblCarrito" class="table table-hover table-condensed">
 	<thead>
 		<tr>
 			<th>&nbsp;</th>
 			<!--<th class="visible-xs">&nbsp;</th>-->
-			<th class="hidden-xs text-center">Description</th>
+			<th class="text-center">Description</th>
 			<th class="text-center">
 				<span class="hidden-xs">Pieces</span>
-				<span class="visible-xs">P</span>
+				<!--<span class="visible-xs">P</span>-->
 			</th>
 			<th class="text-center">
 				<span class="hidden-xs">Unit Price</span>
-				<span class="visible-xs">UP</span>
+				<span class="visible-xs">Qty</span>
 			</th>
 			<th class="text-center">
 				<span class="hidden-xs">Product Total</span>
-				<span class="visible-xs">PT</span>
+				<span class="visible-xs">Total</span>
 			</th>
 		</tr>
 	</thead>
@@ -58,6 +59,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			<!--<td class="visible-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </td> -->
 			<td class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
+</td>
+			<td class="visible-xs"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['row']->value['descripcion'],30,"...",true);?>
 </td>
 			<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
 </td>
