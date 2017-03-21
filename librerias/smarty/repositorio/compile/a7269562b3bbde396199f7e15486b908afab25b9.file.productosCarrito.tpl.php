@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:27:05
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:08:27
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7269562b3bbde396199f7e15486b908afab25b9' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/productosCarrito.tpl',
-      1 => 1485543167,
+      1 => 1490058505,
       2 => 'file',
     ),
   ),
@@ -83,13 +83,13 @@ if (!$_smarty_tpl->tpl_vars["row"]->_loop) {
 	<div class="col-md-7">
 		<div class="alert alert-gris">
 			<div class="row">
-				<div class="col-xs-9 text-right">DISCOUNT</div>
-				<div class="col-xs-3 text-right"><?php echo $_smarty_tpl->tpl_vars['etiquetaDescuento']->value;?>
+				<div class="col-xs-6 col-sm-9 text-right">DISCOUNT</div>
+				<div class="col-xs-6 col-sm-3 text-right"><?php echo $_smarty_tpl->tpl_vars['etiquetaDescuento']->value;?>
 %</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-9 text-right">ESTIMATED SUBTOTAL(USD)</div>
-				<div class="col-xs-3 text-right"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+				<div class="col-xs-6 col-sm-9 text-right">ESTIMATED SUBTOTAL(USD)</div>
+				<div class="col-xs-6 col-sm-3 text-right"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 </div>
 			</div>
 		</div>

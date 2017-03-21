@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-01 09:27:04
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-20 19:10:36
          compiled from "templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:786501328587f8aa285edd0-71067383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '549ebf34062d6a0522cd61a626ac9e56be3fd4cc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl',
-      1 => 1488220706,
+      1 => 1490058633,
       2 => 'file',
     ),
   ),
@@ -41,13 +41,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <input id="idPedido" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['idPedido']->value;?>
 " />
-
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-6">
+		<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5"></textarea>
+	</div>
+</div>
+<br />
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-6 text-center">
 		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
 	</div>
 	<div class="col-sm-3">
-		<a href="placeOrder" class="btn btn-blue">Place Order</a>
+		<p><small><b>After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
+		<!--<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>-->
 	</div>
 </div>
 <br />
@@ -59,6 +65,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<div class="col-sm-5">
 		<small>
+		<p>Wholesale orders have a $100.00 minimum.</p>
 		<p>Please note that orders under $100 will have a $15 surcharge.</p>
 		<p>The standard bulk discounts are as follows:</p>
 		5%   discount for sales of $500.00 and above.<br />
@@ -67,6 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</small>
 	</div>
 	<div class="col-sm-3 text-center">
+		<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 		<br />
 		<p>
 			<b>Any questions?</b><br />

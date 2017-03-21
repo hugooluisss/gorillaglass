@@ -23,7 +23,8 @@
 		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
 	</div>
 	<div class="col-sm-3">
-		<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>
+		<p><small><b>After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
+		<!--<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>-->
 	</div>
 </div>
 <br />
@@ -44,6 +45,7 @@
 		</small>
 	</div>
 	<div class="col-sm-3 text-center">
+		<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 		<br />
 		<p>
 			<b>Any questions?</b><br />

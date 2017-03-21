@@ -12,19 +12,39 @@
 					</a>
 				</div>
 			</div>
+			<div class="row visible-xs">
+				<div class="col-xs-12 text-center">
+					<p class="text-center">Review your order here if you are on a mobile device. You can also download and print this file</p>
+					<button class="btn btn-yellow text-right viewOrder">Mobile version</button>
+					<br />
+					<br />
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-12 table-responsive">
 					
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-5 hidden-xs">
+					<p class="text-center">Review your order here if you are on a mobile device. You can also download and print this file</p>
+					<p>
+						<button class="btn btn-yellow text-right viewOrder">Mobile version</button>
+					</p>
+				</div>
+				<div class="col-md-5 show-xs">&nbsp;</div>
+				<div class="col-md-7">
+					<p class="text-justify">After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
+					<p class="text-justify">
+						<a href="currentOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					
 					<br />
 					<a href="#lnkCerrar" id="lnkCerrar" onclick="javascript: return false;">< Back to products</a>
-				</div>
-				<div class="col-md-6">
-					Done adding products?<br />
-					<a href="currentOrder">Go to your profile page to place the order</a>
 				</div>
 			</div>
 		</div>

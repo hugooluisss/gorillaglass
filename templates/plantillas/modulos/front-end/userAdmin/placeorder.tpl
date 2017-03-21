@@ -1,11 +1,17 @@
 {if $subtotal >= 100}
 <div class="page-header">
-	<h1>Thank you for ordering Gorilla Glass!</h1>
+	<h1>Choose a shipping method and send the order.</h1>
 </div>
 
 <div id="info">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-2 text-right">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-circle-thin fa-stack-2x"></i>
+				<i class="fa fa-stack-1x">1</i>
+			</span>
+		</div>
+		<div class="col-xs-10">
 			<b>Optional: Do you want to add an estimate of your shipping cost to your Order?</b> <br/>
 			<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a> <br />
 			<br />
@@ -19,7 +25,13 @@
 	<br />
 	<br />
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-2 text-right">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-circle-thin fa-stack-2x"></i>
+				<i class="fa fa-stack-1x">2</i>
+			</span>
+		</div>
+		<div class="col-xs-10">
 			<b>Do you wish to confirm your final invoice before we charge your card and ship your order?</b>
 			<select class="form-control" id="selCargo" name="selCargo">
 				<option value="1">Yes, please wait until I approve the final invoice before charging and shipping my order</option>
@@ -36,8 +48,17 @@
 	</div>
 	<br /><br />
 	<div class="row">
-		<div class="col-xs-12 text-right">
-			<button class="btn btn-default" id="btnSubmit">Send</button>
+		<div class="col-xs-2 text-right">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-circle-thin fa-stack-2x"></i>
+				<i class="fa fa-stack-1x">3</i>
+			</span>
+		</div>
+		<div class="col-xs-10">
+			<p><b>Send us the order. You will receive the order as a pdf to your email address.</b></p>
+			<p class="text-right">
+				<button class="btn btn-default" id="btnSubmit">Send</button>
+			</p>
 			<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
 		</div>
 	</div>

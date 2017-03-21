@@ -117,17 +117,19 @@ class RPedido extends tFPDF{
 		
 		$db = TBase::conectaDB();
 		
-		$rs = $db->Execute("select a.*, b.nombre from envio a join paqueteria b using(idPaqueteria) where idPedido = ".$this->pedido->getId());
-		if(!$rs->EOF and $rs->fields['costo'] > 0){
-			$this->Cell(1, $ancho, "");
-			$this->Cell(27, $ancho, "");
-			$this->Cell(97, $ancho, "Shipping ".$rs->fields['nombre']);
-			$this->Cell(12, $ancho, "", 0, 0, 'R');
-			$this->Cell(12.5, $ancho, "", 0, 0, 'R');
-			$this->Cell(19, $ancho, sprintf("$ %.2f", $rs->fields['costo']), 0, 0, 'R');
-			$this->Ln($ancho);
-			
-			$total += $rs->fields['costo'];
+		if ($this->pedido->getId() <> ''){
+			$rs = $db->Execute("select a.*, b.nombre from envio a join paqueteria b using(idPaqueteria) where idPedido = ".$this->pedido->getId());
+			if(!$rs->EOF and $rs->fields['costo'] > 0){
+				$this->Cell(1, $ancho, "");
+				$this->Cell(27, $ancho, "");
+				$this->Cell(97, $ancho, "Shipping ".$rs->fields['nombre']);
+				$this->Cell(12, $ancho, "", 0, 0, 'R');
+				$this->Cell(12.5, $ancho, "", 0, 0, 'R');
+				$this->Cell(19, $ancho, sprintf("$ %.2f", $rs->fields['costo']), 0, 0, 'R');
+				$this->Ln($ancho);
+				
+				$total += $rs->fields['costo'];
+			}
 		}
 		
 		$this->SetFont('Arial', 'B', 11);

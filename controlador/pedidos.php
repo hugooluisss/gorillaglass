@@ -151,7 +151,16 @@ switch($objModulo->getId()){
 			case 'imprimir':
 				#se genera el documento pdf
 				require_once(getcwd()."/repositorio/pdf/pedido.php");
-				$pdf = new RPedido($_POST['pedido']);
+				$pedido = $_POST['pedido'];
+				$db = TBase::conectaDB();
+				
+				if ($pedido == ''){
+					global $userSesion;
+					$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$userSesion->getId()." order by idPedido desc limit 1;");
+					$pedido = $rs->fields['idEstado'] == 1?$rs->fields['idPedido']:"";
+				}
+				
+				$pdf = new RPedido($pedido);
 				$pdf->generar();
 				
 				echo json_encode(array("band" => true, "documento" => $pdf->output()));

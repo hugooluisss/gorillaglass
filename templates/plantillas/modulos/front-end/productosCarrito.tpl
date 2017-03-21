@@ -43,12 +43,12 @@
 	<div class="col-md-7">
 		<div class="alert alert-gris">
 			<div class="row">
-				<div class="col-xs-9 text-right">DISCOUNT</div>
-				<div class="col-xs-3 text-right">{$etiquetaDescuento}%</div>
+				<div class="col-xs-6 col-sm-9 text-right">DISCOUNT</div>
+				<div class="col-xs-6 col-sm-3 text-right">{$etiquetaDescuento}%</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-9 text-right">ESTIMATED SUBTOTAL(USD)</div>
-				<div class="col-xs-3 text-right">{$total}</div>
+				<div class="col-xs-6 col-sm-9 text-right">ESTIMATED SUBTOTAL(USD)</div>
+				<div class="col-xs-6 col-sm-3 text-right">{$total}</div>
 			</div>
 		</div>
 	</div>

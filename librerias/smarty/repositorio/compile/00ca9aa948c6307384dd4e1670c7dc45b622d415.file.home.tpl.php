@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-06 12:18:40
+<?php /* Smarty version Smarty-3.1.11, created on 2017-03-17 10:30:14
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1488427719,
+      1 => 1489625985,
       2 => 'file',
     ),
   ),
@@ -162,7 +162,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 					<?php if ($_smarty_tpl->tpl_vars['vista']->value!=''){?>
 						<b><a href="#" class="addProducto" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
 " totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
-" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add this product to your shopping cart!</a></b>
+" onclick="javascript: return false;"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Click here to select the size and color</a></b>
 					<?php }else{ ?>
 						<b>Choose a product</b>
 					<?php }?>
