@@ -150,13 +150,14 @@ switch($objModulo->getId()){
 			break;
 			case 'imprimir':
 				#se genera el documento pdf
+				global $userSesion;
 				require_once(getcwd()."/repositorio/pdf/pedido.php");
 				$pedido = $_POST['pedido'];
 				$db = TBase::conectaDB();
 				
 				if ($pedido == ''){
 					global $userSesion;
-					$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$userSesion->getId()." order by idPedido desc limit 1;");
+					$rs = $db->Execute("select idPedido, idEstado from pedido where idCliente = ".$sesion['usuario']." order by idPedido desc limit 1;");
 					$pedido = $rs->fields['idEstado'] == 1?$rs->fields['idPedido']:"";
 				}
 				
