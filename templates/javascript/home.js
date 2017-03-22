@@ -153,6 +153,25 @@ $(document).ready(function(){
 	}
 	
 	function addProducto(){
+		var opciones = $("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("select").find("option:selected");
+		var contador = 0;
+		var obj = new TPedido;
+		
+		opciones.each(function(){
+			var el = jQuery.parseJSON($(this).attr("datos"));
+			
+			obj.addMovimiento("", $("#idPedido").val(), el.clave, el.nombreAdd, $("#txtCantidad").val(), el.precio, el.descuento, {
+				after: function(resp){
+					contador++;
+					
+					if (contador == opciones.length)
+						listaPedidos();
+					if (!resp.band)
+						alert("No se pudo agregar el producto");
+				}
+			});
+		});
+		/*
 		var el = jQuery.parseJSON($("[nivel=" + $(".addProducto").attr("totalEtiquetas") + "]").find("select").attr("datos"));
 		var obj = new TPedido;
 		obj.addMovimiento("", $("#idPedido").val(), el.clave, el.nombreAdd, $("#txtCantidad").val(), el.precio, el.descuento, {
@@ -164,6 +183,7 @@ $(document).ready(function(){
 				}
 			}
 		});
+		*/
 	}
 	
 	$("a.order").click(function(){

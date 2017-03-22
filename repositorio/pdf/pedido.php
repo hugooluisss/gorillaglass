@@ -54,6 +54,7 @@ class RPedido extends tFPDF{
 		$cont = 0;
 		#for($x = 0 ; $x < 20; $x ++)
 		foreach($this->pedido->movimientos as $mov){
+			$this->SetFont('Arial', '', 8);
 			$this->Cell(1, $ancho, "");
 			if ($this->showCodigo){
 				$this->Cell(27, $ancho, $mov->getClave());
