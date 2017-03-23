@@ -27,14 +27,14 @@
 			</div>
 			<div class="row">
 				<div class="col-md-5 hidden-xs">
-					<p class="text-center">Review your order here if you are on a mobile device. You can also download and print this file</p>
-					<p>
+					<p class="text-center">Review your order here if you are on a mobile device. You can also view, download and print this pdf file on your computer.</p>
+					<p class="text-center">
 						<button class="btn btn-yellow text-right viewOrder">Mobile version</button>
 					</p>
 				</div>
 				<div class="col-md-5 show-xs">&nbsp;</div>
 				<div class="col-md-7">
-					<p class="text-justify">After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
+					<p class="text-justify" style="color: black;">After you are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
 					<p class="text-justify">
 						<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 					</p>

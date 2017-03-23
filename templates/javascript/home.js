@@ -193,4 +193,9 @@ $(document).ready(function(){
 		
 		return false;
 	});
+	
+	$("#txtCantidad").change(function(){
+		if ($(this).val() < 0)
+			$(this).val(0);
+	});
 });

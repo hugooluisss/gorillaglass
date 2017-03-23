@@ -9,7 +9,7 @@ $(document).ready(function(){
 	});
 	if ($("#pedido").val() == ''){
 		$("#result").show();
-		$("#info").show();
+		$("#info").hide();
 	}else{
 		$("#result").hide();
 		$("#info").show();

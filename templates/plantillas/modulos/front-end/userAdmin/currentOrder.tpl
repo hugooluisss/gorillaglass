@@ -6,7 +6,7 @@
 	<div class="col-xs-12 col-sm-4 col-sm-offset-8 text-center">
 		<span class="text-center"><small><b>Review your order here if you <br />are on a mobile device.</b></small></span><br />
 		<button class="btn btn-yellow text-right viewOrder">Mobile version</button><br />
-		<span class="text-center"><small><b>You can also download and print this file</b></small></span>
+		<span class="text-center"><small><b>You can also view, download and print this pdf file on your computer</b></small></span>
 	</div>
 </div>
 <br /><br />
@@ -25,7 +25,7 @@
 		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
 	</div>
 	<div class="col-sm-3">
-		<p><small><b>After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
+		<p><small><b>After you are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
 		<!--<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>-->
 	</div>
 </div>
@@ -39,7 +39,6 @@
 	<div class="col-sm-5">
 		<small>
 		<p>Wholesale orders have a $100.00 minimum.</p>
-		<p>Please note that orders under $100 will have a $15 surcharge.</p>
 		<p>The standard bulk discounts are as follows:</p>
 		5%   discount for sales of $500.00 and above.<br />
 10% discount for sales of $1,000.00 and above.<br />
