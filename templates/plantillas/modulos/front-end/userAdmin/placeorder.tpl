@@ -1,6 +1,6 @@
 {if $subtotal >= 100}
 <div class="page-header">
-	<h1>Choose a shipping method and send the order.</h1>
+	<h1>Thank you for ordering Gorilla Glass!</h1>
 </div>
 
 <div id="info">
