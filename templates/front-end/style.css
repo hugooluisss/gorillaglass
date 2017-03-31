@@ -361,6 +361,9 @@ div#footer_icons {
   color: black !important;
   font-weight: bold !important;
 }
+.bootstrap-select {
+  width: 95% !important;
+}
 #vistaPage {
   color: #333;
   overflow-x: hidden;

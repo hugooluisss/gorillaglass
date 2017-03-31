@@ -127,7 +127,7 @@
 		<script src="{$PAGE.ruta}bootstrap/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/bootstrap-select/css/bootstrap-select.min.css" />
 		<script src="{$PAGE.ruta}plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
-		<script src="{$PAGE.ruta}plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
+		<script src="{$PAGE.ruta}plugins/bootstrap-select/js/i18n/defaults-en_US.min.js"></script>
 	    
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
     	

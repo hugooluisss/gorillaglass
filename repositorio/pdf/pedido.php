@@ -34,7 +34,7 @@ class RPedido extends tFPDF{
 		$this->Cell(0, 5, $this->pedido->getFecha(), 0, 0, 'C');
 		$this->SetXY(140, 40);
 		$this->SetFont('Arial', '', 10);
-		if ($this->showCodigo)
+		if ($this->showCodigo or true)
 			$this->Cell(0, 5, "Purchase order: #".$this->pedido->getId(), 0, 0, 'C');
 		$this->SetFont('Arial', 'B', 10);
 		$this->SetXY(35, 41);
@@ -56,7 +56,7 @@ class RPedido extends tFPDF{
 		foreach($this->pedido->movimientos as $mov){
 			$this->SetFont('Arial', '', 8);
 			$this->Cell(1, $ancho, "");
-			if ($this->showCodigo){
+			if ($this->showCodigo and false){
 				$this->Cell(27, $ancho, $mov->getClave());
 				$this->Cell(97, $ancho, $mov->getDescripcion());
 			}else{
