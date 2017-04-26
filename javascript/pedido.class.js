@@ -83,7 +83,7 @@ TPedido = function(){
 		);
 	};
 	
-	this.setEnvio = function(pedido, paqueteria, codigo, comentario, fn){
+	this.setEnvio = function(pedido, paqueteria, codigo, comentario, estado, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cpedidos', {
@@ -91,7 +91,8 @@ TPedido = function(){
 				"id": pedido,
 				"paqueteria": paqueteria,
 				"codigo": codigo,
-				"comentario": comentario
+				"comentario": comentario,
+				"estado": estado
 			}, function(data) {
 				if (data.band == false)
 					console.log(data.mensaje == ''?"Upps. Ocurrió un error al guardar el codigo de rastreo":data.mensaje);

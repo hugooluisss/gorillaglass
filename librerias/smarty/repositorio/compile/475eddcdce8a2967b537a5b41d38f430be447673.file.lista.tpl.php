@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-07 12:52:20
+<?php /* Smarty version Smarty-3.1.11, created on 2017-04-25 19:41:34
          compiled from "templates/plantillas/modulos/pedidos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115925172586d3088aa30a5-62389873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '475eddcdce8a2967b537a5b41d38f430be447673' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/lista.tpl',
-      1 => 1488912735,
+      1 => 1493167036,
       2 => 'file',
     ),
   ),
@@ -48,11 +48,19 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td style="border-left: solid 1px <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['fecha'];?>
 </td>
-						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</td>
+						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+</b> <small>(<?php echo $_smarty_tpl->tpl_vars['row']->value['razonsocial'];?>
+)</small></td>
 						<td style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
-" class="text-center"><?php echo $_smarty_tpl->tpl_vars['row']->value['estado'];?>
-</td>
+" class="text-center">
+							<?php echo $_smarty_tpl->tpl_vars['row']->value['estado'];?>
+
+							<?php if ($_smarty_tpl->tpl_vars['row']->value['codigo']!=''){?>
+								<br />
+								<small>Tracking <?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
+</small>
+							<?php }?>
+						</td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-default" action="rastreo" title="Envio" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-motorcycle"></i></button>

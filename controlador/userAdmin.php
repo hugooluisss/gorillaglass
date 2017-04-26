@@ -66,7 +66,9 @@ switch($objModulo->getId()){
 			$rs->moveNext();
 		}
 		
-		
+		global $sesion;
+		$smarty->assign("cliente", $sesion);
+				
 		$rs = $db->Execute("select * from articulo group by clave");
 		$datos = array();
 		while(!$rs->EOF){
@@ -156,7 +158,6 @@ switch($objModulo->getId()){
 					array_push($colores, $rs->fields['clave']);
 					$rs->moveNext();
 				}
-				
 				
 				$rs = $db->Execute("select * from articulo group by clave");
 				$datos = array();

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-17 10:30:14
+<?php /* Smarty version Smarty-3.1.11, created on 2017-04-25 19:31:16
          compiled from "templates/plantillas/layout/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2049699628584f7ba0b4e4a3-81677027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '00ca9aa948c6307384dd4e1670c7dc45b622d415' => 
     array (
       0 => 'templates/plantillas/layout/home.tpl',
-      1 => 1489625985,
+      1 => 1490155126,
       2 => 'file',
     ),
   ),
@@ -188,7 +188,7 @@ plugins/bootstrap-select/css/bootstrap-select.min.css" />
 		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
 		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-plugins/bootstrap-select/js/i18n/defaults-es_CL.min.js"></script>
+plugins/bootstrap-select/js/i18n/defaults-en_US.min.js"></script>
 	    
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
     	

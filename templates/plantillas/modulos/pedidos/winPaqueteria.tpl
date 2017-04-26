@@ -18,6 +18,16 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="selEstado" class="col-sm-4 control-label">Estado de la orden</label>
+						<div class="col-sm-8">
+							<select class="form-control" id="selEstado" name="selEstado">
+								{foreach from=$estados item=estado}
+									<option value="{$estado.idEstado}">{$estado.nombre}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="txtRastreo" class="col-sm-4 control-label">Código de rastreo</label>
 						<div class="col-sm-8">
 							<input type="text" id="txtRastreo" name="txtRastreo" autofocus="true" class="form-control" autocomplete="false"/>

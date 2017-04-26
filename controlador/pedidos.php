@@ -33,6 +33,8 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado, d.idPaqueteria, d.codigo, d.comentario as comentarioEnvio from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado) left join envio d using(idPedido)");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs2 = $db->Execute("select * from envio where idPedido = ".$rs->fields['idPedido']);
+			$rs->fields['codigo'] = $rs2->fields['codigo'];
 			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			
@@ -169,7 +171,12 @@ switch($objModulo->getId()){
 			case 'setEnvio':
 				$obj = new TPedido($_POST['id']);
 				$paqueteria = new TPaqueteria($_POST['paqueteria']);
-				echo json_encode(array("band" => $obj->setCodigoEnvio($_POST['paqueteria'], $_POST['codigo'], $_POST['comentario'], $paqueteria->getCosto())));
+				
+				if($obj->setCodigoEnvio($_POST['paqueteria'], $_POST['codigo'], $_POST['comentario'], $paqueteria->getCosto())){
+					$obj->setEstado($_POST['estado']);
+					echo json_encode(array("band" => $obj->guardar()));
+				}else
+					echo json_encode(array("band" => false));
 			break;
 		}
 	break;

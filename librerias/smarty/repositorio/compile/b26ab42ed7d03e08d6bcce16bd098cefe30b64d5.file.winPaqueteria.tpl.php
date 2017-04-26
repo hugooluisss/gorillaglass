@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-07 12:46:27
+<?php /* Smarty version Smarty-3.1.11, created on 2017-04-25 19:41:45
          compiled from "templates/plantillas/modulos/pedidos/winPaqueteria.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:151295336058bf0003daf324-52072836%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b26ab42ed7d03e08d6bcce16bd098cefe30b64d5' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/winPaqueteria.tpl',
-      1 => 1486005266,
+      1 => 1493167304,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_58bf0003dd3364_39527522',
   'variables' => 
   array (
     'listaPaqueteria' => 0,
     'paqueteria' => 0,
+    'estados' => 0,
+    'estado' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_58bf0003dd3364_39527522',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58bf0003dd3364_39527522')) {function content_58bf0003dd3364_39527522($_smarty_tpl) {?><div class="modal fade" id="winRastreo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog modal-lg" role="document">
@@ -45,6 +47,22 @@ $_smarty_tpl->tpl_vars['paqueteria']->_loop = true;
 									<option value="<?php echo $_smarty_tpl->tpl_vars['paqueteria']->value['idPaqueteria'];?>
 "><?php echo $_smarty_tpl->tpl_vars['paqueteria']->value['nombre'];?>
  - <?php echo $_smarty_tpl->tpl_vars['paqueteria']->value['costo'];?>
+</option>
+								<?php } ?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="selEstado" class="col-sm-4 control-label">Estado de la orden</label>
+						<div class="col-sm-8">
+							<select class="form-control" id="selEstado" name="selEstado">
+								<?php  $_smarty_tpl->tpl_vars['estado'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['estado']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['estados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['estado']->key => $_smarty_tpl->tpl_vars['estado']->value){
+$_smarty_tpl->tpl_vars['estado']->_loop = true;
+?>
+									<option value="<?php echo $_smarty_tpl->tpl_vars['estado']->value['idEstado'];?>
+"><?php echo $_smarty_tpl->tpl_vars['estado']->value['nombre'];?>
 </option>
 								<?php } ?>
 							</select>

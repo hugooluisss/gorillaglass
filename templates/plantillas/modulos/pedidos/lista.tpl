@@ -16,7 +16,13 @@
 						<td>{$row.idPedido}</td>
 						<td style="border-left: solid 1px {$row.color}">{$row.fecha}</td>
 						<td><b>{$row.nombre}</b> <small>({$row.razonsocial})</small></td>
-						<td style="color: {$row.color}" class="text-center">{$row.estado}</td>
+						<td style="color: {$row.color}" class="text-center">
+							{$row.estado}
+							{if $row.codigo neq ''}
+								<br />
+								<small>Tracking {$row.codigo}</small>
+							{/if}
+						</td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-default" action="rastreo" title="Envio" datos='{$row.json}'><i class="fa fa-motorcycle"></i></button>
 							<button type="button" class="btn btn-default" action="pdf" title="Imprimir" datos='{$row.json}'><i class="fa fa-file-pdf-o"></i></button>

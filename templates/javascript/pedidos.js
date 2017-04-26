@@ -238,6 +238,7 @@ $(document).ready(function(){
 				$("#winRastreo").find("#txtRastreo").val(el.codigo);
 				$("#winRastreo").find("#txtComentario").val(el.comentarioEnvio);
 				$("#winRastreo").find("#pedido").val(el.idPedido);
+				$("#winRastreo").find("#selEstado").val(el.idEstado);
 				
 				$("#winRastreo").modal();
 			});
@@ -358,6 +359,7 @@ $(document).ready(function(){
 				$("#frmAddRastreo").find("#selPaqueteria").val(), 
 				$("#frmAddRastreo").find("#txtRastreo").val(),
 				$("#frmAddRastreo").find("#txtComentario").val(),
+				$("#frmAddRastreo").find("#selEstado").val(),
 				{
 					before: function(){
 						$("#frmAdd").prop("disabled", true);

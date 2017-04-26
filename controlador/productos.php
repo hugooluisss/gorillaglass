@@ -206,6 +206,7 @@ switch($objModulo->getId()){
 				$producto = new TProducto($_POST['id']);				
 				echo json_encode(array("band" => $producto->setVista($_POST['html'])));
 			break;
+			/*
 			default:
 				$db = TBase::conectaDB();
 				$rs = $db->Execute("select idProducto from producto where idProducto between 25668 and 32558 order by idProducto desc");
@@ -215,7 +216,7 @@ switch($objModulo->getId()){
 					echo $sql;
 					$rs->moveNext();
 				}
-			break;
+			break;*/
 		}
 	break;
 }
