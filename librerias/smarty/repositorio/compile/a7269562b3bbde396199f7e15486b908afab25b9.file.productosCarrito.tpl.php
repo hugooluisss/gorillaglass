@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 12:03:01
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:26:44
          compiled from "templates/plantillas/modulos/front-end/productosCarrito.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12543081525871167c4fa552-39314734%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:175705662659089724d8cef0-15149692%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12543081525871167c4fa552-39314734',
+  'nocache_hash' => '175705662659089724d8cef0-15149692',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5871167c527334_46662464',
   'variables' => 
   array (
     'lista' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_59089725089a53_61915049',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5871167c527334_46662464')) {function content_5871167c527334_46662464($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/gorillasglass/librerias/smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_59089725089a53_61915049')) {function content_59089725089a53_61915049($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/gorillasglass/librerias/smarty/plugins/modifier.truncate.php';
 ?><table id="tblCarrito" class="table table-hover table-condensed">
 	<thead>
 		<tr>

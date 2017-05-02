@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 09:48:45
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:27:01
          compiled from "templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:786501328587f8aa285edd0-71067383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13527563945908973507d0b8-43332696%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '549ebf34062d6a0522cd61a626ac9e56be3fd4cc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/userAdmin/currentOrder.tpl',
-      1 => 1490111324,
+      1 => 1490296803,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '786501328587f8aa285edd0-71067383',
+  'nocache_hash' => '13527563945908973507d0b8-43332696',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_587f8aa285fb22_46936429',
   'variables' => 
   array (
     'clienteObj' => 0,
     'idPedido' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_59089735100f02_63930493',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_587f8aa285fb22_46936429')) {function content_587f8aa285fb22_46936429($_smarty_tpl) {?><div class="page-header">
+<?php if ($_valid && !is_callable('content_59089735100f02_63930493')) {function content_59089735100f02_63930493($_smarty_tpl) {?><div class="page-header">
 	<h1><?php echo $_smarty_tpl->tpl_vars['clienteObj']->value->getRazonSocial();?>
  - <?php echo $_smarty_tpl->tpl_vars['clienteObj']->value->getNombre();?>
 </h1>
@@ -34,7 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="col-xs-12 col-sm-4 col-sm-offset-8 text-center">
 		<span class="text-center"><small><b>Review your order here if you <br />are on a mobile device.</b></small></span><br />
 		<button class="btn btn-yellow text-right viewOrder">Mobile version</button><br />
-		<span class="text-center"><small><b>You can also download and print this file</b></small></span>
+		<span class="text-center"><small><b>You can also view, download and print this pdf file on your computer</b></small></span>
 	</div>
 </div>
 <br /><br />
@@ -54,7 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
 	</div>
 	<div class="col-sm-3">
-		<p><small><b>After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
+		<p><small><b>After you are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
 		<!--<a href="placeOrder" class="btn btn-blue" onclick="javascript: return false;">Place Order</a>-->
 	</div>
 </div>
@@ -68,7 +68,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="col-sm-5">
 		<small>
 		<p>Wholesale orders have a $100.00 minimum.</p>
-		<p>Please note that orders under $100 will have a $15 surcharge.</p>
 		<p>The standard bulk discounts are as follows:</p>
 		5%   discount for sales of $500.00 and above.<br />
 10% discount for sales of $1,000.00 and above.<br />

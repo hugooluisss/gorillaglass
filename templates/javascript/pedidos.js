@@ -165,11 +165,23 @@ $(document).ready(function(){
 
     });
     
-	function getLista(){
+	function getLista(ocultar){
+		if (ocultar == undefined)
+			ocultar = false;
+			
 		$("#dvLista").html("Estamos actualizando la lista de pedidos, por favor espere...");
-		$.get("listaPedidos", function(html){
+		$.post("listaPedidos", {
+				"ocultar": ocultar
+			}, function(html){
 			$("#dvLista").html(html);
 			
+			$("#btnOcultar").click(function(){
+				getLista(true);
+			});
+			
+			$("#btnMostrar").click(function(){
+				getLista();
+			});
 			
 			$("[action=pdf]").click(function(){
 				var el = $(this);

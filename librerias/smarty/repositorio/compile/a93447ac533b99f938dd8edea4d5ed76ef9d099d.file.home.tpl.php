@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 12:02:16
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:26:37
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1298453899584f7ba0d0a419-95858283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15804035635908971de67347-70830351%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1490115681,
+      1 => 1490297142,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1298453899584f7ba0d0a419-95858283',
+  'nocache_hash' => '15804035635908971de67347-70830351',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_584f7ba0d77654_97551504',
   'variables' => 
   array (
     'vista' => 0,
@@ -31,8 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'etiquetas' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5908971e0aa5f3_61019068',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_584f7ba0d77654_97551504')) {function content_584f7ba0d77654_97551504($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['vista']->value==''){?>
+<?php if ($_valid && !is_callable('content_5908971e0aa5f3_61019068')) {function content_5908971e0aa5f3_61019068($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['vista']->value==''){?>
 	<div class="bar icons">
 		<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['nodosPrimerNivel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -202,7 +202,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			<div class="text-center">
 					<b><a href="#" class="addProducto btn btn-info" identificador="<?php echo $_smarty_tpl->tpl_vars['itemId']->value;?>
 " totalEtiquetas="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
-" onclick="javascript: return false;" style="font-size: 16px; color: black"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add to cart!</a></b>
+" onclick="javascript: return false;" style="font-size: 16px; color: black"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Select size and color!</a></b>
 					<br />
 					<br />
 			</div>

@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-03-21 12:05:03
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:26:38
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:281916842586d524e2a0497-78349095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18576109625908971e0af369-05510714%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1490119481,
+      1 => 1490296844,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '281916842586d524e2a0497-78349095',
+  'nocache_hash' => '18576109625908971e0af369-05510714',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_586d524e2a4ae2_26514954',
   'variables' => 
   array (
     'images' => 0,
@@ -28,8 +26,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cliente' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5908971e1150e6_36637474',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_586d524e2a4ae2_26514954')) {function content_586d524e2a4ae2_26514954($_smarty_tpl) {?><div id="modal-car">
+<?php if ($_valid && !is_callable('content_5908971e1150e6_36637474')) {function content_5908971e1150e6_36637474($_smarty_tpl) {?><div id="modal-car">
 	<div class="container">
 		<div class="col-md-6 modal-car-body">
 			<div class="row">
@@ -58,14 +58,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div class="row">
 				<div class="col-md-5 hidden-xs">
-					<p class="text-center">Review your order here if you are on a mobile device. You can also download and print this file</p>
-					<p>
+					<p class="text-center">Review your order here if you are on a mobile device. You can also view, download and print this pdf file on your computer.</p>
+					<p class="text-center">
 						<button class="btn btn-yellow text-right viewOrder">Mobile version</button>
 					</p>
 				</div>
 				<div class="col-md-5 show-xs">&nbsp;</div>
 				<div class="col-md-7">
-					<p class="text-justify">After you? are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
+					<p class="text-justify" style="color: black;">After you are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</p>
 					<p class="text-justify">
 						<a href="placeOrder" class="btn btn-primary text-right btn-block">Choose a shipping method<br/> and place the order</a>
 					</p>
@@ -110,17 +110,10 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 
 							</div>
 							<div class="col-xs-7 col-sm-7 col-md-7" nivel="<?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['etiquetas']['iteration'];?>
+">
+								<select class="selectpicker" nivels="<?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['etiquetas']['iteration'];?>
 " total="<?php echo count($_smarty_tpl->tpl_vars['etiquetas']->value);?>
 ">
-								<div class="btn-group order">
-									<button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SELECT</button>
-									<button type="button" class="btn btn-secundary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-									<div class="dropdown-menu">
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-7 col-sm-7 col-md-7">
-								<select class="selectpicker" multiple>
 								</select>
 							</div>
 						</div>

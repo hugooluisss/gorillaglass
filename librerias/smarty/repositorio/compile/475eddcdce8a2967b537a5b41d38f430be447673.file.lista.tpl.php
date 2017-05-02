@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-04-25 19:41:34
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:17:54
          compiled from "templates/plantillas/modulos/pedidos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115925172586d3088aa30a5-62389873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '475eddcdce8a2967b537a5b41d38f430be447673' => 
     array (
       0 => 'templates/plantillas/modulos/pedidos/lista.tpl',
-      1 => 1493167036,
+      1 => 1493734670,
       2 => 'file',
     ),
   ),
@@ -26,6 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_586d3088b29342_32903549')) {function content_586d3088b29342_32903549($_smarty_tpl) {?><div class="box">
 	<div class="box-body">
+		<button class="btn-danger btn btn-xs" id="btnOcultar">Ocultar "Adding Products"</button>
+		<button class="btn-success btn btn-xs" id="btnMostrar">Mostrar todas</button>
+		
 		<table id="tblPedidos" class="table table-bordered table-hover">
 			<thead>
 				<tr>

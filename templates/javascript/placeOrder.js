@@ -27,7 +27,7 @@ $(document).ready(function(){
 				"pedido": $("#pedido").val(),
 				"tarjeta": $("#txtCode").val(),
 				"cargo": $("#selCargo").val(),
-				"comentarios": $("#comentarios").val(),
+				"comentarios": $("#txtComentarios").val(),
 				"paqueteria": $("#selPaqueteria").val()
 			}, function(resp){
 				if (!resp.band)
@@ -37,8 +37,18 @@ $(document).ready(function(){
 					
 					$("#result").show("slow");
 					$("#info").hide("slow");
+					window.localStorage.removeItem("comentarios");
 				}
 			}, "json");
 		}
 	});
+	
+	$("#btnGuardarComentarios").click(function(){
+		window.localStorage.setItem("comentarios", $("#txtComentarios").val());
+		alert("Saved order comments");
+	});
+	
+	if ($("#txtComentarios").val() == ''){
+		$("#txtComentarios").val(window.localStorage.getItem("comentarios"));
+	}
 });

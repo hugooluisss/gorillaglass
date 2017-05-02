@@ -1,5 +1,9 @@
 <div class="box">
 	<div class="box-body">
+		<button class="btn-success btn btn-xs" id="btnMostrar">Mostrar todas</button>
+		<button class="btn-danger btn btn-xs" id="btnOcultar">Ocultar "Adding Products"</button>
+		
+		
 		<table id="tblPedidos" class="table table-bordered table-hover">
 			<thead>
 				<tr>

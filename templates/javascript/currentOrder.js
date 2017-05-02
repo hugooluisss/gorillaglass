@@ -63,4 +63,8 @@ $(document).ready(function(){
 	$("[href=placeOrder]").click(function(){
 		location.href = "?mod=placeOrder&comentario=" + $("#txtComentarios").val();
 	});
+	
+	if ($("#txtComentarios").val() == ''){
+		$("#txtComentarios").val(window.localStorage.getItem("comentarios"));
+	}
 });

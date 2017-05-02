@@ -56,8 +56,26 @@
 		</div>
 		<div class="col-xs-10">
 			<p><b>Send us the order. You will receive the order as a pdf to your email address.</b></p>
-			<p>
+			<div class="col-xs-12 col-md-10">
 				<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5">{$comentarios}</textarea>
+			</div>
+			<div class="col-xs-12 col-md-2 text-right">
+				<br />
+				<button type="button" class="btn btn-info btn-xs" id="btnGuardarComentarios">Save comment <br />for later</button>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-xs-2 text-right">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-circle-thin fa-stack-2x"></i>
+				<i class="fa fa-stack-1x">4</i>
+			</span>
+		</div>
+		<div class="col-xs-10">
+			<p>
+				<b>Send us the order, You will recieve the order as a pdf to your email address.</b>
 			</p>
 			<p class="text-center">
 				<button class="btn btn-info" id="btnSubmit">Send</button>

@@ -30,7 +30,10 @@ switch($objModulo->getId()){
 	case 'listaPedidos':
 		$db = TBase::conectaDB();
 		global $userSesion;
-		$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado, d.idPaqueteria, d.codigo, d.comentario as comentarioEnvio from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado) left join envio d using(idPedido)");
+		if ($_POST['ocultar'] == "true"){
+			$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado, d.idPaqueteria, d.codigo, d.comentario as comentarioEnvio from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado) left join envio d using(idPedido) where not idEstado = 1");
+		}else
+			$rs = $db->Execute("select a.*, b.*, c.color, c.nombre as estado, d.idPaqueteria, d.codigo, d.comentario as comentarioEnvio from pedido a join cliente b using(idCliente) join estadopedido c using(idEstado) left join envio d using(idPedido)");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs2 = $db->Execute("select * from envio where idPedido = ".$rs->fields['idPedido']);
