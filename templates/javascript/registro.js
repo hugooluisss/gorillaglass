@@ -27,7 +27,10 @@ $(document).ready(function(){
 			txtPassConfirm:{
 				equalTo: "#txtPass"
 			},
-			txtSitioWeb: "required"
+			txtSitioWeb: "required",
+			txtStreet: "required",
+			txtZip: "required",
+			txtCity: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){

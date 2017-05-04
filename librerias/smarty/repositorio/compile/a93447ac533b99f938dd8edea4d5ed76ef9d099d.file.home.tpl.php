@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-05-02 09:26:37
+<?php /* Smarty version Smarty-3.1.11, created on 2017-05-04 13:51:34
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15804035635908971de67347-70830351%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1490297142,
+      1 => 1490910036,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5908971e0aa5f3_61019068',
   'variables' => 
   array (
     'vista' => 0,
@@ -29,8 +31,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'etiquetas' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5908971e0aa5f3_61019068',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5908971e0aa5f3_61019068')) {function content_5908971e0aa5f3_61019068($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['vista']->value==''){?>
 	<div class="bar icons">

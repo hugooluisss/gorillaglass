@@ -45,7 +45,7 @@ $(document).ready(function(){
 	
 	$("#btnGuardarComentarios").click(function(){
 		window.localStorage.setItem("comentarios", $("#txtComentarios").val());
-		alert("Saved order comments");
+		alert("Your comment has been saved. It will appear here next time you reach this page. It will be sent to us automatically when you send the order.");
 	});
 	
 	if ($("#txtComentarios").val() == ''){

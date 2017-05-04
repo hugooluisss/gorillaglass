@@ -55,7 +55,7 @@
 			</span>
 		</div>
 		<div class="col-xs-10">
-			<p><b>Send us the order. You will receive the order as a pdf to your email address.</b></p>
+			<p><b>Write us any questions and comments. You can also save your comment for later if you are not ready to send the order yet. Click on the button to the right of the text box to save your comment.</b></p>
 			<div class="col-xs-12 col-md-10">
 				<textarea id="txtComentarios" name="txtComentarios" class="form-control" placeholder="If you have any questions, special instructions, requests for custom jewelry, or any other comments, add them here. We will get back to you as soon as possible to the email provided." rows="5">{$comentarios}</textarea>
 			</div>
@@ -78,7 +78,7 @@
 				<b>Send us the order, You will recieve the order as a pdf to your email address.</b>
 			</p>
 			<p class="text-center">
-				<button class="btn btn-info" id="btnSubmit">Send</button>
+				<button class="btn btn-info" id="btnSubmit">Send the order</button>
 			</p>
 			<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
 		</div>

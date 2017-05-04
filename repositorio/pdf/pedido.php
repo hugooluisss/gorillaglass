@@ -136,6 +136,12 @@ class RPedido extends tFPDF{
 		$this->SetFont('Arial', 'B', 11);
 		$this->SetXY(140, 200);
 		$this->Cell(0, $ancho, sprintf("$ %.2f", $total), 0, 0, 'R');
+		
+		$this->AddPage();
+		$this->SetFont('Arial', '', 8);
+		$this->SetY(70);
+		$this->Cell(27, 5, utf8_decode(" Comments: ")); $this->Ln(5);
+		$this->MultiCell(27, 5, utf8_decode($this->pedido->getComentario()));
 	}
 		
 	private function cleanFiles(){

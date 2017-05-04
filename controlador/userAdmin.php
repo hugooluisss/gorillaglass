@@ -209,6 +209,7 @@ switch($objModulo->getId()){
 				$pedido = new TPedido($rs->fields['idPedido']);
 				$pedido->estado->setId(2);
 				$pedido->setFecha(date("Y-m-d"));
+				$pedido->setComentario($_POST['comentarios']);
 				$pedido->guardar();
 				
 				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");

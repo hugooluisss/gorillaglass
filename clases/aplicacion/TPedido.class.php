@@ -13,6 +13,7 @@ class TPedido{
 	public $usuario;
 	private $fecha;
 	public $movimientos;
+	private $comentario;
 	
 	/**
 	* Constructor de la clase
@@ -150,6 +151,31 @@ class TPedido{
 	}
 	
 	/**
+	* Establece el comentario
+	*
+	* @autor Hugo
+	* @access public
+	* @param mix $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	public function setComentario($val = ''){
+		$this->comentario = $val;
+		
+		return true;
+	}
+	
+	/**
+	* Retorna el comentario
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	public function getComentario(){
+		return $this->comentario;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -179,7 +205,8 @@ class TPedido{
 			SET
 				idCliente = ".$this->cliente->getId().",
 				fecha = '".$this->getFecha()."',
-				idEstado = ".$this->estado->getId()."
+				idEstado = ".$this->estado->getId().",
+				comentario = '".$this->getComentario()."'
 			WHERE idPedido = ".$this->getId());
 			
 		return $rs?true:false;
