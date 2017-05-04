@@ -20,6 +20,10 @@ class TCliente{
 	private $sitioweb;
 	private $estado;
 	private $pass;
+	private $street;
+	private $city;
+	private $state;
+	private $zip;
 	
 	/**
 	* Constructor de la clase
@@ -404,6 +408,110 @@ class TCliente{
 	public function getPass(){
 		return $this->pass;
 	}
+	
+	/**
+	* Establece street
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setStreet($val = ''){
+		$this->street = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna street
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getStreet(){
+		return $this->street;
+	}
+	
+	/**
+	* Establece city
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCity($val = ''){
+		$this->city = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna city
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getCity(){
+		return $this->city;
+	}
+	
+	/**
+	* Establece state
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setState($val = ''){
+		$this->state = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna state
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getState(){
+		return $this->state;
+	}
+	
+	/**
+	* Establece zip
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setZip($val = ''){
+		$this->zip = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna zip
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getZip(){
+		return $this->zip;
+	}
 		
 	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
@@ -440,7 +548,11 @@ class TCliente{
 				sitioweb = '".$this->getSitioWeb()."',
 				tipo = '".$this->getTipo()."',
 				estado = '".$this->getEstado()."',
-				pass = '".$this->getPass()."'
+				pass = '".$this->getPass()."',
+				street = '".$this->getStreet()."',
+				city = '".$this->getCity()."',
+				state = '".$this->getState()."',
+				zip = '".$this->getZip()."'
 			WHERE idCliente = ".$this->getId());
 			
 		return $rs?true:false;

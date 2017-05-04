@@ -57,6 +57,10 @@ $(document).ready(function(){
 				$("#txtSitio").val(),
 				$("#selEstado").val(),
 				$("#txtPass").val(),
+				$("#txtStreet").val(),
+				$("#txtCity").val(),
+				$("#txtState").val(),
+				$("#txtZip").val(),
 				{
 					after: function(datos){
 						if (datos.band){
@@ -108,6 +112,10 @@ $(document).ready(function(){
 				$("#txtSitio").val(el.sitioweb);
 				$("#selEstado").val(el.estado);
 				$("#txtPass").val(el.pass);
+				$("#txtStreet").val(el.street);
+				$("#txtCity").val(el.city);
+				$("#txtState").val(el.state);
+				$("#txtZip").val(el.zip);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

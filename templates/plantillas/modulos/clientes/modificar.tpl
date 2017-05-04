@@ -86,6 +86,31 @@
 					<textarea class="form-control" id="txtObservaciones" name="txtObservaciones">{$cliente->getObservaciones()}</textarea>
 				</div>
 			</div>
+			<hr />
+			<div class="form-group">
+				<label for="txtStreet" class="col-lg-2">Calle</label>
+				<div class="col-lg-6">
+					<input class="form-control" id="txtStreet" name="txtStreet" type="text" value="{$cliente->getStreet()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCity" class="col-lg-2">Ciudad</label>
+				<div class="col-lg-6">
+					<input class="form-control" id="txtCity" name="txtCity" type="text" value="{$cliente->getCity()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtState" class="col-lg-2">Estado</label>
+				<div class="col-lg-6">
+					<input class="form-control" id="txtState" name="txtState" type="text" value="{$cliente->getState()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtZip" class="col-lg-2">ZIP</label>
+				<div class="col-lg-6">
+					<input class="form-control" id="txtZip" name="txtZip" type="text" value="{$cliente->getZip()}">
+				</div>
+			</div>
 		</div>
 		<div class="box-footer">
 			<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>

@@ -37,10 +37,35 @@
 				<input type="text" class="form-control form-control-lg" id="txtTienda" name="txtTienda" value="">
 			</div>
 		</div>
+		<!--
 		<div class="form-group row">
 			<label for="txtDireccion" class="col-sm-4 col-form-label col-form-label-lg">Business Address*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtDireccion" name="txtDireccion" value="">
+			</div>
+		</div>-->
+		<div class="form-group row">
+			<label for="txtStreet" class="col-sm-4 col-form-label col-form-label-lg">Street</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control form-control-lg" id="txtStreet" name="txtStreet" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="txtCity" class="col-sm-4 col-form-label col-form-label-lg">City</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control form-control-lg" id="txtCity" name="txtCity" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="txtState" class="col-sm-4 col-form-label col-form-label-lg">State</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control form-control-lg" id="txtState" name="txtState" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="txtZip" class="col-sm-4 col-form-label col-form-label-lg">ZIP</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control form-control-lg" id="txtZip" name="txtZip" value="">
 			</div>
 		</div>
 		<div class="form-group row">

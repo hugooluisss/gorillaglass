@@ -4,7 +4,7 @@ $(document).ready(function(){
 		rules: {
 			txtNombre: "required",
 			txtTienda: "required",
-			txtDireccion: "required",
+			//txtDireccion: "required",
 			txtEmail:{
 				required: true,
 				email: true
@@ -48,6 +48,10 @@ $(document).ready(function(){
 				$("#txtSitio").val(),
 				$("#selEstado").val(),
 				$("#txtPass").val(),
+				$("#txtStreet").val(),
+				$("#txtCity").val(),
+				$("#txtState").val(),
+				$("#txtZip").val(),
 				{
 					before: function(){
 						$("#frmAdd").find("[type=submit]").prop("disabled", true);

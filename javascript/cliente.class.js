@@ -1,7 +1,7 @@
 TCliente = function(){
 	var self = this;
 	
-	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, estado, pass, fn){
+	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, estado, pass, street, city, state, zip, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cclientes', {
@@ -19,6 +19,10 @@ TCliente = function(){
 				"sitioWeb": sitioweb,
 				"estado": estado,
 				"pass": pass,
+				"street": street,
+				"city": city,
+				"state": state,
+				"zip": zip,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

@@ -79,6 +79,10 @@ switch($objModulo->getId()){
 				$obj->setObservaciones($_POST['observaciones']);
 				$obj->setTipo($_POST['tipo']);
 				$obj->setSitioWeb($_POST['sitioWeb']);
+				$obj->setStreet($_POST['street']);
+				$obj->setCity($_POST['city']);
+				$obj->setState($_POST['state']);
+				$obj->setZip($_POST['zip']);
 				if ($_POST['estado'] <> '')
 					$obj->setEstado($_POST['estado']);
 				$obj->setPass($_POST['pass']);
