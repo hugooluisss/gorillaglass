@@ -133,6 +133,17 @@ class RPedido extends tFPDF{
 			}
 		}
 		
+		if ($this->pedido->getExtra() > 0){
+			$this->Cell(1, $ancho, "");
+			$this->Cell(27, $ancho, "");
+			$this->Cell(97, $ancho, "Extra");
+			$this->Cell(12, $ancho, "", 0, 0, 'R');
+			$this->Cell(12.5, $ancho, "", 0, 0, 'R');
+			$this->Cell(19, $ancho, sprintf("$ %.2f", $this->pedido->getExtra()), 0, 0, 'R');
+			$total += $this->pedido->getExtra();
+			$this->Ln($ancho);
+		}
+		
 		$this->SetFont('Arial', 'B', 11);
 		$this->SetXY(140, 200);
 		$this->Cell(0, $ancho, sprintf("$ %.2f", $total), 0, 0, 'R');

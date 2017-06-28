@@ -5,6 +5,7 @@
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
+					<th>Razón social</th>
 					<th>E-mail</th>
 					<th>Estado</th>
 					<th>&nbsp;</th>
@@ -15,6 +16,7 @@
 					<tr>
 						<td>{$row.idCliente}</td>
 						<td>{$row.nombre}</td>
+						<td>{$row.razonsocial}</td>
 						<td>{$row.email}</td>
 						<td>{if $row.estado eq 'R'}Registrado{else}Activo{/if}</td>
 						<td style="text-align: right">

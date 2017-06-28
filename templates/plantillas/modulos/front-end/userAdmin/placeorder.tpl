@@ -1,4 +1,4 @@
-{if $subtotal >= 100}
+{if $subtotal >= 100 or $band eq 1}
 <div class="page-header">
 	<h1>Thank you for ordering Gorilla Glass!</h1>
 </div>
@@ -99,6 +99,16 @@
 </div>
 <br />
 <br /><br />
-<center><a href="home/18039-Plugs/" class="btn btn-primary">Continue shopping</a></center>
+
+<p>Your order has not reached the $100.00 minimum value for wholesale orders.  You can continue shopping until you meet the minimum required value or we can process the small order by charging an extra $15.00 fee.</p>
+<center>
+	<form method="post">
+		<a href="home/18039-Plugs/" class="btn btn-primary">Continue shopping</a>
+		<button class="btn btn-info" id="btnAddExtra" pedido="{$idPedido}">Add a $15.00 fee</button>
+		<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
+		<input type="hidden" id="band" name="band" value="1" />
+	</form>
+</center>
+
 <br /><br />
 {/if}

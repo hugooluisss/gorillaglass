@@ -144,6 +144,7 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("listaPaqueteria", $datos);
 		$smarty->assign("comentarios", $_GET['comentario']);
+		$smarty->assign("band", $_POST['band']);
 	break;
 	case 'cuserAdmin':
 	case 'cuseradmin':
@@ -210,6 +211,21 @@ switch($objModulo->getId()){
 				$pedido->estado->setId(2);
 				$pedido->setFecha(date("Y-m-d"));
 				$pedido->setComentario($_POST['comentarios']);
+				
+				
+				$rsPed = $db->Execute("select * from movpedido where idPedido = ".$rs->fields['idPedido']);
+				$precio = 0;
+				//$datos = array();
+				while(!$rsPed->EOF){
+					$precio +=  $rs->fields['precio'];
+					$rsPed->moveNext();
+				}
+				
+				if ($precio < 100){
+					$pedido->setExtra(15);
+				}
+				
+				
 				$pedido->guardar();
 				
 				$pdf = new RPedido(($rs->fields['idEstado'] == 1)?$rs->fields['idPedido']:"");

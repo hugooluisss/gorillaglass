@@ -14,6 +14,7 @@ class TPedido{
 	private $fecha;
 	public $movimientos;
 	private $comentario;
+	private $extra;
 	
 	/**
 	* Constructor de la clase
@@ -27,6 +28,7 @@ class TPedido{
 		$this->cliente = new TCliente;
 		$this->estado = new TEstado;
 		$this->usuario = new TUsuario;
+		$this->extra = 0;
 		
 		$this->setId($id);
 		
@@ -176,6 +178,31 @@ class TPedido{
 	}
 	
 	/**
+	* Establece el extra
+	*
+	* @autor Hugo
+	* @access public
+	* @param mix $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	public function setExtra($val = 0){
+		$this->extra = $val;
+		
+		return true;
+	}
+	
+	/**
+	* Retorna el extra
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	public function getExtra(){
+		return $this->extra == ''?0:$this->extra;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -206,7 +233,8 @@ class TPedido{
 				idCliente = ".$this->cliente->getId().",
 				fecha = '".$this->getFecha()."',
 				idEstado = ".$this->estado->getId().",
-				comentario = '".$this->getComentario()."'
+				comentario = '".$this->getComentario()."',
+				extra = ".$this->getExtra()."
 			WHERE idPedido = ".$this->getId());
 			
 		return $rs?true:false;

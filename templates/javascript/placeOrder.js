@@ -51,4 +51,8 @@ $(document).ready(function(){
 	if ($("#txtComentarios").val() == ''){
 		$("#txtComentarios").val(window.localStorage.getItem("comentarios"));
 	}
+	
+	$("#btnAddExtra").click(function(){
+		
+	});
 });
