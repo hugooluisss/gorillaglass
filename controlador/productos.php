@@ -126,6 +126,20 @@ switch($objModulo->getId()){
 				
 				echo '{"status":"error"}';
 			break;
+			case 'uploadXLS':
+				$result = array("status" => "error");
+				if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
+					$carpeta = "repositorio/catalogo.xls";
+									
+					if(move_uploaded_file($_FILES['upl']['tmp_name'], $carpeta)){
+						chmod($carpeta, 0755);
+						$result = array("status" => "success");
+						exit;
+					}
+				}
+				
+				echo json_encode($result);
+			break;
 			case 'getImagenes':
 				$archivos = array();
 				$directorio  = scandir("repositorio/productos/producto_".$_POST['id']."/");

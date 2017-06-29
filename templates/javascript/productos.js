@@ -1,4 +1,29 @@
 $(document).ready(function(){
+	$("#winUploadXls").find("form").fileupload({
+		// This function is called when a file is added to the queue
+		add: function (e, data) {
+			// Automatically upload the file once it is added to the queue
+			var jqXHR = data.submit();
+		},
+		progress: function(e, data){
+			// Calculate the completion percentage of the upload
+			var progress = parseInt(data.loaded / data.total * 100, 10);
+			if(progress == 100){
+				//data.context.removeClass('working');
+				alert("El catálogo se ha subido con éxito");
+				$("#winUploadXls").modal("hide");
+				location.reload();
+
+				//getImagenes($("#winUploadImagen").find("form").find("#producto").val());
+			}
+		},
+		fail: function(){
+			alert("Ocurrió un problema en el servidor, contacta al administrador del sistema");
+			
+			console.log("Error en el servidor al subir el archivo, checa permisos de la carpeta repositorio");
+		}
+	});
+	
 	getLista("");
 	
 	$("#btnGenerarArticulos").click(function(){

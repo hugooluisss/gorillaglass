@@ -31,6 +31,15 @@
 -->
 <div class="box">
 	<div class="box-body" style="width: 95%; overflow-x: scroll;">
+		{if file_exists("repositorio/catalogo.xls")}
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<a href="repositorio/catalogo.xls" class="" download="Price List {date("F d Y H:i:s", filectime("repositorio/catalogo.xls"))}.xls">Download the latest Price List as a spreadsheet here</a>
+					<br />
+					<span class="text-muted">Updated on {date("F d Y H:i:s.", filectime("repositorio/catalogo.xls"))}</span>
+				</div>
+			</div>
+		{/if}
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>

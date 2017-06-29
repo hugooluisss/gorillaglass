@@ -9,6 +9,11 @@
 		<button id="btnProductoPrincipal" class="btn btn-info"><i class="fa fa-plus"></i> Nodo principal</button>
 		<button id="btnGenerarArticulos" class="btn btn-danger pull-right"><i class="fa fa-wrench" aria-hidden="true"></i>
  Actualizar catálogo de artículos</button>
+	 	<button id="btnUploadXls" class="btn btn-primary pull-right" data-toggle="modal" data-target="#winUploadXls"><i class="fa fa-file-excel-o" aria-hidden="true"></i>
+ Subir catálogo</button>
+	 	{if file_exists("repositorio/catalogo.xls")}
+	 	<a href="repositorio/catalogo.xls" class="btn btn-success pull-right" download="Price List {date("F d Y H:i:s", filectime("repositorio/catalogo.xls"))}.xls">Descargar catálogo</a>
+	 	{/if}
 	</div>
 </div>
 <br />
@@ -193,6 +198,25 @@
 			</div>
 			<div class="modal-body">
 				<textarea id="txtHTML" name="txtHTML" class="form-control" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="winUploadXls" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h1>Subir XLS</h1>
+			</div>
+			<div class="modal-body">
+				<form method="post" action="?mod=cproductos&action=uploadXLS" enctype="multipart/form-data">
+					<input type="file" name="upl" multiple />
+					<ul class="elementos list-group">
+					<!-- The file list will be shown here -->
+					</ul>
+				</form>
 			</div>
 		</div>
 	</div>
