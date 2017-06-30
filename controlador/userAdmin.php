@@ -217,7 +217,7 @@ switch($objModulo->getId()){
 				$precio = 0;
 				//$datos = array();
 				while(!$rsPed->EOF){
-					$precio +=  $rs->fields['precio'];
+					$precio +=  $rsPed->fields['precio'];
 					$rsPed->moveNext();
 				}
 				
