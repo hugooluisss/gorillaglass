@@ -63,10 +63,10 @@
 						<button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar</button>
 					</div><!-- /.col -->
 				</div>
-			</form>		
+			</form>	
 		</div><!-- /.login-box-body -->
+		<center><a href="#" id="btnRecuperar" name="btnRecuperar" onclick="javascript: return false;">Did you forget your password?</a></center>
 	</div>
-    
     
     <!-- jQuery 2.1.4 -->
     <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>

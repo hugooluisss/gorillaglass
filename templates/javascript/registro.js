@@ -48,7 +48,7 @@ $(document).ready(function(){
 				$("#txtCelular").val(),
 				$("#txtObservaciones").val(),
 				$("#selTipo").val(),
-				$("#txtSitio").val(),
+				$("#txtSitioWeb").val(),
 				$("#selEstado").val(),
 				$("#txtPass").val(),
 				$("#txtStreet").val(),

@@ -24,4 +24,18 @@ $(document).ready(function(){
 
     });
 	
+	$("#btnRecuperar").click(function(){
+		var email = prompt("Enter your email to reset your password", $("#txtUsuario").val());
+		
+		var obj = new TUsuario;
+		obj.resetPassword(email, {
+			after: function(datos){
+				if (datos.band)
+					alert("Your new password was sent to your email");
+				else{
+					alert("Email account does not exist");
+				}
+			}
+		});
+	});
 });

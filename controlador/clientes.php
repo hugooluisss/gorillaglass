@@ -9,6 +9,7 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select * from cliente");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['pass'] = '';
 			$rs->fields['json'] = json_encode($rs->fields);
 			
 			array_push($datos, $rs->fields);
@@ -85,7 +86,9 @@ switch($objModulo->getId()){
 				$obj->setZip($_POST['zip']);
 				if ($_POST['estado'] <> '')
 					$obj->setEstado($_POST['estado']);
-				$obj->setPass($_POST['pass']);
+					
+				if ($_POST['pass'] <> '')
+					$obj->setPass(md5($_POST['pass']));
 				
 				//$emailBand = true;
 				if ($obj->guardar()){
@@ -97,7 +100,7 @@ switch($objModulo->getId()){
 					$datos['cliente.urlconfirmacion'] = "?mod=cclientes&action=confirmacion&cliente=".base64_encode($obj->getId());
 					$datos['sitio.emailcontacto'] = $ini["mail"]["user"];
 					$datos['cliente.email'] = $obj->getEmail();
-					$datos['cliente.pass'] = $obj->getPass();
+					#$datos['cliente.pass'] = $obj->getPass();
 						
 					if ($_POST['id'] == ''){
 						$email = new TMail;

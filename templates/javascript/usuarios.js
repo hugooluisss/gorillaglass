@@ -15,7 +15,7 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtEmail: "required",
-			txtPass: "required"
+			//txtPass: "required"
 		},
 		wrapper: 'span', 
 		messages: {
@@ -70,7 +70,6 @@ $(document).ready(function(){
 				$("#txtNombre").val(el.nombre);
 				$("#txtApellidos").val(el.apellidos);
 				$("#txtEmail").val(el.email);
-				$("#txtPass").val(el.pass);
 				$("#selTipo").val(el.idTipo);
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

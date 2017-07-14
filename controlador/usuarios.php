@@ -68,7 +68,9 @@ switch($objModulo->getId()){
 				$obj->setNombre($_POST['nombre']);
 				$obj->setApellidos($_POST['apellidos']);
 				$obj->setEmail($_POST['email']);
-				$obj->setPass($_POST['pass']);
+				if ($_POST['pass'] <> '')
+					$obj->setPass($_POST['pass']);
+					
 				$obj->setTipo($_POST['tipo']);
 
 				echo json_encode(array("band" => $obj->guardar()));
@@ -95,6 +97,15 @@ switch($objModulo->getId()){
 				$obj->setPass($_POST['pass']);
 				
 				echo json_encode(array("band" => $obj->guardar()));
+			break;
+			case 'getFoto':
+				global $sesion;
+				header('Content-Type: image/jpg');
+				$usuario = new TUsuario($sesion['usuario']);
+				if (file_exists("repositorio/usuarios/user".$usuario->getId())){
+					readfile("repositorio/usuarios/user".$usuario->getId());
+				}else
+					readfile("repositorio/usuarios/default.jpg");
 			break;
 		}
 	break;

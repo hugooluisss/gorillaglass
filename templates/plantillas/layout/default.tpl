@@ -65,7 +65,7 @@
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
 								<li class="user-header">
-									<img src="?mod=cusuarios&action=getFoto&ancho=180&alto=180" class="img-circle" alt="User Image"/>
+									<img src="?mod=cusuarios&action=getFoto" class="img-circle" alt="User Image"/>
 									<p>
 										{$PAGE.usuario->getNombre()}
 										<small>{$PAGE.usuario->getEmail()}</small>
@@ -73,6 +73,11 @@
 								</li>
 								<!-- Menu Body -->
 								<li class="user-body">
+									<div class="row">
+										<div class="col-xs-12">
+											<a href="#" onclick="javascript: return false;" id="changePass">Change password</a>
+										</div>
+									</div>
 								</li>
 								<!-- Menu Footer-->
 								<li class="user-footer">
@@ -227,6 +232,8 @@
     {foreach from=$PAGE.scriptsJS item=script}
 		<script type="text/javascript" src="{$script}?m={rand()}"></script>
 	{/foreach}
+	
+	<script type="text/javascript" src="{$PAGE.ruta}javascript/menuPrincipal.js?m={rand()}"></script>
     
     {if $PAGE.debug}
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>

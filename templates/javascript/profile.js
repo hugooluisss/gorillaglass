@@ -15,9 +15,9 @@ $(document).ready(function(){
 				maxlength: 15,
 				number: true
 			},
-			txtPass: {
+			/*txtPass: {
 				required: true
-			},
+			},*/
 			txtConfirm:{
 				equalTo: "#txtPass"
 			}
@@ -41,6 +41,10 @@ $(document).ready(function(){
 				$("#txtSitioWeb").val(),
 				$("#selEstado").val(),
 				$("#txtPass").val(),
+				$("#txtStreet").val(),
+				$("#txtCity").val(),
+				$("#txtState").val(),
+				$("#txtZip").val(),
 				{
 					before: function(){
 						$("#frmAdd").find("[type=submit]").prop("disabled", true);

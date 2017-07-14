@@ -28,10 +28,11 @@ $(document).ready(function(){
 				minlength: 7,
 				maxlength: 15,
 				number: true
-			},
+			}/*,
 			txtPass: {
 				required: true
 			}
+			*/
 		},
 		wrapper: 'span', 
 		messages: {
@@ -111,7 +112,7 @@ $(document).ready(function(){
 				$("#selTipo").val(el.tipo);
 				$("#txtSitio").val(el.sitioweb);
 				$("#selEstado").val(el.estado);
-				$("#txtPass").val(el.pass);
+				//$("#txtPass").val(el.pass);
 				$("#txtStreet").val(el.street);
 				$("#txtCity").val(el.city);
 				$("#txtState").val(el.state);

@@ -77,4 +77,21 @@ TUsuario = function(){
 			}
 		}, "json");
 	}
+	
+	this.resetPassword = function(usuario, fn){
+		if (fn.before !== undefined)
+			fn.before();
+			
+		$.post('clogin', {
+			"usuario": usuario,
+			"action": "resetPass"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("No se encontró la cuenta");
+			}
+		}, "json");
+	}
 };
