@@ -96,10 +96,13 @@ foreach($_GET as $indice => $valor){
 	$_GET[$indice] = stripslashes($_GET[$indice]);
 	$_GET[$indice] = ereg_replace("'", "''", $_GET[$indice]);
 }
-	
-foreach($_POST as $indice => $valor){
-	if ($objModulo->getDebugSeguridad())
-		$_POST[$indice] = addslashes($_POST[$indice]);
+
+if ($objModulo->slash()){
+	foreach($_POST as $indice => $valor){
+		$_POST[$indice] = stripslashes($_POST[$indice]);
+		$_POST[$indice] = ereg_replace("'", "", $_POST[$indice]);
+		#$_POST[$indice] = addslashes($_POST[$indice]);
+	}
 }
 
 define('TAMPAG', $ini['config']['TAMPAG']);

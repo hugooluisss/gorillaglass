@@ -233,7 +233,7 @@ class TPedido{
 				idCliente = ".$this->cliente->getId().",
 				fecha = '".$this->getFecha()."',
 				idEstado = ".$this->estado->getId().",
-				comentario = '".$this->getComentario()."',
+				comentario = '".mysql_real_escape_string($this->getComentario())."',
 				extra = ".$this->getExtra()."
 			WHERE idPedido = ".$this->getId());
 			

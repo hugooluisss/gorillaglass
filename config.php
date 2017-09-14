@@ -159,6 +159,7 @@ $conf['cclientes'] = array(
 	'controlador' => 'clientes.php',
 	'descripcion' => 'Controlador de clientes',
 	'seguridad' => false,
+	'slash' => true,
 	'capa' => LAYOUT_AJAX);
 
 /* Pedidos */

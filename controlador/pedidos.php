@@ -38,6 +38,7 @@ switch($objModulo->getId()){
 		while(!$rs->EOF){
 			$rs2 = $db->Execute("select * from envio where idPedido = ".$rs->fields['idPedido']);
 			$rs->fields['codigo'] = $rs2->fields['codigo'];
+			$rs->fields['comentario'] = "";
 			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			

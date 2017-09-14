@@ -13,6 +13,7 @@ class TModulo{
 	private $vista;
 	private $controlador;
 	private $capa;
+	private $slash;
 	
 	public function TModulo($id = null){
 		$this->setId($id);
@@ -30,6 +31,7 @@ class TModulo{
 		$this->categoria = $conf[$id]["categoria"] == ''?"Sin especificar":$conf[$id]["categoria"];
 		$this->seguridad = $conf[$id]["seguridad"];
 		$this->scriptsJS = array();
+		$this->slash = $conf[$id]["slash"] == ''?false:$conf[$id]["slash"];
 		
 		if (isset($conf[$id]['js'])){
 			foreach($conf[$id]['js'] as $key => $val)
@@ -126,5 +128,9 @@ class TModulo{
 	
 	public function getDebugSeguridad(){
 		return $this->debugSeg == false?false:true;
+	}
+	
+	public function slash(){
+		return $this->slash;
 	}
 }

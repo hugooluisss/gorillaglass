@@ -106,6 +106,7 @@ $conf['signup'] = array(
 	'vista' => 'front-end/signup.tpl',
 	'descripcion' => 'Registro de clientes',
 	'seguridad' => false,
+	'slash' => true,
 	'js' => array('cliente.class.js'),
 	'jsTemplate' => array('registro.js', 'menuPrincipal.js'),
 	'capa' => LAYOUT_REGISTRO);

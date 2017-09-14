@@ -536,22 +536,22 @@ class TCliente{
 			
 		$rs = $db->Execute("UPDATE cliente
 			SET
-				nombre = '".$this->getNombre()."',
-				direccion = '".$this->getDireccion()."',
+				nombre = '".mysql_real_escape_string($this->getNombre())."',
+				direccion = '".mysql_real_escape_string($this->getDireccion())."',
 				email = '".$this->getEmail()."',
 				rfc = '".$this->getRFC()."',
-				razonsocial = '".$this->getRazonSocial()."',
-				localidad = '".$this->getLocalidad()."',
+				razonsocial = '".mysql_real_escape_string($this->getRazonSocial())."',
+				localidad = '".mysql_real_escape_string($this->getLocalidad())."',
 				tel = '".$this->getTelefono()."',
 				cel = '".$this->getCelular()."',
-				observaciones = '".$this->getObservaciones()."',
+				observaciones = '".mysql_real_escape_string($this->getObservaciones())."',
 				sitioweb = '".$this->getSitioWeb()."',
 				tipo = '".$this->getTipo()."',
-				estado = '".$this->getEstado()."',
+				estado = '".mysql_real_escape_string($this->getEstado())."',
 				pass = '".$this->getPass()."',
-				street = '".$this->getStreet()."',
-				city = '".$this->getCity()."',
-				state = '".$this->getState()."',
+				street = '".mysql_real_escape_string($this->getStreet())."',
+				city = '".mysql_real_escape_string($this->getCity())."',
+				state = '".mysql_real_escape_string($this->getState())."',
 				zip = '".$this->getZip()."'
 			WHERE idCliente = ".$this->getId());
 			
