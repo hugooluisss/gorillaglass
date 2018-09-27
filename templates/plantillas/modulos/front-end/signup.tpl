@@ -8,11 +8,12 @@
 		Interested in carrying our jewelry in your store?
 	</p>
 	<p>
-		Please fill out the following application form. Once approved
+		Please fill out the following application form. Once approved
 		you will be able to check out our wholesale pricelist and use
 		our wholesale shopping cart.
 	</p>
-	
+
+	<p>If you have any questions <a href="faq" target="_blank">check out our Frequently Asked Questions section here</a> or <a href="contact" target="_blank">contact us here with any questions!</a> </p>
 	<br />
 	<div class="alert alert-danger" style="display: none">
 		<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> <strong>Please wait</strong> we are evaluating your registration.
@@ -45,13 +46,13 @@
 			</div>
 		</div>-->
 		<div class="form-group row">
-			<label for="txtStreet" class="col-sm-4 col-form-label col-form-label-lg">Street</label>
+			<label for="txtStreet" class="col-sm-4 col-form-label col-form-label-lg">Street*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtStreet" name="txtStreet" value="">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="txtCity" class="col-sm-4 col-form-label col-form-label-lg">City</label>
+			<label for="txtCity" class="col-sm-4 col-form-label col-form-label-lg">City*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtCity" name="txtCity" value="">
 			</div>
@@ -63,13 +64,19 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="txtZip" class="col-sm-4 col-form-label col-form-label-lg">ZIP</label>
+			<label for="txtCountry" class="col-sm-4 col-form-label col-form-label-lg">Country*</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control form-control-lg" id="txtCountry" name="txtCountry" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="txtZip" class="col-sm-4 col-form-label col-form-label-lg">Postal Code*</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control form-control-lg" id="txtZip" name="txtZip" value="">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="txtRFC" class="col-sm-4 col-form-label col-form-label-lg">TaxID/VAT Import Number</label>
+			<label for="txtRFC" class="col-sm-4 col-form-label col-form-label-lg">TaxID/VAT Import Number*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtRFC" name="txtRFC" value="">
 			</div>
@@ -84,6 +91,13 @@
 			<label for="txtSitioWeb" class="col-sm-4 col-form-label col-form-label-lg">Website / Social Media*</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control form-control-lg" id="txtSitioWeb" name="txtSitioWeb" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="selIsApp" class="col-sm-4 col-form-label col-form-label-lg">Check the following box if you are a member of the APP</label>
+			<div class="col-sm-6 text-left">
+				<input type="checkbox" id="selIsApp" name="selIsApp" value="1" />
+				<span class="help-block">Once verified, you will automatically receive an APP member discount on future orders.</span>
 			</div>
 		</div>
 		<hr />
@@ -112,7 +126,7 @@
 	<small class="text-mute" style="font-wight: normal">*required fields</small>
 	<br /><br />
 	<p>
-		You will receive confirmation to the email you provided once our account is approved!
+		You will receive confirmation to the email you provided once your account is approved!
 	</p>
 	<a href="contact" class="big-text">Contact us here with any questions!</a>
 	<br />

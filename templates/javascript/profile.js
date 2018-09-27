@@ -20,7 +20,8 @@ $(document).ready(function(){
 			},*/
 			txtConfirm:{
 				equalTo: "#txtPass"
-			}
+			},
+			txtCountry: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -44,7 +45,9 @@ $(document).ready(function(){
 				$("#txtStreet").val(),
 				$("#txtCity").val(),
 				$("#txtState").val(),
+				$("#txtCountry").val(),
 				$("#txtZip").val(),
+				$("#isapp").val(),
 				{
 					before: function(){
 						$("#frmAdd").find("[type=submit]").prop("disabled", true);

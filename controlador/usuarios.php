@@ -69,7 +69,7 @@ switch($objModulo->getId()){
 				$obj->setApellidos($_POST['apellidos']);
 				$obj->setEmail($_POST['email']);
 				if ($_POST['pass'] <> '')
-					$obj->setPass($_POST['pass']);
+					$obj->setPass(md5($_POST['pass']));
 					
 				$obj->setTipo($_POST['tipo']);
 

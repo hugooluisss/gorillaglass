@@ -50,7 +50,13 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="txtZip" class="col-sm-2 col-form-label col-form-label-lg">ZIP</label>
+				<label for="txtCountry" class="col-sm-2 col-form-label col-form-label-lg">Country</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control form-control-lg" id="txtCountry" name="txtCountry" value="{$cliente->getStategetCountry}">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="txtZip" class="col-sm-2 col-form-label col-form-label-lg">Postal Code</label>
 				<div class="col-sm-2">
 					<input type="text" class="form-control form-control-lg" id="txtZip" name="txtZip" value="{$cliente->getZip()}">
 				</div>
@@ -90,6 +96,7 @@
 			<div class="row">
 				<div class="col-xs-8 text-right">
 					<input type="hidden" id="id" value="{$cliente->getId()}"/>
+					<input type="hidden" id="isapp" value="{$cliente->getIsApp()}"/>
 					<input type="submit" class="btn" value="Save" />
 				</div>
 			</div>

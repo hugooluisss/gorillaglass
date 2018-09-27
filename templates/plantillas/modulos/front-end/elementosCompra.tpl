@@ -3,6 +3,6 @@
 	<option value="" datos="">Select</option>
 	{/if}
 {foreach from=$lista item="row"}
-	<option value='{$row.idProducto}' datos='{$row.json}'>{$row.nombre}</option>
+	<option value='{$row.idProducto}' datos='{$row.json}'>{$row.nombre} {if $index eq $etiquetas}&nbsp;($ {$row.precio}){/if}</option>
 {/foreach}
 </select>

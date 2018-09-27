@@ -106,9 +106,21 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtZip" class="col-lg-2">ZIP</label>
+				<label for="txtCountry" class="col-lg-2">País</label>
+				<div class="col-lg-6">
+					<input class="form-control" id="txtCountry" name="txtCountry" type="text" value="{$cliente->getCountry()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtZip" class="col-lg-2">Código Postal</label>
 				<div class="col-lg-6">
 					<input class="form-control" id="txtZip" name="txtZip" type="text" value="{$cliente->getZip()}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="selIsApp" class="col-lg-2">Es de APP</label>
+				<div class="col-lg-6 text-left">
+					<input type="checkbox" id="selIsApp" name="selIsApp" value="1" />
 				</div>
 			</div>
 		</div>

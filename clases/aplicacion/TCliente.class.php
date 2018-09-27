@@ -23,7 +23,9 @@ class TCliente{
 	private $street;
 	private $city;
 	private $state;
+	private $country;
 	private $zip;
+	private $isapp;
 	
 	/**
 	* Constructor de la clase
@@ -51,9 +53,12 @@ class TCliente{
 		
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select * from cliente where idCliente = ".$id);
-		
-		foreach($rs->fields as $field => $val)
-			$this->$field = $val;
+		foreach($rs->fields as $field => $val){
+			if ($field == 'isapp')
+				$this->isapp = $val == 1;
+			else
+				$this->$field = $val;
+		}
 		
 		return true;
 	}
@@ -488,6 +493,32 @@ class TCliente{
 	}
 	
 	/**
+	* Establece el país
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCountry($val = ''){
+		$this->country = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna state
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getCountry(){
+		return $this->country;
+	}
+	
+	/**
 	* Establece zip
 	*
 	* @autor Hugo
@@ -511,6 +542,32 @@ class TCliente{
 	
 	public function getZip(){
 		return $this->zip;
+	}
+	
+	/**
+	* Establece si es una empresa app
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setIsApp($val = false){
+		$this->isapp = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna zip
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getIsApp(){
+		return $this->isapp;
 	}
 		
 	/**
@@ -552,7 +609,9 @@ class TCliente{
 				street = '".mysql_real_escape_string($this->getStreet())."',
 				city = '".mysql_real_escape_string($this->getCity())."',
 				state = '".mysql_real_escape_string($this->getState())."',
-				zip = '".$this->getZip()."'
+				country = '".mysql_real_escape_string($this->getCountry())."',
+				zip = '".$this->getZip()."',
+				isapp = ".($this->getIsApp()?1:0)."
 			WHERE idCliente = ".$this->getId());
 			
 		return $rs?true:false;

@@ -1,3 +1,81 @@
+{literal}
+			<style type="text/css">
+				.product_code{
+padding-left: 10px;
+padding-right: 20px;
+color:red;
+  }
+  .nameCodePad{
+padding-top:10px;
+  }
+
+  .material {
+  color:gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  }
+.materialTop {
+  color:gray;
+  margin-top: 5px;
+  text-align: center;
+  }
+  .sizeHeaders{
+  padding: 30px;
+  margin: 0px auto;
+  float: none;
+  text-align: center;
+}
+
+.sizeHeaderRight{
+  padding-right: 5px;
+  }
+  .sizeHeaderLeft{
+  padding-left: 5px;
+  }
+.sizeTable {
+  margin: 0px auto;
+  float: none;
+  text-align: left;
+  table-layout: fixed;
+  width:140px;
+}
+.sizeTable td{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.tableAlign{
+  padding-right: 15px;
+}
+.grayCell{
+  background:#F1F1F1;
+  min-width: 100px;
+}
+
+.diagram  {
+  width: 200px;
+  margin: 0px auto;
+  float: none;
+}
+.diagram  img {
+  max-height: 60%;
+  max-width: 60%;
+  margin-left: 27px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+.navSuperior {
+ font-size: 12pt;
+ text-transform: uppercase;
+ padding-left: 20px;
+ padding-right: 20px;
+color:gray;
+}
+
+			</style>
+			{/literal}
+			
 {if $vista eq ''}
 	<div class="bar icons">
 		{foreach from=$nodosPrimerNivel item="row"}

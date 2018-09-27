@@ -83,7 +83,9 @@ switch($objModulo->getId()){
 				$obj->setStreet($_POST['street']);
 				$obj->setCity($_POST['city']);
 				$obj->setState($_POST['state']);
+				$obj->setCountry($_POST['country']);
 				$obj->setZip($_POST['zip']);
+				$obj->setIsApp($_POST['isapp']);
 				if ($_POST['estado'] <> '')
 					$obj->setEstado($_POST['estado']);
 					

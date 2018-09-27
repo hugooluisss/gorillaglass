@@ -127,4 +127,10 @@ $conf['placeOrder'] = array(
 	'capa' => LAYOUT_USER);
 	
 $conf['cuseradmin'] = $conf['cuserAdmin'];
+
+$conf['cpruebas'] = array(
+	'controlador' => 'pruebas.php',
+	'descripcion' => 'Controlador para pruebas',
+	'seguridad' => false,
+	'capa' => LAYOUT_JSON);
 ?>

@@ -8,17 +8,17 @@
 		<title>{$PAGE.empresaAcronimo}</title>
 		<base href="{$PAGE.url}index.php" target="_top">
 		<link rel="stylesheet" href="{$PAGE.ruta}bootstrap/css/bootstrap.min.css">
-		
+
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/ionicons.min.css">
-		
+
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/iCheck/flat/blue.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/morris/morris.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/datepicker/datepicker3.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/daterangepicker/daterangepicker-bs3.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-		
+
 		<link rel="stylesheet" href="{$PAGE.ruta}plugins/iCheck/square/blue.css">
 	{if $PAGE.debug}
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/AdminLTE.less" />
@@ -60,14 +60,14 @@
 						<a href="signup">Register here</a>
 					</div>
 					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar</button>
+						<button type="submit" class="btn btn-primary btn-block btn-flat">Log in</button>
 					</div><!-- /.col -->
 				</div>
-			</form>	
+			</form>
 		</div><!-- /.login-box-body -->
 		<center><a href="#" id="btnRecuperar" name="btnRecuperar" onclick="javascript: return false;">Did you forget your password?</a></center>
 	</div>
-    
+
     <!-- jQuery 2.1.4 -->
     <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -75,7 +75,7 @@
     <!-- Bootstrap 3.3.5 -->
     <script src="{$PAGE.ruta}bootstrap/js/bootstrap.min.js"></script>
     <!-- Morris.js charts -->
-    
+
     <!-- Sparkline -->
     <script src="{$PAGE.ruta}plugins/sparkline/jquery.sparkline.min.js"></script>
     <!-- jvectormap -->
@@ -97,16 +97,16 @@
     <!-- AdminLTE App -->
     <script src="{$PAGE.ruta}dist/js/app.min.js"></script>
     <script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.js"></script>
-    
+
     {foreach from=$PAGE.scriptsJS item=script}
 		<script type="text/javascript" src="{$script}"></script>
 	{/foreach}
-    
+
     {if $PAGE.debug}
     	<script src="{$PAGE.ruta}plugins/less.min.js"></script>
     {else}
-    
-    
+
+
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>

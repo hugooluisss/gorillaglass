@@ -7,6 +7,7 @@
 					<th>Nombre</th>
 					<th>Razón social</th>
 					<th>E-mail</th>
+					<th>Ciudad</th>
 					<th>Estado</th>
 					<th>&nbsp;</th>
 				</tr>
@@ -18,6 +19,7 @@
 						<td>{$row.nombre}</td>
 						<td>{$row.razonsocial}</td>
 						<td>{$row.email}</td>
+						<td>{$row.city}{if $row.state neq ''}, {$row.state}{/if}</td>
 						<td>{if $row.estado eq 'R'}Registrado{else}Activo{/if}</td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>

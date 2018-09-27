@@ -61,7 +61,9 @@ $(document).ready(function(){
 				$("#txtStreet").val(),
 				$("#txtCity").val(),
 				$("#txtState").val(),
+				$("#txtCountry").val(),
 				$("#txtZip").val(),
+				$("#selIsApp").is(":checked")?1:0,
 				{
 					after: function(datos){
 						if (datos.band){
@@ -116,7 +118,10 @@ $(document).ready(function(){
 				$("#txtStreet").val(el.street);
 				$("#txtCity").val(el.city);
 				$("#txtState").val(el.state);
+				$("#txtCountry").val(el.country);
 				$("#txtZip").val(el.zip);
+				
+				$("#selIsApp").prop("checked", el.isapp == 1);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});
@@ -125,7 +130,7 @@ $(document).ready(function(){
 				"responsive": true,
 				"language": espaniol,
 				"paging": true,
-				"lengthChange": false,
+				"lengthChange": true,
 				"ordering": true,
 				"info": true,
 				"autoWidth": false

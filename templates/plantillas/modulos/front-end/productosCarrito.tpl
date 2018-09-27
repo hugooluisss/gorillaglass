@@ -29,10 +29,6 @@
 			<td class="text-right">{$row.precio / $row.cantidad|string_format:"%.2f"}</td>
 			<td class="text-right">{$row.precio}</td>
 		</tr>
-		{foreachelse}
-			<tr>
-				<td class="text-center" colspan="5">None</td>
-			</tr>
 		{/foreach}
 	</tbody>
 </table>
@@ -40,6 +36,7 @@
 <div class="row">
 	<div class="col-md-5">
 		<a class="btn btn-delete btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Remove selected items</a>
+		<a class="btn btn-warning btn-xs" id="seleccionarTodos"><i class="fa fa-select" aria-hidden="true"></i>Select all</a>
 	</div>
 	<div class="col-md-7">
 		<div class="alert alert-gris">

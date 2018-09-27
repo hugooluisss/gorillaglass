@@ -30,7 +30,9 @@ $(document).ready(function(){
 			txtSitioWeb: "required",
 			txtStreet: "required",
 			txtZip: "required",
-			txtCity: "required"
+			txtCity: "required",
+			txtCountry: "required",
+			txtRFC: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -54,7 +56,9 @@ $(document).ready(function(){
 				$("#txtStreet").val(),
 				$("#txtCity").val(),
 				$("#txtState").val(),
+				$("#txtCountry").val(),
 				$("#txtZip").val(),
+				$("#selIsApp").is(":checked")?1:0,
 				{
 					before: function(){
 						$("#frmAdd").find("[type=submit]").prop("disabled", true);

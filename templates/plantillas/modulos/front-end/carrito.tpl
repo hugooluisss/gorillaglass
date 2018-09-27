@@ -77,7 +77,7 @@
 					<div class="row">
 						<br />
 						<br />
-						<div class="col-xs-5 col-sm-5 col-md-5 text-right">PIECES</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 text-right">{if $producto_id eq 112414}PACKS{else}PIECES{/if}</div>
 						<div class="col-xs-7 col-sm-7 col-md-3">
 							<input type="number" value="0" id="txtCantidad" name="txtCantidad" class="form-control" />
 						</div>
@@ -91,7 +91,11 @@
 					<div class="row">
 						<br />
 						<div class="col-xs-12">
-							<span class="text-danger">All items are single pieces.You must order two pieces to receive a matching pair</span>
+							{if $producto_id eq 112414}
+								<span class="text-danger">Each package contains 10 O-rings</span>
+							{else}
+								<span class="text-danger">All items are single pieces.You must order two pieces to receive a matching pair</span>
+							{/if}
 						</div>
 					</div>
 				</div>

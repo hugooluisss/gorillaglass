@@ -6,7 +6,9 @@ $rs = $db->Execute("select * from producto where idPadre = 0 and not idProducto 
 $datos = array();
 while(!$rs->EOF){
 	$rs->fields['url'] = "home/".$rs->fields['idProducto']."-".getURI($rs->fields['nombre'])."/";
-	array_push($datos, $rs->fields);
+	
+	if (!in_array($rs->fields['idProducto'], array(109429)))
+		array_push($datos, $rs->fields);
 	
 	$rs->moveNext();
 }
@@ -14,6 +16,23 @@ while(!$rs->EOF){
 $smarty->assign("nodosPrimerNivel", $datos);
 
 switch($objModulo->getId()){
+	case 'welcome':
+		$rs = $db->Execute("select * from carousel order by posicion");
+		$datos = array();
+		$cont = 0;
+		while(!$rs->EOF){
+			$rs->fields['existe'] = file_exists("repositorio/principales/".$rs->fields['idItem'].".jpg");
+			if ($cont == 0)
+				$rs->fields['active'] = true;
+			$cont++;
+			$rs->fields['json'] = json_encode($rs->fields);
+			
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("listaProductosPrincipales", $datos);
+	break;
 	case 'home':
 		$db = TBase::conectaDB();
 		global $sesion;
@@ -113,6 +132,8 @@ switch($objModulo->getId()){
 			
 			$smarty->assign("item", $rs->fields);
 		}
+		
+		$smarty->assign("producto_id", $_GET['id'] == ''?'0':$_GET['id']);
 	break;
 	case 'itemsElemento':
 		$db = TBase::conectaDB();

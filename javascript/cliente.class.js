@@ -1,7 +1,7 @@
 TCliente = function(){
 	var self = this;
 	
-	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, estado, pass, street, city, state, zip, fn){
+	this.add = function(id,	nombre, email, rfc, direccion, razonSocial, localidad, telefono, celular, observaciones, tipo, sitioweb, estado, pass, street, city, state, country, zip, isapp, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cclientes', {
@@ -22,7 +22,9 @@ TCliente = function(){
 				"street": street,
 				"city": city,
 				"state": state,
+				"country": country,
 				"zip": zip,
+				"isapp": isapp,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

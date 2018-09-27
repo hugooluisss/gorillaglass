@@ -30,6 +30,10 @@ $(document).ready(function(){
 			after: function(resp){
 				$(".table-responsive").html(resp);
 				
+				$("#seleccionarTodos").click(function(){
+					$("#tblCarrito").find("[type=checkbox]").prop("checked", true);
+				});
+				
 				$(".btn-delete").click(function(){
 					if ($("#tblCarrito").find("[type=checkbox]:checked").length > 0){
 						if(confirm("Are you sure?")){

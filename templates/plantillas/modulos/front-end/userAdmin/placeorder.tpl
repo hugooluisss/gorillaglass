@@ -1,6 +1,6 @@
 {if $subtotal >= 100 or $band eq 1}
 <div class="page-header">
-	<h1>Thank you for ordering Gorilla Glass!</h1>
+	<h1>Almost done...</h1>
 </div>
 
 <div id="info">
@@ -13,8 +13,7 @@
 		</div>
 		<div class="col-xs-10">
 			<b>Add an estimate of your shipping cost to your order</b> <br/>
-			<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a> <br />
-			<br />
+			
 			<select class="form-control" id="selPaqueteria" name="selPaqueteria">
 				{foreach from=$listaPaqueteria item=paqueteria}
 					<option value="{$paqueteria.idPaqueteria}">{$paqueteria.nombre} {if $paqueteria.costo neq 0}- ${$paqueteria.costo}{/if}</option>
@@ -78,10 +77,13 @@
 				<b>Send us the order, You will recieve the order as a pdf to your email address.</b>
 			</p>
 			<p class="text-center">
-				<button class="btn btn-info" id="btnSubmit">Send the order</button>
+				<button class="btn btn-success" id="btnSubmit"><b>Send the order</b></button>
 			</p>
 			<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
 		</div>
+<br/>
+	<p>If you have any questions <a href="faq" target="_blank">check out our Frequently Asked Questions section here</a> or <a href="contact" target="_blank">contact us here with any questions!</a> </p>
+	<br/>		
 	</div>
 </div>
 
@@ -100,10 +102,10 @@
 <br />
 <br /><br />
 
-<p>Your order has not reached the $100.00 minimum value for wholesale orders.  You can continue shopping until you meet the minimum required value or we can process the small order by charging an extra $15.00 fee.</p>
+<p>Your order has not reached the $100.00 minimum value for wholesale orders. You can continue shopping until you meet the minimum required value or we can process the small order by charging an extra $15.00 fee. This surcharge helps offset the cost we absorb when sending small orders.</p>
 <center>
 	<form method="post">
-		<a href="home/18039-Plugs/" class="btn btn-primary">Continue shopping</a>
+		<a href="home/18038-Plugs/" class="btn btn-primary">Continue shopping</a>
 		<button class="btn btn-info" id="btnAddExtra" pedido="{$idPedido}">Add a $15.00 fee</button>
 		<input type="hidden" id="pedido" name="pedido" value="{$idPedido}" />
 		<input type="hidden" id="band" name="band" value="1" />

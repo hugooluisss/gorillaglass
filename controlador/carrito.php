@@ -30,6 +30,14 @@ switch($objModulo->getId()){
 				$descuento = $precio * 0.15;
 				$etiquetaDescuento = "15";
 			}
+			
+			if ($descuento == 0){
+				$pedido = new TPedido($_POST['idPedido']);
+				if ($pedido->cliente->getIsApp()){
+					$descuento = $precio * 0.05;
+					$etiquetaDescuento = "5";
+				}
+			}
 				
 			$smarty->assign("descuento", sprintf("%.2f", $descuento));
 			$smarty->assign("total", sprintf("%.2f", $precio - $descuento));

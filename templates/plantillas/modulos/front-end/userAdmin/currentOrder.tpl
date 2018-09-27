@@ -23,7 +23,7 @@
 <br />-->
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-6 text-center">
-		<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>
+		<!--<a href="repositorio/Shippinginfo.pdf" target="_blank">Learn about our shipping options and costs here.</a>-->
 	</div>
 	<div class="col-sm-3">
 		<p><small><b>After you are finished reviewing the items in your Shopping Cart, choose a shipping method and place the order.</b></small></p>
@@ -44,6 +44,9 @@
 		5%   discount for sales of $500.00 and above.<br />
 10% discount for sales of $1,000.00 and above.<br />
 15% discount for sales of $2,000.00 and above.<br />
+		
+	</br>
+		<p>If you have any questions <a href="faq" target="_blank">check out our Frequently Asked Questions section here</a> or <a href="contact" target="_blank">contact us here with any questions!</a> </p>
 		</small>
 	</div>
 	<div class="col-sm-3 text-center">
